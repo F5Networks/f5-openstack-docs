@@ -27,5 +27,5 @@ bundle exec htmlproof ./_site
 
 git config user.email "j.putrino@f5.com"
 git config user.name "jputrino"
-git commit _site -m "travis-ci build"
+git commit -a -m "travis-ci build"
 git push origin site
