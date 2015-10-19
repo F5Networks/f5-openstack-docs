@@ -22,5 +22,5 @@ mkdir ./docs-build
 #cp -R ./openstack-f5-agent/doc ./docs-build-temp/agent
 #cp -R ./openstack-f5-lbaasv1/doc ./docs-build-temp/lbaasv1
 
-bundle exec jekyll build -s ./docs-build
+bundle exec jekyll build 
 bundle exec htmlproof ./_site
