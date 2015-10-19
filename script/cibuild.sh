@@ -2,10 +2,10 @@
 set -e # halt script on error
 
 # remove docs-build-temp folder if it exists
-#rm -rf ./docs-build-temp
+rm -rf ./docs-build
 
 #make temp folder to build site in
-#mkdir ./docs-build-temp
+mkdir ./docs-build
 
 #copy site config content from root folder into temp folder
 #cp ./Gemfile ./docs-build-temp/
@@ -22,5 +22,5 @@ set -e # halt script on error
 #cp -R ./openstack-f5-agent/doc ./docs-build-temp/agent
 #cp -R ./openstack-f5-lbaasv1/doc ./docs-build-temp/lbaasv1
 
-bundle exec jekyll build
+bundle exec jekyll build -s ./docs-build
 bundle exec htmlproof ./_site
