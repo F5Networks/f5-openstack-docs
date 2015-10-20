@@ -22,6 +22,6 @@ deploy:
   acl: private
   on:
     repo: "jputrino/f5-openstack-docs"
-    branch: master
+    branch: site
   skip_cleanup: true  
 
