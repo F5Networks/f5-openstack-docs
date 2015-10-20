@@ -7,8 +7,16 @@ set -e #halt script on error
 #  Created by Jodie Putrino on 10/19/15.
 #
 
+#Tell Travis what repo to use
+[ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ]
+
+#Tell Travis not to create a pull request
+[ "TRAVIS_PULL_REQUEST" == "false" ]
+
 # commit
-git config user.email "j.putrino@f5.com"
-git config user.name "jputrino"
-git commit _site/ -m "travis-ci build"
-git push origin site
+cd $HOME
+  git config --global user.email "travis@travis-ci.com"
+  git config --global user.name "travis-ci"
+git clone --quiet --branch=site https://${GH_TOKEN}@github.com/jputrino/f5-openstack-docs.git
+  git commit -a
+  git push origin site
