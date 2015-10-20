@@ -22,6 +22,6 @@ deploy:
   skip_cleanup: true 
   acl: private
   on:
-    repo: "TRAVIS_REPO_SLUG"
-    branch: TRAVIS_BRANCH
+    repo: $TRAVIS_REPO_SLUG
+    branch: $TRAVIS_BRANCH
 
