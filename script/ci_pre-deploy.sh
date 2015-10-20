@@ -10,14 +10,14 @@ if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_RE
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
-  git clone --quiet --branch=site https://${GH_TOKEN}@github.com/jputrino/f5-openstack-docs site > /dev/null
+  git clone --quiet --branch=site https://${GH_TOKEN}@github.com/jputrino/f5-openstack-docs site
 
   cd site
   git rm -rf ./site_build
   cp -Rf $HOME/site_build-latest ./site_build
   git add -f .
   git commit -m "Lastest site build on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch"
-  git push -fq origin site > /dev/null
+  git push -fq origin site
 
   echo -e "Pushed site to GitHub.\n"
   
