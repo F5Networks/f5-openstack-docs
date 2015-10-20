@@ -18,3 +18,4 @@ deploy:
   acl: private
   on:
     repo: jputrino/f5-openstack-docs
+    all_branches: true
