@@ -15,12 +15,13 @@ branches:
  - develop
 deploy:
   provider: s3
+  region: us-west-2
   access_key_id: AKIAJXW2OUXQMW3DE7PA
   secret_access_key:
-    secure: $AWS_ACCESSKEY
+    secure: $AWS_ACCESSKEY 
   bucket: f5-openstack-dev
   skip_cleanup: true 
   local_dir: "site_build"
   on:
     repo: $TRAVIS_REPO_SLUG
-    branch: $TRAVIS_BRANCH
+

@@ -1,5 +1,5 @@
 ---
-layout: landing_page
+layout: docs_page
 title: LBaaS Plug-in Architecture and Design
 ---
 
