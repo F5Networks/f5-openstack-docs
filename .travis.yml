@@ -1,7 +1,7 @@
 language: ruby
 rvm:
 - 2.1
-before_script:
+before_install:
 - chmod +x ./script/cibuild.sh
 script: "./script/cibuild.sh"
 env:
@@ -9,8 +9,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - secure: z6Q92K/g9Q0gT/i3XrSQXxNgqVstMU6LB4gyuDn3e+bJ0zhvN7uJ9KNjFFb6/UY84SvuIaoGjBeTkcrlCdTY7fjb5zRAqpJfe12k6x6a3Tt0C5QFSuB/LQLTi5rxM0XCAloee9EhOo3KnZjSzlDgHT4sSatdaFSK+wUih7KAhstP58XUAu0ugotlFospRFWRUhb3+AHp/ftFyMrpi3Wj6GZU06N8DX6LooJST9QUJf/fwMDa1OVhiMCxphf0IvUk3l7WLWHuCxSaU/0rFeSjp/sPbLiQdrrI67iqeHzkHr9jM1SFmW4ALJF6JVVjml02m+XfKygQ19UMcn++irLR8poYeyV3sja5ql0uq9yO/PLSyxIYqbg36KNm4/e5ryHvIcZ3XEHwaPBjHImnV5ij3Gf2Z/cpt8KWMeVIkvoUeb8IgttMGZysSzaJnc9kirb5DJl9MVNAWnxqvd8yYa0l0aK9QbidMAI0GDlkQTWWQqPE7ljHkoki/tVBRiD21Oz+SK2yB2dxLXJTzY0LFTF8fv5/NFFXTdIqTWgILI6Y40zwdGVI8vncaaH+ri2zPSdSEZx2+vAL2pfHbupsZ54X2YwtmsKJE8PI3xgSKbph+RV1UYwr/g+MuviYNOAs7cUmcJPBOJ1p6G2Do4X8D/LcLtPtj3Try2O5/Vu/21BgQJg=
 before_deploy:
-  before_script:
-  - chmod +x ./script/ci_pre-deploy.sh
+- chmod +x ./script/ci_pre-deploy.sh
   script: "./script/ci_pre-deploy.sh"
 deploy:
   provider: s3
