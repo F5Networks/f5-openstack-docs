@@ -1,11 +1,12 @@
 #Hat-tip to Ben Limmer @http://benlimmer.com/2013/12/26/automatically-publish-javadoc-to-gh-pages-with-travis-ci/, without whose help (via the web) I never would have figured this out.
 
 
-if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+#if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
-  echo "Pushing site to GitHub...\n"
+#  echo "Pushing site to GitHub...\n"
 
-  cp -R ./_site $HOME/site_build-latest
+jekyll build -d ./site_build
+  cp -R ./site_build $HOME/site_build-latest
 
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
@@ -19,5 +20,5 @@ if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_RE
   git commit -m "Latest successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch"
   git push -fq origin site
 
-fi
+#fi
 
