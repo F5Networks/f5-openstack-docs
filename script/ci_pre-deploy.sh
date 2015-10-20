@@ -3,9 +3,9 @@
 
 if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
-  echo -e "Pushing site to GitHub...\n"
+  echo "Pushing site to GitHub...\n"
 
-  cp -R f5-openstack-docs/ $HOME/site_build-latest
+  cp -R f5-openstack-docs/_site $HOME/site_build-latest
 
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
@@ -16,10 +16,10 @@ if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_RE
   git rm -rf ./site_build
   cp -Rf $HOME/site_build-latest ./site_build
   git add -f .
-  git commit -m "Lastest site build on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch"
+  git commit -m "Latest site build on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch"
   git push -fq origin site
 
-  echo -e "Pushed site to GitHub.\n"
+  echo "Pushed site to GitHub.\n"
   
 fi
 
