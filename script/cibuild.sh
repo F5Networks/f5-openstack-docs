@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
+echo "building site with jekyll"
+bundle exec jekyll build -d ./site_build
+
+echo "proofing site with htmlproofer"
+bundle exec htmlproof ./site_build
+
 #if [ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 echo "Pushing site to GitHub...\n"
 cp -R ./site_build $HOME/site_build-latest
