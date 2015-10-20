@@ -1,6 +1,9 @@
+#Hat-tip to Ben Limmer @http://benlimmer.com/2013/12/26/automatically-publish-javadoc-to-gh-pages-with-travis-ci/, without whose help (via the web) I never would have figured this out.
+
+
 if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
 
-  echo -e "Publishing site to S3...\n"
+  echo -e "Pushing site to GitHub...\n"
 
   cp -R f5-openstack-docs/ $HOME/site_build-latest
 
@@ -16,8 +19,7 @@ if [ "$TRAVIS_REPO_SLUG" == "jputrino/f5-openstack-docs" ] && [ "$TRAVIS_PULL_RE
   git commit -m "Lastest site build on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch"
   git push -fq origin site > /dev/null
 
-  echo -e "Published site to GitHub.\n"
+  echo -e "Pushed site to GitHub.\n"
   
 fi
 
-#Hat-tip to Ben Limmer @http://benlimmer.com/2013/12/26/automatically-publish-javadoc-to-gh-pages-with-travis-ci/, without whose help (via the web) I never would have figured this out.

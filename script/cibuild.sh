@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
+echo -e "building site with jekyll"
+bundle exec jekyll build -s 
 
-
-bundle exec jekyll build 
+echo -e "proofing site with htmlproofer"
 bundle exec htmlproof ./_site
