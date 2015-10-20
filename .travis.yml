@@ -23,4 +23,6 @@ deploy:
   on:
     repo: "jputrino/f5-openstack-docs"
     branch: master
+  skip_cleanup: true
+  local_dir: site  
 
