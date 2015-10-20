@@ -18,6 +18,7 @@ deploy:
   bucket: jodietestsite
   skip_cleanup: true 
   acl: private
+  local_dir: "site_build"
   on:
     repo: $TRAVIS_REPO_SLUG
     branch: $TRAVIS_BRANCH
