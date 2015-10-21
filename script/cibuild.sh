@@ -20,7 +20,7 @@ cp -R ./site_build $HOME/site_build-latest
   git rm -rf ./site_build
   cp -Rf $HOME/site_build-latest ./site_build
   git add -f .
-  git commit -m "Latest successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch"
+  git commit -m "Latest successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to site branch [ci skip]"
   git push -fq origin site
 
 #fi
