@@ -14,7 +14,7 @@ cp -R ./site_build $HOME/site_build-latest
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
-  git clone --quiet --branch=site https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG site
+  git clone --quiet --branch=site https://$GH_USER@github.com/$TRAVIS_REPO_SLUG site
 
   cd site
   git rm -rf ./site_build
