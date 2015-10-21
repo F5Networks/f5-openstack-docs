@@ -5,3 +5,5 @@
 .bundle/
 
 _site/
+
+.git-commit-template.txt
