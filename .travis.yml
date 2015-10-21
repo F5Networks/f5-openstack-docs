@@ -22,6 +22,6 @@ deploy:
   skip_cleanup: true 
   acl: private
   on:
-    repo: "jputrino/f5-openstack-docs"
-    branch: site
+    repo: $TRAVIS_REPO_SLUG
+    branch: $TRAVIS_BRANCH
 
