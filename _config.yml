@@ -1,5 +1,5 @@
 # Site settings
-title: F5 OpenStack
+title: F5 OpenStack Ready
 description: OpenStack solutions from F5 Networks
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
