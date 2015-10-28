@@ -20,7 +20,7 @@ deploy:
     secure: $AWS_ACCESSKEY
   bucket: jodietestsite
   skip_cleanup: true 
-  acl: private
+  acl: authenticated_read
   local_dir: "site_build"
   on:
     repo: $TRAVIS_REPO_SLUG
