@@ -6,8 +6,6 @@ env:
 cache: bundler
 before_install:
  - gem update --system
-install:
- - bundle install 
 script: 
  - ./script/cibuild.sh
 # whitelist
