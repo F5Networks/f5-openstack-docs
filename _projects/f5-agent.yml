@@ -1,0 +1,5 @@
+layout: default
+title: F5 OpenStack Agent
+repository: git://F5Networks/f5-openstack-agent.git
+published: true
+project_dir: ./f5-agent
