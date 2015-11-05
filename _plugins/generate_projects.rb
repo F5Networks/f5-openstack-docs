@@ -63,8 +63,8 @@ require 'find'
 require 'git'
 #require 'zip/zip'
 #require 'zipfilesystem'
-require 'rubygems'
-require 'zip'
+#require 'rubygems'
+#require 'zip'
 
 module Jekyll
 
