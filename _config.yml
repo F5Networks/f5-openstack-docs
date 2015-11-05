@@ -1,11 +1,13 @@
 # Site settings
-title: F5 OpenStack Ready
-description: OpenStack solutions from F5 Networks
+title: F5 OpenStack
+description: Uniquely cloud-ready
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
 highlighter: pygments
-
 exclude: [vendor]
+
+gems: ['jekyll_version_plugin']
+
