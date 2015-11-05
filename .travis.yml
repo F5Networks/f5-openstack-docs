@@ -7,11 +7,7 @@ cache: bundler
 before_install:
  - gem update --system
 install:
- - bundle install https://rubygems.org/ jekyll
- - bundle install https://rubygems.org/ html-proofer
- - bundle install https://rubygems.org/ jekyll_version_plugin
- - bundle install https://rubygems.org/ git
- - bundle install https://rubygems.org/ rubyzip
+ - bundle install 
 script: 
  - ./script/cibuild.sh
 # whitelist
