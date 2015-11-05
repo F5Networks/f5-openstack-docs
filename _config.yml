@@ -9,5 +9,5 @@ markdown: kramdown
 highlighter: pygments
 exclude: [vendor]
 
-gems: ['jekyll_version_plugin', 'git', 'rubyzip']
+gems: ['jekyll_version_plugin']
 
