@@ -61,8 +61,8 @@
 require 'fileutils'
 require 'find'
 require 'git'
-require 'zip/zip'
-require 'zip/zipfilesystem'
+#require 'zip/zip'
+require 'zipfilesystem'
 
 module Jekyll
 
