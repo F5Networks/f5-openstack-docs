@@ -2,7 +2,7 @@
 title: F5 OpenStack
 description: Uniquely cloud-ready
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+url: "http://f5-openstack-dev.s3-website-us-west-2.amazonaws.com/" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
