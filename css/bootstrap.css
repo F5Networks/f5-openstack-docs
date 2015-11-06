@@ -1069,6 +1069,15 @@ th {
 .glyphicon-menu-up:before {
   content: "\e260";
 }
+.trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
