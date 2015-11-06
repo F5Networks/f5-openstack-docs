@@ -2435,14 +2435,14 @@ Change this line:
     \`list-devices disk | head -n1\`
 
 to this:
-{%raw}
+{% raw %}
     {{if node.fqdn in {'node-compute-1.maas'} }}
        d-i     partman-auto/disk string /dev/sdb
       {{else}}
        d-i     partman/early\_command string debconf-set partman-auto/disk
         'list-devices disk | head -n1'
     {{endif}}
-{%endraw}
+{% endraw %}
 
 MAAS Add Tags
 -------------
