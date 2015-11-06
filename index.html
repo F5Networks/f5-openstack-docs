@@ -1,7 +1,57 @@
----
-layout: default
-title: F5 OpenStack
----
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid"> 
+      
+      <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="https://github.com/F5Networks" target="blank">F5 Cloud Ready</a> 
+        </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">OpenStack <span class="sr-only">(current)</span></a> </li>
+            <li><a href="#">Guides</a> </li>
+            <li><a href="#">Training</a> </li>
+            <li><a href="#">Resources</a> </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://devcentral.f5.com/" target="blank">DevCentral</a> </li>
+            <li><a href="https://support.f5.com/kb/en-us.html" target="blank">Support</a> </li>
+          </ul>
+        </div> <!-- /.navbar-collapse --> 
+       </div> <!-- /.container-fluid --> 
+  
+      <div class="trigger">
+        {% for page in site.pages %}
+          {% if page.title %}
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+  </div>
+</header>
 
 <div class="container">
   <div class="row">
@@ -11,11 +61,12 @@ title: F5 OpenStack
           <div class="text-center">
           <h2>Uniquely Cloud-Ready.</h2>
             <p><a class="btn btn-success btn-lg" href="https://github.com/F5Networks" role="button">Find us on GitHub</a></p>
-            <p class="text-center">Moving applications to the cloud adds flexibility, helps trim costs, and frees up IT for strategic projects.</p>
-            <p class="text-center">F5's Cloud Ready solutions help you replicate services -- and the policies you've worked so hard to fine-tune -- across cloud environments.</p>
-            <p class="text-center">The F5 OpenStack suite lets you access our source code. Our tools can help you build a stack and deploy F5-supported plug-ins. Our Cloud Ready solutions let you manage your resources and services in the way that's right for your business.</p>
+            <!--p class="text-center">Moving applications to the cloud adds flexibility, helps trim costs, and frees up IT for strategic projects.</p>
+            <p class="text-center">F5's Cloud Ready solutions help you replicate services - and the policies you've worked so hard to fine-tune - across cloud environments.</p>
+            <p class="text-center">The F5 OpenStack suite lets you access our source code. Our tools can help you build a stack and deploy F5-supported plug-ins. Our Cloud Ready solutions let you manage your resources and services in the way that's right for your business.</p>-->
           </div>
-        <!--<img src="img/1200X400.gif" alt="" class="img-responsive"!>--> </div>
+        <!--<img src="img/1200X400.gif" alt="" class="img-responsive"!>--> 
+      </div>
     </div>
   </div>
 </div>
