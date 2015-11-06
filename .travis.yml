@@ -20,7 +20,6 @@ deploy:
     secure: $AWS_ACCESSKEY
   bucket: f5-openstack-dev
   skip_cleanup: true 
-  acl: authenticated_read
   local_dir: "site_build"
   on:
     repo: $TRAVIS_REPO_SLUG
