@@ -12,5 +12,5 @@ cp -R ./site_build $HOME/site_build
 
 # If this is a development build, rename index.html to os_landingpage.html
 if [ "$TRAVIS_BRANCH" == "develop" ]; then
-mv index.html os_landingpage.html
+mv index.html os_landingpage.html && rm index.html
 fi
