@@ -8,8 +8,6 @@ bundle exec jekyll build -d ./site_build
 #echo "proofing site with htmlproofer"
 #bundle exec htmlproof ./site_build
 
-cp -R ./site_build $HOME/site_build
-
 # If this is a development build, rename index.html to os_landingpage.html
 if [ "$TRAVIS_BRANCH" == "develop" ]; then
 mv index.html os_landingpage.html;
@@ -17,3 +15,6 @@ mv index.html os_landingpage.html;
     rm "index.html"
     fi
 fi
+
+cp -R ./site_build $HOME/site_build
+
