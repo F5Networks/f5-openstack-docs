@@ -1,57 +1,13 @@
 ---
+layout: landing_page
+title: F5 Platforms for Cloud
 ---
 
-Table of Contents {#table-of-contents .TOCHeading}
-=================
 
-[Audience 1](#audience)
-
-[Introduction 1](#introduction)
-
-[F5 Platform Selection 2](#f5-platform-selection)
-
-[Workload Analysis 2](#workload-analysis)
-
-[Capacity 2](#capacity)
-
-[Scalability 3](#scalability)
-
-[Economics 4](#economics)
-
-[Agility 5](#agility)
-
-[Resource Isolation 5](#resource-isolation)
-
-[Failure and Security Isolation 6](#failure-and-security-isolation)
-
-[Manageability 6](#manageability)
-
-[Best Practices 7](#best-practices)
-
-[Use Virtual Edition for Third Party Cloud
-7](#use-virtual-edition-for-third-party-cloud)
-
-[Use physical ADCs for Session Layer
-7](#use-physical-adcs-for-session-layer)
-
-[Use vADC for CPU-intensive or Advanced Features
-8](#use-vadc-for-cpu-intensive-or-advanced-features)
-
-[Load balance virtual ADCs with physical ADCs
-8](#load-balance-virtual-adcs-with-physical-adcs)
-
-[Build PODs for Scalability 9](#build-pods-for-scalability)
-
-[Final Thoughts 10](#final-thoughts)
-
-Audience
-========
-
-Introduction
+#Introduction
 ============
 
-\
-F5 Platform Selection
+#F5 Platform Selection
 =====================
 
 There are a number of factors to consider when evaluating which F5
@@ -71,7 +27,7 @@ Much of the content of this section is derived from a white paper
 written by Lori MacVittie and is linked here:
 <https://www.gosavo.com/EDGE/Document/Document.aspx?id=1004042&view>=
 
-Workload Analysis
+#Workload Analysis
 -----------------
 
 In order to determine which platforms are appropriate for your
@@ -88,7 +44,7 @@ will be provided, and the SSL handshakes per second and SSL bits per
 second requirements. Also, the customer should determine whether they
 will have advanced services with high CPU workloads such as ASM or AVR.
 
-Capacity
+#Capacity
 --------
 
 Once you have estimated the amount and kind of workloads that you are
@@ -105,7 +61,7 @@ more capacity really does add a lot more capacity and would be done
 infrequently, rather than adding capacity in such small increments that
 you are constantly scaling out your clusters.
 
-Scalability
+#Scalability
 -----------
 
 As noted in the previous section, all F5 platforms can be scaled out by
@@ -180,7 +136,7 @@ downstream load balancers are processing at layer 7, the upstream load
 balancer may be able to process far more traffic than one ADC processing
 traffic at layer 7.
 
-Economics
+#Economics
 ---------
 
 Economics may factor into your platform selection. For example, F5
@@ -218,7 +174,7 @@ instances. Therefore, if one vCMP instance requires certain licensing
 options to satisfy a particular tenant, then the entire Viprion must be
 licensed for that option as well.
 
-Agility
+#Agility
 -------
 
 Another factor to consider when choosing an F5 platform is the ability
@@ -242,7 +198,7 @@ deployment may help avoid traffic trombone issues that can arise when
 virtualizing Network Functions. See the section on Network Function
 Virtualization for further information.
 
-Resource Isolation
+#Resource Isolation
 ------------------
 
 In the discussion on Economics, it was noted that if multiple tenants
@@ -265,7 +221,7 @@ would be platforms that economically support many tenants for a
 reasonable price while also having resource isolation that allows for
 fine-grained, flexible, and accurate assignment of resources to tenants.
 
-Failure and Security Isolation
+#Failure and Security Isolation
 ------------------------------
 
 In some deployment options, the BIG-IP is shared across multiple
@@ -281,7 +237,7 @@ trade-offs. While sharing a BIG-IP may be more economical and easier to
 manage, the downside is that failure and security domains are larger,
 and so the impact of a failure or intrusion is larger.
 
-Manageability
+#Manageability
 -------------
 
 Manageability is a critical issue for cloud environments because a big
@@ -309,10 +265,10 @@ create secondary route domains or really deal with route domains at all.
 So, for ASM support for multiple tenants, virtual edition is probably
 the way to go.
 
-Best Practices
+#Best Practices
 --------------
 
-### Use Virtual Edition for Third Party Cloud
+## Use Virtual Edition for Third Party Cloud
 
 If you are using a third party cloud environment that you have no
 control over, you should use the Virtual Edition of BIG-IP and deploy it
@@ -321,7 +277,7 @@ allows you to deploy your own physical BIG-IP then that’s more of a
 hosting solution than a cloud solution. For the cloud, you’ll need use
 virtual machines.
 
-### Use physical ADCs for Session Layer
+## Use physical ADCs for Session Layer
 
 If you are building a cloud, there are a number of options, but there is
 a common pattern that you should consider, which is a hybrid of pADC and
@@ -353,7 +309,7 @@ at a higher layer, but it might make sense from an economical
 perspective if the upstream BIG-IP has hardware that can support
 compression more economically.
 
-### Use vADC for CPU-intensive or Advanced Features
+## Use vADC for CPU-intensive or Advanced Features
 
 If you are using features that consume a lot of CPU and memory
 resources, a best practice is to deploy a vADC with dedicated resources
@@ -375,7 +331,7 @@ affected, either with increase latency, or rejected connections if too
 much memory is consumed. There are security factors to consider as well,
 as mentioned in the previous chapter on selecting a platform.
 
-### Load balance virtual ADCs with physical ADCs
+## Load balance virtual ADCs with physical ADCs
 
 We’ve mentioned that an upstream BIG-IP can perform certain functions
 such as session management and SSL offload, but another feature that can
@@ -390,7 +346,7 @@ at a lower layer BIG-IP. You will still be limited to what one BIG-IP
 can handle in terms of SSL and cookie persistence, but that is a great
 deal more than if it was also performing the other functions as well.
 
-### Build PODs for Scalability
+## Build PODs for Scalability
 
 A **point of delivery**, or **POD**, is "a module of network, compute,
 storage, and application components that work together to deliver
@@ -420,7 +376,7 @@ every 200 cloud tenants. The exact numbers you select will depend on
 exactly what services you will offer and how much traffic you expect
 your tenants to consume, on average.
 
-### Final Thoughts
+## Final Thoughts
 
 Reading through guidelines on Platform Selection and the Best Practices
 for deployment models can be a bit overwhelming. Anticipating traffic

@@ -1,142 +1,10 @@
 ---
-
+layout: landing_page
+title: Cloud and SDN Overview
 ---
 
-Table of Contents {#table-of-contents .TOCHeading}
-=================
 
-[Audience 1](#audience)
-
-[Introduction 1](#introduction)
-
-[Understanding the Cloud 2](#understanding-the-cloud)
-
-[Overview of Usage Scenarios 2](#overview-of-usage-scenarios)
-
-[Public Cloud 2](#public-cloud)
-
-[Hosted Private Cloud 2](#hosted-private-cloud)
-
-[On-Premise Private Cloud 3](#on-premise-private-cloud)
-
-[Hybrid Cloud 3](#hybrid-cloud)
-
-[Multi-Cloud / Hyper Hybrid Cloud 4](#multi-cloud-hyper-hybrid-cloud)
-
-[Abstract Cloud 4](#abstract-cloud)
-
-[Cloud Network Services 7](#_Toc413313775)
-
-[Introduction 7](#introduction-1)
-
-[Types of Services 7](#types-of-services)
-
-[Example Basic Network Services 8](#example-basic-network-services)
-
-[Example Intermediate Network Services
-9](#example-intermediate-network-services)
-
-[Example Advanced Network Services
-9](#example-advanced-network-services)
-
-[Cloud Architecture 10](#cloud-architecture)
-
-[Cloud Networks 10](#cloud-networks)
-
-[Virtual / Overlay Networks 10](#virtual-overlay-networks)
-
-[Transport Network Implementation 11](#transport-network-implementation)
-
-[Virtual Network Implementation 12](#virtual-network-implementation)
-
-[Layered Virtual Network Implementation 12](#_Toc413313786)
-
-[Virtual Infrastructure Network API
-12](#virtual-infrastructure-network-api)
-
-[Virtual Infrastructure Compute API
-13](#virtual-infrastructure-compute-api)
-
-[Cloud Services API 13](#cloud-services-api)
-
-[Service Fabrics and Service Chaining
-14](#service-fabrics-and-service-chaining)
-
-[Cloud Management Tools 17](#cloud-management-tools)
-
-[Overview 17](#overview)
-
-[Virtual Subnet Mgmt 17](#virtual-subnet-mgmt)
-
-[Virtual Private Cloud Mgmt 18](#virtual-private-cloud-mgmt)
-
-[Virtual Private Cloud Templating 20](#virtual-private-cloud-templating)
-
-[Service Templating / Insertion 21](#service-templating-insertion)
-
-[Provider Cloud Management 21](#provider-cloud-management)
-
-[Hybrid and Heterogeneous Cloud Management
-22](#hybrid-and-heterogeneous-cloud-management)
-
-[Abstract cloud management 22](#abstract-cloud-management)
-
-[Business Integration for Clouds 24](#business-integration-for-clouds)
-
-[Technology Directions 25](#technology-directions)
-
-[Software Defined Networks 25](#software-defined-networks)
-
-[Introduction 25](#introduction-2)
-
-[Use Cases 25](#use-cases)
-
-[Vendors 25](#vendors)
-
-[VMware NSX 25](#vmware-nsx)
-
-[Nuage 25](#nuage)
-
-[Juniper Contrail 25](#juniper-contrail)
-
-[OpenDayLight 25](#opendaylight)
-
-[PlumGrid 25](#plumgrid)
-
-[Midokura 25](#midokura)
-
-[Cisco 25](#cisco)
-
-[BigSwitch 25](#bigswitch)
-
-[Cisco 25](#cisco-1)
-
-[Juniper 25](#juniper)
-
-[HP 25](#hp)
-
-[Service Stiching 26](#service-stiching)
-
-[IP based 26](#ip-based)
-
-[NAT on ingress and egress to SDN 26](#nat-on-ingress-and-egress-to-sdn)
-
-[Network Function Virtualization 26](#network-function-virtualization)
-
-[Containers 26](#containers)
-
-Audience
-========
-
-This document was written for F5 employees working in a technical role
-to help F5 customers plan their cloud deployments. While not intended
-for F5 customers, some care has been taken to ensure that no important
-F5 proprietary information is present in this document. So, while this
-document was not written for F5 customers directly, there shouldn’t be a
-problem with a customer receiving any of the information within this
-document.
-
-Introduction
+#Introduction
 ============
 
 The Cloud introduces new concepts, new limitations, new services, and
@@ -166,11 +34,22 @@ third party partner of F5 as well as general information on F5
 Partnerships. The last section describes the future directions of F5
 technology within cloud environments.
 
-\
-Understanding the Cloud
+#Audience
+========
+
+This document was written for F5 employees working in a technical role
+to help F5 customers plan their cloud deployments. While not intended
+for F5 customers, some care has been taken to ensure that no important
+F5 proprietary information is present in this document. So, while this
+document was not written for F5 customers directly, there shouldn’t be a
+problem with a customer receiving any of the information within this
+document.
+
+
+#Understanding the Cloud
 =======================
 
-Overview of Usage Scenarios
+##Overview of Usage Scenarios
 ---------------------------
 
 In order to make appropriate deployment decisions, it is important to
@@ -316,15 +195,10 @@ some sort of gateway.
 
 Example: Ravello
 
-\
- 
--
+#Cloud Network Services
+------------------------------------------------------------------------------
 
-\
-<span id="_Ref344887978" class="anchor"><span id="_Toc413313775" class="anchor"></span></span>Cloud Network Services
---------------------------------------------------------------------------------------------------------------------
-
-### Introduction
+## Introduction
 
 One very important part of a cloud offering are Cloud Services. Cloud
 Services are services that a tenant can sign up for, usually by
@@ -358,7 +232,7 @@ configure the service, and precisely what the customer should expect
 from the service. After that, they can start thinking about how to build
 the services.
 
-### Types of Services
+## Types of Services
 
 It is important to understand the different types of services offered by
 a cloud vendor. These services can be divided into many types of
@@ -385,7 +259,7 @@ and that nearly all tenants will use, such as IP address assignment,
 versus more sophisticated services such as Web Application Firewall,
 that a smaller subset of tenants will use.
 
-### Example Basic Network Services
+## Example Basic Network Services
 
 Create tenant
 
@@ -403,8 +277,7 @@ Enable DHCP service
 
 Manage Access Control Lists
 
-### \
-Example Intermediate Network Services
+### Example Intermediate Network Services
 
 Create VPN Connection
 
@@ -442,8 +315,7 @@ IDS/IPS virus detection
 
 ADCaaS: Dedicated Traffic Manager
 
-\
-Cloud Architecture
+#Cloud Architecture
 ------------------
 
 Since the cloud introduces many new points of interactions between
@@ -457,7 +329,7 @@ present in the cloud management landscape. Also, it should be noted that
 these are not formalized terms that you’ll find on Wikipedia. They were
 just made up to help explain these concepts.
 
-### Cloud Networks
+## Cloud Networks
 
 Users of Cloud services should be aware that networking may not operate
 the same way that they are used to with standard Ethernet equipment. For
@@ -477,7 +349,7 @@ Additional information is provided later in this document about the
 specific limitations of networking components imposed on customers by
 various cloud and hypervisor vendors.
 
-#### Virtual / Overlay Networks
+##Virtual / Overlay Networks
 
 Since cloud environments may have hundreds or thousands of tenants
 creating many networks, it is easy to exhaust the 4096 VLANs that are
@@ -492,7 +364,7 @@ While using overlay networks is becoming more popular, it is possible to
 implement virtual networks with OpenFlow or other SDN technologies, or
 with evolutionary network protocols such as Q in Q.
 
-### Transport Network Implementation
+## Transport Network Implementation
 
 The Transport Networking Implementation is typically VLANs. Even though
 your virtual network traffic may be encapsulated into VXLAN packets or
@@ -526,7 +398,7 @@ implement a layered solution where the activities of tenants do not
 directly affect the operation of the transport network in a way that may
 affect other tenants in an unexpected way.
 
-### Virtual Network Implementation
+## Virtual Network Implementation
 
 The virtual network implementation layer is the mechanism that gets
 packets from one virtual machine to another. It must leverage a
@@ -539,7 +411,7 @@ be VXLAN and NVGRE.
 
 &lt;discuss legacy bridging&gt;
 
-### <span id="_Ref341947870" class="anchor"><span id="_Toc413313786" class="anchor"></span></span>Layered Virtual Network Implementation
+### Layered Virtual Network Implementation
 
 The concept of a Layered Virtual Network Implementation is interesting
 to be aware of, even though this is rather uncommon at this point. The
@@ -700,10 +572,10 @@ work for a load balancer. It is not too much of a stretch to consider a
 device that directs traffic based on a Service Identifier to be very
 much like an ADC (application delivery controller).
 
-Cloud Management Tools
+#Cloud Management Tools
 ----------------------
 
-### Overview
+## Overview
 
 ### Virtual Subnet Mgmt
 
@@ -823,7 +695,7 @@ Here is a zoom of Step 3:
 
 ![](media/image6.png)
 
-Business Integration for Clouds
+#Business Integration for Clouds
 -------------------------------
 
 The following presentation is, by far, the most comprehensive available
@@ -835,34 +707,33 @@ this case the company was Dell.
 
 ![](media/image7.png)
 
-\
-Technology Directions
+#Technology Directions
 =====================
 
-Software Defined Networks
+#Software Defined Networks
 -------------------------
 
-### Introduction
+## Introduction
 
-### Use Cases
+## Use Cases
 
-### Vendors
+## Vendors
 
-#### VMware NSX
+### VMware NSX
 
-#### Nuage
+### Nuage
 
-#### Juniper Contrail
+### Juniper Contrail
 
-#### OpenDayLight
+### OpenDayLight
 
-#### PlumGrid
+### PlumGrid
 
-#### Midokura
+### Midokura
 
-#### Cisco
+### Cisco
 
-#### BigSwitch
+### BigSwitch
 
 #### Cisco
 
@@ -870,31 +741,31 @@ Software Defined Networks
 
 http://www.theregister.co.uk/2013/01/16/juniper\_sdn\_strategy/
 
-#### HP
+### HP
 
 http://www.networkcomputing.com/next-gen-network-tech-center/hp-details-sdn-strategy-announces-new-pr/240008407
 
-Service Stiching
+# Service Stitching
 ----------------
 
-### IP based 
+## IP based 
 
-#### NAT on ingress and egress to SDN
+### NAT on ingress and egress to SDN
 
-##### Use routing to pick service chains
+### Use routing to pick service chains
 
-##### Use bitmasks to pick service chains
+### Use bitmasks to pick service chains
 
-###### Is this possible with OpenFlow?
+#### Is this possible with OpenFlow?
 
 Not clear because the SDN switches claim they will select a service
 member to handle a flow, perhaps using a hash. OpenFlow cannot operate
 on a flow hash, I think. I could be wrong. (It may support ECMP)
 
-Network Function Virtualization
+#Network Function Virtualization
 -------------------------------
 
-Containers
+#Containers
 ----------
 
 

@@ -1,63 +1,25 @@
 ---
-
+layout: landing_page
+title: Cloud Services Overview
 ---
 
-Table of Contents {#table-of-contents .TOCHeading}
-=================
 
-[F5 Partnerships and Integrations 2](#f5-partnerships-and-integrations)
-
-[Cisco ACI 2](#cisco-aci)
-
-[VMware 2](#vmware)
-
-[vSphere Management Plug-In 2](#vsphere-management-plug-in)
-
-[VMware View and F5 2](#vmware-view-and-f5)
-
-[vCloud Director 2](#vcloud-director)
-
-[NSX 2](#nsx)
-
-[IBM 3](#ibm)
-
-[Nuage Networks 3](#nuage-networks)
-
-[OpenStack 4](#microsoft-hyper-v-gateway)
-
-[Nova Networking (legacy networking) vs Quantum Networking
-4](#nova-networking-legacy-networking-vs-quantum-networking)
-
-[Arista 4](#arista)
-
-[BigSwitch 4](#bigswitch)
-
-[NetApp 9](#netapp)
-
-[BMC Cloud Lifecycle Manager 9](#bmc-cloud-lifecycle-manager)
-
-[HP 9](#hp)
-
-[CloudStack and Xen CloudPlatform / CloudPortal
-9](#cloudstack-and-xen-cloudplatform-cloudportal)
-
-\
-F5 Partnerships and Integrations
+#F5 Partnerships and Integrations
 ================================
 
-Cisco ACI
+#Cisco ACI
 ---------
 
-VMware
+#VMware
 ------
 
 <https://www.gosavo.com/EDGE/Document/Document.aspx?id=824034&view>=
 
 <https://www.gosavo.com/EDGE/Document/Document.aspx?id=961756&view>=
 
-### vSphere Management Plug-In
+## vSphere Management Plug-In
 
-### VMware View and F5
+## VMware View and F5
 
 Patch for ESXi 5.1:
 
@@ -65,13 +27,13 @@ Patch for ESXi 5.1:
 
 <http://www.vmware.com/files/pdf/solutions/vmw-alwayson-validated-design-guide.pdf>
 
-### vCloud Director
+## vCloud Director
 
-### NSX
+# NSX
 
 <http://www.f5.com/pdf/solution-center/vmware-nsx-overview.pdf>
 
-### IBM
+# IBM
 
 http://www-304.ibm.com/software/brandcatalog/ismlibrary/details?catalog.label=1TW10SO06
 
@@ -83,7 +45,7 @@ Nojan Moshiri worked with them through our bizdev partner organization.\
 \
 John
 
-### Nuage Networks
+# Nuage Networks
 
 Yes, we are the LB part of the ALU Nuage solution.  Nuage is currently
 in the process of trying to close their first few deals, with F5 active
@@ -112,7 +74,7 @@ Ask Bellamy
 OpenStack
 ---------
 
-### Nova Networking (legacy networking) vs Quantum Networking
+# Nova Networking (legacy networking) vs Quantum Networking
 
 Different kinds of Quantum networks
 
@@ -120,14 +82,14 @@ BIG-IP Integration Strategy
 
 OVS integration strategy
 
-Arista
+#Arista
 ------
 
-Arista VXLAN Gateway
+##Arista VXLAN Gateway
 
 <http://www.aristanetworks.com/media/system/pdf/VMworld_Demo_Brief.pdf>
 
-BigSwitch
+#BigSwitch
 ---------
 
 The following is content that BigSwitch has created, not F5.
@@ -140,12 +102,12 @@ The following is content that BigSwitch has created, not F5.
 
 ![](media/image4.emf)
 
-NetApp
+#NetApp
 ------
 
 <http://www.f5.com/pdf/deployment-guides/f5-vmotion-flexcache-dg.pdf>
 
-BMC Cloud Lifecycle Manager
+#BMC Cloud Lifecycle Manager
 ---------------------------
 
 <https://devcentral.f5.com/blogs/us/bmc-cloud-lifecycle-manager-and-f5-automated-application-delivery>
@@ -154,10 +116,10 @@ BMC Cloud Lifecycle Manager
 
 <http://www.f5.com/pdf/solution-center/f5-bmc-partnership-overview.pdf>
 
-HP
+#HP
 --
 
-CloudStack and Xen CloudPlatform / CloudPortal
+##CloudStack and Xen CloudPlatform / CloudPortal
 ----------------------------------------------
 
 I believe this written by John Gruber:

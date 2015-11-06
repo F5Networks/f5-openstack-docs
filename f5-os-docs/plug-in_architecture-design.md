@@ -1,5 +1,6 @@
 ---
-
+layout: landing_page
+title: LBaaS Plug-in Architecture and Design
 ---
 
 #F5 LBaaS Plug-in Architecture and Design

@@ -1,5 +1,6 @@
 ---
-
+layout: default
+title: OpenStack Deployment Tips
 ---
 #F5 LBaaS Plug-in -- OpenStack Installation Tips
 

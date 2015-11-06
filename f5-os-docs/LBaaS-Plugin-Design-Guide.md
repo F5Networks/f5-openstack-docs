@@ -1,244 +1,17 @@
 ---
-
+layout: landing_page
+title: LBaaS Plugin Design Guide
 ---
-Table of Contents {#table-of-contents .TOCHeading}
-=================
 
-[Introduction 1](#_Toc416167861)
-
-[Related Documents 1](#_Toc416167862)
-
-[Major Requirements 2](#_Toc416167863)
-
-[Plug-in Architecture/Design 3](#_Toc416167864)
-
-[Overview 3](#_Toc416167865)
-
-[Components and Layers 4](#_Toc416167866)
-
-[Major Components 4](#_Toc416167867)
-
-[Single Agent Diagram 5](#_Toc416167868)
-
-[Multiple Agents and BIG-IP Service Groups 6](#_Toc416167869)
-
-[Agent-Tenant Affinity 7](#_Toc416167870)
-
-[Agent Driver 8](#_Toc416167871)
-
-[Overview 8](#overview-1)
-
-[Plug-in Driver 8](#plug-in-driver)
-
-[Agent Manager 8](#agent-manager)
-
-[iControl Driver 9](#icontrol-driver)
-
-[Network Builder 9](#network-builder)
-
-[LBaaS Builder 9](#lbaas-builder)
-
-[Configuration Managers 9](#configuration-managers)
-
-[BIG-IP Interfaces 9](#big-ip-interfaces)
-
-[Plug-in Code 10](#_Toc416167880)
-
-[Agent Code 10](#_Toc416167881)
-
-[RPC 11](#_Toc416167882)
-
-[Overview 11](#_Toc416167883)
-
-[RPC Queues 11](#_Toc416167884)
-
-[Driver to Agent Methods 11](#_Toc416167885)
-
-[Agent to Driver Methods 11](#_Toc416167886)
-
-[F5 LBaaS Service Definition 12](#_Toc416167887)
-
-[Agent Request Serialization 12](#_Toc416167888)
-
-[Major Deployment Variations 13](#_Toc416167889)
-
-[Hardware or Virtual BIG-IP 13](#_Toc416167890)
-
-[VCMP 13](#_Toc416167891)
-
-[BIG-IQ 13](#_Toc416167892)
-
-[HA Type 14](#_Toc416167893)
-
-[Pair 14](#_Toc416167894)
-
-[ScaleN 14](#_Toc416167895)
-
-[Standalone 14](#_Toc416167896)
-
-[Sync Mode 14](#_Toc416167897)
-
-[Global Routed 15](#_Toc416167898)
-
-[Traffic Return Method 15](#_Toc416167899)
-
-[SNAT 15](#_Toc416167900)
-
-[Gateway 16](#gateway)
-
-[BIG-IP Configuration Strategy 17](#_Toc416167902)
-
-[Overview 17](#_Toc416167903)
-
-[Tenancy 18](#tenancy)
-
-[L2 Configuration 18](#_Toc416167905)
-
-[Network Types 18](#_Toc416167906)
-
-[Naming Conventions 19](#_Toc416167907)
-
-[Predeclared Common Networks 19](#_Toc416167908)
-
-[Enable Common External Networks 19](#_Toc416167909)
-
-[SDN Integration Strategy 20](#_Toc416167910)
-
-[SDN Background 20](#sdn-background)
-
-[SDN L2 to L3 Table 20](#sdn-l2-to-l3-table)
-
-[SDN Control Planes 21](#sdn-control-planes)
-
-[ML2 VTEP Strategy 21](#_Toc416167914)
-
-[External L2/L3 Gateway 21](#external-l2l3-gateway)
-
-[Distributed Routing Support 27](#distributed-routing-support)
-
-[Self IPs 28](#_Toc416167917)
-
-[SNATs 30](#snats)
-
-[iApps and Objects 31](#_Toc416167919)
-
-[Overview 31](#_Toc416167920)
-
-[iApp Folder 31](#iapp-folder)
-
-[Naming Convention 31](#naming-convention)
-
-[Example 31](#example)
-
-[iApp Folder Contents 32](#iapp-folder-contents)
-
-[iApp Service 33](#iapp-service)
-
-[Naming Convention 33](#naming-convention-1)
-
-[Example 33](#example-1)
-
-[Pool 34](#_Toc416167928)
-
-[Naming Convention 34](#naming-convention-2)
-
-[Example 34](#example-2)
-
-[VIP 34](#_Toc416167931)
-
-[Naming Convention 34](#naming-convention-3)
-
-[Example 34](#example-3)
-
-[VIP profile 34](#_Toc416167934)
-
-[Monitor 34](#_Toc416167935)
-
-[Node and Virtual addresses 35](#node-and-virtual-addresses)
-
-[Static ARP Entries 36](#_Toc416167937)
-
-[FDB Entries 36](#fdb-entries)
-
-[Major Operations 38](#_Toc416167939)
-
-[Driver Startup 38](#_Toc416167940)
-
-[Agent Startup 38](#_Toc416167941)
-
-[Agent Status Updates 39](#_Toc416167942)
-
-[Request Handling 40](#_Toc416167943)
-
-[Request Initiation 40](#_Toc416167944)
-
-[Plug-In Request Handling 40](#_Toc416167945)
-
-[Create Pool 40](#_Toc416167946)
-
-[Create Member 40](#_Toc416167947)
-
-[Create VIP 41](#_Toc416167948)
-
-[Agent Request Handling 42](#_Toc416167949)
-
-[Overview 42](#_Toc416167950)
-
-[Determining whether BIG-IQ can be used 42](#_Toc416167951)
-
-[Networking Setup 43](#_Toc416167952)
-
-[BIG-IQ iApp Deployment 43](#_Toc416167953)
-
-[BIG-IP iApp Deployment 43](#_Toc416167954)
-
-[iApp Design 43](#_Toc416167955)
-
-[BIG-IP Object Deployment 44](#_Toc416167956)
-
-[Networking Cleanup 44](#_Toc416167957)
-
-[Periodic Sync 45](#_Toc416167958)
-
-[Periodic Save 45](#_Toc416167959)
-
-[Periodic Purge 45](#_Toc416167960)
-
-[Tunneling Control Plane Integration 45](#_Toc416167961)
-
-[Tunnel Sync 45](#tunnel-sync)
-
-[FDB Handling 45](#_Toc416167963)
-
-[L2 Population Handling 45](#_Toc416167964)
-
-[Failure Recovery 46](#_Toc416167965)
-
-[Agent Failure 46](#_Toc416167966)
-
-[Intermittent API Failure 46](#_Toc416167967)
-
-[BIG-IQ Failure 46](#_Toc416167968)
-
-[BIG-IP Failure Handling 46](#_Toc416167969)
-
-[BIG-IP Failure Recovery 46](#_Toc416167970)
-
-[Replication Mode 46](#replication-mode)
-
-[Auto Sync Mode 46](#auto-sync-mode)
-
-<span id="_Toc414602430" class="anchor"><span id="_Toc288678352" class="anchor"><span id="_Toc416167861" class="anchor"></span></span></span>Introduction
-=========================================================================================================================================================
-
+#Introduction
+==============================================================================
 This document explains the architecture and design of the F5 OpenStack
 LBaaS Plug-in for F5 BIG-IP. This is a highly technical document and is
 intended to be read by F5 technical staff, partners, and customers, who
 would like to gain a deeper understanding of how the F5 plug-in works.
 This document is not intended for end-users of the LBaaS plug-in.
 
-<span id="_Toc414602431" class="anchor"><span id="_Toc288678353" class="anchor"><span id="_Toc416167862" class="anchor"></span></span></span>Related Documents
-==============================================================================================================================================================
+#Related Documents
 
 *F5 OpenStack LBaaS Solution Overview*
 
@@ -277,8 +50,7 @@ as a description of corresponding tools available via our F5 DevCentral
 community. Please note that the automation tools are considered “Open
 Source” and there is no support available for them at this time.
 
-<span id="_Toc414602432" class="anchor"><span id="_Toc288678354" class="anchor"><span id="_Toc416167863" class="anchor"></span></span></span>Major Requirements
-===============================================================================================================================================================
+#Major Requirements
 
 The major requirements of the plug-in are:
 
@@ -296,12 +68,9 @@ The major requirements of the plug-in are:
 
 -   The plug-in can leverage BIG-IQ for service deployment
 
-\
-<span id="_Toc414602433" class="anchor"><span id="_Toc288678355" class="anchor"><span id="_Toc416167864" class="anchor"></span></span></span>Plug-in Architecture/Design
-========================================================================================================================================================================
+#Plug-in Architecture/Design
 
-<span id="_Toc288678356" class="anchor"><span id="_Toc416167865" class="anchor"></span></span>Overview
-------------------------------------------------------------------------------------------------------
+##Overview
 
 OpenStack defines standard services in terms of command line, API, and
 GUI interfaces, and then utilizes a plug-in architecture for
@@ -326,11 +95,9 @@ requests. The Plug-in hands off to an Agent to handle provisioning the
 load balancing service. There can be multiple agents and each agent
 handles requests for a subset of the tenants.
 
-\
-<span id="_Toc288678357" class="anchor"><span id="_Toc416167866" class="anchor"></span></span>Components and Layers
--------------------------------------------------------------------------------------------------------------------
+##Components and Layers
 
-### <span id="_Toc288678358" class="anchor"><span id="_Toc416167867" class="anchor"></span></span>Major Components
+###Major Components
 
 The F5 LBaaS solution is packaged into these major deliverables:
 
@@ -380,7 +147,7 @@ components:
 
 -   BIG-IP Device Service Groups
 
-### <span id="_Toc288678359" class="anchor"><span id="_Toc416167868" class="anchor"></span></span>Single Agent Diagram
+### Single Agent Diagram
 
 Each agent manages one BIG-IP Device Service Group. Also, each agent can
 delegate service deployment to a BIG-IQ. The lines around BIG-IQ are
@@ -388,26 +155,23 @@ dotted because BIG-IQ is optional.
 
 The BIG-IQ can manage multiple independent BIG-IPs; one per tenant.
 
-### \
-<span id="_Toc288678360" class="anchor"><span id="_Toc416167869" class="anchor"></span></span>Multiple Agents and BIG-IP Service Groups
+### Multiple Agents and BIG-IP Service Groups
 
 There can be multiple agents. Each agent will automatically handle a
 subset of the tenants.
 
-### \
- <span id="_Toc288678361" class="anchor"><span id="_Toc416167870" class="anchor"></span></span>Agent-Tenant Affinity
+### Agent-Tenant Affinity
 
 The F5 LBaaS solution maps a tenant permanently to a particular agent.
 
-### \
-<span id="_Toc288678362" class="anchor"><span id="_Toc416167871" class="anchor"></span></span>Agent Driver
+## Agent Driver
 
-#### Overview
+### Overview
 
 The layers in the diagram above are described in more detail in the
 following sections.
 
-#### Plug-in Driver
+### Plug-in Driver
 
 (Not shown in diagram)
 
@@ -415,25 +179,24 @@ The plug-in driver is responsible for processing individual LBaaS APIs.
 It converts those to an F5 LBaaS Service Request and passes the request
 to the agent.
 
-#### Agent Manager
+### Agent Manager
 
 The agent manager is responsible for being the endpoint for RPC calls
 and relaying those to the driver.
 
-#### \
-iControl Driver
+###iControl Driver
 
 The driver is responsible for configuring all aspects of the service.
 The driver leverages additional “Builder” classes to configure the
 networking on BIG-IP if necessary and build the higher level objects or
 the iApp, possibly deploying via BIG-IQ.
 
-#### Network Builder
+### Network Builder
 
 A Network Builder class is used to configure BIG-IP with all of the
 necessary networking for a service definition.
 
-#### LBaaS Builder
+### LBaaS Builder
 
 The LBaaS Builder is responsible for creating the high level iApp or
 objects for the service, such as the pool, pool members, vip, and
@@ -443,7 +206,7 @@ There are a few methods for doing this: deploying an iApp via BIG-IQ,
 deploying an iApp directly to BIG-IP, or creating objects directly on
 BIG-IP.
 
-#### Configuration Managers
+### Configuration Managers
 
 The managers convert LBaaS service definitions and identifiers to F5
 configuration. The tenant, l2, selfip, snat, pool, and vip managers all
@@ -452,13 +215,11 @@ objects.
 
 The vCMP manager talks to the vCMP host to assign VLANs to a guest.
 
-#### BIG-IP Interfaces
+### BIG-IP Interfaces
 
 These are low level interfaces that should not have any LBaaS semantics.
 
-\
-<span id="_Toc288678363" class="anchor"><span id="_Toc416167880" class="anchor"></span></span>Plug-in Code
-----------------------------------------------------------------------------------------------------------
+### Plug-in Code
 
 The F5 LBaaS Plug-in Driver runs in the Neutron process and has access
 to all the methods and data that Neutron uses.
@@ -482,8 +243,7 @@ Finally, there is a class named TenantScheduler which has one method
 which is used to assign an agent to handle an operation on a load
 balancing pool.
 
-<span id="_Toc414602437" class="anchor"><span id="_Toc288678364" class="anchor"><span id="_Toc416167881" class="anchor"></span></span></span>Agent Code
--------------------------------------------------------------------------------------------------------------------------------------------------------
+###Agent Code
 
 The agent is structured quite a bit differently than the plug-in driver.
 The agent runs as a standalone process while the plug-in driver runs
@@ -501,23 +261,22 @@ creates an instance of LbaasAgentManager (from the agent\_manager
 module), which in turn creates and instance of the agent driver, which
 is by default, the iControlDriver class in the icontrol\_driver module.
 
-<span id="_Toc414602438" class="anchor"><span id="_Toc288678365" class="anchor"><span id="_Toc416167882" class="anchor"></span></span></span>RPC
-------------------------------------------------------------------------------------------------------------------------------------------------
+## RPC
 
-### <span id="_Toc414602439" class="anchor"><span id="_Toc288678366" class="anchor"><span id="_Toc416167883" class="anchor"></span></span></span>Overview
+### Overview
 
 The LBaaS Driver and Agents communicate using RPC classes that are part
 of the Neutron server.
 
-### <span id="_Toc288678367" class="anchor"><span id="_Toc416167884" class="anchor"></span></span>RPC Queues
+### RPC Queues
 
-### <span id="_Toc414602440" class="anchor"><span id="_Toc288678368" class="anchor"><span id="_Toc416167885" class="anchor"></span></span></span>Driver to Agent Methods
+#### Driver to Agent Methods
 
 The driver calls into the agent for these purposes:
 
 -   To process all LBaaS methods
 
-### <span id="_Toc414602442" class="anchor"><span id="_Toc288678369" class="anchor"><span id="_Toc416167886" class="anchor"></span></span></span>Agent to Driver Methods
+#### Agent to Driver Methods
 
 The agent calls into the driver for these purposes:
 
@@ -527,9 +286,8 @@ The agent calls into the driver for these purposes:
 
 -   To make query back into Neutron via the driver
 
-\
-<span id="_Toc288678370" class="anchor"><span id="_Toc416167887" class="anchor"></span></span>F5 LBaaS Service Definition
--------------------------------------------------------------------------------------------------------------------------
+##F5 LBaaS Service Definition
+
 
 Requests come in to agent as full service definitions, not incremental
 changes.
@@ -540,6 +298,9 @@ variable) and passes that to the agent.
 
 The following is a simplified version of a service definition.
 
+{% raw %}
+
+```
 service = {'pool': {'id': 'pool\_id\_1',
 
 'status': plugin\_const.PENDING\_CREATE,
@@ -573,29 +334,27 @@ service = {'pool': {'id': 'pool\_id\_1',
 'address': '10.20.1.99',
 
 'network': {'id': 'net\_id\_1', 'shared': False}}}
+```
 
-<span id="_Toc288678371" class="anchor"><span id="_Toc416167888" class="anchor"></span></span>Agent Request Serialization
--------------------------------------------------------------------------------------------------------------------------
+{% endraw %}
+
+###Agent Request Serialization
 
 In order to avoid conflicting requests being handled simultaneously on
 BIG-IP, all requests are processed in a serialized fashion. This is
 implemented with a decorator on all of the functions that need to be
 serialized together. The decorator is unsurprisingly named “serialized”.
 
-\
-<span id="_Toc414602444" class="anchor"><span id="_Toc288678372" class="anchor"><span id="_Toc416167889" class="anchor"></span></span></span>Major Deployment Variations
-========================================================================================================================================================================
+##Major Deployment Variations
 
-<span id="_Toc414602445" class="anchor"><span id="_Toc288678373" class="anchor"><span id="_Toc416167890" class="anchor"></span></span></span>Hardware or Virtual BIG-IP
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+###Hardware or Virtual BIG-IP
 
 The agent operates exactly the same whether or not the BIG-IP device is
 virtual or physical hardware. There is some special handling for vCMP,
 which is only supported by hardware, but other than that, the API calls
 are the same. The vCMP differences are explain in the next section.
 
-<span id="_Toc414602446" class="anchor"><span id="_Toc288678374" class="anchor"><span id="_Toc416167891" class="anchor"></span></span></span>VCMP
--------------------------------------------------------------------------------------------------------------------------------------------------
+###VCMP
 
 vCMP is an F5 technology that allows the customer to create several
 independent BIG-IP instances from a single BIG-IP device. These
@@ -607,40 +366,36 @@ must be provided. The LBaaS agent uses the host credentials to create
 VLANs and assign them to guests. That is the only operational difference
 in how the agent configures vCMP BIG-IP instances.
 
-<span id="_Toc414602447" class="anchor"><span id="_Toc288678375" class="anchor"><span id="_Toc416167892" class="anchor"></span></span></span>BIG-IQ
----------------------------------------------------------------------------------------------------------------------------------------------------
+##BIG-IQ
 
 The agent driver includes configuration variable that allow it to work
 with BIG-IQ. If these variables are present, then the BIG-IQ is
 utilized, otherwise the agent driver falls back to using the BIG-IP
 cluster in the agent configuration file.
 
-\
-<span id="_Toc414602448" class="anchor"><span id="_Toc288678376" class="anchor"><span id="_Toc416167893" class="anchor"></span></span></span>HA Type
-----------------------------------------------------------------------------------------------------------------------------------------------------
+###HA Type
 
 The following HA types are supported:
 
-### <span id="_Toc414602449" class="anchor"><span id="_Toc288678377" class="anchor"><span id="_Toc416167894" class="anchor"></span></span></span>Pair
+#### Pair
 
 Pair is an active / standby HA configuration. One device does not
 process traffic.
 
-### <span id="_Toc414602450" class="anchor"><span id="_Toc288678378" class="anchor"><span id="_Toc416167895" class="anchor"></span></span></span>ScaleN
+#### ScaleN
 
 ScaleN is an active / active HA configuration. The agent uses all
 available floating traffic groups. The agent currently assigns all
 traffic for a given tenant to one traffic group. This may be related to
 the fact that all virtuals within a tenant share the same SNAT pool.
 
-### <span id="_Toc414602451" class="anchor"><span id="_Toc288678379" class="anchor"><span id="_Toc416167896" class="anchor"></span></span></span>Standalone
+#### Standalone
 
 Standalone is a single BIG-IP with no HA functionality. This mode might
 work for non-production or as part as a geographically distributed HA
 solution using DNS as the load balancing method.
 
-<span id="_Toc414602452" class="anchor"><span id="_Toc288678380" class="anchor"><span id="_Toc416167897" class="anchor"></span></span></span>Sync Mode
-------------------------------------------------------------------------------------------------------------------------------------------------------
+####Sync Mode
 
 The agent driver supports two different sync modes: replication and
 autosync.
@@ -649,38 +404,28 @@ If the agent driver sync mode is “replication” mode then the driver
 configures each BIG-IP independently from the others. In replication
 mode, the driver turns off BIG-IP autosync.
 
-\
-<span id="_Toc414602453" class="anchor"><span id="_Toc288678381" class="anchor"><span id="_Toc416167898" class="anchor"></span></span></span>Global Routed
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+####Global Routed
 
 When global routed mode is enabled, the driver skips all L2 and L3
 provisioning and only deploys the LBaaS related objects. No SNAT objects
 are created.
 
-<span id="_Toc414602454" class="anchor"><span id="_Toc288678382" class="anchor"><span id="_Toc416167899" class="anchor"></span></span></span>Traffic Return Method
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+###Traffic Return Method
+####SNAT
 
-### <span id="_Toc414602455" class="anchor"><span id="_Toc288678383" class="anchor"><span id="_Toc416167900" class="anchor"></span></span></span>SNAT
-
-### <span id="_Toc414602456" class="anchor"><span id="_Toc288678384" class="anchor"></span></span>\
-Gateway
+### Gateway
 
 This diagram is not entirely accurate. If the plug-in is configured for
 gateway mode, the Neutron router would not exist and the BIG-IP would be
 the default route in that case.
 
-\
-<span id="_Toc414602457" class="anchor"><span id="_Toc288678385" class="anchor"><span id="_Toc416167902" class="anchor"></span></span></span>BIG-IP Configuration Strategy
-==========================================================================================================================================================================
-
-<span id="_Toc414602458" class="anchor"><span id="_Toc288678386" class="anchor"><span id="_Toc416167903" class="anchor"></span></span></span>Overview
------------------------------------------------------------------------------------------------------------------------------------------------------
+##BIG-IP Configuration Strategy
+###Overview
 
 The following diagram illustrates the relationship of various LBaaS
 configuration objects on the BIG-IP in a multi-tenant configuration.
 
-Tenancy
--------
+###Tenancy
 
 A BIG-IP partition is created for each tenant with a name using this
 syntax:
@@ -691,10 +436,9 @@ The partition is created when the first pool for the tenant is created.
 
 The partition is removed when the last pool is removed for a tenant.
 
-<span id="_Toc414602459" class="anchor"><span id="_Toc288678387" class="anchor"><span id="_Toc416167905" class="anchor"></span></span></span>L2 Configuration
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+###L2 Configuration
 
-### <span id="_Toc288678389" class="anchor"><span id="_Toc416167906" class="anchor"></span></span>Network Types
+#### Network Types
 
 The plug-in supports configuring networks with these types:
 
@@ -709,8 +453,7 @@ predeclared “common” networks, which are explained later in this
 chapter. These can be used for locally connected networks for either
 physical or virtual BIG-IPs.
 
-### \
-<span id="_Toc288678390" class="anchor"><span id="_Toc416167907" class="anchor"></span></span>Naming Conventions
+#### Naming Conventions
 
 The default prefix is “uuid” and it is always used in combination with
 an underscore like so: “uuid\_”.
@@ -720,7 +463,7 @@ configured for, then the agent “ignores” those folders. That means it
 doesn’t delete those folders when it attempts to clean up leftover
 objects.
 
-### <span id="_Toc414602460" class="anchor"><span id="_Toc288678391" class="anchor"><span id="_Toc416167908" class="anchor"></span></span></span>Predeclared Common Networks
+#### Predeclared Common Networks
 
 The plug-in supports pre-declaring networks that have already been
 provisioned on BIG-IP. Sometimes you have existing configuration on
@@ -735,14 +478,13 @@ that allows you to basically say, “network 3242-2423-353543534-4353534”
 in OpenStack is VLAN “external” on BIG-IP. It is assumed that
 pre-declared VLANs exist in the “Common” partition.
 
-### <span id="_Toc288678392" class="anchor"><span id="_Toc416167909" class="anchor"></span></span>Enable Common External Networks
+#### Enable Common External Networks
 
 This configuration variable, if enabled, causes all networks with the
 router:external key set to True to be considered predeclared /Common
 networks.
 
-### \
-SDN Integration Strategy
+### SDN Integration Strategy
 
 #### SDN Background
 
@@ -794,7 +536,7 @@ python code sending messages typically over a RabbitMQ or ZeroMQ message
 bus. The OpenDayLight control plane uses OVSDB and OpenFlow. The
 Midokura control plane is implemented with Zookeeper.
 
-#### <span id="_Toc288678394" class="anchor"><span id="_Toc416167914" class="anchor"></span></span>ML2 VTEP Strategy
+### ML2 VTEP Strategy
 
 F5 has integrated with the ML2/OVS plug-in that allows us to leverage
 our BIG-IP hardware to provide a multi-tenant solution (using partitions
@@ -871,8 +613,7 @@ network (perhaps a VLAN) and calls to a SDN controller to establish the
 mapping. Then it changes the service definition to use the appropriate
 VLANs instead of VXLANs (in that situation).
 
-##### \
-L2 Gateway Sequence Diagram
+##### L2 Gateway Sequence Diagram
 
 ##### OVSDB HW VTEP Strategy
 
@@ -901,11 +642,9 @@ the plug-in and then the OVSDB communication will be setup with the
 controller. The controller will update OVSDB entries and the BIG-IP
 vxland daemon will respond by updating L2-to-L3 entries for the tunnel.
 
-##### \
-OVSDB HW VTEP Sequence Diagram
+##### OVSDB HW VTEP Sequence Diagram
 
-#### \
-Distributed Routing Support
+#### Distributed Routing Support
 
 When BIG-IP is used as a HW VTEP, it may be called on to interface in a
 special way with a virtual machine distributed router. Consider the
@@ -933,9 +672,7 @@ With Neutron, even if there is a distributed router, there is typically
 a designated external gateway behind a designated tunnel endpoint that
 can still route packets.
 
-\
-<span id="_Toc288678396" class="anchor"><span id="_Toc416167917" class="anchor"></span></span>Self IPs
-------------------------------------------------------------------------------------------------------
+###Self IPs
 
 root@(host-10-10-0-2)(cfg-sync Changes
 Pending)(Standby)(/Common)(tmos)\# list net self
@@ -1080,9 +817,7 @@ uuid\_local-host-10-10-0-2.openstacklocal-77a9f215-832f-477a-9a3d-9560034de268
 
 **}**
 
-<span id="_Toc414602462" class="anchor"><span id="_Toc288678397" class="anchor"></span></span>\
-SNATs
------------------------------------------------------------------------------------------------
+#SNATs
 
 The SNAT pool for a tenant is shared by all vips.
 
