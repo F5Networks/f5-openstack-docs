@@ -1,10 +1,13 @@
 # Site settings
 title: F5 OpenStack
-description: OpenStack solutions from F5 Networks
+description: Uniquely cloud-ready
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+url: "http://f5-openstack-dev.s3-website-us-west-2.amazonaws.com/" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
 highlighter: pygments
+exclude: [vendor]
+
+gems: ['jekyll_version_plugin']
 

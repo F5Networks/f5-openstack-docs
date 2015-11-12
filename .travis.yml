@@ -1,21 +1,26 @@
 language: ruby
-rvm:
-- 2.1
+rvm: 1.9.3
 env:
-  global:
+ global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-  - secure: z6Q92K/g9Q0gT/i3XrSQXxNgqVstMU6LB4gyuDn3e+bJ0zhvN7uJ9KNjFFb6/UY84SvuIaoGjBeTkcrlCdTY7fjb5zRAqpJfe12k6x6a3Tt0C5QFSuB/LQLTi5rxM0XCAloee9EhOo3KnZjSzlDgHT4sSatdaFSK+wUih7KAhstP58XUAu0ugotlFospRFWRUhb3+AHp/ftFyMrpi3Wj6GZU06N8DX6LooJST9QUJf/fwMDa1OVhiMCxphf0IvUk3l7WLWHuCxSaU/0rFeSjp/sPbLiQdrrI67iqeHzkHr9jM1SFmW4ALJF6JVVjml02m+XfKygQ19UMcn++irLR8poYeyV3sja5ql0uq9yO/PLSyxIYqbg36KNm4/e5ryHvIcZ3XEHwaPBjHImnV5ij3Gf2Z/cpt8KWMeVIkvoUeb8IgttMGZysSzaJnc9kirb5DJl9MVNAWnxqvd8yYa0l0aK9QbidMAI0GDlkQTWWQqPE7ljHkoki/tVBRiD21Oz+SK2yB2dxLXJTzY0LFTF8fv5/NFFXTdIqTWgILI6Y40zwdGVI8vncaaH+ri2zPSdSEZx2+vAL2pfHbupsZ54X2YwtmsKJE8PI3xgSKbph+RV1UYwr/g+MuviYNOAs7cUmcJPBOJ1p6G2Do4X8D/LcLtPtj3Try2O5/Vu/21BgQJg=
-
-script: "./script/cibuild.sh"
+cache: bundler
+#before_install:
+# - gem update --system
+script: 
+ - ./script/cibuild.sh
+# whitelist
+branches:
+ only:
+ - master
+ - develop
 deploy:
   provider: s3
   access_key_id: AKIAJXW2OUXQMW3DE7PA
   secret_access_key:
     secure: $AWS_ACCESSKEY
-  bucket: jodietestsite
+  bucket: f5-openstack-dev
   skip_cleanup: true 
-  acl: private
   local_dir: "site_build"
   on:
     repo: $TRAVIS_REPO_SLUG
-
+    branch: $TRAVIS_BRANCH

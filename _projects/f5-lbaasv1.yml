@@ -1,0 +1,5 @@
+layout: default
+title: F5 OpenStack LBaaSv1
+repository: git://F5Networks/openstack-f5-lbaasv1.git
+published: true
+project_dir: ./f5-lbaasv1
