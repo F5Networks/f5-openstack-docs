@@ -1,6 +1,8 @@
 ---
-layout: landing_page
+layout: docs_page
 title: F5 Platforms for Cloud
+categories: cloud, platforms, misc_docs
+resource: true
 ---
 
 
