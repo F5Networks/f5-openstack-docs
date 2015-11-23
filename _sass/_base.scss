@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: $link-color;
     text-decoration: none;
 
     &:visited {
@@ -97,7 +97,7 @@ a {
     }
 
     &:hover {
-        color: $text-color;
+        color: $hover-color;
         text-decoration: underline;
     }
 }
@@ -127,18 +127,21 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
-}
+    background-color: #f9f2f4;
+	}
 
 code {
-    padding: 1px 5px;
+    color: #c7254e;
+    font-size: 90%;
+    padding: 2px 4px;
 }
 
 pre {
-    padding: 8px 12px;
+    padding: 10.5px;
     overflow-x: scroll;
 
     > code {
