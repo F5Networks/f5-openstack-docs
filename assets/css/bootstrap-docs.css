@@ -37,16 +37,16 @@ h4 code {
 
 /* Outline button for use within the docs */
 .btn-outline {
-  color: #563d7c;
+  color: #1E77A4;
   background-color: transparent;
-  border-color: #563d7c;
+  border-color: #1E77A4;
 }
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active {
   color: #fff;
-  background-color: #563d7c;
-  border-color: #563d7c;
+  background-color: #1E77A4;
+  border-color: #1E77A4;
 }
 
 /* Inverted outline button (white on dark) */
@@ -58,7 +58,7 @@ h4 code {
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
 .btn-outline-inverse:active {
-  color: #563d7c;
+  color: #1E77A4;
   text-shadow: none;
   background-color: #fff;
   border-color: #fff;
@@ -71,7 +71,7 @@ h4 code {
   color: #fff;
   text-align: center;
   cursor: default;
-  background-color: #563d7c;
+  background-color: #1E77A4;
   border-radius: 15%;
 }
 .bs-docs-booticon-sm {
@@ -87,7 +87,7 @@ h4 code {
   line-height: 140px;
 }
 .bs-docs-booticon-inverse {
-  color: #563d7c;
+  color: #1E77A4;
   background-color: #fff;
 }
 .bs-docs-booticon-outline {
@@ -107,7 +107,7 @@ h4 code {
   display: block;
   padding: 1em;
   color: #fff;
-  background-color: #6f5499;
+  background-color: #1E77A4;
   outline: 0;
 }
 
@@ -124,13 +124,15 @@ h4 code {
  *
  */
 #toc {
-	text-overflow:ellipsis;
-	color: #fff;
-	background-color: #4D4F53;
-	display: block;
-    padding: 4px 20px;
+	color: #4D4F53;
+	background-color: #fff;
+	display: inline-block;
+    padding: 4px;
     font-size: 13px;
     font-weight: 500;
+	min-width: 210px;
+	max-width: 230px;
+	min-height: 350px;
 }
 
 /*
@@ -150,16 +152,16 @@ h4 code {
 .bs-docs-nav .navbar-brand,
 .bs-docs-nav .navbar-nav > li > a {
   font-weight: 500;
-  color: #563d7c;
+  color: #1E77A4;
 }
 .bs-docs-nav .navbar-nav > li > a:hover,
 .bs-docs-nav .navbar-nav > .active > a,
 .bs-docs-nav .navbar-nav > .active > a:hover {
-  color: #463265;
+  color: #1E77A4;
   background-color: #f9f9f9;
 }
 .bs-docs-nav .navbar-toggle .icon-bar {
-  background-color: #563d7c;
+  background-color: #1E77A4;
 }
 .bs-docs-nav .navbar-header .navbar-toggle {
   border-color: #fff;
@@ -218,18 +220,20 @@ h4 code {
 /* Share masthead with page headers */
 .bs-docs-masthead,
 .bs-docs-header {
-  position: relative;
-  padding: 30px 0;
-  color: #cdbfe3;
-  text-align: center;
+  position: fixed;
+  padding: 10px 0;
+  right:0;
+  left:0;
+  color: #9E9E9E;
   text-shadow: 0 1px 0 rgba(0,0,0,.1);
-  background-color: #6f5499;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
-  background-image: -webkit-linear-gradient(top, #563d7c 0%, #6f5499 100%);
-  background-image:      -o-linear-gradient(top, #563d7c 0%, #6f5499 100%);
-  background-image:         linear-gradient(to bottom, #563d7c 0%, #6f5499 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background-color: #0194d2;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1E77A4), to(#2D9BCD));
+  background-image: -webkit-linear-gradient(top, #1E77A4 0%, #2D9BCD 100%);
+  background-image:      -o-linear-gradient(top, #1E77A4 0%, #2D9BCD 100%);
+  background-image:         linear-gradient(to bottom, #1E77A4 0%, #2D9BCD 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1E77A4', endColorstr='#2D9BCD', GradientType=0);
   background-repeat: repeat-x;
+  height: 80px;
 }
 
 /* Masthead (headings and download button) */
@@ -291,11 +295,18 @@ h4 code {
 
 /* Page headers */
 .bs-docs-header {
-  margin-bottom: 40px;
-  font-size: 20px;
+  position: fixed;
+  margin-top: 66px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  height: 128px;
+  color: #fff;
 }
 .bs-docs-header h1 {
   margin-top: 0;
+  text-align:left;
+  margin-left: 75px;
+  margin-bottom: 20px;
   color: #fff;
 }
 .bs-docs-header p {
@@ -304,18 +315,18 @@ h4 code {
   line-height: 1.4;
 }
 .bs-docs-header .container {
-  position: relative;
+  position: fixed;
 }
 
 @media (min-width: 768px) {
   .bs-docs-header {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     font-size: 24px;
-    text-align: left;
+    text-align: center;
   }
   .bs-docs-header h1 {
-    font-size: 60px;
+    font-size: 50px;
     line-height: 1;
   }
 }
@@ -323,91 +334,9 @@ h4 code {
 @media (min-width: 992px) {
   .bs-docs-header h1,
   .bs-docs-header p {
-    margin-right: 380px;
+    margin-right: 180px;
   }
 }
-
-
-/*
- * Carbon ads
- *
- * Single display ad that shows on all pages (except homepage) in page headers.
- * The hella `!important` is required for any pre-set property.
- */
-
-.carbonad {
-  width: auto !important;
-  height: auto !important;
-  padding: 20px !important;
-  margin: 30px -15px -31px !important;
-  overflow: hidden; /* clearfix */
-  font-size: 13px !important;
-  line-height: 16px !important;
-  text-align: left;
-  background: transparent !important;
-  border: solid #866ab3 !important;
-  border-width: 1px 0 !important;
-}
-.carbonad-img {
-  margin: 0 !important;
-}
-.carbonad-text,
-.carbonad-tag {
-  display: block !important;
-  float: none !important;
-  width: auto !important;
-  height: auto !important;
-  margin-left: 145px !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-.carbonad-text {
-  padding-top: 0 !important;
-}
-.carbonad-tag {
-  color: inherit !important;
-  text-align: left !important;
-}
-.carbonad-text a,
-.carbonad-tag a {
-  color: #fff !important;
-}
-.carbonad #azcarbon > img {
-  display: none; /* hide what I assume are tracking images */
-}
-
-@media (min-width: 480px) {
-  .carbonad {
-    width: 330px !important;
-    margin: 20px auto !important;
-    border-width: 1px !important;
-    border-radius: 4px;
-  }
-  .bs-docs-masthead .carbonad {
-    margin: 50px auto 0 !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .carbonad {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .carbonad {
-    position: absolute;
-    top: 0;
-    right: 15px; /* 15px instead of 0 since box-sizing */
-    width: 330px !important;
-    padding: 15px !important;
-    margin: 0 !important;
-  }
-  .bs-docs-masthead .carbonad {
-    position: static;
-  }
-}
-
 
 /*
  * Homepage featurettes
@@ -553,40 +482,41 @@ h4 code {
 }
 @media (min-width: 768px) {
   .bs-docs-sidebar {
-    padding-left: 20px;
+    padding-left: 8px;
   }
 }
 
 /* First level of nav */
 .bs-docs-sidenav {
-  margin-top: 20px;
+  margin-top: 235px;
   margin-bottom: 20px;
+  text-align:left;
 }
 
 /* All levels of nav */
 .bs-docs-sidebar .nav > li > a {
   display: block;
-  padding: 4px 20px;
+  padding: 4px 10px;
   font-size: 13px;
   font-weight: 500;
   color: #767676;
 }
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
-  padding-left: 19px;
-  color: #563d7c;
+  padding-left: 10px;
+  color: #1E77A4;
   text-decoration: none;
   background-color: transparent;
-  border-left: 1px solid #563d7c;
+  border-left: 1px solid #1E77A4;
 }
 .bs-docs-sidebar .nav > .active > a,
 .bs-docs-sidebar .nav > .active:hover > a,
 .bs-docs-sidebar .nav > .active:focus > a {
-  padding-left: 18px;
+  padding-left: 10px;
   font-weight: bold;
-  color: #563d7c;
+  color: #1E77A4;
   background-color: transparent;
-  border-left: 2px solid #563d7c;
+  border-left: 2px solid #1E77A4;
 }
 
 /* Nav: second level (shown on .active) */
@@ -625,7 +555,7 @@ h4 code {
 }
 .back-to-top:hover,
 .bs-docs-theme-toggle:hover {
-  color: #563d7c;
+  color: #1E77A4;
   text-decoration: none;
 }
 .bs-docs-theme-toggle {
@@ -647,7 +577,7 @@ h4 code {
   /* Widen the fixed sidebar */
   .bs-docs-sidebar.affix,
   .bs-docs-sidebar.affix-bottom {
-    width: 213px;
+    width: 200px;
   }
   .bs-docs-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
@@ -670,7 +600,12 @@ h4 code {
   }
 }
 
-
+.bs-docs-container {
+	margin-top: 208px;
+	margin-left: 280px !important;
+	padding-left: 30px;
+	width:auto;
+}
 /*
  * Docs sections
  *
@@ -802,7 +737,7 @@ h1[id] {
 
 /* Docs colors */
 .color-swatches .bs-purple {
-  background-color: #563d7c;
+  background-color: #1E77A4;
 }
 .color-swatches .bs-purple-light {
   background-color: #c7bfd3;
@@ -1336,7 +1271,7 @@ h1[id] {
 }
 .bs-glyphicons li:hover {
   color: #fff;
-  background-color: #563d7c;
+  background-color: #1E77A4;
 }
 
 @media (min-width: 768px) {
@@ -1480,7 +1415,7 @@ h1[id] {
   width: 100%;
   margin-bottom: 15px;
   overflow: hidden;
-  color: #563d7c;
+  color: #1E77A4;
   background-color: #f9f9f9;
   border-radius: 4px;
 }
@@ -1495,7 +1430,7 @@ h1[id] {
 }
 .bs-brand-logos .inverse {
   color: #fff;
-  background-color: #563d7c;
+  background-color: #1E77A4;
 }
 
 /* Heading content within */
@@ -1564,8 +1499,8 @@ h1[id] {
 }
 .btn-clipboard-hover {
   color: #fff;
-  background-color: #563d7c;
-  border-color: #563d7c;
+  background-color: #1E77A4;
+  border-color: #1E77A4;
 }
 
 @media (min-width: 768px) {
