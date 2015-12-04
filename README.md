@@ -23,4 +23,3 @@ TBD
 [Travis CI]:https://travis-ci.com/
 [`HTML::Proofer`]:https://github.com/gjtorikian/html-proofer
 
-
