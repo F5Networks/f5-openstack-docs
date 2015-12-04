@@ -1,34 +1,43 @@
-<!DOCTYPE html lang="en">
-<link href="{{ "assets/css/f5-styles.css" | prepend: site.url }}" rel="stylesheet" type="text/css">
+<header class="site-header">
 
-<header id="F5-Header" class="meta-open animate">
-  <div class="main-row">
-  <div class="container">
-      <div class="outside">
-            <div class="brand">
-            <a href="http://f5.com"><img src="https://cdn.f5.com/digital-platforms/images/logo.svg" alt="F5 Networks" height="42" width="47"></a>
-			</div>
-            <div class="nav-inline">
-            <ul class="main-nav" id="MainMenu">                
-               
-                <li><a class="externalLink" href="http://devcentral.f5.com">DevCentral</a></li>
-				        
-                <li><a class="externalLink" href="http://support.f5.com">Support</a></li>
-                
-                <li><a class="page-link" href="{{ /f5-os-docs/index.html | prepend:site.url }}">Documentation</a></li>
-                
-                <li><a class="externalLink" href="http://www.openstack.org/">OpenStack</a></li>
-            </ul>
-            </div>
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="https://github.com/F5Networks" target="blank">F5 Cloud Ready</a> 
         </div>
-    </div>
-  </div>  
-      <!--div class="trigger">
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">OpenStack <span class="sr-only">(current)</span></a> </li>
+            <li><a href="#">Guides</a> </li>
+            <li><a href="#">Training</a> </li>
+            <li><a href="#">Resources</a> </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://devcentral.f5.com/" target="blank">DevCentral</a> </li>
+            <li><a href="https://support.f5.com/kb/en-us.html" target="blank">Support</a> </li>
+          </ul>
+        </div> <!-- /.navbar-collapse --> 
+  
+      </div> <!-- /.container-fluid --> 
+  
+      <div class="trigger">
         {% for page in site.pages %}
           {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.url }}">{{ page.title }}</a>
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
-      </div-->
+      </div>
+
+    </nav>
+
+  </div>
 
 </header>

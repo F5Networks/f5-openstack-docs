@@ -15,7 +15,6 @@ branches:
  - develop
 deploy:
   provider: s3
-  region: us-west-2
   access_key_id: AKIAJXW2OUXQMW3DE7PA
   secret_access_key:
     secure: $AWS_ACCESSKEY
