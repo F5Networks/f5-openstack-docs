@@ -2,10 +2,9 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
+    background-color: #fff;
+    height: 66px;
+   
     // Positioning context for the mobile navigation icon
     position: relative;
 }
@@ -28,7 +27,7 @@
     line-height: 56px;
 
     .menu-icon {
-        display: none;
+        display: inline;
     }
 
     .page-link {
@@ -92,6 +91,8 @@
  * Site footer
  */
 .site-footer {
+    background-color: #4d4f53;
+    color: #bfbfbf;
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
 }
@@ -211,26 +212,26 @@
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 32px;
+        font-size: 31px;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
+            font-size: 65%;
         }
     }
 
     h3 {
-        font-size: 26px;
+        font-size: 22px;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 75%;
         }
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 18px;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 75%;
         }
     }
 }
