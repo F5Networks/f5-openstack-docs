@@ -1,6 +1,8 @@
 ---
-layout: landing_page
+layout: docs_page
 title: LBaaS Solution Overview
+categories: lbaasv1, solution, openstack
+resource: true
 ---
 
 #F5 LBaaS Solution Overview {#f5-lbaas-solution-overview}

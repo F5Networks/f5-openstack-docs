@@ -1,6 +1,8 @@
 ---
-layout: landing_page
+layout: docs_page
 title: LBaaS Plugin Design Guide
+categories: lbaasv1, plugin, design, openstack
+resource: true
 ---
 
 #Introduction

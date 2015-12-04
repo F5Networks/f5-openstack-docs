@@ -1,21 +1,39 @@
 <!doctype html>
 <html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  {% include head_for_docs.html %}
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 
-  <body>
+{% include head_for_docs.html %}
 
-    {{% include header.html %}}
+<body>
+    {% include header.html %}
      
-    {{% include tocify.html %}}
+    {% include tocify.html %}
     
-      
-        {{ content }}
-      
+    <div class="bs-docs-sidebar bs-docs-sidenav" id="toc">
+    </div>
+  <div class="container-margin-top-2x">
+	
+		 {{ content }}
+    
+	</div>
+ 
 
-    {{% include footer.html %}}
+    {% include footer.html %}
 
-  </body>
-  
+</body>
+<script>
+        $(function() {
+            //Calls the tocify method on the HTML div.
+            $("#toc").tocify();
+        });
+</script>    
 </html>          
       

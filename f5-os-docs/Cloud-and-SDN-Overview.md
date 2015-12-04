@@ -1,6 +1,8 @@
 ---
-layout: landing_page
+layout: docs_page
 title: Cloud and SDN Overview
+categories: cloud, sdn, misc_docs
+resource: true
 ---
 
 
