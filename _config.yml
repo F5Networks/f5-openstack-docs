@@ -1,16 +1,36 @@
 # Site settings
 title: F5 OpenStack
-description: OpenStack solutions from F5 Networks
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+description: Uniquely cloud-ready
+baseurl: "f5-os-docs/" # the subpath of your site, e.g. /blog/
+url: "http://f5-openstack-dev.s3-website-us-west-2.amazonaws.com/" # the base hostname & protocol for your site
+
+# Permalinks
+permalink: pretty
 
 # Build settings
-markdown: pandoc
+markdown: kramdown
 highlighter: pygments
+exclude: [vendor]
 
-gems:
- - jekyll-pandoc
+kramdown:
+    input: GFM
 
-pandoc:
- extensions:
-  - smart
+#gems: ['jekyll_version_plugin', 'tocify']
+
+# Custom vars
+current_version: 1.0.0
+repo: https://github.com/F5Networks/f5-openstack-docs
+brand: F5 Networks
+github_username: F5Networks
+
+# Categories
+project-list: [lbaasv1, agent, odk, onboarding, misc_docs]
+
+#pandoc:
+ #   skip: false
+ #   impose: false
+ #   output: ./tmp
+ #   flags: '--standalone'
+ #   site_flags: '--toc'
+ #   outputs:
+ #       pdf: '--latex-engine=pdflatex'
