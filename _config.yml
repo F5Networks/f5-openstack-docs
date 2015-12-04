@@ -8,8 +8,9 @@ url: "http://f5-openstack-dev.s3-website-us-west-2.amazonaws.com/" # the base ho
 permalink: pretty
 
 # Build settings
-markdown: kramdown
+markdown: pandoc
 highlighter: pygments
+<<<<<<< HEAD
 exclude: [vendor]
 
 kramdown:
