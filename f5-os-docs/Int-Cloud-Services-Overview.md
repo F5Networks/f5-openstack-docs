@@ -1,6 +1,8 @@
 ---
-layout: landing_page
+layout: docs_page
 title: Cloud Services Overview
+categories: cloud, services, misc_docs
+resource: true
 ---
 
 
