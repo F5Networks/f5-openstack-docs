@@ -11872,7 +11872,7 @@ span.label-grayed-out
 {
     background-color: #4d4f53;
     color: #bfbfbf;
-    padding: 30px 0;
+    padding: 30px 30px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -11881,6 +11881,9 @@ span.label-grayed-out
 #F5-Footer .container
 {
     position: relative;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 #F5-Footer p
 {
