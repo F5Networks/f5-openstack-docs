@@ -25,4 +25,4 @@ deploy:
   local_dir: "site_build"
   on:
     repo: $TRAVIS_REPO_SLUG
-
+    branch: develop, jpdev
