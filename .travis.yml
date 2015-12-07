@@ -13,6 +13,7 @@ branches:
  only:
  - master
  - develop
+ - jpdev
 deploy:
   provider: s3
   region: us-west-2
