@@ -8,9 +8,8 @@ url: "http://f5-openstack-dev.s3-website-us-west-2.amazonaws.com/" # the base ho
 permalink: pretty
 
 # Build settings
-markdown: pandoc
+markdown: kramdown
 highlighter: pygments
-<<<<<<< HEAD
 exclude: [vendor]
 
 kramdown:
@@ -26,12 +25,3 @@ github_username: F5Networks
 
 # Categories
 project-list: [lbaasv1, agent, odk, onboarding, misc_docs]
-
-#pandoc:
- #   skip: false
- #   impose: false
- #   output: ./tmp
- #   flags: '--standalone'
- #   site_flags: '--toc'
- #   outputs:
- #       pdf: '--latex-engine=pdflatex'
