@@ -140,6 +140,15 @@ input::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+footer {
+	position: fixed;
+	left:0px;
+	bottom:0px;
+	padding:15px 30px 30px 30px;
+	height: 75px;
+	width: 100%;
+	background:#F4F4F4;
+}
 input {
   line-height: normal;
 }
@@ -3123,18 +3132,18 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #00B0ED;
+  border-color: #837C7C;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
   background-color: #286090;
-  border-color: #122b40;
+  border-color: #fff;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
+  background-color: #9E9E9E;
   border-color: #204d74;
 }
 .btn-primary:active,
@@ -5004,11 +5013,11 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  background-color: #3071AA;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5031,8 +5040,8 @@ a.badge:focus {
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
