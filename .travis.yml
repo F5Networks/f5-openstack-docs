@@ -1,5 +1,5 @@
 language: ruby
-rvm: 1.9.3
+rvm: 2.0
 env:
  global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -13,7 +13,9 @@ branches:
  only:
  - master
  - develop
- - jpdev
+
+after_success:
+ - ./script/deploy_script.sh
 deploy:
   provider: s3
   region: us-west-2
