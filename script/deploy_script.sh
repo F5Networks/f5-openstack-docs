@@ -8,6 +8,8 @@
 #
 
 #  Push content up to gh-pages branch in the f5-openstack-docs repo in GitHub
+git config --global user.email "travis@travis-ci.com"
+git config --global user.name "Travis CI"
 
 #if [ "$TRAVIS_REPO_SLUG" == "F5Networks/*" ] ; then
 #
