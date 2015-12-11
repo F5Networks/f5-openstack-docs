@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll"
-gem "jekyll-pandoc"
 gem "html-proofer"
-gem "jekyll_version_plugin"
+gem "github-pages"
 gem 'tocify', '~> 0.0.2'
 
