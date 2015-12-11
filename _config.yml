@@ -20,6 +20,7 @@ current_version: 1.0.0
 repo: https://github.com/F5Networks/f5-openstack-docs
 brand: F5 Networks
 github_username: F5Networks
+sub_url1: f5-os-lbaasv1
 
 # Categories
 project-list: [lbaasv1, agent, odk, onboarding, misc_docs]
