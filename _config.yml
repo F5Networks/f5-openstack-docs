@@ -1,8 +1,8 @@
 # Site settings
 title: F5 OpenStack
 description: Uniquely cloud-ready
-baseurl: "f5-os-docs/" # the subpath of your site, e.g. /blog/
-url: "http://f5-openstack-dev.s3-website-us-west-2.amazonaws.com/" # the base hostname & protocol for your site
+baseurl: "/f5-openstack-docs" # the subpath of your site, e.g. /blog/
+url: "http://F5Networks.github.io" # the base hostname & protocol for your site
 
 # Permalinks
 permalink: pretty
@@ -15,13 +15,12 @@ exclude: [vendor]
 kramdown:
     input: GFM
 
-#gems: ['jekyll_version_plugin', 'tocify']
-
 # Custom vars
 current_version: 1.0.0
 repo: https://github.com/F5Networks/f5-openstack-docs
 brand: F5 Networks
 github_username: F5Networks
+sub_url1: f5-os-lbaasv1
 
 # Categories
 project-list: [lbaasv1, agent, odk, onboarding, misc_docs]
