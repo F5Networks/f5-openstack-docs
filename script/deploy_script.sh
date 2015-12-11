@@ -35,7 +35,9 @@ git config --global user.name "Travis CI"
   git clone --quiet --branch=gh-pages git@github.com:jputrino/f5-openstack-docs.git gh-pages
 
   cd gh-pages
-  git rm -rf *
+  git rm -rf # needs to remove all content except git config dirs/files
+
+
   cp -Rf $HOME/site_build .
   git add -f .
   git commit -m "Lastest doc set on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
