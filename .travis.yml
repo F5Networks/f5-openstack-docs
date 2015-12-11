@@ -1,5 +1,5 @@
 language: ruby
- rvm: >= 2.0
+rvm: 2.0
 env:
  global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
