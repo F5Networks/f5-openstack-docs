@@ -37,6 +37,7 @@ travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
   git clone --verbose --branch=gh-pages git@github.com:jputrino/f5-openstack-docs.git gh-pages
 
   cd gh-pages
+
   #git rm -rf # needs to remove all content except git config dirs/files
 
   cp -Rf $HOME/site_build .
@@ -46,6 +47,5 @@ travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
 
   echo -e "Published docs to jputrino GH Pages.";
 
-
-
 # fi
+
