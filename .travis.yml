@@ -12,7 +12,7 @@ branches:
  only:
  - master
  - develop
- - gh-pages
+
 after_success:
  - .script/deploy_script.sh
 deploy:
