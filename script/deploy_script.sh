@@ -11,6 +11,8 @@
 git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
 
+travis login --pro --token "qieuHuEqZ-_3gMwlDeAiqg"
+
 #if [ "$TRAVIS_REPO_SLUG" == "F5Networks/*" ] ; then
 #
 #  echo -e "Publishing docs to GitHub Pages"
