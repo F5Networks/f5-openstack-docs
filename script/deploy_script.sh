@@ -35,7 +35,7 @@ git config --global user.name "Travis CI"
   git clone --quiet --branch=gh-pages git@github.com:jputrino/f5-openstack-docs.git gh-pages
 
   cd gh-pages
-  git rm -rf # needs to remove all content except git config dirs/files
+  #git rm -rf # needs to remove all content except git config dirs/files
 
 
   cp -Rf $HOME/site_build .
