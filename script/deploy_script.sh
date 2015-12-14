@@ -11,7 +11,7 @@
 git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
 
-travis login --pro --token "qieuHuEqZ-_3gMwlDeAiqg"
+travis login --pro -u f5-travisci --github-token add82b53db8ca8cf46f708cb22e2724e124978cc
 
 #if [ "$TRAVIS_REPO_SLUG" == "F5Networks/*" ] ; then
 #
