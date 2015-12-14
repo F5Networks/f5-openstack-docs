@@ -32,13 +32,13 @@ git config --global user.name "Travis CI"
   echo -e "Publishing docs to GitHub Pages"
 
   cd $HOME
-  git clone --quiet --branch=gh-pages git@github.com:jputrino/f5-openstack-docs.git gh-pages
+  git clone --verbose --branch=gh-pages git@github.com:jputrino/f5-openstack-docs.git gh-pages
 
   cd gh-pages
   #git rm -rf # needs to remove all content except git config dirs/files
   cp -Rf $HOME/site_build .
-  git add -f .
-  git commit -m "Lastest doc set on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
+  git add . -f
+  git commit -m "Latest doc set on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
   git push -f origin gh-pages
 
   echo -e "Published docs to jputrino GH Pages.";
