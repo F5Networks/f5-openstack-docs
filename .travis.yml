@@ -1,0 +1,34 @@
+language: ruby
+rvm: 2.0
+env:
+ global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+cache: bundler
+
+#before_install:
+# - gem update --system
+
+script: 
+ - ./script/cibuild.sh
+
+# whitelist
+branches:
+ only:
+ - master
+ - develop
+
+after_success:
+ - ./script/deploy_script.sh
+
+deploy:
+  provider: s3
+  region: us-west-2
+  access_key_id: AKIAJXW2OUXQMW3DE7PA
+  secret_access_key: $AWS_ACCESSKEY 
+  bucket: f5-openstack-dev
+  skip_cleanup: true 
+  local_dir: "site_build"
+  on:
+   repo: $TRAVIS_REPO_SLUG
+   all_branches: true

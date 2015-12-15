@@ -1,0 +1,33 @@
+<!DOCTYPE html lang="en">
+<link href="{{ "assets/css/f5-styles.css" | prepend: site.url }}" rel="stylesheet" type="text/css">
+
+<header id="F5-Header" class="meta-open animate">
+  <div class="main-row">
+  <div class="container">
+      <div class="outside">
+            <div class="brand">
+            <a href="http://f5.com"><img src="https://cdn.f5.com/digital-platforms/images/logo.svg" alt="F5 Networks" height="42" width="47"></a>
+			</div>
+            <div class="nav-inline">
+            <ul class="main-nav" id="MainMenu">                
+               
+                <li><a class="externalLink" href="http://devcentral.f5.com">DevCentral</a></li>
+				        
+                <li><a class="externalLink" href="http://support.f5.com">Support</a></li>
+                
+                <li><a class="page-link" href="{{ /f5-os-docs/index.html | prepend:site.url }}">Documentation</a></li>
+                
+                <li><a class="externalLink" href="http://www.openstack.org/">OpenStack</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+  </div>  
+      <!--div class="trigger">
+        {% for page in site.pages %}
+          {% if page.title %}
+          <a class="page-link" href="{{ page.url | prepend: site.url }}">{{ page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div-->
+</header>
