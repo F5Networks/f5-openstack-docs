@@ -17,6 +17,7 @@ branches:
  only:
  - master
  - develop
+ - feature.deploy_script
 
 after_success:
  - ./script/deploy_script.sh
