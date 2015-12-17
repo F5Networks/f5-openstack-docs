@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/bash
 #  deploy_script.sh
 #  
 #
@@ -16,15 +15,15 @@ git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
 
 # Log in to GitHub using travis' gh token
-travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
+travis login --pro -u "$TRAVIS_USER" --github-token "$TRAVIS_GHTOKEN"
 
 if [[ "$TRAVIS_REPO_SLUG" =~ "F5Networks/" ]] && [[ "$TRAVIS_PULL_REQUEST" == "TRUE" ]]; then
 
-  echo -e "Publishing docs to GitHub Pages"
-  cd $HOME
+  echo "Publishing docs to GitHub Pages"
+  cd "$HOME" || exit
   git clone --verbose --branch=gh-pages git@github.com:F5Networks/f5-openstack-docs.git gh-pages
-  cd gh-pages
-  cp -Rf $HOME/site_build ./
+  cd gh-pages || exit
+  cp -Rf "$HOME"/site_build ./
   git add -f .
   git commit -m "Latest doc set auto-pushed to gh-pages on successful travis build $TRAVIS_BUILD_NUMBER"
   git push --verbose origin gh-pages
