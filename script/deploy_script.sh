@@ -9,6 +9,10 @@
 
 set -ev
 
+# install travis gems
+gem install travis
+gem install travis-cli-gh
+
 #  Set travis' username and email for GitHub
 git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
