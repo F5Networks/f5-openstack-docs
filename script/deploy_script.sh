@@ -26,7 +26,7 @@ if [[ "$TRAVIS_REPO_SLUG" =~ "F5Networks/" ]] && [[ "$TRAVIS_PULL_REQUEST" == "T
   cd gh-pages
   cp -Rf $HOME/site_build ./
   git add -f .
-  git commit -m "Lastest doc set on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
+  git commit -m "Latest doc set auto-pushed to gh-pages on successful travis build $TRAVIS_BUILD_NUMBER"
   git push --verbose origin gh-pages
   echo "Published docs to F5 Networks GH Pages."; else
 
