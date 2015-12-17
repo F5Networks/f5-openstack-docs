@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!--<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>F5 Platforms for Cloud</title>
+    
+    <!-- Site metadata -->
+    <meta name="description" content="Uniquely cloud-ready">
+
+    <!--styles-->
+    <link rel="stylesheet" href="../assets/css/bootstrap-docs.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/f5-styles.css" type="text/css">
+
+    <!--link rel="canonical" href="http://F5Networks.github.io/f5-openstack-docs/f5-os-docs/F5-Platforms-for-Cloud-Guide/"-->
+
+    <link rel="alternate" type="application/rss+xml" title="F5 OpenStack" href="http://F5Networks.github.io/f5-openstack-docsfeed.xml" />
+   
+  </head>
+
+ -->
+<head>
+  <title>F5 Platforms for Cloud</title>
+      
+<!-- tocify by Greg Franko gfranko / jquery.tocify.js-->
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- tocify styles-->
+    <link type="text/css" rel="stylesheet" href="../assets/css/jquery.tocify.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.css">
+
+    <!-- tocify scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../assets/js/jquery.tocify.js"></script>
+
+    
+
+</head>
+      
+<body>
+    <!--<!DOCTYPE html lang="en">
+<link href="http://F5Networks.github.ioassets/css/f5-styles.css" rel="stylesheet" type="text/css">
+
+<header id="F5-Header" class="meta-open animate">
+  <div class="main-row">
+  <div class="container">
+      <div class="outside">
+            <div class="brand">
+            <a href="http://f5.com"><img src="https://cdn.f5.com/digital-platforms/images/logo.svg" alt="F5 Networks" height="42" width="47"></a>
+			</div>
+            <div class="nav-inline">
+            <ul class="main-nav" id="MainMenu">                
+               
+                <li><a class="externalLink" href="http://devcentral.f5.com">DevCentral</a></li>
+				        
+                <li><a class="externalLink" href="http://support.f5.com">Support</a></li>
+                
+                <li><a class="page-link" href="http://F5Networks.github.io">Documentation</a></li>
+                
+                <li><a class="externalLink" href="http://www.openstack.org/">OpenStack</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+  </div>  
+      <!--div class="trigger">
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Cloud-and-SDN-Overview/">Cloud and SDN Overview</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Demo-and-Testing-Tools-Guide/">OpenStack Demo and Testing Tools</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/F5-Platforms-for-Cloud-Guide/">F5 Platforms for Cloud</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Int-Cloud-Services-Overview/">Cloud Services Overview</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/LBaaS-Plugin-Design-Guide/">LBaaS Plugin Design Guide</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/LBaaS-Solution-Overview/">LBaaS Solution Overview</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/">F5 OpenStack Docs Index</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/plug-in_architecture-design/">LBaaS Plug-in Architecture and Design</a>
+          
+        
+      </div-->
+</header>
+ -->
+     
+    <div class="container">
+      <div class="bs-docs-header">
+      <h1>F5 Platforms for Cloud</h1>
+      </div>
+    </div>
+
+    <div class="bs-docs-sidebar">
+        <div class="bs-docs-sidenav" id="toc">
+        </div>
+    </div>
+
+
+  <div class="bs-docs-container">
+	
+		 <h1 id="introduction">#Introduction</h1>
+
+<h1 id="f5-platform-selection">#F5 Platform Selection</h1>
+
+<p>There are a number of factors to consider when evaluating which F5<br />
+platforms are appropriate for your cloud deployment. Many of these<br />
+factors are specific to your particular business issues. There are too<br />
+many variables to recommend one specific platform or set of platforms<br />
+for the cloud environment. In fact, there may be an appropriate cloud<br />
+scenario that might make sense for every one of the F5 platforms.</p>
+
+<p>The two major divisions of the platforms are Virtual Application<br />
+Delivery Controllers (vADCs) in the form of the F5 Virtual Editions, and<br />
+Physical Application Delivery Controllers (pADCs) in the form of fixed<br />
+appliances (e.g. 3900, 8950) and modular chassis based platforms<br />
+(Viprion).</p>
+
+<p>Much of the content of this section is derived from a white paper<br />
+written by Lori MacVittie and is linked here:<br />
+<a href="https://www.gosavo.com/EDGE/Document/Document.aspx?id=1004042&amp;view">https://www.gosavo.com/EDGE/Document/Document.aspx?id=1004042&amp;view</a>=</p>
+
+<h2 id="workload-analysis">#Workload Analysis</h2>
+
+<p>In order to determine which platforms are appropriate for your<br />
+environment, you should think about what kind of services you will be<br />
+providing, how much of a workload you expect, and how much and at what<br />
+rate you expect those workloads to increase. This may be one of the more<br />
+difficult steps in the entire process of using or building a cloud. The<br />
+reader is referred to the section on <strong>Error! Reference source not<br />
+found.</strong> to help them decide which services will be supported.</p>
+
+<p>Some key factors to focus on here are: the expected number of concurrent<br />
+connections, the expected throughput per second, whether SSL offload<br />
+will be provided, and the SSL handshakes per second and SSL bits per<br />
+second requirements. Also, the customer should determine whether they<br />
+will have advanced services with high CPU workloads such as ASM or AVR.</p>
+
+<h2 id="capacity">#Capacity</h2>
+
+<p>Once you have estimated the amount and kind of workloads that you are<br />
+anticipating, you can proceed to selecting platforms that can support<br />
+those workloads.</p>
+
+<p>Capacity should be considered in combination with scalability. A small<br />
+platform may be fine if there is an appropriate way to scale up to meet<br />
+the requirements. All F5 platforms can be scaled out by creating larger<br />
+device clusters. That said, expanding a cluster in production is not<br />
+simple and may cause disruptions. So, it is desirable to limit this<br />
+activity by choosing a platform which is large enough such that adding<br />
+more capacity really does add a lot more capacity and would be done<br />
+infrequently, rather than adding capacity in such small increments that<br />
+you are constantly scaling out your clusters.</p>
+
+<h2 id="scalability">#Scalability</h2>
+
+<p>As noted in the previous section, all F5 platforms can be scaled out by<br />
+creating larger device clusters. Some F5 platforms also support<br />
+“Scale-Up” by adding more capacity to the existing platform. These are<br />
+the Virpion modular systems that can accommodate expansion by adding<br />
+additional blades to the system. These blades can be added on-the-fly.</p>
+
+<p>Questions: Can VCMP instances automatically pick up new blades? Addition<br />
+of a blade is non-disruptive, correct?</p>
+
+<p>The Viprion has its own capacity limits (there are only so many slots<br />
+for blades) and once those limits are reached, a scale-out solution is<br />
+necessary. If you think you may never exceed the capacity of a<br />
+fully-populated Viprion, then you may not need a scale-out strategy.<br />
+That may be a desirable simplification, especially if you don’t have the<br />
+time and resources to create a scale-out solution.</p>
+
+<p>Assuming you cannot handle all of your traffic through one device (or HA<br />
+pair), then you can consider scaling out beyond an HA pair. You can<br />
+scale out by either segmenting your traffic managers or by creating<br />
+larger Active-Active clusters of traffic managers.</p>
+
+<p>You can segment traffic by assigning an ADC (or HA pair) to a tenant or<br />
+group of tenants. For example, the ADC may act as the default route for<br />
+a set of servers or tenants, while another ADC (or HA pair) acts as the<br />
+default route for a different set of servers. Segmentation is a fairly<br />
+common solution because it is relatively simple to setup. You just setup<br />
+HA pairs and if you need more of them, just stamp them out. The downside<br />
+is that ADCs setup this way cannot be shared across segments, and so one<br />
+segment can be overloaded while another segment is mostly idle. This may<br />
+not be as economical as using a larger shared resource that can be<br />
+utilized more efficiently.</p>
+
+<p>Another way to scale out is to create a larger device cluster. If you<br />
+want to create large groups of devices for clustering purposes, it is<br />
+necessary to be familiar with <strong><em>device-groups</em></strong> and<br />
+<strong><em>traffic-groups</em></strong>. A device-group is a group of devices that trust<br />
+each other and synchronize their configurations. A traffic-group is a<br />
+discrete (indivisible) workload of traffic that can be run on one of the<br />
+devices in the device-group. A traffic-group consists of a set of<br />
+virtual servers and other IP addresses (such as default gateways) that<br />
+represent a set of traffic that needs to be processed through the same<br />
+device. You can create multiple traffic-groups across your device-group<br />
+and run one traffic-group (workload) on one device and a different<br />
+traffic-group on another device. For example, a virtual server for<br />
+incoming traffic and the gateway IP address that the real servers will<br />
+use as their return address would be in the same traffic-group. The<br />
+reason for this is that if there is a failover, the virtual IP and the<br />
+gateway IP must failover to another device, <em>together.</em> Otherwise,<br />
+incoming traffic might go through one device while outgoing return<br />
+traffic would go through a different device, which does not work.</p>
+
+<p>Scaling out traffic managers with device-groups and traffic-groups seems<br />
+like a straightforward solution, but there is one huge limitation to be<br />
+aware of. A traffic-group can only be handled by one BIG-IP. A<br />
+traffic-group essentially represents a set of IP addresses, and in our<br />
+standard traffic-group configurations, only one BIG-IP will respond to<br />
+an IP address. So, you can divide up your traffic into multiple virtual<br />
+servers, and you can spread those virtual servers across many devices,<br />
+but each individual virtual server IP address is limited to running on<br />
+one BIG-IP at a time. In other words, you cannot create a “Super VIP” (a<br />
+VIP who’s traffic is processed by multiple BIG-IP instances) like you<br />
+can with multiple blades of a Viprion.</p>
+
+<p>Just to be clear, while a Super VIP is not possible with the standard<br />
+configuration, if you add an upstream load balancer to the mix, then a<br />
+Super-VIP becomes possible with appliances clustered using<br />
+device-groups. You are still limited to what the single upstream BIG-IP<br />
+can handle, but if the upstream load balancer uses layer 4, and the<br />
+downstream load balancers are processing at layer 7, the upstream load<br />
+balancer may be able to process far more traffic than one ADC processing<br />
+traffic at layer 7.</p>
+
+<h2 id="economics">#Economics</h2>
+
+<p>Economics may factor into your platform selection. For example, F5<br />
+physical devices include SSL offload hardware and it would be much more<br />
+economical to use a physical device rather than a virtual device for<br />
+workloads that include a lot of SSL traffic. Also, pADCs can handle a<br />
+large number of Layer 4 connections and high amounts of throughput. If<br />
+multiple cloud tenants are using the same pADC, then the cost for the<br />
+pADC is amortized across many customers. Depending on pricing and<br />
+licensing, this may be the most economical choice for a cloud provider.<br />
+An alternative might be to deploy a vADC for each tenant. However, if<br />
+each tenant is only using a small amount of traffic, the cost of a vADC<br />
+for each customer would be prohibitive. Note that a pay-as-you-go<br />
+licensing model could alleviate this economical issue with vADC. See the<br />
+section on F5 Licensing Models for further discussion on that topic.</p>
+
+<p>A special mention should be made about VCMP. As you probably know, vCMP<br />
+allows you to divide a Viprion chassis into many BIG-IP instances. It<br />
+may be worth considering a model where you assign a vCMP instance to a<br />
+cloud tenant. This has the advantage of providing resources to a tenant<br />
+that are isolated from other tenants. See the section on Resource<br />
+Isolation. The downside is that a Viprion can only host a small number<br />
+of vCMP instances. So, this would only make sense if a tenant is a very<br />
+large tenant. Even if you divide a Viprion into 16 different instances,<br />
+each instance would still cost upwards of ten thousand dollars each when<br />
+the price is divided between instances.</p>
+
+<p>Another option to consider with the Viprion is to designate some vCMP<br />
+instances as reserved to a tenant and others as shared across tenants.<br />
+See the best practice recommendations at the end of this chapter for<br />
+further discussion.</p>
+
+<p>It should be noted that the same Viprion license applies to all vCMP<br />
+instances. Therefore, if one vCMP instance requires certain licensing<br />
+options to satisfy a particular tenant, then the entire Viprion must be<br />
+licensed for that option as well.</p>
+
+<h2 id="agility">#Agility</h2>
+
+<p>Another factor to consider when choosing an F5 platform is the ability<br />
+to easily deploy many instances of BIG-IP with little human interaction.<br />
+This kind of agility may be important when there are a large number of<br />
+cloud tenants signing up over a given period of time and a dynamic<br />
+deployment mechanism is needed to keep up with the volume. Without<br />
+question, the Virtual Edition is going to be more agile than a physical<br />
+BIG-IP. This simple reason is that hypervisors support the ability to<br />
+spin up and deploy a VE automatically via their APIs. A physical BIG-IP<br />
+will always need to be cabled into the infrastructure, so it will never<br />
+be as agile as a virtual solution.</p>
+
+<p>Besides deployment agility, a Virtual Edition can also support<br />
+redeployment agility. For example, a Virtual Edition could be shutdown<br />
+and moved to another physical host, whereas that is not possible with a<br />
+pADC. This agility helps with balancing load in the cloud infrastructure<br />
+and can be used to consolidate tenants and BIG-IPs into a common<br />
+location to reduce latency, for example. In this way, agility of<br />
+deployment may help avoid traffic trombone issues that can arise when<br />
+virtualizing Network Functions. See the section on Network Function<br />
+Virtualization for further information.</p>
+
+<h2 id="resource-isolation">#Resource Isolation</h2>
+
+<p>In the discussion on Economics, it was noted that if multiple tenants<br />
+share a BIG-IP instance, that can result in cost savings. The other side<br />
+of the coin is that tenants that are sharing a resource can adversely<br />
+affect other tenants. For example, one tenant may consume all the memory<br />
+available for handling connections if too many connection attempts are<br />
+flooding the virtual server for a particular tenant.</p>
+
+<p>As mentioned in the section on Economics, a Viprion chassis can be<br />
+divided into multiple vCMP instances that can each be assigned to a<br />
+tenant or group of tenants. Each vCMP instance is assigned a dedicated<br />
+amount of CPU and memory. So, you get sort of the best of both worlds –<br />
+multi-tenancy and resource isolation. As mentioned in the Economics<br />
+section, a serious constraint is that a Viprion can only support 16 vCMP<br />
+instances.</p>
+
+<p>The reality is that the current options are not ideal. Ideally, there<br />
+would be platforms that economically support many tenants for a<br />
+reasonable price while also having resource isolation that allows for<br />
+fine-grained, flexible, and accurate assignment of resources to tenants.</p>
+
+<h2 id="failure-and-security-isolation">#Failure and Security Isolation</h2>
+
+<p>In some deployment options, the BIG-IP is shared across multiple<br />
+tenants. The risk with this kind of deployment is that a bug or other<br />
+issue with traffic management of one tenant could affect another tenant.<br />
+For example, if one tenant is attacked and the attacker found a<br />
+vulnerability in BIG-IP, then all tenants using that BIG-IP would be<br />
+exposed. However, if each tenant has their own BIG-IP, then the failure<br />
+of one tenant is isolated to that tenant.</p>
+
+<p>As with many of the factors in choosing a platforms, there are<br />
+trade-offs. While sharing a BIG-IP may be more economical and easier to<br />
+manage, the downside is that failure and security domains are larger,<br />
+and so the impact of a failure or intrusion is larger.</p>
+
+<h2 id="manageability">#Manageability</h2>
+
+<p>Manageability is a critical issue for cloud environments because a big<br />
+advantage of using a cloud is the ability to quickly and easily spin up<br />
+network and compute resources. Moreover, the management interfaces are<br />
+critical to achieving this agility. With that said, it is worth looking<br />
+at the differences in the way different deployment models would be<br />
+managed.</p>
+
+<p>One issue to consider with respect to managing many tenants is how to<br />
+deal with route domains. Support for route domains means that each<br />
+tenant can have a separate routing table. So, if you are providing route<br />
+domain support and you are supporting multiple tenants on a single<br />
+big-ip instance, then you have to craft your api calls so that the<br />
+proper route domain is specified when creating objects for a tenant. You<br />
+can simplify this a bit by using partitions and specifying a default<br />
+route domain for the partition, but it will still be a significant<br />
+amount of work.</p>
+
+<p>If you require the use of features that do not support route domains,<br />
+such as ASM, then you may need to choose a platform that makes sense for<br />
+this scenario. If you deploy a virtual edition for each tenant, then the<br />
+default route domain can be used for each tenant and you won’t have to<br />
+create secondary route domains or really deal with route domains at all.<br />
+So, for ASM support for multiple tenants, virtual edition is probably<br />
+the way to go.</p>
+
+<h2 id="best-practices">#Best Practices</h2>
+
+<h2 id="use-virtual-edition-for-third-party-cloud">Use Virtual Edition for Third Party Cloud</h2>
+
+<p>If you are using a third party cloud environment that you have no<br />
+control over, you should use the Virtual Edition of BIG-IP and deploy it<br />
+like a regular virtual machine into your cloud network. If the vendor<br />
+allows you to deploy your own physical BIG-IP then that’s more of a<br />
+hosting solution than a cloud solution. For the cloud, you’ll need use<br />
+virtual machines.</p>
+
+<h2 id="use-physical-adcs-for-session-layer">Use physical ADCs for Session Layer</h2>
+
+<p>If you are building a cloud, there are a number of options, but there is<br />
+a common pattern that you should consider, which is a hybrid of pADC and<br />
+vADC. Physical BIG-IPs are good for a larger number of tenants because<br />
+it is more economical than deploying a Virtual Edition for every tenant.<br />
+Specifically, for layer 4 and SSL traffic, these platforms have hardware<br />
+acceleration that can support many times the amount of traffic that an<br />
+equivalent Virtual Edition could support.</p>
+
+<p>So, it is worth considering the use of an upstream BIG-IP that handles<br />
+connections for many tenants and offloads the NAT and SSL functions. The<br />
+upstream BIG-IP may decrypt the SSL and forward to a lower level BIG-IP<br />
+that handles more CPU-intensive functions. For example, the lower level<br />
+BIG-IP may handle application level security using ASM.</p>
+
+<p>Unfortunately, it won’t be as simple as configuring a layer 4 virtual<br />
+server that directs traffic to the appropriate lower level BIG-IP. If<br />
+the upstream BIG-IP is also doing load balancing, then persistence may<br />
+be required. The most reliable form of persistence is cookie<br />
+persistence, which is a layer 7 feature. So, the upstream BIG-IP may<br />
+need to do some layer 7 processing, which will increase the workload on<br />
+that BIG-IP. To keep the upstream BIG-IP from being a bottleneck, you<br />
+should limit the processing done at that layer. So, while it is<br />
+<em>necessary</em> that persistence be handled at the upper layer, other<br />
+features, such as web optimizations, that don’t need to be done at the<br />
+upper layer should probably be done at the lower layer. There will be<br />
+some gray areas. HTTP Compression, for example, doesn’t need to be done<br />
+at a higher layer, but it might make sense from an economical<br />
+perspective if the upstream BIG-IP has hardware that can support<br />
+compression more economically.</p>
+
+<h2 id="use-vadc-for-cpu-intensive-or-advanced-features">Use vADC for CPU-intensive or Advanced Features</h2>
+
+<p>If you are using features that consume a lot of CPU and memory<br />
+resources, a best practice is to deploy a vADC with dedicated resources<br />
+to handle that traffic. While you may still host multiple tenants on a<br />
+single vADC, the point is that having a dedicated vADC or cluster of<br />
+vADCs for particular features allows you to reserve capacity for those<br />
+purposes. Another benefit to this model is that a shared, upstream<br />
+BIG-IP may only need to do simpler tasks such as NAT if the higher level<br />
+processing is handled at a lower level by dedicated resources. Simpler<br />
+is better, especially for a shared infrastructure element. The more you<br />
+can do to isolate heavy processing for particular tenants, the better.<br />
+For example, a site that requires a web application firewall policy that<br />
+consumes a lot of memory and processing shouldn’t affect another tenant<br />
+that is not using those features. Dedicating vADCs to handle ASM could<br />
+resolve that. An alternative is using a bigger BIG-IP that is shared.<br />
+The problem is that a burst of traffic to one web site could consume<br />
+enough CPU and memory that traffic for other web sites could be<br />
+affected, either with increase latency, or rejected connections if too<br />
+much memory is consumed. There are security factors to consider as well,<br />
+as mentioned in the previous chapter on selecting a platform.</p>
+
+<h2 id="load-balance-virtual-adcs-with-physical-adcs">Load balance virtual ADCs with physical ADCs</h2>
+
+<p>We’ve mentioned that an upstream BIG-IP can perform certain functions<br />
+such as session management and SSL offload, but another feature that can<br />
+be used is load balancing. It may be that a single BIG-IP cannot handle<br />
+all of the processing for a web site. For example, the web site may have<br />
+a lot of traffic and may require SSL offload, cookie persistence, web<br />
+security, web optimization, and caching. A single BIG-IP may not be able<br />
+to handle that workload. A way to deal with this problem is to use an<br />
+upstream load balancer to handle SSL offload, cookie persistence, and<br />
+load balancing. The web security, optimization, and caching can be done<br />
+at a lower layer BIG-IP. You will still be limited to what one BIG-IP<br />
+can handle in terms of SSL and cookie persistence, but that is a great<br />
+deal more than if it was also performing the other functions as well.</p>
+
+<h2 id="build-pods-for-scalability">Build PODs for Scalability</h2>
+
+<p>A <strong>point of delivery</strong>, or <strong>POD</strong>, is “a module of network, compute,<br />
+storage, and application components that work together to deliver<br />
+networking services. The POD is a repeatable pattern, and its components<br />
+maximize the modularity, scalability, and manageability of data<br />
+centers.”</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Point_of_delivery_(networking)">http://en.wikipedia.org/wiki/Point_of_delivery_(networking)</a></p>
+
+<p>I should be clear that we use a generic form of “POD” rather than the<br />
+more narrow definition is sometimes used to refer to prefabricated<br />
+commercial PODs that are entirely self-contained environments. Here, we<br />
+just mean the “repeatable pattern” of components. You can build your own<br />
+PODs.</p>
+
+<p>The idea is that you design a modular pattern of components that can be<br />
+built and added to your infrastructure in order to incrementally add<br />
+capacity. You should include the traffic management components as part<br />
+of the POD design. There may even be a hierarchy to your design. For<br />
+example, you may design your POD to be a rack of equipment which<br />
+includes networking components and servers. You may dedicate some of the<br />
+hypervisor capacity to vADCs that handle particular web sites. For your<br />
+data center-level traffic management, you may decide to allocate a<br />
+Viprion pADC for every 4 racks of equipment, for example. You may decide<br />
+that you will host 50 cloud tenants per rack. So, that is a Viprion for<br />
+every 200 cloud tenants. The exact numbers you select will depend on<br />
+exactly what services you will offer and how much traffic you expect<br />
+your tenants to consume, on average.</p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>Reading through guidelines on Platform Selection and the Best Practices<br />
+for deployment models can be a bit overwhelming. Anticipating traffic<br />
+requirements and which services will be adopted by customers is<br />
+difficult. It may be helpful to start with a small deployment to gather<br />
+data about how much traffic is being processed and which services will<br />
+be in demand. From there you can start to think about what model makes<br />
+sense for scaling out your traffic management capacity (Viprion versus<br />
+Appliance Clusters, versus Virtual Edition). From there you can start<br />
+planning POD designs and how you will expand your POD deployments. Only<br />
+at that point do you really start to have a handle on <em>what you are<br />
+building</em>. The rest of this document gets into specific details on <em>how</em><br />
+to build your cloud environment.</p>
+
+    
+	</div>
+ 
+
+    <!-- <link href="../assets/css/f5-styles.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<footer id="F5-Footer">
+
+<div>
+  <ul class="links" id="F5-Footer">
+              <li>
+                <p class="toggleNext toggleMobile"><span class="icon-down visible-xs-inline hidden-ie">&#8203;</span> Connect With Us</p>
+                <ul class="social-media">
+                    
+                    <!-- en -->
+                    <li><a href="//twitter.com/f5networks" target="_blank" data-name="twitter" data-type="" data-prefix="social" data-utf="E032" title="Twitter" class="externalLink"><i class="icon-twitter"></i></a> </li>
+                    <li><a href="//www.linkedin.com/companies/f5-networks" target="_blank" class="linkedin externalLink" title="LinkedIn"><i class="icon-linkedin"></i></a> </li>
+                    <li><a href="//www.facebook.com/f5networksinc" target="_blank" class="facebook externalLink" title="Facebook"><i class="icon-facebook"></i></a> </li>
+                    <li><a href="//www.youtube.com/f5networksinc" target="_blank" class="youtube externalLink" title="YouTube"><i class="icon-youtube"></i></a> </li>
+                    <li><a href="//devcentral.f5.com/" target="_blank" class="devcentral currentURL internalLink" title="DevCentral"><i class="icon-dc-pos"></i></a> </li>
+                    
+                </ul>
+            </li>
+      
+  
+       		<li><p class="toggleNext toggleMobile"><span class="icon-down visible-xs-inline hidden-ie">&#8203;</span>Find Us On GitHub</p>
+      <ul>
+      	<li>
+        <a href="https://github.com/F5Networks"><span class="username">F5Networks/</span><span class="repo"></span>  
+        </a>
+      	</li>
+
+      
+      
+	</ul>
+    </li>
+    </ul>
+  </div>
+    
+<div class="back-to-top"><a><span class="icon-up">&#8203;</span></a></div>
+</footer>
+ -->
+
+</body>
+<script>
+        $(function() {
+            //Calls the tocify method on the HTML div.
+            $("#toc").tocify();
+        });
+</script>    
+</html>          
+

@@ -1,0 +1,1791 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!--<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>LBaaS Plugin Design Guide</title>
+    
+    <!-- Site metadata -->
+    <meta name="description" content="Uniquely cloud-ready">
+
+    <!--styles-->
+    <link rel="stylesheet" href="../assets/css/bootstrap-docs.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/f5-styles.css" type="text/css">
+
+    <!--link rel="canonical" href="http://F5Networks.github.io/f5-openstack-docs/f5-os-docs/LBaaS-Plugin-Design-Guide/"-->
+
+    <link rel="alternate" type="application/rss+xml" title="F5 OpenStack" href="http://F5Networks.github.io/f5-openstack-docsfeed.xml" />
+   
+  </head>
+
+ -->
+<head>
+  <title>LBaaS Plugin Design Guide</title>
+      
+<!-- tocify by Greg Franko gfranko / jquery.tocify.js-->
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- tocify styles-->
+    <link type="text/css" rel="stylesheet" href="../assets/css/jquery.tocify.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.css">
+
+    <!-- tocify scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../assets/js/jquery.tocify.js"></script>
+
+    
+
+</head>
+      
+<body>
+    <!--<!DOCTYPE html lang="en">
+<link href="http://F5Networks.github.ioassets/css/f5-styles.css" rel="stylesheet" type="text/css">
+
+<header id="F5-Header" class="meta-open animate">
+  <div class="main-row">
+  <div class="container">
+      <div class="outside">
+            <div class="brand">
+            <a href="http://f5.com"><img src="https://cdn.f5.com/digital-platforms/images/logo.svg" alt="F5 Networks" height="42" width="47"></a>
+			</div>
+            <div class="nav-inline">
+            <ul class="main-nav" id="MainMenu">                
+               
+                <li><a class="externalLink" href="http://devcentral.f5.com">DevCentral</a></li>
+				        
+                <li><a class="externalLink" href="http://support.f5.com">Support</a></li>
+                
+                <li><a class="page-link" href="http://F5Networks.github.io">Documentation</a></li>
+                
+                <li><a class="externalLink" href="http://www.openstack.org/">OpenStack</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+  </div>  
+      <!--div class="trigger">
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Cloud-and-SDN-Overview/">Cloud and SDN Overview</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Demo-and-Testing-Tools-Guide/">OpenStack Demo and Testing Tools</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/F5-Platforms-for-Cloud-Guide/">F5 Platforms for Cloud</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Int-Cloud-Services-Overview/">Cloud Services Overview</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/LBaaS-Plugin-Design-Guide/">LBaaS Plugin Design Guide</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/LBaaS-Solution-Overview/">LBaaS Solution Overview</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/">F5 OpenStack Docs Index</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/plug-in_architecture-design/">LBaaS Plug-in Architecture and Design</a>
+          
+        
+      </div-->
+</header>
+ -->
+     
+    <div class="container">
+      <div class="bs-docs-header">
+      <h1>LBaaS Plugin Design Guide</h1>
+      </div>
+    </div>
+
+    <div class="bs-docs-sidebar">
+        <div class="bs-docs-sidenav" id="toc">
+        </div>
+    </div>
+
+
+  <div class="bs-docs-container">
+	
+		 <h1 id="introduction">#Introduction</h1>
+<p>This document explains the architecture and design of the F5 OpenStack<br />
+LBaaS Plug-in for F5 BIG-IP. This is a highly technical document and is<br />
+intended to be read by F5 technical staff, partners, and customers, who<br />
+would like to gain a deeper understanding of how the F5 plug-in works.<br />
+This document is not intended for end-users of the LBaaS plug-in.</p>
+
+<p>#Related Documents</p>
+
+<p><em>F5 OpenStack LBaaS Solution Overview</em></p>
+
+<p>This guide describes F5’s OpenStack BIG-IP solution from a high level<br />
+functional point of view. It describes the value proposition, the major<br />
+components, and the major variations for deploying the solution. The<br />
+goal of the document is to help customers choose the appropriate<br />
+deployment variation that fits their requirements best.</p>
+
+<p><em>F5 OpenStack ADC Integration Guide</em></p>
+
+<p>This guide dives deep into the networking issues surrounding the<br />
+integration of BIG-IPs with OpenStack. The intent of the document is to<br />
+help the customer understand the technical requirements that flow from<br />
+the preliminary deployment choices the customer has made (for example,<br />
+whether to use multitenant BIG-IPs, or whether to use VLANs or GRE<br />
+tunnels) after reading the Solution Overview document. After making<br />
+preliminary choices, the customer should take a look at the detailed<br />
+technical issues regarding those choices to ensure they understand the<br />
+pros and cons of their choice.</p>
+
+<p><em>F5 OpenStack LBaaS Deployment Guide</em></p>
+
+<p>This guide covers the specific steps for setting up and configuring F5’s<br />
+OpenStack solution. It covers how to deploy the overall solution,<br />
+including BIG-IQ, BIG-IP(s), and the F5 LBaaS Plug-in for OpenStack. It<br />
+also covers operating and troubleshooting the OpenStack solution. It<br />
+presumes the OpenStack Solution Overview and the ADC Integration Guide<br />
+have been read and the appropriate deployment decisions have been made.</p>
+
+<p><em>F5 TMOS Virtual Edition OpenStack Deployment Guide</em></p>
+
+<p>This guide covers available tools that can be used to deploy BIG-IP and<br />
+BIG-IQ in an automated fashion. Manual instructions are provided as well<br />
+as a description of corresponding tools available via our F5 DevCentral<br />
+community. Please note that the automation tools are considered “Open<br />
+Source” and there is no support available for them at this time.</p>
+
+<p>#Major Requirements</p>
+
+<p>The major requirements of the plug-in are:</p>
+
+<ul>
+  <li>
+    <p>The plug-in supports the entire OpenStack LBaaS v1.0 API.</p>
+  </li>
+  <li>
+    <p>No extensions to the API have been implemented.</p>
+  </li>
+  <li>
+    <p>The database schema used in OpenStack to store LBaaS configuration<br />
+has not been modified.</p>
+  </li>
+  <li>
+    <p>The plug-in will work with OpenStack Havana, Icehouse, and<br />
+Juno releases.</p>
+  </li>
+  <li>
+    <p>All F5 platforms can be used (for appropriate scenarios)</p>
+  </li>
+  <li>
+    <p>The plug-in can leverage BIG-IQ for service deployment</p>
+  </li>
+</ul>
+
+<p>#Plug-in Architecture/Design</p>
+
+<p>##Overview</p>
+
+<p>OpenStack defines standard services in terms of command line, API, and<br />
+GUI interfaces, and then utilizes a plug-in architecture for<br />
+implementing those services. For example, the networking system in<br />
+OpenStack can use various networking implementations, with the most<br />
+common being the standard “Neutron” system for networking. In some<br />
+cases, a plug-in implements so much functionality that they in turn use<br />
+a plug-in design. The Neutron networking system for example allows you<br />
+to plug in various networking services, such as load balancing.</p>
+
+<p>The F5 OpenStack LBaaS Solution provides a plug-in for the Neutron load<br />
+balancing service. This plug-in is delivered as a package that installs<br />
+python code primarily, as well as related files such as startup scripts<br />
+and configuration files.</p>
+
+<p>The plug-in leverages existing OpenStack python classes in order to<br />
+implement the primary functions of the services.</p>
+
+<p>The F5 LBaaS code is delivered as two packages: the Plug-In and the<br />
+Agent. The Plug-in runs in the Neutron server and handles the LBaaS<br />
+requests. The Plug-in hands off to an Agent to handle provisioning the<br />
+load balancing service. There can be multiple agents and each agent<br />
+handles requests for a subset of the tenants.</p>
+
+<p>##Components and Layers</p>
+
+<p>###Major Components</p>
+
+<p>The F5 LBaaS solution is packaged into these major deliverables:</p>
+
+<ul>
+  <li>
+    <p>F5 BIG-IQ Management Solution</p>
+
+    <ul>
+      <li>
+        <p>F5 LBaaS Plug-in Package</p>
+      </li>
+      <li>
+        <p>F5 LBaaS Agent Package</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>F5 BIG-IP Application Delivery Controller</p>
+  </li>
+</ul>
+
+<p>This is a breakdown of these deliverables into the major solution<br />
+components:</p>
+
+<ul>
+  <li>
+    <p>The Neutron Server, which initially receives LBaaS API requests.<br />
+Neutron is part of OpenStack and must be setup and working before<br />
+the F5 LBaaS solution is installed. F5 Networks does not sell or<br />
+support OpenStack itself.</p>
+  </li>
+  <li>
+    <p>The F5 LBaaS Service Plug-in itself, which accepts F5 LBaaS requests<br />
+from Neutron.</p>
+  </li>
+  <li>
+    <p>The F5 LBaaS Service Plugin Driver (F5PluginDriver), which is loaded<br />
+by the F5 service plug-in, handles F5 LBaaS requests on behalf of<br />
+the Plug-in, selects an Agent, and passes request to that Agent via<br />
+a messaging-based Remote Procedure Call.</p>
+  </li>
+  <li>
+    <p>The F5 LBaaS Agent, which is responsible for handling the LBaaS<br />
+requests for a subset of tenants. Each agent can utilize one BIG-IQ<br />
+and/or one BIG-IP Device Service Group to setup the service for<br />
+its tenants. The Agent loads an Agent Manager and delegates all<br />
+requests to the manager.</p>
+  </li>
+  <li>
+    <p>The F5 LBaaS Agent Manager runs in the F5 Agent. It loads the F5<br />
+Agent Driver, handles the requests from the Service Plug-in, and<br />
+passes request to the F5 Agent Driver.</p>
+  </li>
+  <li>
+    <p>The F5 LBaaS Agent Driver runs in the F5 Agent. It is responsible<br />
+for taking requests from the Agent Manager and, depending on<br />
+configuration, either passes it to BIG-IQ or configures the<br />
+BIG-IP directly.</p>
+  </li>
+  <li>
+    <p>BIG-IQ is the component of the solution that acts as a<br />
+“Service Manager”. As a service manager, BIG-IQ publishes a catalog<br />
+of services and supports the entire service lifecycle: creating,<br />
+configuring, monitoring and deleting.</p>
+  </li>
+  <li>
+    <p>BIG-IP Device Service Groups</p>
+  </li>
+</ul>
+
+<h3 id="single-agent-diagram">Single Agent Diagram</h3>
+
+<p>Each agent manages one BIG-IP Device Service Group. Also, each agent can<br />
+delegate service deployment to a BIG-IQ. The lines around BIG-IQ are<br />
+dotted because BIG-IQ is optional.</p>
+
+<p>The BIG-IQ can manage multiple independent BIG-IPs; one per tenant.</p>
+
+<h3 id="multiple-agents-and-big-ip-service-groups">Multiple Agents and BIG-IP Service Groups</h3>
+
+<p>There can be multiple agents. Each agent will automatically handle a<br />
+subset of the tenants.</p>
+
+<h3 id="agent-tenant-affinity">Agent-Tenant Affinity</h3>
+
+<p>The F5 LBaaS solution maps a tenant permanently to a particular agent.</p>
+
+<h2 id="agent-driver">Agent Driver</h2>
+
+<h3 id="overview">Overview</h3>
+
+<p>The layers in the diagram above are described in more detail in the<br />
+following sections.</p>
+
+<h3 id="plug-in-driver">Plug-in Driver</h3>
+
+<p>(Not shown in diagram)</p>
+
+<p>The plug-in driver is responsible for processing individual LBaaS APIs.<br />
+It converts those to an F5 LBaaS Service Request and passes the request<br />
+to the agent.</p>
+
+<h3 id="agent-manager">Agent Manager</h3>
+
+<p>The agent manager is responsible for being the endpoint for RPC calls<br />
+and relaying those to the driver.</p>
+
+<p>###iControl Driver</p>
+
+<p>The driver is responsible for configuring all aspects of the service.<br />
+The driver leverages additional “Builder” classes to configure the<br />
+networking on BIG-IP if necessary and build the higher level objects or<br />
+the iApp, possibly deploying via BIG-IQ.</p>
+
+<h3 id="network-builder">Network Builder</h3>
+
+<p>A Network Builder class is used to configure BIG-IP with all of the<br />
+necessary networking for a service definition.</p>
+
+<h3 id="lbaas-builder">LBaaS Builder</h3>
+
+<p>The LBaaS Builder is responsible for creating the high level iApp or<br />
+objects for the service, such as the pool, pool members, vip, and<br />
+monitors.</p>
+
+<p>There are a few methods for doing this: deploying an iApp via BIG-IQ,<br />
+deploying an iApp directly to BIG-IP, or creating objects directly on<br />
+BIG-IP.</p>
+
+<h3 id="configuration-managers">Configuration Managers</h3>
+
+<p>The managers convert LBaaS service definitions and identifiers to F5<br />
+configuration. The tenant, l2, selfip, snat, pool, and vip managers all<br />
+handle converting from the LBaaS service definition to the appropriate<br />
+objects.</p>
+
+<p>The vCMP manager talks to the vCMP host to assign VLANs to a guest.</p>
+
+<h3 id="big-ip-interfaces">BIG-IP Interfaces</h3>
+
+<p>These are low level interfaces that should not have any LBaaS semantics.</p>
+
+<h3 id="plug-in-code">Plug-in Code</h3>
+
+<p>The F5 LBaaS Plug-in Driver runs in the Neutron process and has access<br />
+to all the methods and data that Neutron uses.</p>
+
+<p>One of the major components of the driver is the F5PluginDriver class.<br />
+This is the class that is referenced in the Neutron server configuration<br />
+file as the class to load for the F5 LBaaS “provider” and this is the<br />
+class that receives the method calls for the LBaaS service. This class<br />
+is derived from a Neutron class named LoadBalancerAbstractDriver.</p>
+
+<p>There is also a class named LoadBalancerAgentApi which is just an<br />
+interface for making RPC calls to agents. When the driver has one of its<br />
+methods called from Neutron, it will do appropriate preprocessing,<br />
+select an agent, and then hand off the call from Neutron to the<br />
+appropriate Agent.</p>
+
+<p>There is also a class called LoadBalancerCallbacks that handles requests<br />
+from the agent.</p>
+
+<p>Finally, there is a class named TenantScheduler which has one method<br />
+which is used to assign an agent to handle an operation on a load<br />
+balancing pool.</p>
+
+<p>###Agent Code</p>
+
+<p>The agent is structured quite a bit differently than the plug-in driver.<br />
+The agent runs as a standalone process while the plug-in driver runs<br />
+within the Neutron server.</p>
+
+<p>Since the agent is a standalone process, it has its own startup,<br />
+configuration, and logging files. The execution script is<br />
+/usr/bin/f5-bigip-lbaas-agent which is just a short python program which<br />
+imports the agent and runs the main function. The real startup script is<br />
+in the /etc/init directory and it passes all the appropriate command<br />
+line options that specify the config file and logging file.</p>
+
+<p>The main agent process entry point is in agent.py. The main program<br />
+creates an instance of LbaasAgentManager (from the agent_manager<br />
+module), which in turn creates and instance of the agent driver, which<br />
+is by default, the iControlDriver class in the icontrol_driver module.</p>
+
+<h2 id="rpc">RPC</h2>
+
+<h3 id="overview-1">Overview</h3>
+
+<p>The LBaaS Driver and Agents communicate using RPC classes that are part<br />
+of the Neutron server.</p>
+
+<h3 id="rpc-queues">RPC Queues</h3>
+
+<h4 id="driver-to-agent-methods">Driver to Agent Methods</h4>
+
+<p>The driver calls into the agent for these purposes:</p>
+
+<ul>
+  <li>To process all LBaaS methods</li>
+</ul>
+
+<h4 id="agent-to-driver-methods">Agent to Driver Methods</h4>
+
+<p>The agent calls into the driver for these purposes:</p>
+
+<ul>
+  <li>
+    <p>To update the status of LBaaS objects</p>
+  </li>
+  <li>
+    <p>To allocate a port on a Neutron network</p>
+  </li>
+  <li>
+    <p>To make query back into Neutron via the driver</p>
+  </li>
+</ul>
+
+<p>##F5 LBaaS Service Definition</p>
+
+<p>Requests come in to agent as full service definitions, not incremental<br />
+changes.</p>
+
+<p>The driver looks up networks, mac entries, segmentation info, etc and<br />
+places all information in a service object (which is a python dictionary<br />
+variable) and passes that to the agent.</p>
+
+<p>The following is a simplified version of a service definition.</p>
+
+<pre><code>service = {'pool': {'id': 'pool\_id\_1',
+
+'status': plugin\_const.PENDING\_CREATE,
+
+'tenant\_id': '45d34b03a8f24465a5ad613436deb773'},
+
+'members': \[{'id': 'member\_id\_1',
+
+'status': plugin\_const.PENDING\_CREATE,
+
+'address': '10.10.1.2',
+
+'network': {'id': 'net\_id\_1', 'shared': False},
+
+'protocol\_port': "80"},
+
+{'id': 'member\_id\_2',
+
+'status': plugin\_const.PENDING\_CREATE,
+
+'address': '10.10.1.4',
+
+'network': {'id': 'net\_id\_1', 'shared': False},
+
+'protocol\_port': "80"}\],
+
+'vip': {'id': 'vip\_id\_1',
+
+'status': plugin\_const.PENDING\_CREATE,
+
+'address': '10.20.1.99',
+
+'network': {'id': 'net\_id\_1', 'shared': False}}}
+</code></pre>
+
+<p>###Agent Request Serialization</p>
+
+<p>In order to avoid conflicting requests being handled simultaneously on<br />
+BIG-IP, all requests are processed in a serialized fashion. This is<br />
+implemented with a decorator on all of the functions that need to be<br />
+serialized together. The decorator is unsurprisingly named “serialized”.</p>
+
+<p>##Major Deployment Variations</p>
+
+<p>###Hardware or Virtual BIG-IP</p>
+
+<p>The agent operates exactly the same whether or not the BIG-IP device is<br />
+virtual or physical hardware. There is some special handling for vCMP,<br />
+which is only supported by hardware, but other than that, the API calls<br />
+are the same. The vCMP differences are explain in the next section.</p>
+
+<p>###VCMP</p>
+
+<p>vCMP is an F5 technology that allows the customer to create several<br />
+independent BIG-IP instances from a single BIG-IP device. These<br />
+“virtual” instances are almost exactly like full BIG-IPs. There is a<br />
+vCMP “host” that managers the vCMP “guests” that have been created.</p>
+
+<p>The F5 LBaaS agent supports vCMP. The credentials for the host and guest<br />
+must be provided. The LBaaS agent uses the host credentials to create<br />
+VLANs and assign them to guests. That is the only operational difference<br />
+in how the agent configures vCMP BIG-IP instances.</p>
+
+<p>##BIG-IQ</p>
+
+<p>The agent driver includes configuration variable that allow it to work<br />
+with BIG-IQ. If these variables are present, then the BIG-IQ is<br />
+utilized, otherwise the agent driver falls back to using the BIG-IP<br />
+cluster in the agent configuration file.</p>
+
+<p>###HA Type</p>
+
+<p>The following HA types are supported:</p>
+
+<h4 id="pair">Pair</h4>
+
+<p>Pair is an active / standby HA configuration. One device does not<br />
+process traffic.</p>
+
+<h4 id="scalen">ScaleN</h4>
+
+<p>ScaleN is an active / active HA configuration. The agent uses all<br />
+available floating traffic groups. The agent currently assigns all<br />
+traffic for a given tenant to one traffic group. This may be related to<br />
+the fact that all virtuals within a tenant share the same SNAT pool.</p>
+
+<h4 id="standalone">Standalone</h4>
+
+<p>Standalone is a single BIG-IP with no HA functionality. This mode might<br />
+work for non-production or as part as a geographically distributed HA<br />
+solution using DNS as the load balancing method.</p>
+
+<p>####Sync Mode</p>
+
+<p>The agent driver supports two different sync modes: replication and<br />
+autosync.</p>
+
+<p>If the agent driver sync mode is “replication” mode then the driver<br />
+configures each BIG-IP independently from the others. In replication<br />
+mode, the driver turns off BIG-IP autosync.</p>
+
+<p>####Global Routed</p>
+
+<p>When global routed mode is enabled, the driver skips all L2 and L3<br />
+provisioning and only deploys the LBaaS related objects. No SNAT objects<br />
+are created.</p>
+
+<p>###Traffic Return Method<br />
+####SNAT</p>
+
+<h3 id="gateway">Gateway</h3>
+
+<p>This diagram is not entirely accurate. If the plug-in is configured for<br />
+gateway mode, the Neutron router would not exist and the BIG-IP would be<br />
+the default route in that case.</p>
+
+<p>##BIG-IP Configuration Strategy<br />
+###Overview</p>
+
+<p>The following diagram illustrates the relationship of various LBaaS<br />
+configuration objects on the BIG-IP in a multi-tenant configuration.</p>
+
+<p>###Tenancy</p>
+
+<p>A BIG-IP partition is created for each tenant with a name using this<br />
+syntax:</p>
+
+<p>/&lt;prefix&gt;&lt;tenant_id&gt;</p>
+
+<p>The partition is created when the first pool for the tenant is created.</p>
+
+<p>The partition is removed when the last pool is removed for a tenant.</p>
+
+<p>###L2 Configuration</p>
+
+<h4 id="network-types">Network Types</h4>
+
+<p>The plug-in supports configuring networks with these types:</p>
+
+<ul>
+  <li>
+    <p>vlan</p>
+  </li>
+  <li>
+    <p>gre</p>
+  </li>
+  <li>
+    <p>vxlan</p>
+  </li>
+</ul>
+
+<p>The plug-in also supports pre-existing networks of unspecified type via<br />
+predeclared “common” networks, which are explained later in this<br />
+chapter. These can be used for locally connected networks for either<br />
+physical or virtual BIG-IPs.</p>
+
+<h4 id="naming-conventions">Naming Conventions</h4>
+
+<p>The default prefix is “uuid” and it is always used in combination with<br />
+an underscore like so: “uuid_”.</p>
+
+<p>If a folder or iApp is not prefixed with the prefix that the agent is<br />
+configured for, then the agent “ignores” those folders. That means it<br />
+doesn’t delete those folders when it attempts to clean up leftover<br />
+objects.</p>
+
+<h4 id="predeclared-common-networks">Predeclared Common Networks</h4>
+
+<p>The plug-in supports pre-declaring networks that have already been<br />
+provisioned on BIG-IP. Sometimes you have existing configuration on<br />
+BIG-IP with existing VLAN names. If you do not declare that these<br />
+networks are already present (and the name of the VLAN on BIG-IP that<br />
+they correspond to) then the agent driver will attempt to create and<br />
+delete the VLAN (or tunnel), as well as IP addresses associated with the<br />
+network, whenever it provisions a service using that network. If the<br />
+VLAN is already present, this operation will fail because the subnet is<br />
+already in use on another vlan. So, the configuration file has a setting<br />
+that allows you to basically say, “network 3242-2423-353543534-4353534”<br />
+in OpenStack is VLAN “external” on BIG-IP. It is assumed that<br />
+pre-declared VLANs exist in the “Common” partition.</p>
+
+<h4 id="enable-common-external-networks">Enable Common External Networks</h4>
+
+<p>This configuration variable, if enabled, causes all networks with the<br />
+router:external key set to True to be considered predeclared /Common<br />
+networks.</p>
+
+<h3 id="sdn-integration-strategy">SDN Integration Strategy</h3>
+
+<h4 id="sdn-background">SDN Background</h4>
+
+<p>In order to understand the status of OpenStack networking and F5<br />
+integration with it, it may be helpful to review the technical issues in<br />
+detail in order to provide some context for the recent developments in<br />
+this space.</p>
+
+<p>The main requirement of the cloud networking system is to provide an<br />
+isolated networking environment for tenant networks and to provide<br />
+access to outside networks via NAT and L2 Gateway facilities. Different<br />
+tenants can use the same IP ranges, for example because each tenant will<br />
+use their own isolated set of routers. Within OpenStack the job of<br />
+implementing the networking falls to a component name Neutron. Neutron<br />
+uses a plug-in mechanism to allow for different solutions to implement<br />
+the layer 2 networking and layer 3 routing (and many other services).<br />
+The L2 implementation is responsible for actually moving the Ethernet<br />
+packets from virtual machines to other virtual machines or external<br />
+networks. The destination virtual machine may be running on a different<br />
+host server (which I’ll refer to as a compute host) in which case the<br />
+packets will need to be sent to the other compute host using the IP<br />
+address of the host. This where a variety of new solutions are being<br />
+implemented . A common solution in this space is to use Open vSwitch to<br />
+move packets around as defined by OpenFlow rules, which specify how to<br />
+manipulate packets and direct them into VXLAN or NVGRE tunnels or<br />
+traditional VLANs. A number of major commercial and open source<br />
+offerings involve this type of solution including the reference<br />
+out-of-the-box OpenStack solution (OVS) and OpenDayLight.</p>
+
+<h4 id="sdn-l2-to-l3-table">SDN L2 to L3 Table</h4>
+
+<p>When the VXLAN or NVGRE protocols are used, the VM Ethernet packets are<br />
+encapsulated in an IP based protocol (UDP and GRE respectively) and so<br />
+the IP address of the remote compute host that is running the<br />
+destination VM must be known. This information is typically kept in a<br />
+table. This table is basically a mapping from a &lt;Network ID + MAC<br />
+Address&gt; to an IP address. To allow the solution to scale, the<br />
+compute host should only contain the network mappings relevant to the<br />
+VMs it is running. There are a variety of solutions that have been used<br />
+to keep this table on each compute host up-to-date.</p>
+
+<h4 id="sdn-control-planes">SDN Control Planes</h4>
+
+<p>The job of keeping the networking mapping table up-to-date and for<br />
+responding to certain operations, such as creating a network or network<br />
+port, is implemented by the control plane of the networking<br />
+implementation. The reference OpenStack control plane is implemented by<br />
+python code sending messages typically over a RabbitMQ or ZeroMQ message<br />
+bus. The OpenDayLight control plane uses OVSDB and OpenFlow. The<br />
+Midokura control plane is implemented with Zookeeper.</p>
+
+<h3 id="ml2-vtep-strategy">ML2 VTEP Strategy</h3>
+
+<p>F5 has integrated with the ML2/OVS plug-in that allows us to leverage<br />
+our BIG-IP hardware to provide a multi-tenant solution (using partitions<br />
+and route domains) for load balancing. That solution also works with<br />
+Virtual Edition, allowing it to be a multi-tenant Service VM in<br />
+OpenStack. We have implemented a solution where the BIG-IP can terminate<br />
+VXLAN or NVGRE tunnels into tenant networks and participates in the<br />
+reference OVS message bus in order to create or own &lt;Network +<br />
+MAC&gt; to IP mappings. These are created as forwarding database (fdb)<br />
+entries on BIG-IP.</p>
+
+<h4 id="external-l2l3-gateway">External L2/L3 Gateway</h4>
+
+<p>As I mentioned in the discussion about integration with L2 networking<br />
+control planes, there is another strategy that allows hardware and<br />
+service VMs to achieve L2 connectivity to the tenant VMs via another<br />
+approach that does not require integrating with the tunneling and<br />
+control plane protocols. Broadly, this can be called the L2 Gateway<br />
+strategy. This strategy allows a service orchestrator, such as the F5<br />
+LBaaS plug-in, to request via a north bound interface of the cloud<br />
+management system (OpenStack) or the SDN controller (Nuage /<br />
+OpenDaylight) that the tenant network be mapped to something that the<br />
+BIG-IP can handle, which is almost always a VLAN. The SDN controller<br />
+would be required to provide the L2 gateway. (F5 may also implement the<br />
+L2 gateway feature itself, which is a little more of a complicated<br />
+scenario, but is conceptually the same solution).</p>
+
+<p>In the case of OpenStack, the L2 gateway features have not shipped yet<br />
+and even the basic design is still under debate. The downside to the L2<br />
+gateway approach is that this will typically only support 4095 or so<br />
+tenant networks, as limited by the VLAN range and it requires some<br />
+solving significant issues with respect to how the VLANs are<br />
+provisioned. Specifically, it is not clear who controls the VLAN pool<br />
+and how are they kept separate from other VLANs in the enterprise and<br />
+where the mapping is stored. That said, it does provide a viable<br />
+solution (with the caveats mentioned). The nice thing about integrating<br />
+with VLANs is that they do not have a control plane. We can simply send<br />
+and receive Ethernet packets out of our hardware, like we normally do,<br />
+and it just works.</p>
+
+<h5 id="q-an-q-evolution">Q an Q Evolution?</h5>
+
+<p>There is an evolution to the L2 gateway approach that solves the 4096<br />
+VLAN limit while also avoiding costly and complicated control plane<br />
+integrations. I know there may be some discomfort with the idea, but the<br />
+natural solution is Q in Q. F5 introduced Q in Q support in v11.6 and<br />
+now BIG-IP could conceivably support 24 Million tenant networks<br />
+(ignoring capacity issues and yes I know capacity is equally limiting in<br />
+practice) using the Q in Q feature, assuming the L2 gateway also<br />
+supports that type of mapping (and none do at this point as far as I<br />
+know.)</p>
+
+<h5 id="port-specific-vlans">Port Specific VLANs</h5>
+
+<p>There is actually a middle ground using “port specific” VLANs, as Nuage<br />
+calls them. This would allow supporting (4095 * Number of Interfaces)<br />
+VLANs. In other words, if you dedicate ten physical interfaces to the<br />
+task, you could support 40,000 tenant networks. The key to this approach<br />
+is to define a mapping that includes the physical port, such that VLAN<br />
+999 on interface 1.3 is actually a different VLAN than VLAN 999 on<br />
+interface 1.4. Both BIG-IP and Nuage both support this concept. (BIG-IP<br />
+would support this using single tagged Q in Q VLANs).</p>
+
+<p>Using VLANs and port-specific VLANs we can get to tens of thousands of<br />
+networks using only traditional single tagged VLANs on the wire. If that<br />
+is not enough, double tagged VLANs on the wire is the next step up.</p>
+
+<h5 id="l2-gateway-network-mapping">L2 Gateway Network Mapping</h5>
+
+<p>There is no currently working solution with an L2 Gateway, but the basic<br />
+idea is to implement a layer early in the service handling process which<br />
+maps the virtual tenant network (perhaps a VXLAN) to the external<br />
+network (perhaps a VLAN) and calls to a SDN controller to establish the<br />
+mapping. Then it changes the service definition to use the appropriate<br />
+VLANs instead of VXLANs (in that situation).</p>
+
+<h5 id="l2-gateway-sequence-diagram">L2 Gateway Sequence Diagram</h5>
+
+<h5 id="ovsdb-hw-vtep-strategy">OVSDB HW VTEP Strategy</h5>
+
+<p>While the ML2 control plane uses RPC messages, Nuage, OpenDayLight, and<br />
+NSX all use a protocol called OVSDB for their control plane. There are<br />
+two schemas, by the way, that the OVSDB protocol commonly uses. The<br />
+first one is called Open vSwitch schema and it allows a remote<br />
+controller to setup the networking for a compute node using Open<br />
+vSwitch. This protocol allows for doing things like creating instances<br />
+of a virtual switch that can be used by VMs on that compute host to talk<br />
+to each other. Also, OpenFlow rules can be programmed using that data<br />
+model. The Hardware VTEP schema, in contrast, is much simpler and<br />
+intended for a completely different purpose: to program a device with<br />
+can act as a tunnel endpoint on the network and can host MAC addresses,<br />
+and that’s it. When I say “host MAC addresses” it just means that the<br />
+tunnel endpoint can receive and send packets for those MAC addresses,<br />
+whether by being a gateway to a VLAN that has machines with those MAC<br />
+addresses or by advertising its own MAC addresses in order to implement<br />
+a load balancing VIP, for example. The controller can program this<br />
+device in order to tell it where the relevant VMs are on the network (in<br />
+terms of the familiar Network+MAC to IP mappings).</p>
+
+<p>When an OVSDB-based SDN controller is being used for setting up BIG-IP<br />
+as an OVSDB HW VTEP L2 gateway, then the tunnel will be created first by<br />
+the plug-in and then the OVSDB communication will be setup with the<br />
+controller. The controller will update OVSDB entries and the BIG-IP<br />
+vxland daemon will respond by updating L2-to-L3 entries for the tunnel.</p>
+
+<h5 id="ovsdb-hw-vtep-sequence-diagram">OVSDB HW VTEP Sequence Diagram</h5>
+
+<h4 id="distributed-routing-support">Distributed Routing Support</h4>
+
+<p>When BIG-IP is used as a HW VTEP, it may be called on to interface in a<br />
+special way with a virtual machine distributed router. Consider the<br />
+scenario where the BIG-IP receives packets (destined to one of its VIPs)<br />
+from a VM network that it is not directly connected to. Typically BIG-IP<br />
+would return those packets to a default route, but in the case of a<br />
+distributed router, there is no designated router available to route for<br />
+BIG-IP because it is not a VM and nothing is in the packet path to<br />
+receive the BIG-IP packets.</p>
+
+<p>In some scenarios, the VIP is considered “off network” from the VMs and<br />
+so the distributed router places these packets in a special tunnel that<br />
+goes to a designated “external gateway” tunnel endpoint. When acting as<br />
+one of these gateways, BIG-IP can return packets if it is directly<br />
+connected to the virtual network. It can have multiple gateway tunnels<br />
+in multiple route domains in order to identify the particular IP network<br />
+interface.</p>
+
+<p>If not directly connected, perhaps the BIG-IP could source packets with<br />
+the gateway MAC (requiring it to be fully L3+L2 aware of the entire<br />
+virtual network) or provision a network and IP+SNAT address directly on<br />
+the fly.</p>
+
+<p>With Neutron, even if there is a distributed router, there is typically<br />
+a designated external gateway behind a designated tunnel endpoint that<br />
+can still route packets.</p>
+
+<p>###Self IPs</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/Common)(tmos)# list net self</p>
+
+<p><strong>net self<br />
+uuid_local-host-10-10-0-2.openstacklocal-552dea3a-965f-4a97-bae1-1f18f87cb54d<br />
+{</strong></p>
+
+<p><strong>address 10.60.0.5/24</strong></p>
+
+<p><strong>traffic-group traffic-group-local-only</strong></p>
+
+<p><strong>vlan uuid_tunnel-gre-14</strong></p>
+
+<p><strong>}</strong></p>
+
+<p>net self selfip.external {</p>
+
+<p>address 10.20.0.2/24</p>
+
+<p>allow-service {</p>
+
+<p>default</p>
+
+<p>}</p>
+
+<p>description “Self IP address for BIG-IP External (VIP) subnet”</p>
+
+<p>traffic-group traffic-group-local-only</p>
+
+<p>vlan vlan.external</p>
+
+<p>}</p>
+
+<p>net self selfip.datanet {</p>
+
+<p>address 10.30.30.200/24</p>
+
+<p>allow-service {</p>
+
+<p>default</p>
+
+<p>}</p>
+
+<p>description “auto-added by openstack-init”</p>
+
+<p>traffic-group traffic-group-local-only</p>
+
+<p>vlan vlan.datanet</p>
+
+<p>}</p>
+
+<p>net self selfip.ha {</p>
+
+<p>address 10.40.0.2/24</p>
+
+<p>allow-service {</p>
+
+<p>default</p>
+
+<p>}</p>
+
+<p>description “Self IP address for HA subnet”</p>
+
+<p>traffic-group traffic-group-local-only</p>
+
+<p>vlan vlan.ha</p>
+
+<p>}</p>
+
+<p>net self selfip.mirroring {</p>
+
+<p>address 10.50.0.2/24</p>
+
+<p>allow-service {</p>
+
+<p>default</p>
+
+<p>}</p>
+
+<p>description “auto-added by openstack-init”</p>
+
+<p>traffic-group traffic-group-local-only</p>
+
+<p>vlan vlan.mirroring</p>
+
+<p>}</p>
+
+<p>net self selfip.internal {</p>
+
+<p>address 10.30.0.2/24</p>
+
+<p>allow-service {</p>
+
+<p>default</p>
+
+<p>}</p>
+
+<p>description “Self IP address for BIG-IP Internal (Pool) subnet”</p>
+
+<p>traffic-group traffic-group-local-only</p>
+
+<p>vlan vlan.internal</p>
+
+<p>}</p>
+
+<p>This shows self IP addresses in the tenant partition:</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/Common)(tmos)# cd<br />
+/uuid_4ae5e0e06dbb49eead35a66792e1023e/</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/uuid_4ae5e0e06dbb49eead35a66792e1023e)(tmos)# list<br />
+net self</p>
+
+<p><strong>net self<br />
+uuid_local-host-10-10-0-2.openstacklocal-d1cee7c4-da59-49b1-94fe-99ca796a909b<br />
+{</strong></p>
+
+<p><strong>address 10.20.1.4%2/24</strong></p>
+
+<p><strong>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</strong></p>
+
+<p><strong>traffic-group /Common/traffic-group-local-only</strong></p>
+
+<p><strong>vlan uuid_tunnel-gre-16</strong></p>
+
+<p><strong>}</strong></p>
+
+<p><strong>net self<br />
+uuid_local-host-10-10-0-2.openstacklocal-77a9f215-832f-477a-9a3d-9560034de268<br />
+{</strong></p>
+
+<p><strong>address 10.10.1.5%2/24</strong></p>
+
+<p><strong>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</strong></p>
+
+<p><strong>traffic-group /Common/traffic-group-local-only</strong></p>
+
+<p><strong>vlan uuid_tunnel-gre-15</strong></p>
+
+<p><strong>}</strong></p>
+
+<p>#SNATs</p>
+
+<p>The SNAT pool for a tenant is shared by all vips.</p>
+
+<p>SNAT address name:</p>
+
+<p>&lt;prefix&gt;_snat-&lt;traffic-group&gt;&lt;neutron subnet id&gt;</p>
+
+<p>Unfortunately, there is no delimiter between traffic group and neutron<br />
+subnet id. There probably should be.</p>
+
+<p>SNAT pool:</p>
+
+<p>&lt;prefix&gt;_&lt;tenant id&gt;</p>
+
+<p>ltm snat-translation<br />
+uuid_snat-traffic-group-1d1cee7c4-da59-49b1-94fe-99ca796a909b_0 {</p>
+
+<p>address 10.20.1.5%2</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>traffic-group /Common/traffic-group-1</p>
+
+<p>}</p>
+
+<p>ltm snat-translation<br />
+uuid_snat-traffic-group-177a9f215-832f-477a-9a3d-9560034de268_0 {</p>
+
+<p>address 10.10.1.6%2</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>traffic-group /Common/traffic-group-1</p>
+
+<p>}</p>
+
+<p>ltm snatpool uuid_4ae5e0e06dbb49eead35a66792e1023e {</p>
+
+<p>members {</p>
+
+<p>/Common/uuid_snat-traffic-group-1552dea3a-965f-4a97-bae1-1f18f87cb54d_0</p>
+
+<p>uuid_snat-traffic-group-177a9f215-832f-477a-9a3d-9560034de268_0</p>
+
+<p>uuid_snat-traffic-group-1d1cee7c4-da59-49b1-94fe-99ca796a909b_0</p>
+
+<p>}</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>}</p>
+
+<p>\<br />
+<span id="_Toc288678398" class="anchor"><span id="_Toc416167919" class="anchor"></span></span>iApps and Objects<br />
+—————————————————————————————————————</p>
+
+<h3 id="span-idtoc288678399-classanchorspan-idtoc416167920-classanchorspanspanoverview"><span id="_Toc288678399" class="anchor"><span id="_Toc416167920" class="anchor"></span></span>Overview</h3>
+
+<h3 id="iapp-folder">iApp Folder</h3>
+
+<h4 id="naming-convention">Naming Convention</h4>
+
+<p>/&lt;partition&gt;/&lt;prefix&gt;_&lt;neutron lb-pool id&gt;.app/</p>
+
+<h4 id="example">Example</h4>
+
+<p>(/uuid_4ae5e0e06dbb49eead35a66792e1023e)(tmos)# list sys folder</p>
+
+<p>sys folder uuid_48dfaed4-2502-4169-8191-85cc8a114308.app {</p>
+
+<p>app-service<br />
+/uuid_4ae5e0e06dbb49eead35a66792e1023e/uuid_48dfaed4-2502-4169-8191-85cc8a114308.app/uuid_48dfaed4-2502-4169-8191-85cc8a114308</p>
+
+<p>device-group /Common/openstack.bigip.cluster</p>
+
+<p>inherited-devicegroup true</p>
+
+<p>inherited-traffic-group true</p>
+
+<p>traffic-group /Common/traffic-group-1</p>
+
+<p>}</p>
+
+<h3 id="section">\</h3>
+<p>iApp Folder Contents</p>
+
+<p>(/uuid_4ae5e0e06dbb49eead35a66792e1023e/uuid_48dfaed4-2502-4169-8191-85cc8a114308.app)(tmos)#<br />
+<strong>list sys application</strong></p>
+
+<p>sys application service uuid_48dfaed4-2502-4169-8191-85cc8a114308 { … }</p>
+
+<p>(/uuid_4ae5e0e06dbb49eead35a66792e1023e/uuid_48dfaed4-2502-4169-8191-85cc8a114308.app)(tmos)#<br />
+<strong>list ltm</strong></p>
+
+<p>ltm default-node-monitor {</p>
+
+<p>rule none</p>
+
+<p>}</p>
+
+<p>ltm dns analytics global-settings { }</p>
+
+<p>ltm dns cache global-settings { }</p>
+
+<p>ltm global-settings connection { }</p>
+
+<p>ltm global-settings general {</p>
+
+<p>share-single-mac vmw-compat</p>
+
+<p>}</p>
+
+<p>ltm global-settings traffic-control { }</p>
+
+<p>ltm monitor http uuid_48dfaed4-2502-4169-8191-85cc8a114308_http {</p>
+
+<p>&lt;contents snipped&gt;</p>
+
+<p>}</p>
+
+<p>ltm persistence global-settings { }</p>
+
+<p>ltm pool uuid_48dfaed4-2502-4169-8191-85cc8a114308_pool {</p>
+
+<p>&lt;contents snipped&gt;</p>
+
+<p>}</p>
+
+<p>ltm profile http uuid_48dfaed4-2502-4169-8191-85cc8a114308_http {</p>
+
+<p>&lt;contents snipped&gt;</p>
+
+<p>}</p>
+
+<p>ltm virtual uuid_48dfaed4-2502-4169-8191-85cc8a114308_vip {</p>
+
+<p>&lt;contents snipped&gt;</p>
+
+<p>}</p>
+
+<h3 id="section-1">\</h3>
+<p>iApp Service</p>
+
+<h4 id="naming-convention-1">Naming Convention</h4>
+
+<p>&lt;prefix&gt;_&lt;neutron lb-pool id&gt;</p>
+
+<h4 id="example-1">Example</h4>
+
+<p>root@(host-10-10-0-2)<br />
+(Standby)(/uuid_4ae5e0e06dbb49eead35a66792e1023e/uuid_48dfaed4-2502-4169-8191-85cc8a114308.app)(tmos)#<br />
+list sys application service</p>
+
+<p>sys application service uuid_48dfaed4-2502-4169-8191-85cc8a114308 {</p>
+
+<p>device-group /Common/openstack.bigip.cluster</p>
+
+<p>inherited-devicegroup true</p>
+
+<p>inherited-traffic-group true</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>tables {</p>
+
+<p>pool__members {</p>
+
+<p>column-names { addr connection_limit port state }</p>
+
+<p>rows {</p>
+
+<p>{ row { 10.10.1.2%2 10000 80 enabled } }</p>
+
+<p>{ row { 10.60.0.2%0 10000 80 enabled } }</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>template /Common/f5.lbaas</p>
+
+<p>traffic-group /Common/traffic-group-1</p>
+
+<p>variables {</p>
+
+<p>app_stats { value enabled }</p>
+
+<p>pool__lb_method { value round-robin }</p>
+
+<p>pool__monitor { value http }</p>
+
+<p>pool__port { value 80 }</p>
+
+<p>vip__addr { value 10.20.1.2%2 }</p>
+
+<p>vip__port { value 80 }</p>
+
+<p>vip__protocol { value http }</p>
+
+<p>vip__state { value enabled }</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<h3 id="section-2">\</h3>
+<p>Pool</p>
+
+<h4 id="naming-convention-2">Naming Convention</h4>
+
+<p>uuid_48dfaed4-2502-4169-8191-85cc8a114308_pool</p>
+
+<h4 id="example-2">Example</h4>
+
+<h3 id="span-idtoc288678401-classanchorspan-idtoc416167931-classanchorspanspanvip"><span id="_Toc288678401" class="anchor"><span id="_Toc416167931" class="anchor"></span></span>VIP</h3>
+
+<h4 id="naming-convention-3">Naming Convention</h4>
+
+<p>uuid_48dfaed4-2502-4169-8191-85cc8a114308_vip</p>
+
+<h4 id="example-3">Example</h4>
+
+<h3 id="span-idtoc288678402-classanchorspan-idtoc416167934-classanchorspanspanvip-profile"><span id="_Toc288678402" class="anchor"><span id="_Toc416167934" class="anchor"></span></span>VIP profile</h3>
+
+<p>ltm profile http uuid_48dfaed4-2502-4169-8191-85cc8a114308_http {</p>
+
+<p>app-service<br />
+/uuid_4ae5e0e06dbb49eead35a66792e1023e/uuid_48dfaed4-2502-4169-8191-85cc8a114308.app/uuid_48dfaed4-2502-4169-8191-85cc8a114308</p>
+
+<p>}</p>
+
+<h3 id="span-idtoc288678403-classanchorspan-idtoc416167935-classanchorspanspanmonitor"><span id="_Toc288678403" class="anchor"><span id="_Toc416167935" class="anchor"></span></span>Monitor</h3>
+
+<p>ltm monitor http uuid_48dfaed4-2502-4169-8191-85cc8a114308_http</p>
+
+<p><span id="_Toc414602465" class="anchor"><span id="_Toc288678404" class="anchor"><span id="_Toc414602464" class="anchor"></span></span></span>\<br />
+Node and Virtual addresses<br />
+———————————————————————————————————————————————-</p>
+
+<p>Node addresses and virtual-addresses are created automatically for pool<br />
+members and virtual servers. They represent the IP-level identify of the<br />
+pool member and virtual-service.</p>
+
+<p>Pool member are identified by address and port. All pool members with<br />
+the same address implicitly refer to the same “node-address”. The<br />
+node-address can be used, for example, to set a connection limit on the<br />
+node (the server) as a whole rather than for a specific address/port<br />
+used by pool members.</p>
+
+<p>Node addresses and virtual addresses are created in the “root” of the<br />
+partition. In other words, they are in the tenant partition, but they<br />
+are not</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes Pending)(Standby)(/)(tmos)# cd<br />
+uuid_4ae5e0e06dbb49eead35a66792e1023e/</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/uuid_4ae5e0e06dbb49eead35a66792e1023e)(tmos)#<br />
+<strong>list ltm node</strong></p>
+
+<p>ltm node 10.10.1.2%2 {</p>
+
+<p>address 10.10.1.2%2</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>}</p>
+
+<p>ltm node 10.60.0.2%0 {</p>
+
+<p>address 10.60.0.2</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>}</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/uuid_4ae5e0e06dbb49eead35a66792e1023e)(tmos)#<br />
+<strong>list ltm virtual-address</strong></p>
+
+<p>ltm virtual-address 10.20.1.2%2 {</p>
+
+<p>address 10.20.1.2%2</p>
+
+<p>mask 255.255.255.255</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>traffic-group /Common/traffic-group-1</p>
+
+<p>}</p>
+
+<p>Node addresses are apparently not be cleaned up when an iApp is deleted,<br />
+so they have to be deleted by the plug-in after the iApp is deleted.</p>
+
+<p>ISSUE: Node addresses for route-domain %0 addresses also show up in a<br />
+tenant partition. Is that OK? Can another tenant create the same exact<br />
+node in a different partition?</p>
+
+<p>\<br />
+<span id="_Toc288678405" class="anchor"><span id="_Toc416167937" class="anchor"></span></span>Static ARP Entries<br />
+—————————————————————————————————————-</p>
+
+<p>IP addresses for shared networks have ARP entries in the /Common<br />
+partition.</p>
+
+<p>root@(host-10-10-0-2)(Standby)(/Common)(tmos)# list net arp</p>
+
+<p>net arp /Common/10.60.0.2 {</p>
+
+<p>ip-address 10.60.0.2</p>
+
+<p>mac-address fa:16:3e:6a:7d:a9</p>
+
+<p>}</p>
+
+<p>IP addresses for tenant networks have ARP entries in the tenant<br />
+partition:</p>
+
+<p>root@(host-10-10-0-2)(Standby)(/Common)(tmos)# cd<br />
+/uuid_4ae5e0e06dbb49eead35a66792e1023e/</p>
+
+<p>root@(host-10-10-0-2)(Standby)(/uuid_4ae5e0e06dbb49eead35a66792e1023e)(tmos)#<br />
+list net arp</p>
+
+<p>net arp /uuid_4ae5e0e06dbb49eead35a66792e1023e/10.10.1.2%2 {</p>
+
+<p>ip-address 10.10.1.2%2</p>
+
+<p>mac-address fa:16:3e:53:42:dc</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>}</p>
+
+<h2 id="fdb-entries">FDB Entries</h2>
+
+<p>IP addresses for shared networks have fdb entries in the /Common<br />
+partition.</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/Common)(tmos)# list net fdb</p>
+
+<p>net fdb tunnel http-tunnel { }</p>
+
+<p>net fdb tunnel socks-tunnel { }</p>
+
+<p>net fdb tunnel uuid_tunnel-gre-14 {</p>
+
+<p>records {</p>
+
+<p>fa:16:3e:6a:7d:a9 {</p>
+
+<p>endpoint 10.30.30.2</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>net fdb vlan vlan.datanet { }</p>
+
+<p>net fdb vlan vlan.external { }</p>
+
+<p>net fdb vlan vlan.ha { }</p>
+
+<p>net fdb vlan vlan.internal { }</p>
+
+<p>net fdb vlan vlan.mirroring { }</p>
+
+<p>IP addresses for tenant networks have fdb entries in the tenant<br />
+partition:</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/Common)(tmos)# cd<br />
+/uuid_4ae5e0e06dbb49eead35a66792e1023e/</p>
+
+<p>root@(host-10-10-0-2)(cfg-sync Changes<br />
+Pending)(Standby)(/uuid_4ae5e0e06dbb49eead35a66792e1023e)(tmos)# list<br />
+net fdb</p>
+
+<p>net fdb tunnel uuid_tunnel-gre-15 {</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>records {</p>
+
+<p>fa:16:3e:53:42:dc {</p>
+
+<p>endpoint 10.30.30.2</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>net fdb tunnel uuid_tunnel-gre-16 {</p>
+
+<p>partition uuid_4ae5e0e06dbb49eead35a66792e1023e</p>
+
+<p>records {</p>
+
+<p>02:00:16:1e:1e:01 {</p>
+
+<p>endpoint 10.30.30.1</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>\<br />
+<span id="_Toc414602466" class="anchor"><span id="_Toc288678406" class="anchor"><span id="_Toc416167939" class="anchor"></span></span></span>Major Operations<br />
+=============================================================================================================================================================</p>
+
+<h2 id="span-idtoc414602468-classanchorspan-idtoc288678407-classanchorspan-idtoc416167940-classanchorspanspanspandriver-startup"><span id="_Toc414602468" class="anchor"><span id="_Toc288678407" class="anchor"><span id="_Toc416167940" class="anchor"></span></span></span>Driver Startup</h2>
+
+<p>Create RPC interface to Agent.</p>
+
+<p>Load the agent scheduler driver.</p>
+
+<p>Install callbacks for RPC.</p>
+
+<p>Wait for a service request.</p>
+
+<h2 id="span-idtoc414602469-classanchorspan-idtoc288678408-classanchorspan-idtoc416167941-classanchorspanspanspanagent-startup"><span id="_Toc414602469" class="anchor"><span id="_Toc288678408" class="anchor"><span id="_Toc416167941" class="anchor"></span></span></span>Agent Startup</h2>
+
+<p>Process the networking configuration.</p>
+
+<p>Process the hostnames.</p>
+
+<p>Initialize the managers.</p>
+
+<p>Connect to the BIG-IPS.</p>
+
+<p>Validate HA config.</p>
+
+<p>Discover traffic groups</p>
+
+<p>Setup Tunneling</p>
+
+<p>Prepare the Agent “Configuration” for reporting.</p>
+
+<p>If the agent fails, it should be restarted automatically by the<br />
+operating system. The most common fatal failure is that the agent is<br />
+unable to connect to the BIG-IPs. In this case, the agent pauses 5<br />
+seconds before terminating, in order to avoid a restart “storm”.</p>
+
+<p>\<br />
+<span id="_Toc288678409" class="anchor"><span id="_Toc416167942" class="anchor"></span></span>Agent Status Updates<br />
+——————————————————————————————————————</p>
+
+<p>The agent periodically reports its status to the neutron server. The<br />
+agent uses the default period, which is currently defined in<br />
+neutron/agent/common/config.py as 30 seconds.</p>
+
+<p>The agent_manager reports the agent state using the _report_state<br />
+method. It uses the following data structure to report the state:</p>
+
+<p>self.agent_state = {</p>
+
+<p>‘binary’: ‘f5-bigip-lbaas-agent’,</p>
+
+<p>‘host’: self.agent_host,</p>
+
+<p>‘topic’: plugin_driver.TOPIC_LOADBALANCER_AGENT,</p>
+
+<p>‘agent_type’: neutron_constants.AGENT_TYPE_LOADBALANCER,</p>
+
+<p>‘l2_population’: self.conf.l2_population,</p>
+
+<p>‘configurations’: agent_configurations,</p>
+
+<p>‘start_flag’: True}</p>
+
+<p>A significant amount of information is populated in the “configurations”<br />
+member. The agent_manager populates agent_state.configurations before<br />
+reporting with the current service count, the current service queue<br />
+size, and the agent driver configurations:</p>
+
+<p>service_count = self.cache.size</p>
+
+<p>self.agent_state[‘configurations’][‘services’] = service_count</p>
+
+<p>if hasattr(self.lbdriver, ‘service_queue’):</p>
+
+<p>self.agent_state[‘configurations’][‘request_queue_depth’] = \</p>
+
+<p>len(self.lbdriver.service_queue)</p>
+
+<p>if self.lbdriver.agent_configurations:</p>
+
+<p>self.agent_state[‘configurations’].update(</p>
+
+<p>self.lbdriver.agent_configurations</p>
+
+<p>)</p>
+
+<p>The agent driver populates its configuration with the following members:</p>
+
+<p>tunnel_types</p>
+
+<p>icontrol_endpoints</p>
+
+<p>bridge_mappings</p>
+
+<p>common_networks</p>
+
+<p>tunneling_ips</p>
+
+<p>environment_prefix</p>
+
+<p>This information can be displayed with the “neutron agent-show<br />
+&lt;agent-id&gt;” command. Agent ids can be obtained with the “neutron<br />
+agent-list” command.</p>
+
+<h2 id="span-idtoc288678410-classanchorspan-idtoc416167943-classanchorspanspanrequest-handling"><span id="_Toc288678410" class="anchor"><span id="_Toc416167943" class="anchor"></span></span>Request Handling</h2>
+
+<h3 id="span-idtoc288678411-classanchorspan-idtoc416167944-classanchorspanspanrequest-initiation"><span id="_Toc288678411" class="anchor"><span id="_Toc416167944" class="anchor"></span></span>Request Initiation</h3>
+
+<p>Command line, GUI, or API is used. Command line and GUI are converted to<br />
+API calls.</p>
+
+<p>The API call is made to the Neutron Server.</p>
+
+<h3 id="span-idtoc288678412-classanchorspan-idtoc416167945-classanchorspanspanplug-in-request-handling"><span id="_Toc288678412" class="anchor"><span id="_Toc416167945" class="anchor"></span></span>Plug-In Request Handling</h3>
+
+<p>After the request has been validated and authorized by Neutron, the F5<br />
+plug-in receives a python method call from the Neutron server for the<br />
+LBaaS operation. All LBaaS requests are related to a particular pool.<br />
+The plug-in determines which agent “owns” the pool related to the<br />
+request. If this is a new pool, the plug-in selects an agent using a<br />
+pool-to-agent “scheduler”. The scheduler records the selected agent for<br />
+the pool in the Neutron database.</p>
+
+<p>While the most folks use the word “scheduler” to describe something that<br />
+sequences events across time, the OpenStack community is using it to<br />
+describe something that “assigns a workload”. So, a VM “scheduler” might<br />
+choose which compute host a VM should run on. An LBaaS agent scheduler<br />
+chooses which LBaaS agent to service a particular request.</p>
+
+<p>Typically the plug-in builds a service definition for the request and<br />
+then calls into the agent RPC interface. Some requests are handled in a<br />
+special manner, however. Those details are provided in the following<br />
+sections.</p>
+
+<h4 id="span-idtoc288678413-classanchorspan-idtoc416167946-classanchorspanspancreate-pool"><span id="_Toc288678413" class="anchor"><span id="_Toc416167946" class="anchor"></span></span>Create Pool</h4>
+
+<p>Since this is a new pool, an agent is selected.</p>
+
+<h4 id="span-idtoc288678414-classanchorspan-idtoc416167947-classanchorspanspancreate-member"><span id="_Toc288678414" class="anchor"><span id="_Toc416167947" class="anchor"></span></span>Create Member</h4>
+
+<p>If this is a duplicate member then the plug-in sets the member status to<br />
+error, and continues processing. Frankly, it may not make sense for it<br />
+to continue processing but it does.</p>
+
+<h4 id="section-3">\</h4>
+<p><span id="_Toc288678415" class="anchor"><span id="_Toc416167948" class="anchor"></span></span>Create VIP</p>
+
+<p>When the plug-in receives a request to create a vip, the vip will<br />
+already have a port assigned to it. All IP addresses in Neutron are<br />
+associated with a port on a subnet. The notion of a port in Neutron is<br />
+rather “flexible”. A port does not necessarily represent a port on a<br />
+switch. It is simply the data structure in Neutron that “connects” a<br />
+subnet with an IP address, and (optionally) a device that “owns” that IP<br />
+address. The interesting flexibility within Neutron is that the “device”<br />
+that connects to the port does not necessarily have to be a Virtual<br />
+Machine, although it commonly is. The “device” can be pretty much<br />
+anything (or just left blank). This makes sense because Neutron has a<br />
+number of “devices” such as the Neutron router, DHCP agent, and the HA<br />
+Proxy load balancer, none of which are typically implemented as virtual<br />
+machines.</p>
+
+<p>The plug-in updates the VIP port to say that the LBaaS agent is the<br />
+device that owns the port. Then the plug-in proceeds with the usual<br />
+processing.</p>
+
+<h3 id="section-4">\</h3>
+<p><span id="_Toc288678416" class="anchor"><span id="_Toc416167949" class="anchor"></span></span>Agent Request Handling</p>
+
+<h4 id="span-idtoc288678417-classanchorspan-idtoc416167950-classanchorspanspanoverview"><span id="_Toc288678417" class="anchor"><span id="_Toc416167950" class="anchor"></span></span>Overview</h4>
+
+<p>The agent manager receives the LBaaS RPC calls from the plug-in and<br />
+calls into the driver to process the method.</p>
+
+<p><span id="_Toc371078180" class="anchor"></span>The service request<br />
+handler methods all call into _common_service_handler.</p>
+
+<p>Determine whether big-iq can be used</p>
+
+<p>Ensure tenant partition exists if necessary</p>
+
+<p>Ensure networking is provisioned if necessary. This is explained in<br />
+further detail later.</p>
+
+<p>If BIG-IQ possible, proceed to BIG-IQ iApp deployment, otherwise<br />
+configure directly.</p>
+
+<p>Depending on configuration, proceed to configuring directly using iApp<br />
+(template) APIs, which is explained by the topic named “BIG-IP iApp<br />
+Deployment”, or using object (non-template) APIs, which is explained by<br />
+the following section named “BIG-IP Object Deployment”.</p>
+
+<p>After service configuration, networking cleanup is done if necessary.</p>
+
+<p>Tenant cleanup is done if necessary.</p>
+
+<p>OpenStack LBaaS object statuses are updated via RPC back to Neutron.</p>
+
+<h4 id="span-idtoc288678418-classanchorspan-idtoc416167951-classanchorspanspandetermining-whether-big-iq-can-be-used"><span id="_Toc288678418" class="anchor"><span id="_Toc416167951" class="anchor"></span></span>Determining whether BIG-IQ can be used</h4>
+
+<p>The BIG-IQ configuration must be present and correct. The OpenStack<br />
+credentials must be present and correct. The tenant must have a BIG-IP<br />
+running in their project.</p>
+
+<h4 id="span-idtoc288678419-classanchorspan-idtoc416167952-classanchorspanspannetworking-setup"><span id="_Toc288678419" class="anchor"><span id="_Toc416167952" class="anchor"></span></span>Networking Setup</h4>
+
+<p>The agent driver uses a “NetworkBuilderDirect” class to configure BIG-IP<br />
+so it can connect to OpenStack networks. The entry point into this class<br />
+that is used to ensure network connectivity with a service definition is<br />
+named “prep_service_networking”.</p>
+
+<p>Currently, the driver does not deploy the iApp until a VIP is defined,<br />
+and so the driver does not do any networking configuration either if the<br />
+vip is not define. This should be resolved in the Green Flash release.</p>
+
+<p>For every BIG-IP, a VLAN or tunnel, and an IP address is configured for<br />
+every subnet that the BIG-IPs need to be connected to. Each BIG-IP gets<br />
+a unique IP address so that it can independently communicate with pool<br />
+members in order to perform service checking. Additional floating IP<br />
+(SNAT) addresses are used when the BIG-IP is load balancing connections<br />
+that flow through the vip.</p>
+
+<h4 id="span-idtoc288678420-classanchorspan-idtoc416167953-classanchorspanspanbig-iq-iapp-deployment"><span id="_Toc288678420" class="anchor"><span id="_Toc416167953" class="anchor"></span></span>BIG-IQ iApp Deployment</h4>
+
+<p>Create Connector</p>
+
+<p>Discover Devices</p>
+
+<p>Deploy iApp</p>
+
+<p>Allowed Address Pairs</p>
+
+<h4 id="span-idtoc288678421-classanchorspan-idtoc416167954-classanchorspanspanbig-ip-iapp-deployment"><span id="_Toc288678421" class="anchor"><span id="_Toc416167954" class="anchor"></span></span>BIG-IP iApp Deployment</h4>
+
+<p>Deploys iApp</p>
+
+<h4 id="span-idtoc288678422-classanchorspan-idtoc416167955-classanchorspanspaniapp-design"><span id="_Toc288678422" class="anchor"><span id="_Toc416167955" class="anchor"></span></span>iApp Design</h4>
+
+<p>This section describes how the iApp, which resides on BIG-IP, works.<br />
+First, this is a traditional Tcl based iApp</p>
+
+<h4 id="section-5">\</h4>
+<p><span id="_Toc288678423" class="anchor"><span id="_Toc416167956" class="anchor"></span></span>BIG-IP Object Deployment</p>
+
+<p>This section describes the process for creating LBaaS objects on BIG-IP<br />
+directly from the plug-in (instead of using BIG-IQ) and by using<br />
+individual REST APIs to create objects rather than using iApp templates.</p>
+
+<h4 id="span-idtoc288678424-classanchorspan-idtoc416167957-classanchorspanspannetworking-cleanup"><span id="_Toc288678424" class="anchor"><span id="_Toc416167957" class="anchor"></span></span>Networking Cleanup</h4>
+
+<p>If any pool members or vip deleted the driver checks to see if any other<br />
+members or vips are on the network</p>
+
+<p>\<br />
+<span id="_Toc414602471" class="anchor"><span id="_Toc288678425" class="anchor"><span id="_Toc416167958" class="anchor"></span></span></span>Periodic Sync<br />
+———————————————————————————————————————————————————-</p>
+
+<p>The Agent periodically ensures that all services in OpenStack are<br />
+configured properly.</p>
+
+<h2 id="span-idtoc414602472-classanchorspan-idtoc288678426-classanchorspan-idtoc416167959-classanchorspanspanspanperiodic-save"><span id="_Toc414602472" class="anchor"><span id="_Toc288678426" class="anchor"><span id="_Toc416167959" class="anchor"></span></span></span>Periodic Save</h2>
+
+<p>The Agent periodically saves the configuration. Saving is serialized<br />
+along with other methods.</p>
+
+<h2 id="span-idtoc414602473-classanchorspan-idtoc288678427-classanchorspan-idtoc416167960-classanchorspanspanspanperiodic-purge"><span id="_Toc414602473" class="anchor"><span id="_Toc288678427" class="anchor"><span id="_Toc416167960" class="anchor"></span></span></span>Periodic Purge</h2>
+
+<p>Pools on BIG-IP that appear to be managed* by the current agent but do<br />
+not correspond to a known service within OpenStack are removed<br />
+automatically.</p>
+
+<p>*See the Agent Prefix topic for additional information.</p>
+
+<h2 id="span-idtoc414602474-classanchorspan-idtoc288678428-classanchorspan-idtoc416167961-classanchorspanspanspantunneling-control-plane-integration"><span id="_Toc414602474" class="anchor"><span id="_Toc288678428" class="anchor"><span id="_Toc416167961" class="anchor"></span></span></span>Tunneling Control Plane Integration</h2>
+
+<h3 id="tunnel-sync">Tunnel Sync</h3>
+
+<p>The agent periodically reports its tunnel end points.</p>
+
+<h3 id="span-idtoc414602475-classanchorspan-idtoc288678429-classanchorspan-idtoc416167963-classanchorspanspanspanfdb-handling"><span id="_Toc414602475" class="anchor"><span id="_Toc288678429" class="anchor"><span id="_Toc416167963" class="anchor"></span></span></span>FDB Handling</h3>
+
+<p>The agent periodically updates tunneling MAC-to-VTEP records.</p>
+
+<h3 id="span-idtoc414602476-classanchorspan-idtoc288678430-classanchorspan-idtoc416167964-classanchorspanspanspanl2-population-handling"><span id="_Toc414602476" class="anchor"><span id="_Toc288678430" class="anchor"><span id="_Toc416167964" class="anchor"></span></span></span>L2 Population Handling</h3>
+
+<p>When l2 tunnel created or deleted, l2.assure_bigip_network_vxlan and<br />
+l2.assure_bigip_network_gre use the fdb_connector class to call l2<br />
+population rpcs which advertise flooding records for the tunnels, which<br />
+the local tunnel ip address of the bigip as the endpoint.</p>
+
+<p>\<br />
+<span id="_Toc414602477" class="anchor"><span id="_Toc288678431" class="anchor"><span id="_Toc416167965" class="anchor"></span></span></span>Failure Recovery<br />
+=============================================================================================================================================================</p>
+
+<h2 id="span-idtoc288678432-classanchorspan-idtoc416167966-classanchorspanspanagent-failure"><span id="_Toc288678432" class="anchor"><span id="_Toc416167966" class="anchor"></span></span>Agent Failure</h2>
+
+<p>If the agent stops working for whatever reason, restarting it is the<br />
+first procedure to try and will usually will resolve the problem.</p>
+
+<h2 id="span-idtoc288678433-classanchorspan-idtoc416167967-classanchorspanspanintermittent-api-failure"><span id="_Toc288678433" class="anchor"><span id="_Toc416167967" class="anchor"></span></span>Intermittent API Failure</h2>
+
+<p>Any intermittent problems with APIs and so forth will usually throw an<br />
+exception that will fail the entire request. There is very little retry<br />
+handling in the lower level code. Therefore, recovery is done at a<br />
+higher level. The method that is used to “repair” a service that was not<br />
+configured properly is to periodically sync services with BIG-IP. So,<br />
+even if the configuration failed, later the sync process will attempt to<br />
+resync the service definition to the device. At that point the<br />
+configuration should be completed. This process may take several minutes<br />
+because the sync process does not run very often.</p>
+
+<h2 id="span-idtoc288678434-classanchorspan-idtoc416167968-classanchorspanspanbig-iq-failure"><span id="_Toc288678434" class="anchor"><span id="_Toc416167968" class="anchor"></span></span>BIG-IQ Failure</h2>
+
+<p>Discuss BIG-IQ HA strategy here.</p>
+
+<h2 id="span-idtoc288678435-classanchorspan-idtoc416167969-classanchorspanspanbig-ip-failure-handling"><span id="_Toc288678435" class="anchor"><span id="_Toc416167969" class="anchor"></span></span>BIG-IP Failure Handling</h2>
+
+<p>An exception handler needs to be added to every big-ip loop so failure<br />
+of one big-ip doesn’t affect population of the others.</p>
+
+<p>Currently syncs will probably fail with long delays.</p>
+
+<h2 id="span-idtoc288678436-classanchorspan-idtoc416167970-classanchorspanspanbig-ip-failure-recovery"><span id="_Toc288678436" class="anchor"><span id="_Toc416167970" class="anchor"></span></span>BIG-IP Failure Recovery</h2>
+
+<h3 id="replication-mode">Replication Mode</h3>
+
+<p>When a BIG-IP comes back online, it should recovery missing services as<br />
+it sees them.</p>
+
+<h3 id="auto-sync-mode">Auto Sync Mode</h3>
+
+<p>When a BIG-IP comes back online, its per-device configuration needs to<br />
+be established before a sync can succeed. But the current autosync<br />
+sync_mode strategy will probably fail after the first sync fails for<br />
+the first service. The configuration may need to be put into replication<br />
+mode to recover. This is an open issue.</p>
+
+    
+	</div>
+ 
+
+    <!-- <link href="../assets/css/f5-styles.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<footer id="F5-Footer">
+
+<div>
+  <ul class="links" id="F5-Footer">
+              <li>
+                <p class="toggleNext toggleMobile"><span class="icon-down visible-xs-inline hidden-ie">&#8203;</span> Connect With Us</p>
+                <ul class="social-media">
+                    
+                    <!-- en -->
+                    <li><a href="//twitter.com/f5networks" target="_blank" data-name="twitter" data-type="" data-prefix="social" data-utf="E032" title="Twitter" class="externalLink"><i class="icon-twitter"></i></a> </li>
+                    <li><a href="//www.linkedin.com/companies/f5-networks" target="_blank" class="linkedin externalLink" title="LinkedIn"><i class="icon-linkedin"></i></a> </li>
+                    <li><a href="//www.facebook.com/f5networksinc" target="_blank" class="facebook externalLink" title="Facebook"><i class="icon-facebook"></i></a> </li>
+                    <li><a href="//www.youtube.com/f5networksinc" target="_blank" class="youtube externalLink" title="YouTube"><i class="icon-youtube"></i></a> </li>
+                    <li><a href="//devcentral.f5.com/" target="_blank" class="devcentral currentURL internalLink" title="DevCentral"><i class="icon-dc-pos"></i></a> </li>
+                    
+                </ul>
+            </li>
+      
+  
+       		<li><p class="toggleNext toggleMobile"><span class="icon-down visible-xs-inline hidden-ie">&#8203;</span>Find Us On GitHub</p>
+      <ul>
+      	<li>
+        <a href="https://github.com/F5Networks"><span class="username">F5Networks/</span><span class="repo"></span>  
+        </a>
+      	</li>
+
+      
+      
+	</ul>
+    </li>
+    </ul>
+  </div>
+    
+<div class="back-to-top"><a><span class="icon-up">&#8203;</span></a></div>
+</footer>
+ -->
+
+</body>
+<script>
+        $(function() {
+            //Calls the tocify method on the HTML div.
+            $("#toc").tocify();
+        });
+</script>    
+</html>          
+

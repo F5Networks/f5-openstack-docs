@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!--<head>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Cloud and SDN Overview</title>
+    
+    <!-- Site metadata -->
+    <meta name="description" content="Uniquely cloud-ready">
+
+    <!--styles-->
+    <link rel="stylesheet" href="../assets/css/bootstrap-docs.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/f5-styles.css" type="text/css">
+
+    <!--link rel="canonical" href="http://F5Networks.github.io/f5-openstack-docs/f5-os-docs/Cloud-and-SDN-Overview/"-->
+
+    <link rel="alternate" type="application/rss+xml" title="F5 OpenStack" href="http://F5Networks.github.io/f5-openstack-docsfeed.xml" />
+   
+  </head>
+
+ -->
+<head>
+  <title>Cloud and SDN Overview</title>
+      
+<!-- tocify by Greg Franko gfranko / jquery.tocify.js-->
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- tocify styles-->
+    <link type="text/css" rel="stylesheet" href="../assets/css/jquery.tocify.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.css">
+
+    <!-- tocify scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../assets/js/jquery.tocify.js"></script>
+
+    
+
+</head>
+      
+<body>
+    <!--<!DOCTYPE html lang="en">
+<link href="http://F5Networks.github.ioassets/css/f5-styles.css" rel="stylesheet" type="text/css">
+
+<header id="F5-Header" class="meta-open animate">
+  <div class="main-row">
+  <div class="container">
+      <div class="outside">
+            <div class="brand">
+            <a href="http://f5.com"><img src="https://cdn.f5.com/digital-platforms/images/logo.svg" alt="F5 Networks" height="42" width="47"></a>
+			</div>
+            <div class="nav-inline">
+            <ul class="main-nav" id="MainMenu">                
+               
+                <li><a class="externalLink" href="http://devcentral.f5.com">DevCentral</a></li>
+				        
+                <li><a class="externalLink" href="http://support.f5.com">Support</a></li>
+                
+                <li><a class="page-link" href="http://F5Networks.github.io">Documentation</a></li>
+                
+                <li><a class="externalLink" href="http://www.openstack.org/">OpenStack</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+  </div>  
+      <!--div class="trigger">
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Cloud-and-SDN-Overview/">Cloud and SDN Overview</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Demo-and-Testing-Tools-Guide/">OpenStack Demo and Testing Tools</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/F5-Platforms-for-Cloud-Guide/">F5 Platforms for Cloud</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/Int-Cloud-Services-Overview/">Cloud Services Overview</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/LBaaS-Plugin-Design-Guide/">LBaaS Plugin Design Guide</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/LBaaS-Solution-Overview/">LBaaS Solution Overview</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/">F5 OpenStack Docs Index</a>
+          
+        
+          
+          <a class="page-link" href="http://F5Networks.github.io/f5-os-docs/plug-in_architecture-design/">LBaaS Plug-in Architecture and Design</a>
+          
+        
+      </div-->
+</header>
+ -->
+     
+    <div class="container">
+      <div class="bs-docs-header">
+      <h1>Cloud and SDN Overview</h1>
+      </div>
+    </div>
+
+    <div class="bs-docs-sidebar">
+        <div class="bs-docs-sidenav" id="toc">
+        </div>
+    </div>
+
+
+  <div class="bs-docs-container">
+	
+		 <h1 id="introduction">#Introduction</h1>
+
+<p>The Cloud introduces new concepts, new limitations, new services, and<br />
+new opportunities for F5 customers. Services such as Amazon Web Services<br />
+or Rackspace Cloud and products such as VMware vCloud Director are<br />
+fundamentally changing the landscape of IT. F5 Customers are struggling<br />
+to understand the changing business and technical landscape in order to<br />
+deploy applications and network services economically and productively<br />
+in this new environment. This document attempts to provide guidance and<br />
+best-practices for customers using F5 products and services in a Cloud<br />
+environment.</p>
+
+<p>The first part of this document is called <em>Understanding the Cloud</em> and<br />
+is intended to give an overview of the business and technical landscape<br />
+of the cloud. The next section is called <em>Deploying F5 Devices in a<br />
+Cloud</em> <em>Environment</em> and describes how to get an F5 device operational<br />
+in a cloud environment, which applies to both deploying and using a<br />
+BIG-IP in an existing cloud environment, and also to deploying BIG-IP as<br />
+part of a cloud infrastructure that you are building. The next two<br />
+sections provide specific information for each of the two major<br />
+deployment models: <em>Using a Cloud</em> or <em>Building a Cloud</em>.</p>
+
+<p>Finally, the last two sections provide additional information to think<br />
+about beyond a basic cloud deployment. The next to the last section<br />
+describes integrated solutions that combine technology from F5 and a<br />
+third party partner of F5 as well as general information on F5<br />
+Partnerships. The last section describes the future directions of F5<br />
+technology within cloud environments.</p>
+
+<h1 id="audience">#Audience</h1>
+
+<p>This document was written for F5 employees working in a technical role<br />
+to help F5 customers plan their cloud deployments. While not intended<br />
+for F5 customers, some care has been taken to ensure that no important<br />
+F5 proprietary information is present in this document. So, while this<br />
+document was not written for F5 customers directly, there shouldn’t be a<br />
+problem with a customer receiving any of the information within this<br />
+document.</p>
+
+<h1 id="understanding-the-cloud">#Understanding the Cloud</h1>
+
+<h2 id="overview-of-usage-scenarios">##Overview of Usage Scenarios</h2>
+
+<p>In order to make appropriate deployment decisions, it is important to<br />
+think about the model you want to use for engaging with cloud<br />
+technologies. You can build it yourself, you can purchase cloud<br />
+offerings, or you can do both. You can run the cloud deployment on your<br />
+own premises, you can run them off-premise, or you can do both. There<br />
+are a number of variations to choose from. The following sections<br />
+provide definitions for the major variations of cloud deployments.</p>
+
+<h3 id="public-cloud">Public Cloud</h3>
+
+<p>By definition, a VM in a Public Cloud is accessible by the general<br />
+public. There is no isolated networking capability, and generally these<br />
+offerings are cheaper than Hosted Private Cloud offerings which provide<br />
+more isolation, such as IP subnets that are dedicated to a particular<br />
+tenant.</p>
+
+<p>With a “basic” Public Cloud deployment such as Amazon EC2, each VM is<br />
+given its own public IP address that maps to an internal private IP<br />
+address. However, another VM that is deployed using the same tenant’s<br />
+account may be deployed to a different IP subnet. With Amazon EC2, the<br />
+tenant has very little control of IP addresses, subnets, or routing.<br />
+Also, the VM is limited to one network interface. This makes it<br />
+impossible to create an isolated network for a three-tier deployment,<br />
+for example. (Well, not really impossible – see the section on Layered<br />
+Virtual Network Implementation.)</p>
+
+<p>The quintessential example of Public Cloud is Amazon EC2.</p>
+
+<p>It should be noted that Amazon has a premium service called Virtual<br />
+Private Cloud that does not have the same limitations as EC2.</p>
+
+<h3 id="hosted-private-cloud">Hosted Private Cloud</h3>
+
+<p>An off-premise cloud may be considered private if it is not accessible<br />
+to the public or from any other tenants using the same cloud provider.<br />
+Typically, a VPN is used to connect the cloud deployment back to the<br />
+enterprise.</p>
+
+<p>In addition to enhanced isolation, the private cloud may provide IP<br />
+subnets managed by the tenant, and provide more routing flexibility so<br />
+that the tenant can route back to their enterprise network.</p>
+
+<p>Examples of this are Amazon VPC, Rackspace Hosted Private Cloud, and<br />
+vCloud Director based Cloud Providers. Details on particular vendors are<br />
+provided in a later section.</p>
+
+<h3 id="on-premise-private-cloud">On-Premise Private Cloud</h3>
+
+<p>An on-premise private cloud is something an enterprise will build or<br />
+purchase if they want an elastic computing infrastructure (a cloud) but<br />
+they do not want to expose certain IT assets outside the enterprise.</p>
+
+<p>There are products available that allow the customer to run their own<br />
+cloud in their own environment. An example is VMware vCloud Director.</p>
+
+<h3 id="hybrid-cloud">Hybrid Cloud</h3>
+
+<p>The Hybrid Cloud is a solution that combines a private cloud on the<br />
+enterprise premise along with a vendor hosted cloud offering.</p>
+
+<p>While an enterprise may have some applications that they consider<br />
+sensitive and they may not be comfortable running in the cloud, there<br />
+may be some applications that they have no problem placing in the public<br />
+cloud because the information is less sensitive.</p>
+
+<p>Some vendors have recognized this and provide on-premise versions of<br />
+their infrastructure software so that the customer can run the cloud<br />
+infrastructure in their own environment. Then, if the customer wants to<br />
+deploy some assets to the cloud provider, the management system for the<br />
+enterprise can be designed to make that transition seamless.</p>
+
+<p>Examples of offerings oriented towards enterprise and vendor cloud<br />
+combinations are VMware vCloud Director and Rackspace Private Cloud.<br />
+Also, Eucalyptus is an open-source software platform that is design to<br />
+mimic Amazon’s EC2 environment. Eucalyptus is a bit different in that<br />
+Amazon is not providing the software, but has licensed the Amazon APIs<br />
+to Eucalyptus. Further details on particular vendors are provided in a<br />
+later section.</p>
+
+<p>In addition to vendors offering hybrid solutions, there are some<br />
+features that a cloud vendor may provide that will allow you to sort of<br />
+build your own hybrid cloud. For example, Amazon offers an IPSEC VPN<br />
+that can be used to connect your enterprise network to your cloud<br />
+deployment. So, this could be considered “hybrid-light”. It may not be a<br />
+full hybrid management solution that allows migrating workloads, a<br />
+combined view, and so forth, but it does at least support secure<br />
+communication between enterprise and cloud.</p>
+
+<p>Example Offerings: Rackspace Private Cloud (Hosted or Enterprise),<br />
+vCloud Director</p>
+
+<p>Example Gateway Products: Verizon CloudSwitch, Citrix CloudBridge, F5<br />
+Cloud Connector</p>
+
+<p>Example Hybrid-oriented Cloud Features: Amazon’s VPN</p>
+
+<p>Details on particular vendors are provided in a later section.</p>
+
+<h3 id="multi-cloud--hyper-hybrid-cloud">Multi-Cloud / Hyper Hybrid Cloud</h3>
+
+<p>The term <strong>Hyper Hybrid</strong> <strong>Cloud</strong> has been used to describe the most<br />
+sophisticated cloud deployments that include potentially multiple public<br />
+and private clouds networked together. In contrast, the simpler term<br />
+Hybrid Cloud may refer to a deployment of a combination of a single<br />
+private cloud and a single public cloud.</p>
+
+<p>Despite being around for years, the Hyper Hybrid term is not being used<br />
+consistently and in a widespread fashion. The simpler term, <strong>Hybrid<br />
+Cloud,</strong> appears to be used sometimes to refer to more complex cloud<br />
+deployments that include multiple clouds. So, it remains to be seen<br />
+whether these terms will be used interchangeably.</p>
+
+<p>Recently, Ranjeet from F5 has used the term “Multi Cloud” to refer to<br />
+the usage of multiple clouds, whether they are public or private.</p>
+
+<h3 id="abstract-cloud">Abstract Cloud</h3>
+
+<p>Some vendors are providing solutions that <em>abstract</em> the cloud. A<br />
+customer of this vendor would purchase cloud capacity from the<br />
+“abstract” vendor and then the vendor turns around and deploys the VMs<br />
+to a “real” cloud vendor. So, the customer interacts with one vendor and<br />
+does not necessarily know that their VMs have been “outsourced” to some<br />
+other vendor. By purchasing capacity from a “real” vendor in advance and<br />
+in bulk, the abstract vendor may be able to resell cloud capacity at a<br />
+lower price point and still make a profit. Also, the “abstract” vendor<br />
+can outsource to multiple vendors for redundancy, pricing, or other<br />
+reasons.</p>
+
+<p>In order to support multiple back end cloud vendors, the abstract vendor<br />
+will need to provide a consistent experience across all vendors. Given<br />
+the variation between cloud vendors, this is a significant problem. One<br />
+solution proposed by some abstract cloud vendors is to layer another<br />
+hypervisor on top of the hypervisor provided by the back end cloud<br />
+vendor. While this provides a consistent experience, there are two major<br />
+downsides to this approach. One is performance and latency problems<br />
+introduced by an additional layer. The second is that services that were<br />
+available from the underlying cloud vendor may not be directly<br />
+accessible because the layered hypervisor may not allow access to the<br />
+underlying network layer, for example, at least without going through<br />
+some sort of gateway.</p>
+
+<p>Example: Ravello</p>
+
+<h2 id="cloud-network-services">#Cloud Network Services</h2>
+
+<h2 id="introduction-1">Introduction</h2>
+
+<p>One very important part of a cloud offering are Cloud Services. Cloud<br />
+Services are services that a tenant can sign up for, usually by<br />
+purchasing them and having them billed to their account. While this<br />
+seems like a simple requirement, it has profound implications for how<br />
+various network features are exposed to users and how they are<br />
+configured.</p>
+
+<p>For a vendor selling cloud services, the services must be arranged into<br />
+sellable packages with clear pricing. Services are usually offered with<br />
+a simple configuration model because requiring complex configuration<br />
+options only adds friction to the sale. While the service may be<br />
+complex, the way the service is deployed and operated should not be<br />
+complex. Finally, the customer must understand exactly what they are<br />
+going to get for their money.</p>
+
+<p>The above requirements commonly result in simple tiered service<br />
+offerings with labels such as Gold, Silver, Bronze, or Small, Medium,<br />
+and Large. They result in simple service menus so the customer<br />
+understands what services are available. Simple web based wizards to<br />
+configure a service are presented. Finally, Service Level Agreements<br />
+(SLAs) regarding how the service will behave are established so the<br />
+customer understands exactly what they have purchased. SLAs may cover<br />
+simple issues like how many IP addresses are available to more complex<br />
+issues such as networking Quality of Service (QoS) enforcement of<br />
+latency and bandwidth, for example.</p>
+
+<p>Anyone building a cloud should first think about what services are being<br />
+offered, how they will be offered to the customer, how the customer will<br />
+configure the service, and precisely what the customer should expect<br />
+from the service. After that, they can start thinking about how to build<br />
+the services.</p>
+
+<h2 id="types-of-services">Types of Services</h2>
+
+<p>It is important to understand the different types of services offered by<br />
+a cloud vendor. These services can be divided into many types of<br />
+services, but the three most common ones are IaaS, PaaS, and SaaS.<br />
+Definition of these terms and more can be found here:<br />
+<a href="http://en.wikipedia.org/wiki/Cloud_computing">http://en.wikipedia.org/wiki/Cloud_computing</a>.</p>
+
+<p>This document mainly focuses on IaaS using its broadest definition. For<br />
+example, while being able to order a VPN might be considered to be more<br />
+sophisticated than simply being able to run VMs on network segments, for<br />
+purposes of this document, it is still considered an IaaS. When you<br />
+consider the breadth of IaaS services that can be offered, such as DNS,<br />
+DHCP, and even a Web Application Firewall, it is clear that some<br />
+services are more sophisticated than others, but they still fall into<br />
+the IaaS category. The reason is that these services are still<br />
+supporting some high level application. They are not the application<br />
+themselves, such as Saleforce.com or Microsoft SharePoint. Providing an<br />
+application service is SaaS. Salesforce.com is the quintessential SaaS.</p>
+
+<p>Given that there are so many infrastructure services that can be<br />
+offered, it may be useful to divide them into categories that clarify<br />
+whether these are <em>really</em> basic services that are somewhat fundamental<br />
+and that nearly all tenants will use, such as IP address assignment,<br />
+versus more sophisticated services such as Web Application Firewall,<br />
+that a smaller subset of tenants will use.</p>
+
+<h2 id="example-basic-network-services">Example Basic Network Services</h2>
+
+<p>Create tenant</p>
+
+<p>Create broadcast domain or IP subnet</p>
+
+<p>Enable Router</p>
+
+<p>Assign IP to VM</p>
+
+<p>Deploy, Start, Stop VM</p>
+
+<p>Enable DNS service</p>
+
+<p>Enable DHCP service</p>
+
+<p>Manage Access Control Lists</p>
+
+<h3 id="example-intermediate-network-services">Example Intermediate Network Services</h3>
+
+<p>Create VPN Connection</p>
+
+<p>Outbound Internet Access Address</p>
+
+<p>Inbound Internet Access Address</p>
+
+<p>Bidirectional Internet Access Address</p>
+
+<p>Private L4 Load Balancing</p>
+
+<p>Offload SSL Termination</p>
+
+<p>Offload DNSSEC Termination</p>
+
+<p>Tenant-to-Tenant Access</p>
+
+<p>Network Tap</p>
+
+<h3 id="example-advanced-network-services">Example Advanced Network Services</h3>
+
+<p>HTTP Caching</p>
+
+<p>HTTP LB w/Cookie persistence</p>
+
+<p>HTTP Optimization</p>
+
+<p>Advanced Service Checking (cloudwatch from vmware)</p>
+
+<p>GSLB</p>
+
+<p>Web Application Firewall</p>
+
+<p>IDS/IPS virus detection</p>
+
+<p>ADCaaS: Dedicated Traffic Manager</p>
+
+<h2 id="cloud-architecture">#Cloud Architecture</h2>
+
+<p>Since the cloud introduces many new points of interactions between<br />
+hypervisors, management consoles, tenants, providers, and so forth, this<br />
+leads to entirely new management models and solutions for managing this<br />
+infrastructure. In order to build or use a cloud offering, it is helpful<br />
+to understand the various components that are being managed and the<br />
+various ways those components can be managed. While this list is a bit<br />
+unorganized, it should be helpful in understanding what elements are<br />
+present in the cloud management landscape. Also, it should be noted that<br />
+these are not formalized terms that you’ll find on Wikipedia. They were<br />
+just made up to help explain these concepts.</p>
+
+<h2 id="cloud-networks">Cloud Networks</h2>
+
+<p>Users of Cloud services should be aware that networking may not operate<br />
+the same way that they are used to with standard Ethernet equipment. For<br />
+example, Amazon only supports IP level connectivity between virtual<br />
+machines. Other traffic is likely to be dropped. Moreover, Amazon does<br />
+not support IP Multicast, so users requiring that functionality will<br />
+need to seek alternatives to using Amazon. Different cloud environments<br />
+have different limitations and so customers should be aware of these<br />
+limitations.</p>
+
+<p>Customers should also be aware that cloud environments also offer (or<br />
+impose) additional services, such as a router or VPN. Customers should<br />
+be aware of the presence of these components because it may affect the<br />
+design of their network topology or selection of vendor components.</p>
+
+<p>Additional information is provided later in this document about the<br />
+specific limitations of networking components imposed on customers by<br />
+various cloud and hypervisor vendors.</p>
+
+<p>##Virtual / Overlay Networks</p>
+
+<p>Since cloud environments may have hundreds or thousands of tenants<br />
+creating many networks, it is easy to exhaust the 4096 VLANs that are<br />
+allowed with standard networking equipment. This is has lead to<br />
+alternative solutions that support more than 4096 networks. In order to<br />
+move beyond that limit without replacing the existing network, many<br />
+environments have introduced an overlay network. An overlay is typically<br />
+implemented with tunnels protocols that run on top of the standard<br />
+Ethernet equipment. Examples of these protocols are VXLAN and NVGRE.</p>
+
+<p>While using overlay networks is becoming more popular, it is possible to<br />
+implement virtual networks with OpenFlow or other SDN technologies, or<br />
+with evolutionary network protocols such as Q in Q.</p>
+
+<h2 id="transport-network-implementation">Transport Network Implementation</h2>
+
+<p>The Transport Networking Implementation is typically VLANs. Even though<br />
+your virtual network traffic may be encapsulated into VXLAN packets or<br />
+similar, those packets ultimately need to traverse a real network. VLANs<br />
+are typically the implementation of this transport network, in terms of<br />
+segmenting the traffic from other traffic at the lowest level. There are<br />
+other solutions such as MPLS and solutions built on OpenFlow that<br />
+control the network connectivity.</p>
+
+<p>The relevance of this layer to the upper layers in the cloud environment<br />
+is that you’ll ideally want to limit the amount of configuration<br />
+necessary to make the transport network work. For example, if you use an<br />
+overlay protocol such as VXLAN or NVGRE, that traffic may be carried on<br />
+a small number of VLANs. Those VLANs are used to implement the various<br />
+IP subnets that your hypervisor servers are running on. The setup of<br />
+additional virtual networks shouldn’t require any additional VLANs to be<br />
+configured.</p>
+
+<p>While not requiring switches to be configured with VLANs is the ideal,<br />
+the reality is that some customers may be using VLANs for segmenting<br />
+virtual networks because that may have been the only technology<br />
+available when it was first implemented or they have chosen not to<br />
+implement the overlay protocols for some other reason. In this case, the<br />
+Transport and Virtual Network Implementation may be one and the same.</p>
+
+<p>Another term that may describe the Transport Network is “Provider<br />
+Network”. Ideally, in a cloud scenario, the Provider owns and manages<br />
+the transport network, while the Tenants manage their own virtual<br />
+network segments. This division of ownership is another reason to<br />
+implement a layered solution where the activities of tenants do not<br />
+directly affect the operation of the transport network in a way that may<br />
+affect other tenants in an unexpected way.</p>
+
+<h2 id="virtual-network-implementation">Virtual Network Implementation</h2>
+
+<p>The virtual network implementation layer is the mechanism that gets<br />
+packets from one virtual machine to another. It must leverage a<br />
+transport network to move the packets. The Virtual Network<br />
+Implementation layer is responsible for isolating network segment, for<br />
+isolating tenants, and for supporting the location and communication<br />
+with virtual machines that may have moved to different area of the<br />
+<em>transport network.</em> Examples of Virtual Network Implementations would<br />
+be VXLAN and NVGRE.</p>
+
+<p>&lt;discuss legacy bridging&gt;</p>
+
+<h3 id="layered-virtual-network-implementation">Layered Virtual Network Implementation</h3>
+
+<p>The concept of a Layered Virtual Network Implementation is interesting<br />
+to be aware of, even though this is rather uncommon at this point. The<br />
+idea is that there is so much variation between different cloud vendors<br />
+in terms of how their networks operate, their APIs, and so forth, that<br />
+it becomes very difficult to create a “portable” cloud deployment.<br />
+Portable in this context means that I can deploy to a different cloud<br />
+provider without too much trouble. For this to work, I need a<br />
+combination of standardize behavior and standard APIs to configure that<br />
+behavior.</p>
+
+<p>To solve this problem, a few vendors have proposed layering another<br />
+hypervisor on top of the existing cloud hypervisor. While this provides<br />
+a consistent experience, there are two major downsides to this approach.<br />
+One is the performance bottlenecks and latency introduced by an<br />
+additional layer. The second is that services that were available from<br />
+the underlying cloud vendor may not be directly accessible because the<br />
+layered hypervisor may not allow access to the underlying network layer,<br />
+for example, at least without going through some sort of gateway.</p>
+
+<h3 id="virtual-infrastructure-network-api">Virtual Infrastructure Network API</h3>
+
+<p>Once you’ve selected your network virtualization implementation, you can<br />
+proceed to working out how to configure these virtual networks. In the<br />
+cloud environment, automation is critical, so virtual network segments<br />
+need be created via an API. An API that allows creating virtual subnets<br />
+is what is named the “Virtual Infrastructure Network API”, at least in<br />
+this document. Examples of APIs that provide this functionality are<br />
+Amazon AWS (VPC), VMware vCenter, and OpenStack Quantum.</p>
+
+<p>Also, these APIs include a way to attach and detach the VM to a network<br />
+segment. Typically, this can be done by associating a specific network<br />
+adapter on the VM with a specific network segment.</p>
+
+<h3 id="virtual-infrastructure-compute-api">Virtual Infrastructure Compute API</h3>
+
+<p>Once subnets are available, VMs can then be deployed. Obviously, VMs<br />
+talking over networks requires the VMs to be deployed and operational.<br />
+So, there needs to be an API for deploying and operating the VMs as part<br />
+of the system for creating a cloud. This is typically done in<br />
+conjunction with networking oriented APIs and it would be strange to<br />
+have either a Compute API or Networking API but not both. Examples of<br />
+APIs that provide this functionality are Amazon AWS (VPC), VMware<br />
+vCenter, and OpenStack Nova.</p>
+
+<h3 id="cloud-services-api">Cloud Services API</h3>
+
+<p>In the previous chapter, the importance of Cloud Services was<br />
+emphasized. Examples were listed of various services that may be offered<br />
+in a Cloud. For these various services, it is expected that the service<br />
+will be configurable via an API.</p>
+
+<p>Most cloud services are available to be configured via REST APIs while<br />
+some are available alternatively via SOAP/XML. APIs are typically<br />
+available for configuring, listing, monitoring, and discontinuing<br />
+services.</p>
+
+<p>A cloud tenant buys a cloud service, so the cloud services API should be<br />
+accessible to the cloud tenants. The cloud service API should be easy to<br />
+use and should be oriented around the benefits of the service. It may be<br />
+associated with a Service Level Agreement that details the benefits of<br />
+the service and expectations of how well the service will operate,<br />
+usually in terms of availability, performance, and scalability.</p>
+
+<p>Because many cloud services are related to networking, cloud services<br />
+are often implemented by configuring networking features on networking<br />
+equipment and/or virtual machines. Therefore, it is common for the cloud<br />
+management system to take cloud service configuration parameters and map<br />
+them to the configuration parameters of features on networking<br />
+equipment. This mapping from service parameters to feature parameters<br />
+should be part of an abstraction layer that can be used to simplify the<br />
+configuration model for customers. It can also provide a useful layer<br />
+for a cloud operator to include business logic for their particular<br />
+environment.</p>
+
+<p>&lt;ADD DIAGRAM&gt;</p>
+
+<h3 id="service-fabrics-and-service-chaining">Service Fabrics and Service Chaining</h3>
+
+<p>A Service Fabric is a set of devices that provide a service and operate<br />
+in a unified fashion as though you were operating a single entity. While<br />
+customers may have been attempting to build service fabrics for a very<br />
+long time, new technologies such as SDN/OpenFlow and Network Overlays<br />
+such as VXLAN, have re-ignited an interest in building these fabrics<br />
+with new technologies.</p>
+
+<p>Many of the technologies proposed for usage in a service fabric are<br />
+fairly new, and the networking patterns that are being developed are not<br />
+well understood and standardized. Even the terminology is not well<br />
+developed. We’ll start with trying to identify the main components of a<br />
+service fabric so it is clear what is being talked about. Some of the<br />
+terms in the following section are adopted ad-hoc and so they may be<br />
+unfamiliar to a customer.</p>
+
+<p>First we will attempt to distinguish between a Cluster, a Service<br />
+fabric, and a Service Chaining Fabric.</p>
+
+<p><img src="media/image1.png" alt="" /></p>
+
+<p><em>Network Function / Service Cluster</em></p>
+
+<p>A cluster is a set of devices that are designed to work closely together<br />
+and are tightly coupled by a control plane. Each device is probably<br />
+aware of the other devices in the cluster. In the diagram above, there<br />
+are two ADC clusters shown. Each ADC cluster has a full mesh of<br />
+connections.</p>
+
+<p><em>Network Function / Service Fabric</em></p>
+
+<p>A fabric is the larger set of all devices providing a function and may<br />
+consist of multiple clusters. A management system (sometimes referred to<br />
+as the Service Fabric Controller) sets up and scales clusters and knows<br />
+when to create a new cluster. The reason that multiple clusters may be<br />
+created is that there is a limit to the number of devices in a cluster.</p>
+
+<p>Workloads are directed to a fabric by a higher level management system,<br />
+then a Service Fabric Controller assigns the workload to a cluster based<br />
+on load, and then the Cluster assigns the workload to a member or set of<br />
+members (in the case of a Super VIP, which runs simultaneously on<br />
+multiple elements) of the cluster based on load.</p>
+
+<p><em>Service Chaining Fabrics</em></p>
+
+<p>Service Chaining allows a customer to transparently insert a new service<br />
+into a service graph without affecting other services in the graph. The<br />
+key factor is that many of these services rely on the IP addresses to<br />
+identify the original source (a mobile handset) and the ultimate<br />
+destination (e.g. an internet address), and do not allow the IP<br />
+addresses to be modified.</p>
+
+<p>The IP-transparency requirement introduces a challenge to traditional<br />
+“proxy” devices or middle-boxes that have typically used IP addresses to<br />
+direct traffic to the next hop in the service path. Some other mechanism<br />
+must be used to direct traffic within the service graph. There are a<br />
+number of ideas for this.</p>
+
+<p><a href="http://tools.ietf.org/id/draft-boucadair-network-function-chaining-02.txt">http://tools.ietf.org/id/draft-boucadair-network-function-chaining-02.txt</a></p>
+
+<p><a href="http://tools.ietf.org/html/draft-jiang-service-chaining-arch-00">http://tools.ietf.org/html/draft-jiang-service-chaining-arch-00</a></p>
+
+<p>Assembling services into a graph of services to apply to various traffic<br />
+classifications is the job of a Service Fabric Controller. This<br />
+controller exposes a management user to the administrator to allow<br />
+managing the service chaining policies.</p>
+
+<p><em>Service Identifier</em></p>
+
+<p>The IETF drafts in the previous section describe the use of various<br />
+kinds of identifiers in the network packets that can be used to direct<br />
+the traffic between services. For example, a VLAN or VXLAN id could be<br />
+used for this purpose. The second IETF draft calls the logical<br />
+identifier for a service to be a Service Id. That maps to an on-the-wire<br />
+packet identifier, which could be one of various fields in the packet.</p>
+
+<p>It is interesting to consider that the Service Identifier represents a<br />
+processing endpoint just like an IP based Virtual Server address would<br />
+work for a load balancer. It is not too much of a stretch to consider a<br />
+device that directs traffic based on a Service Identifier to be very<br />
+much like an ADC (application delivery controller).</p>
+
+<h2 id="cloud-management-tools">#Cloud Management Tools</h2>
+
+<h2 id="overview">Overview</h2>
+
+<h3 id="virtual-subnet-mgmt">Virtual Subnet Mgmt</h3>
+
+<p>Once you have APIs to manage compute and networking, there should be a<br />
+console for ad hoc management tasks. Generally, self-service combined<br />
+with automation is the preferred way to “manage” networks, but it is<br />
+often convenient for a cloud provider to utilize a management console<br />
+that allows them to manage all of the virtual subnets and VMs in their<br />
+cloud. Examples of management consoles that provide this are VMware<br />
+vCenter and DynamicOps.</p>
+
+<p><img src="media/image2.png" alt="" /></p>
+
+<p>vCenter Networking Management</p>
+
+<h3 id="virtual-private-cloud-mgmt">Virtual Private Cloud Mgmt</h3>
+
+<p>A cloud provider needs to have Administrator privileges for their entire<br />
+infrastructure. For example, if some VM is violating some security<br />
+policy, the cloud administrator may want to shutdown that VM or<br />
+disconnect it. They also need to view the cloud holistically to monitor<br />
+capacity and plan for growth. A tenant, in contrast, who wants to manage<br />
+their own resources, needs their own view and management console that is<br />
+restricted to their own resources. When you combine tenant isolate with<br />
+self-service management, you have the components of a Virtual Private<br />
+Cloud.</p>
+
+<p>Examples of this are VMware vCloud Director and the Amazon VPC console.</p>
+
+<p><img src="media/image3.png" alt="" /></p>
+
+<p>vCloud Director vApp Networking Diagram</p>
+
+<p><img src="media/image4.png" alt="" /></p>
+
+<p>AWS Virtual Private Cloud Subnet Management (some fields are redacted.)</p>
+
+<h3 id="virtual-private-cloud-templating">Virtual Private Cloud Templating</h3>
+
+<p>Once a tenant has control over their private cloud and can create<br />
+subnets and deploy VMs, there are some scenarios where the tenant can<br />
+benefit from “cloud templating” capabilities. The idea of a cloud<br />
+template is that there may be some kind of services which a tenant may<br />
+want to deploy multiple times. For example, the tenant may have a<br />
+three-tiered application (web, application, db) that is composed of<br />
+multiple subnets and VMs arranged together in a specific way. Now<br />
+imagine that the tenant wants to “stamp-out” that application into<br />
+multiple geographical locations. Some vendors are providing template<br />
+technologies that allow the tenant to define a template that defines the<br />
+arrangement of the VMs, but leaves out certain details that are unique<br />
+to each deployment (such as public IP addresses).</p>
+
+<p>Once a tenant has defined a template, they can select that template and<br />
+fill in the details (either automatically or manually) and have all the<br />
+subnets and VMs created and deployed. This substantially reduces the<br />
+effort to deploy the service.</p>
+
+<p>Examples of cloud templating technologies are VMware vApp and VMware<br />
+vFabric App Director, Amazon Cloud Formation templates, and Oracle VAB.</p>
+
+<p>&lt;add vshield iApp screen shot&gt;</p>
+
+<h3 id="service-templating--insertion">Service Templating / Insertion</h3>
+
+<p>The previous section described a templating system for tenants to<br />
+leverage to deploy their services. There are also cases where the cloud<br />
+provider offers standard services that can be ordered and deployed by<br />
+the tenant. These services may be provided by a third party, so there is<br />
+a desire to have some sort of standard for defining the service and<br />
+relaying configuration between a tenant, cloud provider, and service<br />
+provider.</p>
+
+<p><em>Service Templates for cloud services and inserting those services into<br />
+cloud environments is different than Service Chaining, which is defined<br />
+in the Cloud Architecture section of this document and described in<br />
+detail in the SDN section.</em></p>
+
+<p>Examples of this are vCloud Ecosystem Framework and TOSCA.</p>
+
+<h3 id="provider-cloud-management">Provider Cloud Management</h3>
+
+<p>Provider Cloud Management is the management system that a cloud provider<br />
+uses to manage the entire cloud infrastructure, including physical and<br />
+virtual networking, Hosts and Hypervisors, VMs, VM catalogs, services,<br />
+etc. This console should support monitoring, resource balancing, and<br />
+capacity planning. It should also support orchestration.</p>
+
+<p>Examples of this are the VMware vSphere suite, which includes<br />
+sophisticated facilities such as the Distributed Resource Scheduler for<br />
+resource balancing and VMware Orchestrator for orchestration. Other<br />
+examples are BMC Cloud Lifecycle Manager and DynamicOps.</p>
+
+<p>&lt;add screen shot of VMware distributed scheduler&gt;</p>
+
+<h3 id="hybrid-and-heterogeneous-cloud-management">Hybrid and Heterogeneous Cloud Management</h3>
+
+<p>An example of Hybrid cloud management would be vCloud Director in<br />
+combination with a third party provider. Citrix CloudBridge is another<br />
+example.</p>
+
+<p>An example of Heterogeneous cloud management is BMC Lifecycle Manager,<br />
+Dynamic Ops.</p>
+
+<p>&lt;add BMC screen shot&gt;</p>
+
+<h3 id="abstract-cloud-management">Abstract cloud management</h3>
+
+<p>Abstract cloud management provides the same functionality as virtual<br />
+private cloud management except that underneath, there are adaptors to<br />
+each cloud deployment.</p>
+
+<p>An example of an abstract cloud is Ravello.</p>
+
+<p><img src="media/image5.png" alt="" /></p>
+
+<p>Here is a zoom of Step 3:</p>
+
+<p><img src="media/image6.png" alt="" /></p>
+
+<h2 id="business-integration-for-clouds">#Business Integration for Clouds</h2>
+
+<p>The following presentation is, by far, the most comprehensive available<br />
+that discusses the challenge of providing a public service using a cloud<br />
+and integrating that into the business processes of an organization. In<br />
+this case the company was Dell.</p>
+
+<p><a href="https://www.openstack.org/summit/portland-2013/session-videos/presentation/best-practices-for-integrating-a-third-party-portal-with-openstack/">https://www.openstack.org/summit/portland-2013/session-videos/presentation/best-practices-for-integrating-a-third-party-portal-with-openstack/</a></p>
+
+<p><img src="media/image7.png" alt="" /></p>
+
+<h1 id="technology-directions">#Technology Directions</h1>
+
+<h2 id="software-defined-networks">#Software Defined Networks</h2>
+
+<h2 id="introduction-2">Introduction</h2>
+
+<h2 id="use-cases">Use Cases</h2>
+
+<h2 id="vendors">Vendors</h2>
+
+<h3 id="vmware-nsx">VMware NSX</h3>
+
+<h3 id="nuage">Nuage</h3>
+
+<h3 id="juniper-contrail">Juniper Contrail</h3>
+
+<h3 id="opendaylight">OpenDayLight</h3>
+
+<h3 id="plumgrid">PlumGrid</h3>
+
+<h3 id="midokura">Midokura</h3>
+
+<h3 id="cisco">Cisco</h3>
+
+<h3 id="bigswitch">BigSwitch</h3>
+
+<h4 id="cisco-1">Cisco</h4>
+
+<h4 id="juniper">Juniper</h4>
+
+<p>http://www.theregister.co.uk/2013/01/16/juniper_sdn_strategy/</p>
+
+<h3 id="hp">HP</h3>
+
+<p>http://www.networkcomputing.com/next-gen-network-tech-center/hp-details-sdn-strategy-announces-new-pr/240008407</p>
+
+<h1 id="service-stitching">Service Stitching</h1>
+<hr />
+
+<h2 id="ip-based">IP based</h2>
+
+<h3 id="nat-on-ingress-and-egress-to-sdn">NAT on ingress and egress to SDN</h3>
+
+<h3 id="use-routing-to-pick-service-chains">Use routing to pick service chains</h3>
+
+<h3 id="use-bitmasks-to-pick-service-chains">Use bitmasks to pick service chains</h3>
+
+<h4 id="is-this-possible-with-openflow">Is this possible with OpenFlow?</h4>
+
+<p>Not clear because the SDN switches claim they will select a service<br />
+member to handle a flow, perhaps using a hash. OpenFlow cannot operate<br />
+on a flow hash, I think. I could be wrong. (It may support ECMP)</p>
+
+<h2 id="network-function-virtualization">#Network Function Virtualization</h2>
+
+<h2 id="containers">#Containers</h2>
+
+
+    
+	</div>
+ 
+
+    <!-- <link href="../assets/css/f5-styles.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<footer id="F5-Footer">
+
+<div>
+  <ul class="links" id="F5-Footer">
+              <li>
+                <p class="toggleNext toggleMobile"><span class="icon-down visible-xs-inline hidden-ie">&#8203;</span> Connect With Us</p>
+                <ul class="social-media">
+                    
+                    <!-- en -->
+                    <li><a href="//twitter.com/f5networks" target="_blank" data-name="twitter" data-type="" data-prefix="social" data-utf="E032" title="Twitter" class="externalLink"><i class="icon-twitter"></i></a> </li>
+                    <li><a href="//www.linkedin.com/companies/f5-networks" target="_blank" class="linkedin externalLink" title="LinkedIn"><i class="icon-linkedin"></i></a> </li>
+                    <li><a href="//www.facebook.com/f5networksinc" target="_blank" class="facebook externalLink" title="Facebook"><i class="icon-facebook"></i></a> </li>
+                    <li><a href="//www.youtube.com/f5networksinc" target="_blank" class="youtube externalLink" title="YouTube"><i class="icon-youtube"></i></a> </li>
+                    <li><a href="//devcentral.f5.com/" target="_blank" class="devcentral currentURL internalLink" title="DevCentral"><i class="icon-dc-pos"></i></a> </li>
+                    
+                </ul>
+            </li>
+      
+  
+       		<li><p class="toggleNext toggleMobile"><span class="icon-down visible-xs-inline hidden-ie">&#8203;</span>Find Us On GitHub</p>
+      <ul>
+      	<li>
+        <a href="https://github.com/F5Networks"><span class="username">F5Networks/</span><span class="repo"></span>  
+        </a>
+      	</li>
+
+      
+      
+	</ul>
+    </li>
+    </ul>
+  </div>
+    
+<div class="back-to-top"><a><span class="icon-up">&#8203;</span></a></div>
+</footer>
+ -->
+
+</body>
+<script>
+        $(function() {
+            //Calls the tocify method on the HTML div.
+            $("#toc").tocify();
+        });
+</script>    
+</html>          
+
