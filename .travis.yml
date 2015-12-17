@@ -3,6 +3,7 @@ rvm: 2.0
 env:
  global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+# - TRAVIS_SECURE_ENV_VARS=true
 
 cache: bundler
 
@@ -17,6 +18,7 @@ branches:
  only:
  - master
  - develop
+ - feature.deploy_script
 
 after_success:
  - ./script/deploy_script.sh
