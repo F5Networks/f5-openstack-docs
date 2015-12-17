@@ -9,12 +9,16 @@
 
 set -ev
 
+# install travis gems
+gem install travis
+gem install travis-cli-gh
+
 #  Set travis' username and email for GitHub
 git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
 
 # Log in to GitHub using travis' gh token
-# travis login --pro -u f5-travisci --github-token 53c54a12d1c7ef2c22bcc755266df939b6666626
+travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
 
 if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
 
