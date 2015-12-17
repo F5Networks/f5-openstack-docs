@@ -14,7 +14,7 @@ git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
 
 # Log in to GitHub using travis' gh token
-travis login --pro -u "$TRAVIS_USER" --github-token "$TRAVIS_GHTOKEN"
+travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
 
 if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
 
