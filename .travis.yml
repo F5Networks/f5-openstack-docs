@@ -3,7 +3,7 @@ rvm: 2.0
 env:
  global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
+  - TRAVIS_SECURE_ENV_VARS=true
 cache: bundler
 
 #before_install:
