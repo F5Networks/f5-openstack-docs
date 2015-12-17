@@ -10,21 +10,21 @@
 set -ev
 
 # install travis gems
-gem install travis
-gem install travis-cli-gh
+#gem install travis
+#gem install travis-cli-gh
 
 #  Set travis' username and email for GitHub
 git config --global user.email "OpenStack_TravisCI@f5.com"
 git config --global user.name "f5-travisci"
 
-# Log in to GitHub using travis' gh token
- travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
+# Log in to GitHub
+# travis login --pro -u $TRAVIS_USER --github-token $TRAVIS_GHTOKEN
 
 if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
 
   echo "Publishing docs to GitHub Pages"
   cd "$HOME" 
-  git clone --verbose --branch=gh-pages git@github.com:F5Networks/f5-openstack-docs.git gh-pages
+git clone --verbose --branch=gh-pages https://$TRAVIS_GHTOKEN@github.com/F5Networks/f5-openstack-docs.git gh-pages
   cd gh-pages
   cp -Rf "$HOME"/site_build ./
   git add -f .
