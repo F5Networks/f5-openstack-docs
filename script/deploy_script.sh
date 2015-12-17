@@ -16,7 +16,7 @@ git config --global user.name "f5-travisci"
 # Log in to GitHub using travis' gh token
 travis login --pro -u "$TRAVIS_USER" --github-token "$TRAVIS_GHTOKEN"
 
-if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]] && [[ "$TRAVIS_PULL_REQUEST" == "TRUE" ]]; then
+if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
 
   echo "Publishing docs to GitHub Pages"
   cd "$HOME" 
