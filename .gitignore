@@ -1,7 +1,5 @@
-.sass-cache
-
-*.lock
-
-.bundle/
-
+/.sass-cache
+Gemfile.lock
+/.bundle/
 _site/
+

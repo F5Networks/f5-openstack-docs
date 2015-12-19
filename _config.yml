@@ -10,7 +10,7 @@ permalink: pretty
 # Build settings
 markdown: kramdown
 highlighter: pygments
-exclude: [vendor]
+exclude: [vendor, Gemfile, Gemfile.lock, Rakefile]
 
 kramdown:
     input: GFM
