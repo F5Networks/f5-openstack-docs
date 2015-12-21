@@ -1,5 +1,3 @@
-/.sass-cache
-Gemfile.lock
-/.bundle/
-_site/
-travis_pa-token.txt
+_site
+.sass-cache
+.jekyll-metadata
