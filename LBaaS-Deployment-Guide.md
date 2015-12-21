@@ -1,183 +1,3 @@
-Table of Contents {#table-of-contents .TOCHeading}
-=================
-
-[Introduction 1](#introduction)
-
-[Overview 1](#overview)
-
-[Related Documents 1](#related-documents)
-
-[OpenStack Deployment Tips 2](#openstack-deployment-tips)
-
-[OpenStack Installation Pitfalls 2](#openstack-installation-pitfalls)
-
-[Network Node Sysctl 2](#network-node-sysctl)
-
-[Load kvm kernel module on Ubuntu 12.04
-2](#load-kvm-kernel-module-on-ubuntu-12.04)
-
-[Allow GRE to VMs 3](#allow-gre-to-vms)
-
-[Nova and Neutron Security 3](#nova-and-neutron-security)
-
-[OpenStack Sanity Checks 4](#openstack-sanity-checks)
-
-[Ensure Services are Running 4](#ensure-services-are-running)
-
-[Ensure console access is working 4](#ensure-console-access-is-working)
-
-[Ensure DHCP works 4](#ensure-dhcp-works)
-
-[Ensure floating IPs work 4](#ensure-floating-ips-work)
-
-[Ensure metadata access is working
-4](#ensure-metadata-access-is-working)
-
-[Ping between VMs on the same and different hosts
-5](#ping-between-vms-on-the-same-and-different-hosts)
-
-[Deployment Options 6](#deployment-options)
-
-[Overview 6](#overview-1)
-
-[BIG-IQ 6](#big-iq)
-
-[HA Type 6](#ha-type)
-
-[Replication Mode 6](#replication-mode)
-
-[Global Routed 6](#global-routed)
-
-[Traffic Return 6](#traffic-return)
-
-[SNAT Mode 6](#snat-mode)
-
-[Gateway Mode 6](#gateway-mode)
-
-[LBaaS Dedicated 7](#lbaas-dedicated)
-
-[Deploying TMOS Devices Overview 8](#deploying-tmos-devices-overview)
-
-[Deploying BIG-IQ 9](#deploying-big-iq)
-
-[Hardware 9](#hardware)
-
-[Deploying BIG-IQ Virtual Edition 9](#deploying-big-iq-virtual-edition)
-
-[BIG-IQ LBaaS Setup 9](#big-iq-lbaas-setup)
-
-[OpenStack Setup for BIG-IQ 9](#openstack-setup-for-big-iq)
-
-[Deploying BIG-IPs 11](#deploying-big-ips)
-
-[Deploying BIG-IP Hardware 11](#deploying-big-ip-hardware)
-
-[Licensing 11](#licensing)
-
-[Data network connectivity 11](#data-network-connectivity)
-
-[Deploying BIG-IP Virtual Edition 12](#deploying-big-ip-virtual-edition)
-
-[BIG-IP Setup for Use with Big-IQ 12](#big-ip-setup-for-use-with-big-iq)
-
-[Deploying LBaaS Plug-in 13](#deploying-lbaas-plug-in)
-
-[Driver Installation 13](#driver-installation)
-
-[Install Neutron Server Packages 13](#install-neutron-server-packages)
-
-[For Ubuntu: 13](#for-ubuntu)
-
-[Red Hat/Centos: 13](#red-hatcentos)
-
-[Configure Neutron Server 13](#configure-neutron-server)
-
-[Agent Deployment Options 15](#agent-deployment-options)
-
-[BIG-IP Cluster Scope 15](#big-ip-cluster-scope)
-
-[Tenant Scheduler 15](#tenant-scheduler)
-
-[Relation to BIG-IQ 15](#relation-to-big-iq)
-
-[Agent Placement 15](#agent-placement)
-
-[Agent Installation 17](#agent-installation)
-
-[Install Neutron Gateway Packages 17](#install-neutron-gateway-packages)
-
-[Ubuntu: 17](#ubuntu)
-
-[Red Hat/Centos: 17](#red-hatcentos-1)
-
-[Stop Agent 17](#stop-agent)
-
-[Installing Additional Agents 17](#installing-additional-agents)
-
-[Agent Configuration 18](#agent-configuration)
-
-[Restart Agent 25](#restart-agent)
-
-[Check the Agent Status 25](#check-the-agent-status)
-
-[Enable LBaaS GUI in OpenStack 25](#enable-lbaas-gui-in-openstack)
-
-[Tuning and Performance 27](#tuning-and-performance)
-
-[Limitations 27](#limitations)
-
-[Route Domains, Tunnels, VLANs 27](#route-domains-tunnels-vlans)
-
-[Overlapping Subnets within one OpenStack Project
-27](#overlapping-subnets-within-one-openstack-project)
-
-[Procedures 28](#procedures)
-
-[Agent High Availability 28](#agent-high-availability)
-
-[Scaling Out With Multiple Clusters
-28](#scaling-out-with-multiple-clusters)
-
-[Overview 28](#overview-2)
-
-[Add Additional Cluster 28](#add-additional-cluster)
-
-[Disable Cluster for New Tenants 28](#disable-cluster-for-new-tenants)
-
-[Disable New Pools on Cluster 28](#disable-new-pools-on-cluster)
-
-[Remove Pool From Cluster 28](#remove-pool-from-cluster)
-
-[Remove Tenant From Cluster 28](#remove-tenant-from-cluster)
-
-[Move Tenant to New Cluster 29](#move-tenant-to-new-cluster)
-
-[GTM Integration 29](#gtm-integration)
-
-[Introduction 29](#introduction-1)
-
-[Wide IP Setup 29](#wide-ip-setup)
-
-[Divert away 29](#divert-away)
-
-[Divert back 29](#divert-back)
-
-[Troubleshooting 30](#troubleshooting)
-
-[Log Files 30](#log-files)
-
-[Neutron Server 30](#neutron-server)
-
-[Neutron Gateway 30](#neutron-gateway)
-
-[Packet Tracing 30](#packet-tracing)
-
-[Network Node 30](#network-node)
-
-[Compute Node 30](#compute-node)
-
-[BIG-IP 31](#big-ip)
-
 Introduction
 ============
 
@@ -454,69 +274,6 @@ essential part of the LBaaS solution in the future. So while you may
 choose not to deploy BIG-IQ now, you may need to in the future to remain
 compatible with the LBaaS solution.
 
-\
-Deploying BIG-IQ
-================
-
-This section describes how to deploy BIG-IQ as part of the LBaaS
-solution. BIG-IQ supports the deployment of LBaaS services to a
-tenant-dedicated BIG-IP. You will need to decide whether to deploy
-BIG-IQ as hardware or software. The various reasons to pick either
-hardware or software are beyond the scope of this document.
-
-### Hardware
-
-This section describes how to deploy BIG-IQ as hardware.
-
-The detailed instructions for setting up an F5 hardware device are
-outside the scope of this document but a summary is provided here.
-
-The first thing to do is the basic hardware setup, which includes:
-
--   Rack the device and connect the power cables.
-
--   Connect the BIG-IQ to your switch.
-
--   Turn on the BIG-IQ
-
-The next thing to do is to setup and configure the device. If you are
-using DHCP, then connect to with the DHCP address. If DHCP is not
-configured, the device will default to 192.168.1.245. The default
-credentials are admin/admin for the GUI and API and root/default for the
-command line.
-
-### Deploying BIG-IQ Virtual Edition
-
-If you have decided to deploy BIG-IQ as a virtual machine in OpenStack,
-then please refer to the F5 OpenStack TMOS VE deployment guide for
-detailed instructions.
-
-### BIG-IQ LBaaS Setup
-
-The LBaaS solution does not require any specific configuration to make
-it work except that the initial setup screen must be completed and the
-product must also be licensed properly.
-
-TODO: Is adding a route necessary so that discovery is done via TMM
-interface?
-
-### OpenStack Setup for BIG-IQ
-
-On the Nova Controller server:
-
-Edit the /etc/nova/policy.json file and change this setting to the
-following value:
-
-"compute\_extension:server\_diagnostics": "rule:admin\_or\_owner",
-
-Then restart the Nova server:
-
-service nova-api-os-compute restart
-
-\
-Deploying BIG-IPs
-=================
-
 ### Deploying BIG-IP Hardware
 
 The first thing to do is the basic hardware setup, which includes:
@@ -565,11 +322,6 @@ then please refer to the F5 OpenStack TMOS VE deployment guide for
 detailed instructions on how to preparing images for OpenStack, deploy
 instances, and configure BIG-IP in a virtual environment.
 
-#### BIG-IP Setup for Use with Big-IQ
-
-If you are deploying a BIG-IP VE for each tenant and are using BIG-IQ,
-then there are certain customization options available for how the
-BIG-IQ “discovers” the BIG-IP.
 
 ##### Network Naming
 
@@ -584,7 +336,6 @@ network&gt;
 
 Install iApp RPM
 
-\
 Deploying LBaaS Plug-in
 =======================
 
@@ -636,7 +387,6 @@ service neutron-server restart
 You can check for errors and other relevant log messages in
 /var/log/neutron/server.log on the Neutron server.
 
-\
 Agent Deployment Options
 ------------------------
 
@@ -669,13 +419,6 @@ service a given tenant. However, if you delete all pools for a tenant,
 there will no longer be any record of how to map the tenant pool to an
 agent, and so the BIG-IP may choose a new agent for that tenant.
 
-### Relation to BIG-IQ
-
-Alternatively, it may delegate iApp deployment to a BIG-IQ. In the case
-where BIG-IQ is used, the BIG-IQ may deploy to more than one cluster of
-BIG-IPs but the LBaaS agent will perform no direct interaction with
-BIG-IQ managed BIG-IPs.
-
 ### Agent Placement
 
 The F5 LBaaS agent can be run on any host which has the appropriate
@@ -684,10 +427,6 @@ Neutron Gateway node is used because those nodes have the appropriate
 libraries already. An alternative is to have a dedicated node for
 running agents. Multiple F5 LBaaS agent processes can run on the same
 host simultaneously.
-
-\
-Agent Installation
-------------------
 
 ### Install Neutron Gateway Packages
 
@@ -780,7 +519,6 @@ Then restart the web server for the setting to take effect:
 
 service httpd restart
 
-\
 Tuning and Performance
 ======================
 
@@ -812,10 +550,6 @@ same subnet, such as 10.0.0.0/24, twice in the same project. OpenStack
 actually supports this. We are evaluating whether to support this
 feature in the future and would like to hear from customers whether this
 is an important feature.
-
-\
-Procedures
-==========
 
 Agent High Availability
 -----------------------

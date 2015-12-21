@@ -1,6 +1,6 @@
-The F5 OpenStack LBaaSv1 Plug-in allows you to utilize your BIG-IP (hardware or Virtual Edition) in an OpenStack distribution.  
+The F5 OpenStack LBaaSv1 Plugin allows you to utilize your BIG-IP (hardware or Virtual Edition) in an OpenStack distribution.  
 
-F5’s OpenStack LBaaSva Plug-in provides management of load balancing in OpenStack, including:
+F5’s OpenStack LBaaSva Plugin provides management of load balancing in OpenStack, including:
 
 - Local and global server load balancing;
 - Support for multi-tenant deployments;
@@ -15,6 +15,3 @@ F5’s OpenStack LBaaSva Plug-in provides management of load balancing in OpenSt
 
 \* Requires TMOS 11.5 or higher.
 
-Figure 1 shows a sample deployment of BIG-IP in OpenStack using the F5 OpenStack LBaaSv1 Plug-in.
-
-![](f5-os-lbaasv1/assets/plugin_solution_diagram.png "Figure 1")

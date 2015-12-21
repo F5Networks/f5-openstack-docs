@@ -1,1 +1,0 @@
-This guide will help you set up load-balancing as a service (LBaaS) in OpenStack using the F5 LBaaS Plug-in. Deploying the F5 LBaaS Plug-in and Agent in an OpenStack environment allows you to provision virtual IPs, server pools, health monitors, and load balancing on your hardware or Virtual Edition BIG-IP.

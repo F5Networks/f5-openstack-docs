@@ -1618,6 +1618,13 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.container-fluid-gray {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color:#D7D6D6;
+}
 .row {
   margin-right: -15px;
   margin-left: -15px;
