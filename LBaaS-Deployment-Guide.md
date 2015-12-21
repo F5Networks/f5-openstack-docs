@@ -274,6 +274,8 @@ essential part of the LBaaS solution in the future. So while you may
 choose not to deploy BIG-IQ now, you may need to in the future to remain
 compatible with the LBaaS solution.
 
+Deploying BIG-IPs
+
 ### Deploying BIG-IP Hardware
 
 The first thing to do is the basic hardware setup, which includes:
@@ -321,7 +323,6 @@ If you have decided to deploy BIG-IQ as a virtual machine in OpenStack,
 then please refer to the F5 OpenStack TMOS VE deployment guide for
 detailed instructions on how to preparing images for OpenStack, deploy
 instances, and configure BIG-IP in a virtual environment.
-
 
 ##### Network Naming
 
@@ -427,6 +428,9 @@ Neutron Gateway node is used because those nodes have the appropriate
 libraries already. An alternative is to have a dedicated node for
 running agents. Multiple F5 LBaaS agent processes can run on the same
 host simultaneously.
+
+Agent Installation
+------------------
 
 ### Install Neutron Gateway Packages
 
@@ -550,6 +554,8 @@ same subnet, such as 10.0.0.0/24, twice in the same project. OpenStack
 actually supports this. We are evaluating whether to support this
 feature in the future and would like to hear from customers whether this
 is an important feature.
+
+Procedures
 
 Agent High Availability
 -----------------------

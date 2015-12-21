@@ -53,4 +53,3 @@ resource: true
 
 {% include /f5-os-lbaasv1/t_install_driver_neutron_server_restart_redhat-centos.md %}
 
-
