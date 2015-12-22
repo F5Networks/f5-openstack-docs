@@ -56,7 +56,11 @@ Table 1.
 {% include /f5-os-lbaasv1/t_install_agent_status_ubuntu-redhat-centos.md %}
 
 Figure 1. 
+<<<<<<< HEAD
 <img src="//f5-os-lbaasv1/media/lbaas-agent-status.png"/>
+=======
+<img src="/f5-os-lbaasv1/media/lbaas-agent-status.png"/>
+>>>>>>> develop
 
 {% include /f5-os-lbaasv1/t_install_agent_check_status_note.md %}
 

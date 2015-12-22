@@ -4,7 +4,11 @@ Introduction
 Overview
 --------
 
+<<<<<<< HEAD
 This guide covers the specific steps for setting up and configuring F5’s 
+=======
+This guide covers the specific steps for setting up and configuring F5’s
+>>>>>>> develop
 OpenStack solution. It covers how to deploy the overall solution,
 including BIG-IQ, BIG-IP(s), and the F5 LBaaS Plug-in for OpenStack. It
 also covers operating and troubleshooting the OpenStack solution. It
@@ -275,7 +279,10 @@ choose not to deploy BIG-IQ now, you may need to in the future to remain
 compatible with the LBaaS solution.
 
 Deploying BIG-IPs
+<<<<<<< HEAD
 =================
+=======
+>>>>>>> develop
 
 ### Deploying BIG-IP Hardware
 
@@ -557,7 +564,10 @@ feature in the future and would like to hear from customers whether this
 is an important feature.
 
 Procedures
+<<<<<<< HEAD
 ==========
+=======
+>>>>>>> develop
 
 Agent High Availability
 -----------------------
@@ -565,7 +575,10 @@ Agent High Availability
 This solution supports running the F5 LBaaS Agent in a high availability
 mode. Further details will be provided in the future. (TODO)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 Scaling Out With Multiple Clusters
 ----------------------------------
 

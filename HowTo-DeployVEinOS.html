@@ -1,0 +1,1488 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>HowTo-DeployVEinOS</title></head><body><article class="markdown-body"><h1 id="how-to-deploy-big-ip-ve-on-openstack"><a href="#how-to-deploy-big-ip-ve-on-openstack"><span class="headeranchor"></span></a>How To Deploy BIG-IP VE on OpenStack</h1>
+<h1 id="overview"><a href="#overview"><span class="headeranchor"></span></a>Overview</h1>
+<p>This document describes how to deploy BIG-IP Virtual Edition within<br />
+OpenStack.</p>
+<h1 id="before-you-start"><a href="#before-you-start"><span class="headeranchor"></span></a>Before You Start</h1>
+<p>Check to make sure you have the following:</p>
+<ol>
+<li>
+<p>A running OpenStack installation (Juno or later) on either Red<br />
+    Hat/CentOS 7 or Ubuntu 12.04 / 14.04.</p>
+</li>
+<li>
+<p>Licensed BIG-IP VE software.</p>
+</li>
+<li>
+<p>Basic understanding of <a href="add%20link%20to%20doc%20here">OpenStack Networking<br />
+    Concepts</a>.</p>
+</li>
+<li>
+<p>An OpenStack <a href="http://docs.openstack.org/admin-guide-cloud/content/provider_api_workflow.html">provider<br />
+    network</a><br />
+    (if using multi-tenant deployment).</p>
+</li>
+<li></li>
+</ol>
+<h1 id="how-to-deploy-big-ip-ve-on-openstack_1"><a href="#how-to-deploy-big-ip-ve-on-openstack_1"><span class="headeranchor"></span></a>How to Deploy BIG-IP VE on OpenStack</h1>
+<h2 id="initial-setup"><a href="#initial-setup"><span class="headeranchor"></span></a>Initial Setup</h2>
+<h3 id="1-verify-that-the-standard-admin-project-user-and-roles-are-set-up"><a href="#1-verify-that-the-standard-admin-project-user-and-roles-are-set-up"><span class="headeranchor"></span></a>1. Verify that the standard “admin” project, user, and roles are set up:</h3>
+<pre><code>manager@maas-ctrl-4:~$ keystone tenant-get admin
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| description |         Created by Juju          |
+|   enabled   |               True               |
+|      id     | 3142ea42fd7c4ba0903f5701f88b1478 |
+|     name    |              admin               |
++-------------+----------------------------------+
+
+manager@maas-ctrl-4:~$ keystone user-get admin
++----------+----------------------------------+
+| Property |              Value               |
++----------+----------------------------------+
+|  email   |          juju@localhost          |
+| enabled  |               True               |
+|    id    | 44ee559840444916bd02e943894c0a09 |
+|   name   |              admin               |
+| tenantId | 3142ea42fd7c4ba0903f5701f88b1478 |
+| username |              admin               |
++----------+----------------------------------+
+
+manager@maas-ctrl-4:~$ keystone user-role-list
++----------------------------------+----------+----------------------------------+----------------------------------+
+|                id                |   name   |             user_id              |            tenant_id             |
++----------------------------------+----------+----------------------------------+----------------------------------+
+| 72d7203cdb484a60a635bcdd1b43cf65 |  Admin   | 44ee559840444916bd02e943894c0a09 | 3142ea42fd7c4ba0903f5701f88b1478 |
+| 9fe2ff9ee4384b1894a90878d3e92bab | _member_ | 44ee559840444916bd02e943894c0a09 | 3142ea42fd7c4ba0903f5701f88b1478 |
++----------------------------------+----------+----------------------------------+----------------------------------+
+</code></pre>
+<h3 id="2-define-the-neutron-security-policy"><a href="#2-define-the-neutron-security-policy"><span class="headeranchor"></span></a>2. Define the Neutron Security Policy</h3>
+<ul>
+<li>
+<p>To allow the ICMP protocol:\</p>
+<pre><code>neutron security-group-rule-create --protocol icmp \\
+    --direction ingress default
+</code></pre>
+</li>
+<li>
+<p>To assign the standard ports used by BIG-IP (22, 80, and 443):\</p>
+<pre><code>neutron security-group-rule-create --protocol tcp --port-range-min 22 --port-range-max 22 --direction ingress default
+neutron security-group-rule-create --protocol tcp --port-range-min 80 --port-range-max 80 --direction ingress default
+neutron security-group-rule-create --protocol tcp --port-range-min 443 --port-range-max 443 --direction ingress default
+</code></pre>
+</li>
+<li>
+<p>To allow BIG-IP VE access to VXLAN packets:\</p>
+<pre><code>neutron security-group-rule-create --protocol udp --port-range-min 4789 --port-range-max 4789 --direction ingress default
+</code></pre>
+</li>
+<li>
+<p>To allow BIG-IP VE access to GRE packets:\</p>
+<pre><code>neutron security-group-rule-create --protocol 47 --direction ingress default
+</code></pre>
+</li>
+</ul>
+<h3 id="3-set-up-nova-compute-nodes"><a href="#3-set-up-nova-compute-nodes"><span class="headeranchor"></span></a>3. Set Up Nova Compute Nodes</h3>
+<p>The <em>/etc/nova/release</em> file must be changed on every Nova compute node<br />
+that may run BIG-IP. Otherwise, BIG-IP will not be able to detect that<br />
+it’s running on KVM. <strong>[jputrino: IS THIS STILL TRUE??]</strong></p>
+<pre><code># echo -e "[Nova]\nvendor = Red Hat\nproduct = Bochs\npackage = RHEL 6.3.0 PC" \ &gt; /etc/nova/release
+#
+# cat /etc/nova/release
+[Nova]
+vendor = Red Hat
+product = Bochs
+package = RHEL 6.3.0 PC
+</code></pre>
+<h3 id="4-restart-the-nova-compute-service"><a href="#4-restart-the-nova-compute-service"><span class="headeranchor"></span></a>4. Restart the Nova-Compute Service</h3>
+<p><code>service nova-compute restart</code></p>
+<h2 id="integrate-big-ip-ve-with-the-openstack-network-infrastructure"><a href="#integrate-big-ip-ve-with-the-openstack-network-infrastructure"><span class="headeranchor"></span></a>Integrate BIG-IP VE with the OpenStack Network Infrastructure</h2>
+<p><strong>NOTE:</strong> If you have not yet decided on your integration method, you<br />
+should stop here and read the <a href="">F5 OpenStack ADC Integration Guide</a>.</p>
+<p><strong>[jputrino: OUTSIDE OF DOCUMENT SCOPE]</strong>\<br />
+<del>### Single-tenant Deployment</del>\<br />
+<del>If you’re using a single-tenant deployment, you can skip this section<br />
+and go on to <strong>?</strong>.</del>\<br />
+<del>### Multi-tenant Deployment</del>\<br />
+<del>### Base Networking</del>\<br />
+<del>The goal of the base networking setup is to create the OpenStack<br />
+networks, subnets, and other networking elements that are necessary to<br />
+run BIG-IP within OpenStack.</del>\<br />
+<del>### Admin Router Setup</del>\<br />
+<del>If you are working with a proof-of-concept and just have an empty\<br />
+ project, these are typical commands that are used to populate an<br />
+initial\<br />
+ public network attached to a router that can later be attached to\<br />
+ private networks that we will create.</del>\</p>
+<p><del><code>neutron router-create admin_router_1 neutron net-create public -- --router:external=True --provider:network_type local  neutron subnet-create --allocation-pool start=10.144.64.92,end=10.144.64.109 --gateway=10.144.64.91 --name public_subnet public 10.144.64.0/24  neutron router-gateway-set admin_router_1 public</code></del></p>
+<h3 id="1-set-up-the-management-network"><a href="#1-set-up-the-management-network"><span class="headeranchor"></span></a>1. Set Up the Management Network</h3>
+<p>This network will be used for the BIG-IP management interface.\</p>
+<pre><code>neutron net-create bigip_mgmt
+neutron subnet-create --name bigip_mgmt_subnet bigip_mgmt 10.10.0.0/24
+neutron router-interface-add admin_router_1 bigip_mgmt_subnet
+</code></pre>
+<h3 id="2-set-up-high-availability-and-mirroring"><a href="#2-set-up-high-availability-and-mirroring"><span class="headeranchor"></span></a>2. Set Up High Availability and Mirroring</h3>
+<p><strong>NOTE:</strong> Skip this step if you’re using a stand-alone BIG-IP.</p>
+<ul>
+<li>
+<h4 id="high-availability-ha"><a href="#high-availability-ha"><span class="headeranchor"></span></a>High Availability (HA)</h4>
+<pre><code>neutron net-create bigip_ha
+neutron subnet-create --name bigip_ha_subnet bigip_ha 10.40.0.0/24
+neutron router-interface-add admin_router_1 bigip_ha_subnet
+</code></pre>
+</li>
+<li>
+<h4 id="mirroring"><a href="#mirroring"><span class="headeranchor"></span></a>Mirroring</h4>
+<pre><code>  neutron net-create bigip\_mirror
+  neutron subnet-create --name bigip\_mirror\_subnet bigip\_mirror 10.50.0.0/24
+  neutron router-interface-add admin\_router\_1 bigip\_mirror\_subnet
+</code></pre>
+</li>
+</ul>
+<h3 id="3-set-up-external-and-internal-networks"><a href="#3-set-up-external-and-internal-networks"><span class="headeranchor"></span></a>3. Set Up External and Internal Networks</h3>
+<p><strong>NOTE:</strong> This step is only required if you’re using BIG-IQ. It may also<br />
+be helpful to use as the external side of a load balancing service in a<br />
+single-tenant deployment.</p>
+<ul>
+<li>
+<h4 id="external"><a href="#external"><span class="headeranchor"></span></a>External</h4>
+<pre><code>neutron net-create bigip_external
+neutron subnet-create --name bigip_external_subnet bigip_external 10.20.0.0/24
+neutron router-interface-add admin_router_1 bigip_external_subnet
+</code></pre>
+</li>
+<li>
+<h4 id="internal"><a href="#internal"><span class="headeranchor"></span></a>Internal</h4>
+<pre><code>neutron net-create bigip_internal
+neutron subnet-create --name bigip_internal_subnet bigip_internal
+10.30.0.0/24
+neutron router-interface-add admin_router_1 bigip_internal_subnet
+</code></pre>
+</li>
+</ul>
+<p><strong>[jputrino: OUTSIDE OF DOCUMENT SCOPE]</strong>\<br />
+<del>### Data Network</del>\<br />
+<del>Now create the data network. See instructions</del>\<br />
+<del>For flat Provider Network:</del>\</p>
+<p><del><code>neutron net-create datanet --provider:network_type flat --provider:physical_network physnet-data</code></del></p>
+<p><del>For VLAN provider network:</del>\</p>
+<p><del><code>neutron net-create datanet --provider:network_type vlan --provider:physical_network physnet-data --provider:segmentation_id 4</code></del></p>
+<p><del>After creating the network above, create the subnet:</del>\</p>
+<p><del><code>neutron subnet-create --allocation-pool start=10.30.30.200,end=10.30.30.250 --name datanet_subnet datanet 10.30.30.0/24</code></del></p>
+<p><del>Notice that a higher range of the subnet is used here. The idea is<br />
+that\<br />
+ IP addresses used for tunneling endpoints on the compute nodes can use<br />
+a\<br />
+ lower range of the subnet and service VMs like BIG-IP can use a higher\<br />
+ range of the subnet. This separation might be necessary if the compute\<br />
+ nodes are using static IPs or a different DHCP server.</del></p>
+<h3 id="4-create-a-nova-custom-flavor-for-big-ip"><a href="#4-create-a-nova-custom-flavor-for-big-ip"><span class="headeranchor"></span></a>4. Create a Nova Custom Flavor for BIG-IP</h3>
+<p>We recommend that you define a custom flavor to represent BIG-IP’s<br />
+hardware requirements. For example:\<br />
+<code>flavor_id=\$(cat /proc/sys/kernel/random/uuid)</code>\<br />
+<code>nova flavor-create m1.bigip.lbaas.min \$flavor_id 4096 120 2</code></p>
+<h3 id="5-import-the-big-ip-image-to-openstack"><a href="#5-import-the-big-ip-image-to-openstack"><span class="headeranchor"></span></a>5. Import the BIG-IP Image to OpenStack</h3>
+<p>F5 provides images for <a href="insert%20link">BIG-IP</a> and<br />
+<a href="insert%20link">BIG-IQ</a> in qcow2 disk format. These can be imported<br />
+directly into OpenStack.</p>
+<ul>
+<li>
+<h4 id="image-preparation-40optional41"><a href="#image-preparation-40optional41"><span class="headeranchor"></span></a>Image Preparation (optional)</h4>
+<p>Image preparation allows you to place a boot script on the image<br />
+before you import it into OpenStack. Both BIG-IP and BIG-IQ will run<br />
+the boot script is immediately upon startup. <strong>The script must be<br />
+named <em>/config/startup</em>.</strong>\<br />
+<strong>NOTE:</strong> F5 does not recommend creating virtual machines for<br />
+BIG-IP or BIG-IQ with a disk image that has already been booted.\<br />
+<strong>[INSTRUCTIONS FOR ADDING BOOT SCRIPT TO IMAGE?]</strong></p>
+</li>
+<li>
+<h4 id="import-the-image"><a href="#import-the-image"><span class="headeranchor"></span></a>Import the image</h4>
+<p>Example using glance:\</p>
+<pre><code>glance image-create --name bigip11.5.2 --is-public true --container-format bare --disk-format qcow2 --file \[your.image.filename\]-OpenStack.qcow2
+</code></pre>
+<p>\<br />
+<strong>Do not upload the qcow2 zip file that is generated by the<br />
+build</strong>. The qcow2 zip format isn’t compatible with OpenStack.</p>
+</li>
+</ul>
+<h3 id="6-deploy-big-ip"><a href="#6-deploy-big-ip"><span class="headeranchor"></span></a>6. Deploy BIG-IP</h3>
+<ul>
+<li>
+<h4 id="startup-metadata-preparation"><a href="#startup-metadata-preparation"><span class="headeranchor"></span></a>Startup Metadata Preparation</h4>
+<p><a href="link?">DevCentral</a> has onboarding tools that patch a startup script<br />
+into the BIG-IP image.\<br />
+<strong>NOTE:</strong> This software is not officially supported.</p>
+</li>
+<li>
+<h4 id="create-an-sr-iov-neutron-port"><a href="#create-an-sr-iov-neutron-port"><span class="headeranchor"></span></a>Create an SR-IOV Neutron Port</h4>
+<p>If you’re using SR-IOV, create the port BIG-IP will attach to it<br />
+launches:\<br />
+<code>neutron port-create &amp;lt;net-id&amp;gt; --binding:vnic-type direct</code>\<br />
+ Make note of the id of the port; you’ll need it in the next step.</p>
+</li>
+<li>
+<h4 id="launch-a-big-ip-instance"><a href="#launch-a-big-ip-instance"><span class="headeranchor"></span></a>Launch a BIG-IP Instance</h4>
+<p>To deploy BIG-IP using Horizon, login as the admin tenant and select<br />
+the “admin” project, then click instances, and add an instance.<br />
+Select the BIG-IP image from above as well as the custom flavor, and<br />
+provide the VM with at least 2 networks, 3 if a management VLAN will<br />
+be provisioned.</p>
+</li>
+</ul>
+<p>Using the “nova” command line, use something like:\<br />
+ for net in<br />
+<code>bigip_mgmt bigip_external bigip_internal datanet bigip_ha bigip_mirror</code>,<br />
+do\</p>
+<pre><code># this command sets environmental var "id" to the id of the network
+eval `neutron net-show \$net -f shell --fields id\`
+# append nic to list
+nics="\$nics --nic net-id=\$id"
+done
+nova boot --image bigip11.5.2 --flavor m1.bigip.lbaas.min \$nics admin_bigip1
+</code></pre>
+<p>\<br />
+ Wait until the instance becomes active:\<br />
+<code>nova show admin_bigip1\</code></p>
+<h3 id="7-create-a-floating-ip-from-the-public-network-for-the-big-ip"><a href="#7-create-a-floating-ip-from-the-public-network-for-the-big-ip"><span class="headeranchor"></span></a>7. Create a floating IP from the public network for the BIG-IP.</h3>
+<pre><code>manager@maas-ctrl-1:~$ neutron floatingip-create public
+Created a new floatingip:
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| fixed_ip_address    |                                      |
+| floating_ip_address | 10.144.64.93                         |
+| floating_network_id | 1cb6add9-61a4-40a4-81ab-24295ad5896d |
+| id                  | 36f7b24c-f980-449d-a3c1-e45dd613c639 |
+| port_id             |                                      |
+| router_id           |                                      |
+| status              | DOWN                                 |
+| tenant_id           | 8a7e073f703b4232b126bda16e05f9d7     |
++---------------------+--------------------------------------+
+manager@maas-ctrl-1:~$ neutron port-list | grep 10.10.0.2
+| 8d98789e-57f9-4013-b2a9-8598ba3bbb43 |      | fa:16:3e:f7:02:f2 | {"subnet_id": "016a23e0-8a6d-4c65-a2d7-bd4bc19d3487", "ip_address": "10.10.0.2"}    |
+manager@maas-ctrl-1:~$ neutron floatingip-associate 36f7b24c-f980-449d-a3c1-e45dd613c639 8d98789e-57f9-4013-b2a9-8598ba3bbb43
+Associated floatingip 36f7b24c-f980-449d-a3c1-e45dd613c639
+</code></pre>
+<h2 id="next-steps"><a href="#next-steps"><span class="headeranchor"></span></a>Next Steps</h2>
+<p>Now that you have a BIG-IP installed, you’ll need to configure it. Our<br />
+recommended resources for the setup process are listed below.</p>
+<ul>
+<li>
+<h6 id="devcentral-community"><a href="#devcentral-community"><span class="headeranchor"></span></a>DevCentral Community</h6>
+<p>\<br />
+ The DevCentral F5 Onboard package contains a number of tools to<br />
+ease deployment of BIG-IP and BIG-IQ. These tools can take care of<br />
+setting passwords, licensing, provisioning, and setting up VLANs and<br />
+IP addresses, upgrading software, and clustering multiple devices.</p>
+</li>
+</ul>
+<p>-\<br />
+ -\<br />
+ -</p>
+<h2 id="_1"><a href="#_1"><span class="headeranchor"></span></a></h2>
+<h2 id="command-design"><a href="#command-design"><span class="headeranchor"></span></a>Command Design</h2>
+<p>These tools are provided in the form of Bash shell wrappers around\<br />
+ scripts written in python. The python code uses the REST interface of\<br />
+ TMOS. This design was chosen so that they would integrate with<br />
+existing\<br />
+ shell or python scripts with minimal effort.</p>
+<h3 id="commands-for-tmos-openstack"><a href="#commands-for-tmos-openstack"><span class="headeranchor"></span></a>Commands for TMOS - OpenStack</h3>
+<p>The commands in this section are relevant to getting VE running on\<br />
+ OpenStack.</p>
+<h3 id="tmos-startup-script-overview"><a href="#tmos-startup-script-overview"><span class="headeranchor"></span></a>TMOS Startup Script Overview</h3>
+<p>IP/DHCP, DNS, SSH keys, passwords, Licensing, Module Provisioning</p>
+<h4 id="metadata-format"><a href="#metadata-format"><span class="headeranchor"></span></a>Metadata Format</h4>
+<p>{</p>
+<p>“bigip”: {</p>
+<p>“ssh_key_inject”: “false”,</p>
+<p>“admin_password”: “”,</p>
+<p>“change_passwords”: “false”,</p>
+<p>“root_password”: “”,</p>
+<p>“license”: {</p>
+<p>“basekey”: “U1923-75960-85089-XXXXX-XXXXX”</p>
+<p>},</p>
+<p>“modules”: {</p>
+<p>“auto_provision”: “false”,</p>
+<p>“ltm”: “nominal”,</p>
+<p>“gtm”: “minimum”,</p>
+<p>“avr”: “none”,</p>
+<p>“apm”: “none”,</p>
+<p>“afm”: “none”,</p>
+<p>“asm”: “none”</p>
+<p>},</p>
+<p>“network”: {</p>
+<p>“dhcp”: “true”,</p>
+<p>“selfip_prefix”: “selfip-dhcp-abc-“,</p>
+<p>“vlan_prefix”: “network-abc-“,</p>
+<p>“interfaces”: {</p>
+<p>“1.1”: {</p>
+<p>“dhcp”: “true”,</p>
+<p>“selfip_allow_service”: “default”,</p>
+<p>“selfip_name”: “selfip.external”,</p>
+<p>“selfip_description”: “Self IP address for BIG-IP External (VIP)\<br />
+ subnet”,</p>
+<p>“vlan_name”: “vlan.external”,</p>
+<p>“vlan_description”: “VLAN for BIG-IP External traffic”</p>
+<p>},</p>
+<p>“1.2”: {</p>
+<p>“dhcp”: “true”,</p>
+<p>“selfip_allow_service”: “default”,</p>
+<p>“selfip_name”: “selfip.internal”,</p>
+<p>“selfip_description”: “Self IP address for BIG-IP Internal (Pool)\<br />
+ subnet”,</p>
+<p>“vlan_name”: “vlan.internal”,</p>
+<p>“vlan_description”: “VLAN for BIG-IP Internal traffic”</p>
+<p>},</p>
+<p>“1.3”: {</p>
+<p>“dhcp”: “true”,</p>
+<p>“selfip_allow_service”: “default”,</p>
+<p>“selfip_name”: “selfip.datanet”,</p>
+<p>“vlan_name”: “vlan.datanet”,</p>
+<p>“vlan_description”: “VLAN for OpenStack tunneling traffic”</p>
+<p>},</p>
+<p>“1.4”: {</p>
+<p>“dhcp”: “true”,</p>
+<p>“selfip_allow_service”: “default”,</p>
+<p>“selfip_name”: “selfip.ha”,</p>
+<p>“selfip_description”: “Self IP address for HA subnet”,</p>
+<p>“vlan_name”: “vlan.ha”,</p>
+<p>“vlan_description”: “VLAN for BIG-IP HA traffic”</p>
+<p>},</p>
+<p>“1.5”: {</p>
+<p>“dhcp”: “true”,</p>
+<p>“selfip_allow_service”: “default”,</p>
+<p>“selfip_name”: “selfip.mirroring”,</p>
+<p>“vlan_name”: “vlan.mirroring”,</p>
+<p>“vlan_description”: “VLAN for BIG-IP Mirroring traffic”</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<h3 id="big-iq-image-patching-for-openstack"><a href="#big-iq-image-patching-for-openstack"><span class="headeranchor"></span></a>BIG-IQ Image Patching for OpenStack</h3>
+<p>f5-onboard-openstack patch-image |</p>
+<p>patch-image-and-hotfix</p>
+<h3 id="big-ip-image-patching-for-openstack"><a href="#big-ip-image-patching-for-openstack"><span class="headeranchor"></span></a>BIG-IP Image Patching for OpenStack</h3>
+<p>f5-onboard-ve-openstack patch-image</p>
+<p>The image file name must end with .qcow2</p>
+<p>Usage:</p>
+<p>sudo env “PATH=\\$PATH” f5-onboard-ve-openstack patch-image.sh\<br />
+ BIGIP-11.5.0.0.0.221.qcow2</p>
+<p>f5-onboard-ve-openstack patch-image-and-hotfix</p>
+<p>Example Usage:</p>
+<p>sudo env “PATH=\\$PATH” f5-onboard-ve-openstack patch-image-and-hotfix\<br />
+ BIGIP-11.5.0.0.0.221.qcow2 base.iso hotfix.iso</p>
+<h3 id="deploying-big-iq-ve-on-openstack"><a href="#deploying-big-iq-ve-on-openstack"><span class="headeranchor"></span></a>Deploying BIG-IQ VE on OpenStack</h3>
+<p>f5-onboard-openstack deploy-admin-bigiqs |</p>
+<p>destroy-admin-bigiqs |</p>
+<p>deploy-tenant-bigiqs |</p>
+<p>destroy-tenant-bigiqs</p>
+<h3 id="deploying-big-ip-ve-on-openstack"><a href="#deploying-big-ip-ve-on-openstack"><span class="headeranchor"></span></a>Deploying BIG-IP VE on OpenStack</h3>
+<p>f5-onboard-openstack deploy-admin-bigips |</p>
+<p>destroy-admin-bigips |</p>
+<p>deploy-tenant-bigips |</p>
+<p>destroy-tenant-bigips</p>
+<p>f5-onboard-ve-openstack deploy-bigips</p>
+<p>–keystone-addr &lt;addr&gt;</p>
+<p>–admin-password &lt;pw&gt;</p>
+<p>–bigip-image &lt;img&gt;</p>
+<p>–ha-type [ scalen | pair | standalone ]</p>
+<p>–num-bigips &lt;num&gt;</p>
+<p>–bigip-index &lt;idx&gt; (starting bigip index)</p>
+<p>f5-onboard-ve-openstack destroy-bigips</p>
+<p>–keystone-addr &lt;addr&gt;</p>
+<p>–admin-password &lt;pw&gt;</p>
+<p>–num-bigips &lt;num&gt;</p>
+<p>–bigip-index &lt;idx&gt; (starting bigip index)</p>
+<h4 id="commands-for-tmos-general"><a href="#commands-for-tmos-general"><span class="headeranchor"></span></a>Commands for TMOS - General</h4>
+<p>These commands in this section should work with any set of BIG-IPs,\<br />
+ whether they are Virtual, Appliance, or vCMP®-based. These commands\<br />
+ presume you have already deployed BIG-IP in terms of basic setup and\<br />
+ licensing.</p>
+<p>If you are using VE, the commands in the next section can help you\<br />
+ deploy the BIG-IP from scratch.</p>
+<h3 id="upgrading-big-iq-software"><a href="#upgrading-big-iq-software"><span class="headeranchor"></span></a>Upgrading BIG-IQ Software</h3>
+<h3 id="upgrading-big-ip-software"><a href="#upgrading-big-ip-software"><span class="headeranchor"></span></a>Upgrading BIG-IP Software</h3>
+<p>f5-onboard-upgrade-bigips</p>
+<p>–keystone-addr &lt;addr&gt;</p>
+<p>–admin-password &lt;pw&gt;</p>
+<p>–bigip-image &lt;img&gt;</p>
+<p>–num-bigips &lt;num&gt;</p>
+<h3 id="clustering-big-ips"><a href="#clustering-big-ips"><span class="headeranchor"></span></a>Clustering BIG-IPs</h3>
+<p>f5-onboard-cluster-bigips</p>
+<p>–keystone-addr &lt;addr&gt;</p>
+<p>–admin-password &lt;pw&gt;</p>
+<p>–bigip-image &lt;img&gt;</p>
+<p>–ha-type scalen pair standalone</p>
+<p>–num-bigips &lt;num&gt;</p>
+<p>–bigip-floating-ip-addr-list &lt;list&gt;</p>
+<p>–bigip-mgmt-addr-list &lt;list&gt;</p>
+<p>–bigip-ha-addr-list’ &lt;list&gt;</p>
+<p>–bigip-mirror-addr-list’ &lt;list&gt;</p>
+<p>(Lists are comma separated.)</p>
+<h3 id="commands-for-tmos-odk"><a href="#commands-for-tmos-odk"><span class="headeranchor"></span></a>Commands for TMOS - ODK</h3>
+<p>The commands in this section are relevant to getting VE running on\<br />
+ OpenStack, but presume that you have used the OpenStack Deployment Kit\<br />
+ (ODK) to deploy OpenStack and are using the reference implementation\<br />
+ that the ODK deploys. The ODK is an internal F5 testing tool.</p>
+<p>A significant difference between the commands in this section and the\<br />
+ generic OpenStack commands in the previous section is that the ODK is\<br />
+ used to get the keystone address and password. Therefore, you do not\<br />
+ need to provide those arguments in the following commands. The ODK is\<br />
+ storing your deployment information (in your \\$HOME/.odk/conf and\<br />
+ \\$HOME/.odk/state directories) so there is no need for you to<br />
+provide\<br />
+ those settings as arguments to these commands.</p>
+<p>f5-onboard-ve-odk attach-bigips-to-vlan-trunk |</p>
+<p>deploy-bigips-base |</p>
+<p>destroy-bigips-base |</p>
+<p>deploy-bigips |</p>
+<p>upgrade-bigips |</p>
+<p>cluster-bigips |</p>
+<p>destroy-bigips</p>
+<p>f5-onboard-ve-odk attach-bigips-to-vlan-trunk</p>
+<p>No arguments. Uses configured cluster settings.</p>
+<p>f5-onboard-ve-odk deploy-bigips-base</p>
+<p>–ha-type Which High Availability type to use: standalone, pair, scalen</p>
+<p>Default: pair</p>
+<p>–bigip-image Which BIG-IP to use</p>
+<p>Default: BIGIP-11.5.0.0.0.221-OpenStack.qcow2</p>
+<p>f5-onboard-ve-odk destroy-bigips-base</p>
+<p>–ha-type Which High Availability type to use: standalone, pair, scalen</p>
+<p>Default: pair</p>
+<p>–bigip-image Which BIG-IP to use</p>
+<p>Default: BIGIP-11.5.0.0.0.221-OpenStack.qcow2</p>
+<p>f5-onboard-ve-odk deploy-bigips</p>
+<p>–bigip-image Which BIG-IP to use</p>
+<p>Default: BIGIP-11.5.0.0.0.221-OpenStack.qcow2</p>
+<p>–ha-type Which High Availability type to use: standalone, pair, scalen</p>
+<p>Default: pair</p>
+<p>–num-bigips Number of big-ips to deploy for scalen mode</p>
+<p>Default: 4</p>
+<p>–sync-mode Which Synchronization mode to use: replication or autosync</p>
+<p>Default: replication</p>
+<p>f5-onboard-ve-odk destroy-bigips</p>
+<p>No arguments. Uses configured cluster settings.</p>
+<p>f5-onboard-ve-odk upgrade-bigips</p>
+<p>No arguments. Uses configured cluster settings.</p>
+<p>f5-onboard-ve-odk cluster-bigips</p>
+<p>No arguments. Uses configured cluster settings.</p>
+<p>f5-onboard-lbaas</p>
+<p>configure-bigip-plugin | unconfigure-bigip-plugin</p></article></body></html>
