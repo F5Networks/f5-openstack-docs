@@ -17,7 +17,7 @@ if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
 
   echo "Publishing docs to GitHub Pages"
   cd "$HOME"
-  git clone --verbose --branch=gh-pages https://f5-travisci:$TRAVIS_PATOKEN@github.com/F5Networks/f5-openstack-docs.git gh-pages
+  git clone --verbose --branch=gh-pages https://f5-travisci:$TRAVIS_PASS@github.com/F5Networks/f5-openstack-docs.git gh-pages
   cd gh-pages
   git remote rm origin
   git remote add origin https://f5-travisci:$TRAVIS_PASS@github.com/F5Networks/f5-openstack-docs.git
