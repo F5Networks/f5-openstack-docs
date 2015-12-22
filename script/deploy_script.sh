@@ -20,7 +20,7 @@ if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
   git clone --verbose --branch=gh-pages https://f5-travisci:$TRAVIS_PATOKEN@github.com/F5Networks/f5-openstack-docs.git gh-pages
   cd gh-pages
   git remote rm origin
-  git remote add origin https://f5-travisci:$TRAVIS_PATOKEN@github.com/F5Networks/f5-openstack-docs.git
+  git remote add origin https://f5-travisci:$TRAVIS_PASS@github.com/F5Networks/f5-openstack-docs.git
   cp -Rf "$HOME"/site_build ./
   git add -f .
   git commit -m "Latest doc set auto-pushed to gh-pages on successful travis build $TRAVIS_BUILD_NUMBER"
