@@ -21,7 +21,7 @@ branches:
  - feature.deploy_script
 
 after_success:
- - script: ./script/deploy_script.sh
+ - ./script/deploy_script.sh
 
 deploy:
   provider: s3
