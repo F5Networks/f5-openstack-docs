@@ -4,24 +4,30 @@
 
 <body>
   {% include header.html %}
- <hr>  
-     <div class="bs-docs-header">
-    <h1>{{ page.title }}</h1>
-   </div>
-  </div>
 
-  <div class="bs-docs-sidebar">
-    <div class="bs-docs-sidenav" id="toc">
-    </div>
-  </div>
- <div class="bs-docs-container">
-  	
+<div class="alert alert-danger alert-dismissible" role="alert">
+   <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
+</div>
+
+ <hr>  
+
+ <div class="bs-docs-header">
+    <h1>{{ page.title }}</h1>
+ </div>
+
+<div class="bs-docs-sidebar">
+ <div class="bs-docs-sidenav" id="toc">
+ </div>
+</div>
+
+<div class="bs-docs-container">
 		 {{ content }}
-    
-	</div>
+</div>
  
 <hr>
+
 {% include footer.html %}
+
 </body>
 
 <!-- tocify scripts-->
