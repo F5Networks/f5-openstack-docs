@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: How to Deploy the F5 LBaaS Agent in OpenStack
+url: {{ page.title | slugify }}
 tags: agent, lbaas, openstack
 resource: true
 openstack version: 

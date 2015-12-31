@@ -1,3 +1,9 @@
+---
+layout: docs_page
+title: LBaaS Deployment Guide
+url: {{ page.title | slugify }}
+---
+
 Introduction
 ============
 

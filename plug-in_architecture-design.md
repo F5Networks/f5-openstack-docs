@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: LBaaS Plug-in Architecture and Design
+url: {{ page.title | slugify }}
 ---
 
 #F5 LBaaS Plug-in Architecture and Design

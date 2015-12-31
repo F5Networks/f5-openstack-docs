@@ -1,3 +1,10 @@
+---
+layout: docs_page
+title: Setting up OpenStack LBaaSv1
+url: {{ page.title | slugify }}
+resource: true
+---
+
 #Overview: Setting up OpenStack LBaaS
 
 This document provides instructions for installing the F5 OpenStack Load Balancing as a Service (LBaaS) plug-in. Using the OpenStack LBaaS user interface, command-line interface, or REST interface, you can provision OpenStack LBaaS resources (virtual IP addresses, pools, pool members, health monitors). The plug-in leverages the BIG-IP device's load balancing capabilities to support your OpenStack LBaaS resources.
