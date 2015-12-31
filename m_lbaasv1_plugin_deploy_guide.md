@@ -1,3 +1,11 @@
+
+layout: docs_page
+title: Using the F5 OpenStack LBaaSv1 Plugin and BIG-IP
+url: {{ page.title | slugify }}
+resource: true
+
+
+
 Using the F5 OpenStack LBaaSv1 Plugin and BIG-IP to Manage Local Traffic in OpenStack
 
 {% include /f5-os-lbaasv1/t_driver_overview.md %}

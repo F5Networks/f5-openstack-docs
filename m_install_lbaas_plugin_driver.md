@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: Install the F5 OpenStack LBaaSv1 Plug-In
+url: {{ page.title | slugify }}
 tags: lbaasv1, plug-in
 resource: true
 ---

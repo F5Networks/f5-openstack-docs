@@ -1,3 +1,12 @@
+---
+layout: docs_page
+title: F5 LBaaS Plug-in - OpenStack Installation Tips
+url: {{ page.title | slugify }}
+tags: lbaas, openstack, plugin
+resource: true
+openstack version: 
+---
+
 #F5 LBaaS Plug-in -- OpenStack Installation Tips
 
 ## Common Pitfalls

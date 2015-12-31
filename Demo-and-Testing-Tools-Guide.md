@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: OpenStack Demo and Testing Tools
+url: {{ page.title | slugify }}
 categories: openstack, testing, tools, misc_docs
 resource: true
 ---

@@ -12,18 +12,19 @@
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 <!--styles-->
- <link rel="stylesheet" href="{{ "css/bootstrap-docs.css" | prepend: site.baseurl | prepend: site.url }}" type="text/css">
+ <link rel="stylesheet" href="{{ '/css/bootstrap-docs.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
 
- <link rel="stylesheet" href="{{ "css/bootstrap.css" | prepend: site.baseurl | prepend: site.url }}" type="text/css">
+ <link rel="stylesheet" href="{{ '/css/bootstrap.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
     
- <link rel="stylesheet" href="{{ "css/bootstrap-theme.css" | prepend: site.baseurl | prepend: site.url }}" type="text/css">
+ <link rel="stylesheet" href="{{ '/css/bootstrap-theme.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
 
- <link rel="stylesheet" href="{{ "css/font-awesome.css" | prepend: site.baseurl | prepend: site.url }}" type="text/css">
-
+ <link rel="stylesheet" href="{{ '/css/font-awesome.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
+ 
 <!-- tocify styles-->
- <link type="text/css" rel="stylesheet" href="{{ "css/jquery.tocify.css" | prepend: site.baseurl | prepend: site.url }}">
+ <link type="text/css" rel="stylesheet" href="{{ '/css/jquery.tocify.css' | prepend: site.baseurl | prepend: site.url }}">
 
- <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+<!-- jekyll stuff
+ <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">-->
 
  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
    
