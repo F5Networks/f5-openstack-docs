@@ -30,7 +30,7 @@ slug: F5 OpenStack Docs
     {% for page in site.pages %}
       <li>
         <p>
-          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
         </p>
       </li>
     {% endfor %}
