@@ -1,27 +1,16 @@
----
-layout: docs_page
-title: How to Deploy the F5 LBaaS Agent in OpenStack
-url: {{ page.title | slugify }}
-tags: agent, lbaas, openstack
-resource: true
-openstack version: 
----
-
-#How to Deploy the F5 LBaaS Agent in OpenStack
-
-## Overview
+# Overview
 
 {% include /f5-os-lbaasv1/t_agent_overview.md %}
 
-### Prerequisites
+## Prerequisites
 
 {% include /f5-os-lbaasv1/t_agent_prerequisites.md %}
 
-### Placement
+## Placement
 
 {% include /f5-os-lbaasv1/t_agent_placement.md %}
 
-## Install the F5 OpenStack LBaaS Plug-in Agent
+# Installing the F5 OpenStack LBaaS Plugin Agent
 
 Use the command set for your distribution to install the Neutron Gateway Packages for the F5 LBaaS Agent.
 
@@ -39,29 +28,30 @@ Use the command set for your distribution to install the Neutron Gateway Package
 
 Complete both of the installation steps \(install, then stop\) on each host on which you want the F5 LBaaS Agent to run.
 
-## Set up the Agent
+# Set up the Agent
 
 {% include /f5-os-lbaasv1/t_install_agent_setup.md %}
 
 Table 1.
 {% include /f5-os-lbaasv1/r_os_lbaas_agent_config_settings.md %}
 
-## Start the Agent
+# Start the Agent
 
 {% include /f5-os-lbaasv1/t_install_agent_start_note.md %}
 
 {% include /f5-os-lbaasv1/t_install_agent_start_ubuntu-redhat-centos.md %}
 
-## Check the Agent Status
+# Check the Agent Status
 
 {% include /f5-os-lbaasv1/t_install_agent_status_ubuntu-redhat-centos.md %}
 
-Figure 1. 
-<img src="//f5-os-lbaasv1/media/lbaas-agent-status.png"/>
+**Figure 1.** 
+
+<img src="{{ "/f5-os-lbaasv1/media/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1"/>
 
 {% include /f5-os-lbaasv1/t_install_agent_check_status_note.md %}
 
-## Enable LBaaS in OpenStack GUI
+# Enable LBaaS in OpenStack Horizon
 
 {% include /f5-os-lbaasv1/t_install_agent_enable_lbaas.md %}
 
@@ -70,8 +60,4 @@ Figure 1.
 {% include /f5-os-lbaasv1/t_install_agent_restart_webserver_ubuntu.md %}
 
 {% include /f5-os-lbaasv1/t_install_agent_restart_webserver_redhat-centos.md %}
-
-## Additional Information
-
-{% include /f5-os-lbaasv1/t_f5-lbaasv1-plugin_tenant-scheduler.md %}
 

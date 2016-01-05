@@ -1,5 +1,0 @@
-layout: default
-title: F5 OpenStack Onboard
-repository: git://F5Networks/f5-openstack-onboard.git
-published: true
-project_dir: ./f5-onboard

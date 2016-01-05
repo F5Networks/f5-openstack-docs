@@ -1,5 +1,5 @@
 ---
-layout: docs_page
+layout: default
 title: LBaaS Plugin Design Guide
 url: {{ page.title | slugify }}
 categories: lbaasv1, plugin, design, openstack

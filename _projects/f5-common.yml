@@ -1,5 +1,0 @@
-layout: default
-title: F5 OpenStack Common
-repository: git://F5Networks/f5-openstack-common.git
-published: true
-project_dir: ./f5-common
