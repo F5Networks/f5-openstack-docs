@@ -6,7 +6,7 @@ bundle exec jekyll build -d ./site_build
 
 # Check the html and validate links
 echo "proofing site with htmlproofer"
-bundle exec htmlproof ./site_build
+bundle exec htmlproof ./site_build --allow_hash_href true
 
 cp -R ./site_build $HOME/site_build
 

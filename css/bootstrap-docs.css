@@ -233,8 +233,7 @@ h4 code {
   background-image:         linear-gradient(to bottom, #1E77A4 0%, #2D9BCD 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1E77A4', endColorstr='#2D9BCD', GradientType=0);
   background-repeat: repeat-x;
-  height: 80px;
-}
+ }
 
 /* Masthead (headings and download button) */
 .bs-docs-masthead .bs-docs-booticon {
@@ -295,7 +294,7 @@ h4 code {
 
 /* Page headers */
 .bs-docs-header {
-  position: relative;
+  position: fixed;
   padding-top:50px;
   font-size: 28px;
   color: #fff;
@@ -329,13 +328,13 @@ h4 code {
   }
 }
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
   .bs-docs-header h1,
   .bs-docs-header p {
     margin-right: 180px;
   }
 }
-
+/
 /*
  * Homepage featurettes
  *
@@ -602,6 +601,7 @@ h4 code {
 	margin-top: 50px;
 	margin-left: 280px !important;
 	padding-left: 30px;
+	margin-right: 20px;
 	width: auto;
 }
 /*

@@ -1,5 +1,4 @@
 ---
-layout: docs_page
 title: Deploying F5 in OpenStack with MaaS and JuJu
 url: {{ page.title | slugify }}
 categories: openstack, testing, tools, maas, juju, ubuntu

@@ -1,7 +1,7 @@
-<table width="797">
+<table width="800" border="1">
 <tbody>
 <tr>
-<td colspan="2" width="797">F5 OpenStack LBaaS Agent Configuration Options</td>
+<td colspan="2" width="797"><strong>F5 OpenStack LBaaS Agent Configuration Options</strong></td>
 </tr>
 <tr>
 <td width="341">[DEFAULT]</td>
