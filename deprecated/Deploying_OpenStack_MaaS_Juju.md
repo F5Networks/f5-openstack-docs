@@ -40,11 +40,7 @@ This network need not be routable but should be on its own broadcast domain beca
 
 Each physical machine MUST have a working IPMI interface or other power interface supported by MaaS (most Dell machines do). It should function with 8 GB of RAM, although we are not exactly sure how low memory can go and still work. For multiple BIG-IPs and VMs you may want more memory. Some of our machines have 32GB of RAM.
 
-<<<<<<< HEAD
 {% comment %}make into table --JP{% endcomment %}
-=======
-**{% comment %}make into table{% comment %}**
->>>>>>> 8d6b524... Refactor demo and testing tools guide into multiple docs:
 
 #### Minimal
 
@@ -66,11 +62,7 @@ The recommended configuration specifies a total of 5 physical machines which inc
 
 Each machine consumes an IPMI port on the mgmt network. We’d recommend the MaaS controller have an interface on the external network (to avoid routing test traffic through PD Lab routers). So, that’s two ports for the MaaS controller. The network node needs three network ports: mgmt, external, and data. Each compute node needs two network ports: mgmt, and data. 
 
-<<<<<<< HEAD
 {% comment %}make into table --JP{% endcomment %}
-=======
-**{% comment %}make into table{% comment %}**
->>>>>>> 8d6b524... Refactor demo and testing tools guide into multiple docs:
 
 #### Minimal
 
