@@ -24,14 +24,14 @@ slug: F5 OpenStack Docs
 <div class="container-fluid-gray">
 <div class="container-fluid">
   <div class="text-center">
-    <h2>Docs</h1>
+    <h3>Docs</h3>
    <div class="row">
   <ul class="text-left">
     {% for page in site.pages %}
       <li>
-        <h4>
+        <p>
           <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        </h4>
+        </p>
       </li>
     {% endfor %}
   </ul>
