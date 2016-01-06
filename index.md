@@ -9,9 +9,7 @@ slug: F5 OpenStack Docs
 {% include header.html %}
 
 <div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
+   <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
 </div>
 
 <div class="jumbotron">
@@ -24,16 +22,18 @@ slug: F5 OpenStack Docs
 <div class="container-fluid-gray">
 <div class="container-fluid">
   <div class="text-center">
-    <h2>Docs</h1>
+    <h3>Docs</h3>
    <div class="row">
   <ul class="text-left">
     {% for page in site.pages %}
+     {% if page.layout == "docs_page" %}
       <li>
-        <h4>
-          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        </h4>
+        <p>
+          <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
+        </p>
       </li>
-    {% endfor %}
+      {% endif %}
+     {% endfor %}
   </ul>
 
 {% include footer.html %}
