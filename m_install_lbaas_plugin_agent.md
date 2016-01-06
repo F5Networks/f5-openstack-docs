@@ -56,8 +56,9 @@ Table 1.
 
 {% include /f5-os-lbaasv1/t_install_agent_status_ubuntu-redhat-centos.md %}
 
-Figure 1. 
-<img src="//f5-os-lbaasv1/media/lbaas-agent-status.png"/>
+**Figure 1.** 
+
+<img src="{{ "/f5-os-lbaasv1/media/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1"/>
 
 {% include /f5-os-lbaasv1/t_install_agent_check_status_note.md %}
 

@@ -12,7 +12,7 @@ resource: true
 
 {% include /f5-os-lbaasv1/t_sample_environment_diagram_explained.md %}
 
-![](/f5-os-lbaasv1/media/openstack_lbaas_env_example.png "Figure 1")
+<img src="{{ "/f5-os-lbaasv1/media/openstack_lbaas_env_example.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1" />
 
 ## Prerequisites
 
