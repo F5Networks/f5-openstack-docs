@@ -1,18 +1,10 @@
----
-layout: docs_page
-title: Install the F5 OpenStack LBaaSv1 Plug-In
-url: {{ page.title | slugify }}
-tags: lbaasv1, plug-in
-resource: true
----
-
 # Overview
 
 {% include /f5-os-lbaasv1/t_driver_overview.md %}
 
 {% include /f5-os-lbaasv1/t_sample_environment_diagram_explained.md %}
 
-![](/f5-os-lbaasv1/media/openstack_lbaas_env_example.png "Figure 1")
+<img src="{{ "/f5-os-lbaasv1/media/openstack_lbaas_env_example.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1" />
 
 ## Prerequisites
 

@@ -1,5 +1,4 @@
 ---
-layout: docs_page
 title: Cloud and SDN Overview
 url: {{ page.title | slugify }}
 categories: cloud, sdn, misc_docs

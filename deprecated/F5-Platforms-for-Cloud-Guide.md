@@ -1,5 +1,4 @@
 ---
-layout: docs_page
 title: F5 Platforms for Cloud
 url: {{ page.title | slugify }}
 categories: cloud, platforms, misc_docs

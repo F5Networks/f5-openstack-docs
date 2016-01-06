@@ -1,5 +1,4 @@
 ---
-layout: docs_page
 title: Setting up OpenStack LBaaSv1
 url: {{ page.title | slugify }}
 resource: true
