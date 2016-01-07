@@ -2,7 +2,7 @@
 
 <link rel="icon" sizes="196x196" href="http://cdn.f5.com/digital-platforms/images/f5-196.png">
 
- <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>    
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>    
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +11,34 @@
 <!-- Site metadata -->
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-<!--styles-->
- <link rel="stylesheet" href="{{ '/css/bootstrap-docs.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap-docs.css" type="text/css">
+<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap.css">
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="{{ site.url }}{{ site.baseurl }}/css/font-awesome.css">
+<!-- tocify styles-->
+<link type="text/css" rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/jquery.tocify.css">
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.js"></script>
+
+<!-- tocify -->
+<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/jquery.tocify.js"></script>
+
+<!--styles>
+ 
 
  <link rel="stylesheet" href="{{ '/css/bootstrap.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
     
  <link rel="stylesheet" href="{{ '/css/bootstrap-theme.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
 
- <link rel="stylesheet" href="{{ '/css/font-awesome.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
+ <link rel="stylesheet" href="{{ '/css/font-awesome.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css"-->
  
-<!-- tocify styles-->
- <link type="text/css" rel="stylesheet" href="{{ '/css/jquery.tocify.css' | prepend: site.baseurl | prepend: site.url }}">
 
-<!-- jekyll stuff
+<!-- cannonical link settings
  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">-->
 
  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "feed.xml" | prepend: site.baseurl | prepend: site.url }}" />

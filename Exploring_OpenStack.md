@@ -5,11 +5,6 @@ url: {{ page.title | slugify }}
 categories: openstack, testing, tools, misc_docs
 resource: true
 ---
-<div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Heads up!</strong> This doc is under development.
-</div>
 
 # Overview
 
