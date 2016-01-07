@@ -2,18 +2,16 @@
 <html>
  {% include head_for_docs.html %}
 
-<body>
+<body class="padding-top:70px">
   {% include header.html %}
 
 <div class="alert alert-danger alert-dismissible" role="alert">
-   <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
+ <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
 </div>
 
- <hr>  
-
- <div class="bs-docs-header">
-    <h1>{{ page.title }}</h1>
- </div>
+<div class="container-fluid" class="position:fixed">
+   <h1>{{ page.title }}</h1>
+</div>
 
 <div class="bs-docs-sidebar">
  <div class="bs-docs-sidenav" id="toc">
@@ -33,7 +31,7 @@
 <!-- tocify scripts-->
 <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="{{ '/js/jquery.tocify.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/jquery.tocify.js"></script>
 <script>
         $(function() {
             //Calls the tocify method on the HTML div.
