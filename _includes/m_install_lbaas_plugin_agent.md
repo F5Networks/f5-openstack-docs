@@ -47,7 +47,7 @@ Table 1.<a name="Table1"></a>
 
 **Figure 1.** 
 
-<img src="{{ "/f5-os-lbaasv1/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1"/>
+<img src="{{ "/f5-os-lbaasv1/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1" width="500"/>
 
 {% include /f5-os-lbaasv1/t_install_agent_check_status_note.md %}
 

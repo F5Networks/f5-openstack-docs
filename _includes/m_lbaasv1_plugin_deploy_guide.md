@@ -30,7 +30,7 @@
 
 {% include /f5-os-lbaasv1/t_sample_environment_diagram_explained.md %}
 
-![]({{ "/f5-os-lbaasv1/openstack_lbaas_env_example.png" | prepend: site.baseurl | prepend: site.url }} "Figure 1")
+<img src="{{ "/f5-os-lbaasv1/openstack_lbaas_env_example.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1" width="500">
 
 #### RedHat/CentOS
 
@@ -83,7 +83,7 @@ Complete both of the installation steps \(install, then stop\) on each host on w
 
 Figure 2. 
 
-![]({{ "/f5-os-lbaasv1/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }} "Figure 2")
+<img src="{{ "/f5-os-lbaasv1/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 2" width="500">
 
 {% include /f5-os-lbaasv1/t_install_agent_check_status_note.md %}
 
