@@ -4,7 +4,7 @@
 
 {% include /f5-os-lbaasv1/t_sample_environment_diagram_explained.md %}
 
-<img src="{{ "/f5-os-lbaasv1/openstack_lbaas_env_example.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1" />
+<img src="{{ "/f5-os-lbaasv1/openstack_lbaas_env_example.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1" width="500px" />
 
 ## Prerequisites
 
