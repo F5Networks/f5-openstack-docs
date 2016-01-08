@@ -6,18 +6,13 @@ categories: openstack, testing, tools, misc_docs
 resource: true
 ---
 
-# Overview
+## Overview
 
-You can log in to the OpenStack dashboard with the following URL (replacing with your IP address): *http://<ip_address\>/dashboard*.
+You can log in to the OpenStack dashboard with the following URL (replacing with your IP address) and the login you configured during the setup process: *\http://<ip_address\>/dashboard*.
 
 **NOTE:** We’ve had better luck accessing VM remote consoles with Chrome than with Internet Explorer.
 
-If you've used the [QuickStart configuration](#), you can log in into the admin project using the username “admin” and password from the *keystonerc_admin* file which is placed in your local directory.
-
-# Projects
-You can also log in as a regular tenant using the username “user_1” and password “user_1”; this will log you into the “proj_1” tenant project. You can also explore proj_2 and proj_3 using credentials “user_2” and “user_3”, respectively.
-
-# Exploring the OpenStack CLI
+## Exploring the OpenStack CLI
 
 You can use the OpenStack CLI by first sourcing the credentials:
 
@@ -25,7 +20,8 @@ You can use the OpenStack CLI by first sourcing the credentials:
 
 Check out a few commands:
 
-`[manager@pack43 ~(keystone_admin)]$ keystone tenant-list`
+```
+[manager@pack43 ~(keystone_admin)]$ keystone tenant-list
 
 id |name |enabled 
 :------|:------|:------
@@ -34,7 +30,7 @@ ca2d148d2f004029b147084a0e58f69c |admin    | True
 b2b7599a9ba34292ab1a66a6239fc201 | proj_2  | True    
 4fbf9eddf32c41e28a40beb935e96c35 | proj_3  | True    
 18fc8dbb8d9745429e10224de01a78a3 | services | True    
-
+```
 
 More commands to try:
 
@@ -47,12 +43,12 @@ More commands to try:
 [manager@pack43 ~(keystone_admin)]$ nova service-list
 [manager@pack43 ~(keystone_admin)]$ neutron agent-list
 ```
-
+{% comment %}
 Check out the Load Balancer Agent (be sure to use the ID listed in the previous command):
-
 **INSERT TABLE IMAGE HERE**
+{% endcomment %}
 
-### Explore Networks and Floating IPs
+### Networks and Floating IPs
 
 ```
 neutron net-list
@@ -64,7 +60,7 @@ neutron port-show <id>
 neutron floatingip-list
 ```
 
-## Explore Flavors, Images, and VMs
+### Flavors, Images, and VMs
 
 ```
 nova list
@@ -77,14 +73,14 @@ nova flavor-list
 nova flavor-show m1.bigip
 ```
 
-## Explore Security Rules
+### Security Rules
 
 ```
 neutron security-group-list
 neutron security-group-rule-list
 ```
 
-## Explore Firewall Configuration
+### Firewall Configurations
 
 **NOTE:** If you haven’t created a firewall, the results of these commands will be empty.
 
@@ -94,7 +90,7 @@ neutron firewall-policy-list
 neutron firewall-rule-list
 ```
 
-## Explore LBaaS Configuration
+### LBaaS Configuration
 
 ```
 neutron help | grep lb-
@@ -115,14 +111,14 @@ myip=`ip addr show dev $myif | grep "inet "| cut -d' ' -f6 | cut -d'/'
 iptables -t nat -A PREROUTING -i $myif -p tcp --dport 2443 -d $myip -m
 conntrack --ctstate NEW -j DNAT --to-destination 10.99.2.2:443
 ```
-If you deployed a second BIG-IP using the option “--ha-type pair” (which is not the default), then you should also do this for the second BIG-IP:
+If you deployed a second BIG-IP using the option `--ha-type pair` (which is not the default), then you should also do this for the second BIG-IP:
 
 ```
 iptables -t nat -A PREROUTING -i \$myif -p tcp --dport 3443 -d $myip -m
 conntrack --ctstate NEW -j DNAT --to-destination 10.99.2.3:443
 ```
 
-### Explore BIG-IP Partitions and LTM Objects
+### Partitions and LTM Objects
 
 Log in to the BIG-IP.
 
@@ -137,7 +133,7 @@ list ltm virtuals
 list ltm pools
 ```
 
-### Explore Tunnel Config
+### Tunnel Configurations
 
 Log in to the BIG-IP.
 
@@ -152,7 +148,7 @@ Type `cd /u<tab> …`, select a folder, and press return.
 list net tunnels
 ```
 
-### Launch a Nova Instance
+## Launch a Nova Instance
 
 ```
 curl -O http://cloud-images.ubuntu.com/releases/precise/release/ubuntu-12.04-server-cloudimg-amd64-disk1.img

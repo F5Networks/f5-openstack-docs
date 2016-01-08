@@ -32,7 +32,7 @@ Complete both of the installation steps \(install, then stop\) on each host on w
 
 {% include /f5-os-lbaasv1/t_install_agent_setup.md %}
 
-Table 1.
+Table 1.<a name="Table1"></a>
 {% include /f5-os-lbaasv1/r_os_lbaas_agent_config_settings.md %}
 
 # Start the Agent
@@ -47,7 +47,7 @@ Table 1.
 
 **Figure 1.** 
 
-<img src="{{ "/f5-os-lbaasv1/media/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1"/>
+<img src="{{ "/f5-os-lbaasv1/lbaas-agent-status.png" | prepend: site.baseurl | prepend: site.url }}" alt="Figure 1"/>
 
 {% include /f5-os-lbaasv1/t_install_agent_check_status_note.md %}
 
