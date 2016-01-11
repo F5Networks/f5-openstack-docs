@@ -9,8 +9,9 @@
 #
 
 set -e # exit with nonzero exit code if anything fails
+set -x # enable verbose output for debugging
 
-if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
+if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" && "$TRAVIS_BRANCH" == "feature.autodocgen" ]]; then
 
   # go to the out directory and create a *new* Git repo
   cd "$HOME"/site_build
@@ -25,7 +26,6 @@ if [[ "$TRAVIS_REPO_SLUG" == "F5Networks/f5-openstack-docs" ]]; then
   git add .
   git commit -m "Deploy to GitHub Pages"
 
-  git remote rm origin
   git remote add origin https://f5-travisci:$TRAVIS_PATOKEN@github.com/F5Networks/f5-openstack-docs.git
   
   # Force push from the current repo's master branch to the remote
