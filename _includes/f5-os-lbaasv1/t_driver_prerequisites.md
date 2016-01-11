@@ -13,5 +13,5 @@ To use the F5 OpenStack LBaaSv1 plugin, you'll need:
 1. Licensed BIG-IP hardware or Virtual Edition (VE). 
 2. Administrator priveleges on BIG-IP and any associated device clusters. 
 
-See the [F5 OpenStack LBaaS compatibility matrix]({{ /compatibility-matrix/ | prepend: site.baseurl | prepend: site.url }}) for information regarding various distributions' compatibility with the F5 OpenStack LBaaSv1 Plugin and BIG-IP. 
+
 
