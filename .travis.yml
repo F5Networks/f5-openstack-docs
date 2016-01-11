@@ -20,8 +20,8 @@ branches:
  - develop
  - feature.deploy_script
 
-#after_success:
-# - script: ./script/deploy_script.sh
+after_success:
+ - ./script/deploy_script.sh
 
 deploy:
   provider: s3
