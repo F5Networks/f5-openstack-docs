@@ -8,5 +8,5 @@ bundle exec jekyll build -d ./site_build
 echo "proofing site with htmlproofer"
 bundle exec htmlproof ./site_build --empty-alt-ignore true --disable-external true 
 
+rm -rf $HOME/site_build
 cp -R ./site_build $HOME/site_build
-
