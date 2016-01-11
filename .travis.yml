@@ -19,9 +19,10 @@ branches:
  - master
  - develop
  - feature.deploy_script
+ - feature.autodocgen
 
-#after_success:
-# - script: ./script/deploy_script.sh
+after_success:
+ - ./script/deploy_script.sh
 
 deploy:
   provider: s3
@@ -31,6 +32,7 @@ deploy:
   bucket: f5-openstack-dev
   skip_cleanup: true 
   local_dir: "site_build"
+  upload-dir: $TRAVIS_BUILD_NUMBER
   on:
    repo: $TRAVIS_REPO_SLUG
    all_branches: true
