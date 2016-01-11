@@ -19,6 +19,7 @@ branches:
  - master
  - develop
  - feature.deploy_script
+ - feature.autodocgen
 
 after_success:
  - ./script/deploy_script.sh
