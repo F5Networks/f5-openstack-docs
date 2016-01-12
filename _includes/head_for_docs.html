@@ -11,32 +11,23 @@
 <!-- Site metadata -->
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap-docs.css" type="text/css">
-<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap.css">
-<!-- Bootstrap theme -->
-<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap-theme.css">
-<link rel="stylesheet" type="text/css" href="{{ site.url }}{{ site.baseurl }}/css/font-awesome.css">
+
 <!-- tocify styles-->
 <link type="text/css" rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/jquery.tocify.css">
+<!-- Bootstrap / Bootsrap Docs CSS -->
+<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap.css">
+<!--link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap-docs.css" type="text/css"-->
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/bootstrap-theme.css">
+<!--Font Awesome -->
+<link rel="stylesheet" type="text/css" href="{{ site.url }}{{ site.baseurl }}/css/font-awesome.css">
 <!-- jquery -->
 <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
-<!-- Latest compiled and minified JavaScript -->
+<!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.js"></script>
-
-<!-- tocify -->
+<!-- tocify scripts -->
 <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/js/jquery.tocify.js"></script>
-
-<!--styles>
- 
-
- <link rel="stylesheet" href="{{ '/css/bootstrap.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
-    
- <link rel="stylesheet" href="{{ '/css/bootstrap-theme.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css">
-
- <link rel="stylesheet" href="{{ '/css/font-awesome.css' | prepend: site.baseurl | prepend: site.url }}" type="text/css"-->
- 
 
 <!-- cannonical link settings
  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">-->

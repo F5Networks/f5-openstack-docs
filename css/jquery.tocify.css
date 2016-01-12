@@ -6,9 +6,9 @@
 /* The Table of Contents container element */
 .tocify {
     width: 20%;
-    max-height: 90%;
-    overflow: auto;
-    margin-left: 2%;
+    max-height: 80%;
+    overflow: auto; 
+	margin-left: 2%;
     position: fixed;
     border: 1px solid #ccc;
     webkit-border-radius: 6px;
@@ -20,19 +20,26 @@
 .tocify ul, .tocify li {
     list-style: none;
     margin: 0;
+    text-indent: 0;
     padding: 0;
     border: none;
-    line-height: 30px;
+    line-height: 14px;
 }
 
 /* Top level header elements */
 .tocify-header {
-    text-indent: 10px;
+    text-indent: 0px;
+    margin-top: 5px;    
+}
+
+.tocify-header > h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Top level subheader elements.  These are the first nested items underneath a header element. */
 .tocify-subheader {
-    text-indent: 20px;
+    text-indent: 10px;
     display: none;
 }
 
@@ -43,12 +50,12 @@
 
 /* Further indents second level subheader elements. */
 .tocify-subheader .tocify-subheader {
-    text-indent: 30px;
+    text-indent: 20px;
 }
 
 /* Further indents third level subheader elements. You can continue this pattern if you have more nested elements. */
 .tocify-subheader .tocify-subheader .tocify-subheader {
-    text-indent: 40px;
+    text-indent: 30px;
 }
 
 /* Twitter Bootstrap Override Style */
@@ -56,7 +63,34 @@
     margin: 0px;
 }
 
+
 /* Twitter Bootstrap Override Style */
-.nav-list > li > a {
-    padding: 5px;
+/*.nav-list > li > a {
+    padding: 1px;
+} */
+
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #767676;
+}
+
+.bs-docs-sidebar .nav > li > a:hover, .bs-docs-sidebar .nav > li > a:focus {
+    color: #1E77A4;
+    text-decoration: none;
+    background-color: transparent;
+}
+.bs-docs-sidebar .nav > .active > a, .bs-docs-sidebar .nav > .active:hover > a, .bs-docs-sidebar .nav > .active:focus > a {
+    color: #1E77A4;
+    background-color: transparent;
+}
+.bs-docs-container {
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-bottom: 80px;
+    margin-right: 20px;
+    width: auto;
+    height: auto;
 }

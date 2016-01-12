@@ -2,25 +2,28 @@
 <html>
  {% include head_for_docs.html %}
 
-<body class="padding-top:70px">
+<body style="margin-top: 50px">
   {% include header.html %}
 
 <div class="alert alert-danger alert-dismissible" role="alert">
- <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
+ <strong>Heads up!</strong> This site is under construction and not all doc sets are available / complete.
+</div>
+<div class="container-fluid" style="margin-top:auto" >   
+
+<div class="col-md-push-3">
+   <div class="tocify" id="toc">
+   </div>
+</div>
+<div class="col-md-offset-3">
+   <h1 class="tocify-header">{{ page.title }}</h1>
 </div>
 
-<div class="container-fluid" class="position:fixed">
-   <h1>{{ page.title }}</h1>
-</div>
-
-<div class="bs-docs-sidebar">
- <div class="bs-docs-sidenav" id="toc">
- </div>
-</div>
 
 <div class="bs-docs-container">
-		 {{ content }}
+    {{ content }}
 </div>
+
+</div> 
  
 <hr>
 
@@ -35,7 +38,7 @@
 <script>
         $(function() {
             //Calls the tocify method on the HTML div.
-            $("#toc").tocify();
+            $("#toc").tocify({ selectors: "h1,h2,h3,h4,h5,h6", ignoreSelector: "h1 .tocify-header", showAndHideOnScroll: "true", scrollTo: "55", hashGenerator: "pretty", extendPage: "true", extendPageOffset: "100" });
         });
 </script>    
 </html>          

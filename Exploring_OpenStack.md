@@ -1,5 +1,5 @@
 ---
-layout: docs_page
+layout: default
 title: Exploring OpenStack
 url: {{ page.title | slugify }}
 categories: openstack, testing, tools, misc_docs

@@ -1,5 +1,5 @@
 ---
-layout: docs_page
+layout: default
 title: F5 OpenStack LBaaSv1 Plugin Architecture and Design
 url: {{ page.title | slugify }}
 resource: true
