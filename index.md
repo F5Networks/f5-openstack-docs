@@ -4,12 +4,14 @@ slug: F5 OpenStack Docs
 ---
 
 {% include head.html %}
-<body style="padding-top: 70px">
+<body style="margin-top: 50px">
 
 {% include header.html %}
 
 <div class="alert alert-danger alert-dismissible" role="alert">
-   <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
 </div>
 
 <div class="jumbotron">
@@ -18,22 +20,40 @@ slug: F5 OpenStack Docs
     <p>Uniquely cloud-ready.</p>
   </div>
 </div>
-<hr>
-<div class="container-fluid-gray">
-<div class="container-fluid">
-  <div class="text-center">
-    <h3>Docs</h3>
-   <div class="row">
-  <ul class="text-left">
-    {% for page in site.pages %}
-     {% if page.layout == "docs_page" %}
-      <li>
-        <p>
-          <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
-        </p>
-      </li>
-      {% endif %}
-     {% endfor %}
-  </ul>
-
+<div class="text-center col-lg-12">
+    <div class="row">
+      <h3>Documentation</h3>
+    </div>
+       <div class="container-fluid-gray">
+       <div class="row">  
+       <div class="text-center">
+        
+          <div class="col-md-4">
+           <h4>F5 OpenStack LBaaSv1 Plugin</h4>
+        <ul class="text-left" style="list-style: none">
+        {% for page in site.pages %}
+        {% if page.layout == "docs_page" && page.categories == "lbaasv1" %}
+          <li><p><a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" target="_blank">{{ page.title }}</a></p>
+          </li>
+        {% endif %}
+        {% endfor %}
+       </ul>
+      </div>
+    <div class="col-md-4">
+        <h4>F5 OpenStack LBaaSv2 Plugin</h4>
+        {% case template %}
+        {when page.categories == "lbaasv2"}
+        <ul class="text-left" style="list-style: none">
+        <li><p><a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" target="_blank">{{ page.title }}</a></p>
+          </li>
+        </ul>
+      {% endcase %}
+      <p>Coming soon!</p>
+       </div>
+       <div class="col-md-4">
+        <h4>F5 OpenStack API Libraries</h4>
+           <p>Coming soon!</p>
+       </div>
+     </div>
+      
 {% include footer.html %}
