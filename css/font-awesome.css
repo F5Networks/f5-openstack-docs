@@ -245,6 +245,7 @@
 }
 .fa-home:before {
   content: "\f015";
+  color:antiquewhite;
 }
 .fa-file-o:before {
   content: "\f016";
@@ -556,9 +557,11 @@
 }
 .fa-twitter-square:before {
   content: "\f081";
+  color:antiquewhite;
 }
 .fa-facebook-square:before {
   content: "\f082";
+  color:antiquewhite;
 }
 .fa-camera-retro:before {
   content: "\f083";
@@ -590,6 +593,7 @@
 }
 .fa-linkedin-square:before {
   content: "\f08c";
+  color:antiquewhite;
 }
 .fa-thumb-tack:before {
   content: "\f08d";
@@ -605,6 +609,7 @@
 }
 .fa-github-square:before {
   content: "\f092";
+  color:antiquewhite;
 }
 .fa-upload:before {
   content: "\f093";
@@ -1196,6 +1201,7 @@
 }
 .fa-youtube-square:before {
   content: "\f166";
+  color:antiquewhite;
 }
 .fa-youtube:before {
   content: "\f167";
