@@ -142,12 +142,10 @@ input::-moz-focus-inner {
 }
 footer {
 	position: fixed;
-	left:0px;
-	bottom:0px;
-	padding:20px 10px 10px 10x;
-	height: 50px;
+	left: 0px;
+	bottom: 0px;
 	width: 100%;
-	background:#F4F4F4;
+	background:#4D4F53;
 }
 input {
   line-height: normal;
@@ -1424,8 +1422,8 @@ a.bg-danger:focus {
 }
 ul,
 ol {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 ul ul,
 ol ul,
@@ -1438,12 +1436,24 @@ ol ol {
   list-style: none;
 }
 .list-inline {
-  padding-left: 0;
-  margin-left: -5px;
+  padding-left: 5px;
+  padding-right: 5px;
   list-style: none;
 }
 .list-inline > li {
   display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.list-inline-push {
+  display: inline-block;
+  left: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.list-inline-pull {
+  display: inline-block;
+  right: 100%;
   padding-right: 5px;
   padding-left: 5px;
 }

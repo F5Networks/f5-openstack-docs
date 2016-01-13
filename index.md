@@ -24,11 +24,12 @@ slug: F5 OpenStack Docs
     <div class="row">
       <h3>Documentation</h3>
     </div>
+ </div>
        <div class="container-fluid-gray">
        <div class="row">  
        <div class="text-center">
         
-          <div class="col-md-4">
+       <div class="col-md-4">
            <h4>F5 OpenStack LBaaSv1 Plugin</h4>
         <ul class="text-left" style="list-style: none">
         {% for page in site.pages %}
@@ -55,5 +56,8 @@ slug: F5 OpenStack Docs
            <p>Coming soon!</p>
        </div>
      </div>
+   </div>
+ </div>
+
       
 {% include footer.html %}
