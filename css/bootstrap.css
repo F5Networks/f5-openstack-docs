@@ -4,6 +4,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/*!
+ * Copyright 2015 - 2016 F5 Networks, Inc.
+ */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -145,7 +148,19 @@ footer {
 	left: 0px;
 	bottom: 0px;
 	width: 100%;
-	background:#4D4F53;
+	background-color:#4D4F53;
+}
+footer .sub-footer {
+  bottom: 10px;  
+  font-family: Georgia,"Times New Roman",Times,serif;
+  color: #FAEBD7;
+  padding-left: 5px;
+  padding-top: 0px;
+  display: inline-block;
+  float: left;
+  background-color:#4D4F53;
+  width:100%;
+  font-size: 10px;
 }
 input {
   line-height: normal;
@@ -1422,8 +1437,8 @@ a.bg-danger:focus {
 }
 ul,
 ol {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 ul ul,
 ol ul,
