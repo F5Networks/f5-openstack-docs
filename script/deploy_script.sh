@@ -81,8 +81,9 @@ elif [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
 
   # This is a pull request, push to S3 for code review.
 
-  for file in `find $F5_SITE_FILES -type f`; do
-    putS3 "$F5_SITE_FILES" "/${file#*/}" "/$TRAVIS_PULL_REQUEST"
+  cd "$F5_SITE_FILES"
+  for file in `find . -type f`; do
+    putS3 ./ "/${file#*/}" "/$TRAVIS_PULL_REQUEST"
   done
 
   echo "Published docs to F5 S3 Dev Bucket.  Browse to ${S3_URL}/$TRAVIS_PULL_REQUEST for review."
