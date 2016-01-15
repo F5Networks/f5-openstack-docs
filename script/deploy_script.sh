@@ -9,7 +9,7 @@
 #
 
 set -e # exit with nonzero exit code if anything fails
-# set -x # enable verbose output for debugging
+set -x # enable verbose output for debugging
 
 #  Specify the git branch receiving a pull request that will replace the published docs on github pages.
 #  master is correct for final released 'images', feature.autodocgen (or something else) for testing changes
