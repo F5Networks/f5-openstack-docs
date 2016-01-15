@@ -42,7 +42,7 @@ function putS3 {
   content_type='application/x-compressed-tar'
   string="PUT\n\n$content_type\n$date\n$acl\n/$bucket$aws_path$file"
   signature=$(echo -en "${string}" | openssl sha1 -hmac "${S3_SECRET}" -binary | base64)
-  curl -X PUT -T "$path/$file" \
+  curl -X PUT -T "$path$file" \
     -H "Host: $S3_URL" \
     -H "Date: $date" \
     -H "Content-Type: $content_type" \
@@ -83,7 +83,7 @@ elif [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
 
   cd "$F5_SITE_FILES"
   for file in `find . -type f`; do
-    putS3 ./ "/${file#*/}" "/$TRAVIS_PULL_REQUEST"
+    putS3 . "/${file#*/}" "/$TRAVIS_PULL_REQUEST"
   done
 
   echo "Published docs to F5 S3 Dev Bucket.  Browse to ${S3_URL}/$TRAVIS_PULL_REQUEST for review."
