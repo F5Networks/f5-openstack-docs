@@ -4,6 +4,10 @@ description: Uniquely cloud-ready
 baseurl: "/f5-openstack-docs" # the subpath of your site, e.g. /blog/
 url: "http://F5Networks.github.io" # the base hostname & protocol for your site
 
+gems:
+  - jekyll-sitemap
+  - github-pages
+
 # Permalinks
 permalink: pretty
 
