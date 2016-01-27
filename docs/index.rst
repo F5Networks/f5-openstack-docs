@@ -24,13 +24,14 @@
 F5 OpenStack Documentation
 ==========================
 
-.. toctree::
-    :hidden:
-    :titlesonly:
+    .. toctree::
+        :titlesonly:
 
-    releases_and_versioning.rst
-    openstack_docs/os-deploy-guide.rst
-    openstack_docs/os-config-guide.rst
+        releases_and_versioning.rst
+        openstack_docs/os-deploy-guide.rst
+        openstack_docs/os-config-guide.rst
+        ve_openstack/ve_deploy_single-tenant.rst
+        ve_openstack/ve_deploy_multi-tenant.rst
 
 
 Introduction
