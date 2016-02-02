@@ -2,6 +2,10 @@
 
 {% include /f5-os-lbaasv1/t_driver_overview.md %}
 
+## Compatibility
+
+{% include r_compatibility_matrix.md %}
+
 {% comment %}# Prerequisites
 
  tbd {% endcomment %}
