@@ -17,7 +17,7 @@ The information presented here is based on the RDO project [Quickstart guide](ht
 
 ## Prerequisites
 
-Hardware: Machine with at least 4GB RAM, processors with hardware virtualization extensions, and at least one network adapter. For more information, see the [OpenStack Kilo Installation guide](http://docs.openstack.org/kilo/install-guide/install/yum/content/ch_overview.html#example-architecture-with-neutron-networking-hw).
+Hardware: Machine with at least 4GB RAM, processors with hardware virtualization extensions, and at least one network adapter. For more information, see the [OpenStack Kilo Installation guide](http://docs.openstack.org/liberty/install-guide-rdo/overview.html#example-architecture).
 
 Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended version you can use with OpenStack Kilo. You can also use any of the equivalent versions of RHEL-based Linux distributions (CentOS, Scientific Linux, etc.). x86_64 is currently the only supported architecture.
 
@@ -90,7 +90,7 @@ The quickest and easiest way to deploy OpenStack is via Packstack's `--allinone`
 
 ## Custom Configuration with an Answers File 
 
-Instead of using the `--allinone` flag, we generated an [answers file](f5-onboard_kilo-answers.txt) and edited it to enable the services we want and disable some options we don't want.
+Instead of using the `--allinone` flag, we generated an [answers file](f5-onboard_liberty-answers.txt) and edited it to enable the services we want and disable some options we don't want.
 
 **NOTE:** The configurations in our answers file are basically equivalent to running `packstack --os-heat-install=y --os-debug-mode=y --os-neutron-lbaas-install=y --provision-demo=n`.
 

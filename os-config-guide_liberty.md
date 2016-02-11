@@ -11,7 +11,7 @@ tags: openstack, liberty, red hat 7, centos 7, setup, bare metal, network, confi
 
 This guide will allow a user who already has an all-in-one OpenStack deployment (in other words, one host serves as the controller, compute, and network nodes) to configure it to attach to an existing external network. 
 
-The instructions presented here were prepared from a Packstack deployment on OpenStack Kilo using CentOS 7. We relied heavily on the RDO project's [Neutron with existing external network](https://www.rdoproject.org/networking/neutron-with-existing-external-network/) and the Red Hat Enterprise Linux 7 [OpenStack Networking Guide](https://access.redhat.com/documentation/en/red-hat-enterprise-linux-openstack-platform/7/networking-guide/networking-guide). We've found both documentation sets extremely helpful and recommend consulting them for any issues you may encounter.
+The instructions presented here were prepared from a Packstack deployment on OpenStack Liberty using CentOS 7. We relied heavily on the RDO project's [Neutron with existing external network](https://www.rdoproject.org/networking/neutron-with-existing-external-network/) and the Red Hat Enterprise Linux 7 [OpenStack Networking Guide](https://access.redhat.com/documentation/en/red-hat-enterprise-linux-openstack-platform/7/networking-guide/networking-guide). We've found both documentation sets extremely helpful and recommend consulting them for any issues you may encounter.
 
 ## Users
 
@@ -20,15 +20,15 @@ When installing CentOS, we created a root user and a user with administrative pr
     # = root
     $ = admin
 
-**WARNING: This guide describes how to deploy OpenStack Kilo. This is an open source project that is continually changing; while the instructions included here worked for us, there is no guarantee they will work exactly the same for you.**
+**WARNING: This guide describes how to deploy OpenStack Liberty. This is an open source project that is continually changing; while the instructions included here worked for us, there is no guarantee they will work exactly the same for you.**
 
 ## Prerequisites
 
 OpenStack: All-in-one deployment on Liberty 
 
-Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended version you can use with OpenStack Kilo. You can also use any of the equivalent versions of RHEL-based Linux distributions (CentOS, Scientific Linux, etc.). x86_64 is currently the only supported architecture.
+Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended version you can use with OpenStack Liberty. You can also use any of the equivalent versions of RHEL-based Linux distributions (CentOS, Scientific Linux, etc.). x86_64 is currently the only supported architecture.
 
-Hardware: Machine with at least 4GB RAM, processors with hardware virtualization extensions, and at least one network adapter. For more information, see the [OpenStack Kilo Installation guide](http://docs.openstack.org/kilo/install-guide/install/yum/content/ch_overview.html#example-architecture-with-neutron-networking-hw).
+Hardware: Machine with at least 4GB RAM, processors with hardware virtualization extensions, and at least one network adapter. For more information, see the [OpenStack Liberty Installation guide](http://docs.openstack.org/liberty/install-guide-rdo/overview.html#example-architecture).
 
 # Configure the Neutron Network
 
