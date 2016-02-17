@@ -90,7 +90,7 @@ The quickest and easiest way to deploy OpenStack is via Packstack's `--allinone`
 
 ## Custom Configuration with an Answers File 
 
-Instead of using the `--allinone` flag, we generated an [answers file](f5-onboard_liberty-answers.txt) and edited it to enable the services we want and disable some options we don't want.
+Instead of using the `--allinone` flag, we generated an [answers file](http://f5networks.github.io/f5-openstack-docs/f5-onboard_liberty-answers.txt) and edited it to enable the services we want and disable some options we don't want.
 
 **NOTE:** The configurations in our answers file are basically equivalent to running `packstack --os-heat-install=y --os-debug-mode=y --os-neutron-lbaas-install=y --provision-demo=n`.
 
@@ -206,7 +206,7 @@ Please, find your login credentials stored in the keystonerc_admin in your home 
 
 ## Configure OpenStack
 
-Congratulations! You now have an OpenStack deployment. Next, you'll need to configure your network, add projects and users, and launch instances. Please see our [OpenStack configuration guide](os-config-guide.md) for instructions.
+Congratulations! You now have an OpenStack Liberty deployment. Next, you'll need to configure your network, add projects and users, and launch instances. Please see our [OpenStack configuration guide](http://f5networks.github.io/f5-openstack-docs/os-config-guide_liberty/) for instructions.
 
 You can log in to the Horizon dashboard at the URL provided, using the username and password found in *keystonerc_admin*. **If you change your password in Horizon, be sure to update this file with the new password.**
 
