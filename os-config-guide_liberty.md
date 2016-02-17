@@ -414,5 +414,5 @@ We highly recommend that you follow the RDO [Running an Instance guide](https://
 Once you have successfully launched an instance in your OpenStack cloud, you may find the [OpenStack Admin User Guide](http://docs.openstack.org/user-guide-admin/) or the [OpenStack Operations Guide](http://docs.openstack.org/ops/) helpful.
 
 If you want to deploy a BIG-IP VE and manage its LTM services using the F5 LBaaS Plugin, you may find these docs helpful:
-[How to Deploy a BIG-IP VE in OpenStack]()(coming soon)
-[How to Deploy the F5 OpenStack LBaaSv1 Plugin]()(coming soon)
+[How to Deploy a BIG-IP VE in OpenStack](http://f5networks.github.io/f5-openstack-docs/HowTo-DeployVEinOS/)
+[How to Deploy the F5 OpenStack LBaaSv1 Plugin](http://f5networks.github.io/f5-openstack-docs/lbaasv1-plugin-deploy-guide/)

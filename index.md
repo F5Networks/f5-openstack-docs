@@ -32,24 +32,23 @@ slug: F5 OpenStack Docs
        <div class="col-md-4">
            <h4>F5 OpenStack LBaaSv1 Plugin</h4>
         <ul class="text-left" style="list-style: none">
-        {% for page in site.pages %}
-        {% if page.layout == "docs_page" && page.categories == "lbaasv1" %}
-          <li><p><a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" target="_blank">{{ page.title }}</a></p>
-          </li>
-        {% endif %}
-        {% endfor %}
-       </ul>
-      </div>
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-deploy-guide/" target="_blank">OpenStack Deployment Guide</a></p>
+         </li>
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-config-guide/" target="_blank">OpenStack Configuration Guide</a></p>
+         </li>              
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/HowTo-DeployVEinOS/" target="_blank">How To Deploy BIG-IP VE in OpenStack</a></p>
+         </li>           
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-install-agent/" target="_blank">How to Install the F5 OpenStack LBaaSv1 Plugin Agent</a></p>
+         </li>
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-install-driver/" target="_blank">How to Install the F5 OpenStack LBaaSv1 Plug-In Driver</a></p>
+         </li>
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-deploy-guide/" target="_blank">How To Deploy the F5 OpenStack LBaaSv1 Plugin</a></p>
+          /li>
+        </ul>
+       </div>
     <div class="col-md-4">
         <h4>F5 OpenStack LBaaSv2 Plugin</h4>
-        {% case template %}
-        {when page.categories == "lbaasv2"}
-        <ul class="text-left" style="list-style: none">
-        <li><p><a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" target="_blank">{{ page.title }}</a></p>
-          </li>
-        </ul>
-      {% endcase %}
-      <p>Coming soon!</p>
+         <p>Coming soon!</p>
        </div>
        <div class="col-md-4">
         <h4>F5 OpenStack API Libraries</h4>
