@@ -32,10 +32,14 @@ slug: F5 OpenStack Docs
        <div class="col-md-4">
            <h4>F5 OpenStack LBaaSv1 Plugin</h4>
         <ul class="text-left" style="list-style: none">
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-deploy-guide/" target="_blank">OpenStack Deployment Guide</a></p>
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-deploy-guide/" target="_blank">OpenStack Deployment Guide - Kilo</a></p>
          </li>
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-config-guide/" target="_blank">OpenStack Configuration Guide</a></p>
-         </li>              
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-config-guide/" target="_blank">OpenStack Configuration Guide - Kilo</a></p>
+         </li>    
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-deploy-guide_liberty/" target="_blank">OpenStack Deployment Guide - Liberty</a></p>
+         </li>
+         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-config-guide_liberty/" target="_blank">OpenStack Configuration Guide - Liberty</a></p>
+         </li>           
          <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/HowTo-DeployVEinOS/" target="_blank">How To Deploy BIG-IP VE in OpenStack</a></p>
          </li>           
          <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-install-agent/" target="_blank">How to Install the F5 OpenStack LBaaSv1 Plugin Agent</a></p>
