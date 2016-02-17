@@ -57,7 +57,15 @@ slug: F5 OpenStack Docs
        </div>
      </div>
    </div>
+  </div>
+  <hr>
+   <div class="row">
+    <div class="text-center">
+    <p><a class="btn btn-primary btn-md" href="http://f5networks.github.io/f5-openstack-docs/releases_and_versioning/" role="button">Releases and Versioning</a></p>
+  </div>
  </div>
 
-      
+<hr>
+<hr>
+            
 {% include footer.html %}
