@@ -213,7 +213,7 @@ Please, find your login credentials stored in the keystonerc_admin in your home 
 
 ## Configure OpenStack
 
-Congratulations! You now have an OpenStack deployment. Next, you'll need to configure your network, add projects and users, and launch instances. Please see our [OpenStack configuration guide](os-config-guide.md) for instructions.
+Congratulations! You now have an OpenStack deployment. Next, you'll need to configure your network, add projects and users, and launch instances. Please see our [OpenStack configuration guide](http://f5networks.github.io/f5-openstack-docs/os-config-guide/) for instructions.
 
 You can log in to the Horizon dashboard at the URL provided, using the username and password found in *keystonerc_admin*. **If you change your password in Horizon, be sure to update this file with the new password.**
 
