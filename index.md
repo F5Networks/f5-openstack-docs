@@ -43,7 +43,7 @@ slug: F5 OpenStack Docs
          <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-install-driver/" target="_blank">How to Install the F5 OpenStack LBaaSv1 Plug-In Driver</a></p>
          </li>
          <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-deploy-guide/" target="_blank">How To Deploy the F5 OpenStack LBaaSv1 Plugin</a></p>
-          /li>
+         </li>
         </ul>
        </div>
     <div class="col-md-4">
