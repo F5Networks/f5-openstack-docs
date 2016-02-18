@@ -1,39 +1,21 @@
-language: ruby
-rvm: 2.0
-env:
- global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-# - TRAVIS_SECURE_ENV_VARS=true
+sudo: true
+language: python
+python:
+ - '2.7'
+ - '2.6'
 
-cache: bundler
-
-#before_install:
-# - gem update --system
+install:
+ - sudo pip install -r requirements.docs.txt
 
 script: 
- - ./script/cibuild.sh
+ - cd docs
+ - make html
+ - cd ..
 
-# whitelist
-branches:
- only:
- - master
- - develop
- - feature.deploy_script
- - feature.autodocgen
-
-after_success:
- - ./script/deploy_script.sh
-
-# The deploy_script decides where to deploy based on our workflow.
-#deploy:
-#  provider: s3
-#  region: us-west-2
-#  access_key_id: AKIAJXW2OUXQMW3DE7PA
-#  secret_access_key: $AWS_ACCESSKEY 
-#  bucket: f5-openstack-dev
-#  skip_cleanup: true 
-#  local_dir: "site_build"
-#  upload-dir: $TRAVIS_BUILD_NUMBER
-#  on:
-#   repo: $TRAVIS_REPO_SLUG
-#   all_branches: true
+notifications:
+ slack:
+  rooms:
+   - f5openstackdev:$SLACK_TOKEN#f5-openstack-docs
+   - f5openstackdev:$SLACK_TOKEN#build_status
+  on_success: change
+  on_failure: always

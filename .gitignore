@@ -1,5 +1,9 @@
-_site
-.sass-cache
-.jekyll-metadata
-.idea
-Gemfile.lock
+# Ignore the sphinx build directories
+_build
+_build_html
+
+# Ignore the python venv directory
+venv/*
+
+.venv
+.idea/*
