@@ -1,3 +1,5 @@
+.. _cla_landing:
+
 F5 Networks Contributor License Agreement
 =========================================
 
@@ -19,5 +21,6 @@ further that each employee of the entity that submits contributions is
 authorized to submit such contributions on behalf of the entity pursuant
 to the CLA.
 
-Click here to access the PDF: [F5 Contributor License Agreement
-(CLA)]({{%20site.url%20}}{{%20site.baseurl%20}}/F5-contributor-license-agreement.pdf)
+Click the link below to download the PDF:
+
+:download:`F5 Contributor License Agreement (CLA) <_static/F5-contributor-license-agreement.pdf>`

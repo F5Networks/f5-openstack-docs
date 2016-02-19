@@ -1,8 +1,3 @@
-.. F5 OpenStack Documentation documentation master file, created by
-   sphinx-quickstart on Thu Feb 18 15:51:54 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 .. raw:: html
 
    <!--
@@ -21,21 +16,11 @@
    limitations under the License.
    -->
 
-F5 OpenStack Documentation
-==========================
+f5-openstack-docs
+=================
 
-.. toctree::
-    :hidden:
-
-    releases_and_versioning.rst
-    cla_landing.rst
-    openstack_docs/Exploring_OpenStack.rst
-    openstack_docs/os-deploy-guide.rst
-    openstack_docs/os-config-guide.rst
-
-
-
-
+    .. image:: https://travis-ci.org/F5Networks/f5-openstack-docs.svg?token=9DzDpZ48B74dRXvdFxM2&branch=master
+        :target: https://travis-ci.com/F5Networks/f5-openstack-docs
 
 Introduction
 ------------
@@ -47,7 +32,7 @@ Projects
 
 Each F5 Networks OpenStack project repo in GitHub (prefaced by 'f5-openstack') has its own documentation set.
 
-    - `f5-openstack-lbaasv1 <http://f5-openstack-lbaasv1.rtfd.org/en/liberty/>`_
+    - `f5-openstack-lbaasv1 <http://f5-openstack-lbaasv1.readthedocs.org/en/liberty/>`_
     - `f5-openstack-lbaasv2-plugin <coming soon>`_
     - `f5-openstack-lbaasv2-driver <coming soon>`_
     - `f5-openstack-heat <coming soon>`_
@@ -55,25 +40,25 @@ Each F5 Networks OpenStack project repo in GitHub (prefaced by 'f5-openstack') h
 
 In addition, the following open source F5 projects are used in conjunction with our OpenStack tool set:
 
-    - `f5-icontrol-rest-python <http://icontrol.rtfd.org/en/latest/>`_
-    - `f5-common-python <https://f5-sdk.rtfd.org/en/latest/>`_
+    - `f5-icontrol-rest-python <http://icontrol.readthedocs.org/en/latest/>`_
+    - `f5-common-python <https://f5-sdk.readthedocs.org/en/latest/>`_
 
 
 Releases and Versioning
 -----------------------
 
-See :ref:`F5 OpenStack Releases and Support Matrix <releases-and-versioning>`.
+See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/releases-and-versioning.html>`.
 
 
 Filing Issues
 -------------
 
-If you find an issue, we would love to hear about it. Please let us know by filing an issue at `F5Networks/f5-openstack-docs <https://github.com/F5Networks/f5-openstack-docs>`_; good issues contain specific and detailed information, such as links and line numbers.
+If you find an issue, we would love to hear about it. Please let us know by filing an issue; good issues contain specific and detailed information, such as links and line numbers.
 
 Contributing
 ------------
 
-See `Contributing <https://github.com/F5Networks/f5-openstack-docs/blob/master/CONTRIBUTING.md>`_.
+See `Contributing <CONTRIBUTING.md>`_.
 
 Contact
 -------
@@ -88,7 +73,7 @@ Copyright 2015-2016 F5 Networks, Inc.
 Support
 -------
 
-See `Support <https://github.com/F5Networks/f5-openstack-docs/blob/master/SUPPORT.md>`_.
+See `Support <SUPPORT.md>`_.
 
 License
 -------
@@ -112,12 +97,9 @@ Contributor License Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Individuals or business entities who contribute to this project must
-have completed and submitted the :ref:`F5 Contributor License Agreement <cla_landing>`
+have completed and submitted the `F5 Contributor License
+Agreement <http://f5-openstack-docs.rtfd.org/cla_landing.html>`_
 to Openstack_CLA@f5.com prior to their code submission being included
 in this project.
-
-
-
-
 
 
