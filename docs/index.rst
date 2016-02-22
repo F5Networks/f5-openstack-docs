@@ -26,6 +26,7 @@ F5 OpenStack Documentation
 
 .. toctree::
     :hidden:
+    :titlesonly:
 
     releases_and_versioning.rst
     cla_landing.rst
