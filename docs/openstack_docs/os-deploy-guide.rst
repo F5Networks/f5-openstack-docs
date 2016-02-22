@@ -23,7 +23,7 @@ Prerequisites
 Hardware: Machine with at least 4GB RAM, processors with hardware
 virtualization extensions, and at least one network adapter. For more
 information, see the [OpenStack Kilo Installation
-guide](http://docs.openstack.org/kilo/install-guide/install/yum/content/ch_overview.html#example-architecture-with-neutron-networking-hw).
+guide](http://docs.openstack.org/liberty/install-guide-rdo/overview.html#example-architecture).
 
 Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended
 version you can use with OpenStack Kilo. You can also use any of the
@@ -92,11 +92,8 @@ choice. If you want to use the latest release, run:
 
       # yum install -y https://www.rdoproject.org/repos/rdo-release.rpm
 
-**For this guide we installed the Kilo package** using the command
-below, because Liberty is the latest release at the time of this doc's
+**NOTE:** Liberty is the latest release at the time of this doc's
 creation.
-
-      # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
 
 If you want to use a different version, see http://rdoproject.org/repos/
 for the full listing.
@@ -121,7 +118,7 @@ Custom Configuration with an Answers File
 -----------------------------------------
 
 Instead of using the `--allinone` flag, we generated an [answers
-file](http://f5networks.github.io/f5-openstack-docs/f5-onboard_kilo-answers.txt)
+file](http://f5networks.github.io/f5-openstack-docs/f5-onboard_liberty-answers.txt)
 and edited it to enable the services we want and disable some options we
 don't want.
 
@@ -154,10 +151,6 @@ account credentials here, if desired.
     ...
     # Password to use for the Identity service 'admin' user.
     CONFIG_KEYSTONE_ADMIN_PW=57a791d9e7d849b4
-    ...
-    # Specify 'y' to enable the EPEL repository (Extra Packages for
-    # Enterprise Linux). ['y', 'n']
-    CONFIG_USE_EPEL=y
     ...
     # Specify 'y' to install OpenStack Networking's Load-Balancing-
     # as-a-Service (LBaaS). ['y', 'n']
@@ -250,10 +243,10 @@ eventually see the following message:
 Configure OpenStack
 -------------------
 
-Congratulations! You now have an OpenStack deployment. Next, you'll need
-to configure your network, add projects and users, and launch instances.
-Please see our [OpenStack configuration
-guide](http://f5networks.github.io/f5-openstack-docs/os-config-guide/)
+Congratulations! You now have an OpenStack Liberty deployment. Next,
+you'll need to configure your network, add projects and users, and
+launch instances. Please see our [OpenStack configuration
+guide](http://f5networks.github.io/f5-openstack-docs/os-config-guide_liberty/)
 for instructions.
 
 You can log in to the Horizon dashboard at the URL provided, using the

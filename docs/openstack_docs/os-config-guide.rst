@@ -7,7 +7,7 @@ and network nodes) to configure it to attach to an existing external
 network.
 
 The instructions presented here were prepared from a Packstack
-deployment on OpenStack Kilo using CentOS 7. We relied heavily on the
+deployment on OpenStack Liberty using CentOS 7. We relied heavily on the
 RDO project's [Neutron with existing external
 network](https://www.rdoproject.org/networking/neutron-with-existing-external-network/)
 and the Red Hat Enterprise Linux 7 [OpenStack Networking
@@ -27,26 +27,26 @@ command prompt symbol:
     # = root
     $ = admin
 
-**WARNING: This guide describes how to deploy OpenStack Kilo. This is an
-open source project that is continually changing; while the instructions
-included here worked for us, there is no guarantee they will work
-exactly the same for you.**
+**WARNING: This guide describes how to deploy OpenStack Liberty. This is
+an open source project that is continually changing; while the
+instructions included here worked for us, there is no guarantee they
+will work exactly the same for you.**
 
 Prerequisites
 -------------
 
-OpenStack: All-in-one deployment on Kilo
+OpenStack: All-in-one deployment on Liberty
 
 Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended
-version you can use with OpenStack Kilo. You can also use any of the
+version you can use with OpenStack Liberty. You can also use any of the
 equivalent versions of RHEL-based Linux distributions (CentOS,
 Scientific Linux, etc.). x86\_64 is currently the only supported
 architecture.
 
 Hardware: Machine with at least 4GB RAM, processors with hardware
 virtualization extensions, and at least one network adapter. For more
-information, see the [OpenStack Kilo Installation
-guide](http://docs.openstack.org/kilo/install-guide/install/yum/content/ch_overview.html#example-architecture-with-neutron-networking-hw).
+information, see the [OpenStack Liberty Installation
+guide](http://docs.openstack.org/liberty/install-guide-rdo/overview.html#example-architecture).
 
 Configure the Neutron Network
 =============================
@@ -170,7 +170,7 @@ this file if it exists.
 
 <!-- -->
 
-    # openstack-config --set /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini ovs bridge_mappings extnet:br-ex
+    # openstack-config --set /etc/neutron/plugins/ml2/openvswitch_agent.ini ovs bridge_mappings extnet:br-ex
 
 #### Configure the network types
 
@@ -181,9 +181,9 @@ as a bug workaround.)
 
     # openstack-config --set /etc/neutron/plugin.ini ml2 type_drivers vxlan,flat,vlan
 
-**NOTE:** We're assigning IP addresses from our external network using
-DHCP, so we replaced the default `dhcp_domain` in
-`/etc/neutron/dhcp_agent.ini` with the name of our local domain.
+**NOTE:** If you're assigning IP addresses from your external network
+using DHCP, replace the default `dhcp_domain` in
+`/etc/neutron/dhcp_agent.ini` with the name of your local domain.
 
     # vi /etc/neutron/dhcp_agent.ini 
     ...
@@ -320,7 +320,7 @@ your cloud for various projects/users.
 
 **TIP:** To check what networks are configured, run
 `openstack network list`. To view details for a configured network, run
-`openstack network show`.
+`openstack network show [network_name / network_id]`.
 
     # openstack network list
     +--------------------------------------+------------------+--------------------------------------+
@@ -381,11 +381,11 @@ enabled by default.
 The below command creates a user named demo with access to the 'demo1'
 project. The new user account will be enabled by default.
 
-    $ openstack user create --project demo1 --password foobar1 --email demo123@f5.com demo
+    $ openstack user create --project demo1 --password foobar1 --email something@example.com demo
     +------------+----------------------------------+
     | Field      | Value                            |
     +------------+----------------------------------+
-    | email      | demo123@f5.com                   |
+    | email      | something@example.com                   |
     | enabled    | True                             |
     | id         | c845db0c788443b4962b0717738ab0ce |
     | name       | demo                             |
@@ -408,33 +408,29 @@ To get a
 image (not provisioned, without demo provisioning), run the command
 shown below.
 
-**NOTE:** Issues have been reported when using the `--is-public=true`
-flag. You may need to remove this for the command to work.
-
-    $ curl http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img | glance image-create --name='cirros_image' --is-public=true  --container-format=bare --disk-format=qcow2
+    $ curl http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img | glance image-create --name='cirros_image' --visibility=public  --container-format=bare --disk-format=qcow2
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
-    100 12.6M  100 12.6M    0     0  1441k      0  0:00:09  0:00:09 --:--:-- 2050k
+    100 12.6M  100 12.6M    0     0  1416k      0  0:00:09  0:00:09 --:--:-- 2260k
     +------------------+--------------------------------------+
     | Property         | Value                                |
     +------------------+--------------------------------------+
     | checksum         | ee1eca47dc88f4879d8a229cc70a07c6     |
     | container_format | bare                                 |
-    | created_at       | 2016-01-21T23:39:08.000000           |
-    | deleted          | False                                |
-    | deleted_at       | None                                 |
+    | created_at       | 2016-02-11T16:48:50Z                 |
     | disk_format      | qcow2                                |
-    | id               | 5002704e-04c4-48d0-847f-23685cf748f5 |
-    | is_public        | True                                 |
+    | id               | 5665fc77-73a9-46cb-9f59-6ba229099ad9 |
     | min_disk         | 0                                    |
     | min_ram          | 0                                    |
     | name             | cirros_image                         |
-    | owner            | 1a35d6558b59423e83f4500f1ebc1cec     |
+    | owner            | 9af267dd389249cc8c8e922f8bfbd0aa     |
     | protected        | False                                |
     | size             | 13287936                             |
     | status           | active                               |
-    | updated_at       | 2016-01-21T23:39:17.000000           |
+    | tags             | []                                   |
+    | updated_at       | 2016-02-11T16:48:59Z                 |
     | virtual_size     | None                                 |
+    | visibility       | public                               |
     +------------------+--------------------------------------+
 
 Launch an Instance
@@ -442,15 +438,15 @@ Launch an Instance
 
 We highly recommend that you follow the RDO [Running an Instance
 guide](https://www.rdoproject.org/install/running-an-instance/) from
-here on out. They've done a great job describing the information, so
-we're not going to paraphrase it here.
+here on out. They've done a great job presenting the information, so
+we're not going to paraphrase it here. We do have a few tips, though:
 
-We do have a few tips, though: - We recommend generating a key pair on
-your client and importing it as opposed to the other way around. - You
-already created an image as part of this guide; it will be available in
-the Images list to use when launching your instance. - If your private
-network doesn't show up in the network list when adding an instance, it
-may be misconfigured.
+-   We recommend generating a key pair on your client and importing it,
+    as opposed to the other way around.
+-   You already created an image as part of this guide; it will be
+    available in the Images list to use when launching your instance.
+-   If your private network doesn't show up in the network list when
+    adding an instance, it may be misconfigured.
 
 Further Reading
 ===============
