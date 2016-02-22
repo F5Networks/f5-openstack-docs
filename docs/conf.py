@@ -63,13 +63,13 @@ author = u'F5 Networks'
 # built documents.
 #
 # The short X.Y version.
-version = u'1.0'
+version = u'2.0'
 # The full version, including alpha/beta/rc tags.
-release = u'1.0'
+release = u'2.0.x'
 
 # OpenStack release
 
-openstack_release = "Icehouse - Kilo"
+openstack_release = "Liberty"
 rst_epilog = """
 .. |openstack| replace:: {0}
 """.format(openstack_release)
