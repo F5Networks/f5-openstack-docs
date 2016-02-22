@@ -34,9 +34,6 @@ F5 OpenStack Documentation
     openstack_docs/os-config-guide.rst
 
 
-
-
-
 Introduction
 ------------
 
