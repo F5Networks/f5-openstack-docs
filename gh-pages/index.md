@@ -8,67 +8,53 @@ slug: F5 OpenStack Docs
 
 {% include header.html %}
 
-<div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Heads up!</strong> This site is under construction and not all doc sets are available.
-</div>
-
 <div class="jumbotron">
   <div class="text-center">
     <h1>F5 OpenStack</h1>
     <p>Uniquely cloud-ready.</p>
   </div>
 </div>
-<div class="text-center col-lg-12">
-    <div class="row">
-      <h3>Documentation</h3>
-    </div>
- </div>
-       <div class="container-fluid-gray">
-       <div class="row">  
-       <div class="text-center">
-        
-       <div class="col-md-4">
-           <h4>F5 OpenStack LBaaSv1 Plugin</h4>
-        <ul class="text-left" style="list-style: none">
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-deploy-guide/" target="_blank">OpenStack Deployment Guide - Kilo</a></p>
-         </li>
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-config-guide/" target="_blank">OpenStack Configuration Guide - Kilo</a></p>
-         </li>    
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-deploy-guide_liberty/" target="_blank">OpenStack Deployment Guide - Liberty</a></p>
-         </li>
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/os-config-guide_liberty/" target="_blank">OpenStack Configuration Guide - Liberty</a></p>
-         </li>           
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/HowTo-DeployVEinOS/" target="_blank">How To Deploy BIG-IP VE in OpenStack</a></p>
-         </li>           
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-install-agent/" target="_blank">How to Install the F5 OpenStack LBaaSv1 Plugin Agent</a></p>
-         </li>
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-install-driver/" target="_blank">How to Install the F5 OpenStack LBaaSv1 Plug-In Driver</a></p>
-         </li>
-         <li><p><a href="http://F5Networks.github.io/f5-openstack-docs/lbaasv1-plugin-deploy-guide/" target="_blank">How To Deploy the F5 OpenStack LBaaSv1 Plugin</a></p>
-         </li>
-        </ul>
-       </div>
-    <div class="col-md-4">
-        <h4>F5 OpenStack LBaaSv2 Plugin</h4>
-         <p>Coming soon!</p>
-       </div>
-       <div class="col-md-4">
-        <h4>F5 OpenStack API Libraries</h4>
-           <p>Coming soon!</p>
-       </div>
-     </div>
-   </div>
-  </div>
-  <hr>
-   <div class="row">
-    <div class="text-center">
-    <p><a class="btn btn-primary btn-md" href="http://f5networks.github.io/f5-openstack-docs/releases_and_versioning/" role="button">Releases and Versioning</a></p>
-  </div>
- </div>
 
-<hr>
-<hr>
-            
-{% include footer.html %}
+<div class="text-center">
+ <div class="container">
+  <h3>Documentation and Resources</h3>
+   <p><strong>F5's OpenStack LBaaS plugins and related projects are all open source.</strong></p>
+   <p><strong>Documentation sets for F5's OpenStack plugins and related projects can be found on Read The Docs.</strong></p>
+     <div class="row">
+      <p><a class="btn btn-danger btn-md" href="https://github.com/F5Networks" role="button">F5Networks on GitHub</a></p>
+     </div> 
+     <div class="row">  
+      <p><a class="btn btn-primary btn-md" href="http://f5-openstack-lbaasv1.rtfd.org/en/" role="button">LBaaSv1 Plugin Documentation</a></p>
+     </div>
+     <div class="row">
+      <p><a class="btn btn-primary btn-md" href="http://f5-openstack-docs.rtfd.org/en/" role="button">F5 OpenStack User Guides</a></p>
+     </div>
+     <div class="row"> 
+      <p><a class="btn btn-primary btn-md" href="http://f5-sdk.rtfd.org/en/" role="button">F5 SDK Documentation</a></p>
+     </div>
+     <div class="row">
+      <p><a class="btn btn-primary btn-md" href="http://icontrol.readthedocs.org/en/latest/" role="button">F5 iControl Documentation</a></p>
+     </div> 
+     <div class="row">
+      <p><a class="btn btn-primary btn-md" href="http://f5-openstack-docs.readthedocs.org/en/latest/releases_and_versioning.html" role="button">Releases and Versioning</a></p>
+     </div>
+     <div class="row">
+      <p><a class="btn btn-primary btn-md" href="http://f5-openstack-docs.readthedocs.org/en/latest/cla_landing.html" role="button">Contributor License Agreement</a></p>
+     </div>
+ </div>
+</div>
+
+<footer>
+<ul class="list-inline">
+   <li><a href="https://github.com/F5Networks/f5-openstack-docs" title="home"><i class="fa fa-home fa-3x"></i></a></li>
+   <li><a href="http://github.com/F5Networks" title="GitHub"><i class="fa fa-github-square fa-3x"></i></a></li>
+   <li><a href="http://twitter.com/f5networks" title="Twitter"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+   <li><a href="http://www.linkedin.com/companies/f5-networks" title="LinkedIn"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
+   <li><a href="http://www.facebook.com/f5networksinc" title="Facebook"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+   <li><a href="http://www.youtube.com/f5networksinc" title="YouTube"><i class="fa fa-youtube-square fa-3x"></i></a></li>
+  </ul>
+  <div class="sub-footer">
+   © 2016 F5 Networks, Inc.  All rights reserved.
+  </div>
+</footer>
+
