@@ -29,8 +29,6 @@ F5 OpenStack Documentation
     :titlesonly:
 
     releases_and_versioning.rst
-    cla_landing.rst
-    openstack_docs/Exploring_OpenStack.rst
     openstack_docs/os-deploy-guide.rst
     openstack_docs/os-config-guide.rst
 
@@ -43,18 +41,63 @@ This repo contains technical documentation related to the use of F5 products and
 Projects
 --------
 
-Each F5 Networks OpenStack project repo in GitHub (prefaced by 'f5-openstack') has its own documentation set.
+All of F5 Networks' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. The OpenStack-specific projects are all prefaced by 'f5-openstack'; two projects used by the F5 OpenStack projects are also noted below.
 
-    - `f5-openstack-lbaasv1 <http://f5-openstack-lbaasv1.rtfd.org/en/liberty/>`_
-    - `f5-openstack-lbaasv2-plugin <coming soon>`_
-    - `f5-openstack-lbaasv2-driver <coming soon>`_
-    - `f5-openstack-heat <coming soon>`_
-    - `f5-openstack-heat-plugins <coming soon>`_
+f5-openstack-lbaasv1
+~~~~~~~~~~~~~~~~~~~~
 
-In addition, the following open source F5 projects are used in conjunction with our OpenStack tool set:
+This repo contains the code for the F5 OpenStack LBaaSv1 plugin.
 
-    - `f5-icontrol-rest-python <http://icontrol.rtfd.org/en/latest/>`_
-    - `f5-common-python <https://f5-sdk.rtfd.org/en/latest/>`_
+`F5Networks/f5-openstack-lbaasv1 <https://github.com/F5Networks/f5-openstack-lbaasv1>`_
+`Documentation <http://f5-openstack-lbaasv1.readthedocs.org/en/>`_
+
+f5-openstack-lbaasv2-plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This repo contains the code for the F5 OpenStack LBaaSv2 plugin.
+
+`F5Networks/f5-openstack-lbaasv2-plugin <https://github.com/F5Networks/f5-openstack-lbaasv2-plugin>`_
+`Documentation <http://f5-openstack-lbaasv2-plugin.readthedocs.org/en/>`_
+
+f5-openstack-lbaasv2-driver
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This repo contains the code for the F5 OpenStack LBaaSv2 service provider driver, which is part of the LBaaSv2 plugin.
+
+`F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
+`Documentation <http://f5-openstack-lbaasv2-driver.readthedocs.org/en/>`_
+
+f5-openstack-heat
+~~~~~~~~~~~~~~~~~
+
+This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP devices in OpenStack.
+
+`F5Networks/f5-openstack-heat <https://github.com/F5Networks/f5-openstack-heat>`_
+`Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
+
+f5-openstack-heat-plugins
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This repo contains code for the plugins that make the Heat templates work.
+
+`F5Networks/f5-openstack-heat-plugins <https://github.com/F5Networks/f5-openstack-heat-plugins>`_
+`Documentation <http://f5-openstack-heat-plugins.readthedocs.org/en/>`_
+
+f5-icontrol-rest-python
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This generic python library allows programs and other modules to interact with the BIG-IP iControl REST API.
+
+`F5Networks/f5-icontrol-rest-python <https://github.com/F5Networks/f5-icontrol-rest-python>`_
+`Documentation <http://icontrol.readthedocs.org/en/latest/>`_
+
+f5-common-python
+~~~~~~~~~~~~~~~~
+
+The F5 Networks BIG-IP python SDK. This project implements an SDK for the iControl REST interface for the BigIP.
+
+`F5Networks/f5-common-python <https://github.com/F5Networks/f5-common-python>`_
+`Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
 
 
 Releases and Versioning
@@ -66,7 +109,7 @@ See :ref:`F5 OpenStack Releases and Support Matrix <releases-and-versioning>`.
 Filing Issues
 -------------
 
-If you find an issue, we would love to hear about it. Please let us know by filing an issue at `F5Networks/f5-openstack-docs <https://github.com/F5Networks/f5-openstack-docs>`_; good issues contain specific and detailed information, such as links and line numbers.
+If you find an issue, we would love to hear about it. Please let us know by filing an issue at `F5Networks/f5-openstack-docs <https://github.com/F5Networks/f5-openstack-docs>`_. Good issues contain specific and detailed information, such as links and line numbers.
 
 Contributing
 ------------

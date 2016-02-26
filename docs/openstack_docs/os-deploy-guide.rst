@@ -1,16 +1,16 @@
+.. _os-deploy-guide:
+
 OpenStack Deployment Guide
 ==========================
 
 Overview
 --------
 
-This guide will allow a user who is largely unfamiliar with OpenStack to create an all-in-one, bare metal installation of `OpenStack RDO <https://www.rdoproject.org/>`_. The instructions presented here guide you through the installation of an operating system and using Packstack to simplify OpenStack deployment.
+This guide will allow a user who is largely unfamiliar with OpenStack to create an all-in-one, bare metal installation of `OpenStack RDO <https://www.rdoproject.org/>`_. The instructions presented here guide you through installing an operating system and using `Packstack <https://wiki.openstack.org/wiki/Packstack>`_ to deploy OpenStack.
 
-The information presented here is based on the RDO project `Quickstart guide <https://www.rdoproject.org/install/quickstart/>`_. We've found the
-RDO documentation set extremely helpful and recommend consulting it for any issues you may encounter.
+The information presented here is based on the RDO project `Quickstart guide <https://www.rdoproject.org/install/quickstart/>`_. We've found the RDO documentation set extremely helpful and recommend consulting it for any issues you may encounter.
 
-**WARNING: This guide describes how to deploy OpenStack Kilo. This is an open source project that is continually changing; while the instructions
-included here worked for us, there is no guarantee they will work exactly the same for you.**
+**CAUTION:** This guide describes how to deploy OpenStack using Packstack. Both are open source projects that are continually changing. You may see some variations between the commands presented here and those available in your environment.
 
 Prerequisites
 `````````````
@@ -29,8 +29,8 @@ See :ref:`F5 OpenStack Releases and Support Matrix <releases-and-versioning>`.
 Getting Started
 ---------------
 
-First, you need to install an operating system on your hardware. We installed CentOS 7 on one machine, which will serve as the controller,
-compute, and network nodes (referred to in this document as an 'all-in-one' configuration). An IP address was assigned to the machine automatically via DHCP.
+First, you need to install an operating system on your hardware. We installed CentOS 7 on one machine which will serve as the controller,
+compute, and network nodes (referred to in this document as an 'all-in-one' configuration). Because our lab uses DHCP, the machine was able to acquire an IP address automatically. You may need to manually assign a static IP address, which can be easily done as part of the CentOS installation.
 
 Users
 `````
@@ -39,7 +39,7 @@ When installing CentOS, create a root user and a user with administrative privel
 admin user is 'manager', with the password 'manager'. In all command blocks shown in this guide, the assumed user is represented by the
 command prompt symbol:
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # = root
         $ = admin
@@ -53,14 +53,13 @@ interfaces that will be used by OpenStack Networking.
 
 To verify if Network Manager is enabled:
 
-    .. code-block:: shell
+    .. code-block:: text
 
-        # systemctl status NetworkManager
-
+         # systemctl status NetworkManager
 
 The system displays an error if the Network Manager service is not currently installed:
 
-    .. code-block:: shell
+    .. code-block:: text
 
         error reading information on service NetworkManager: No such file or directory
 
@@ -68,7 +67,7 @@ If you see this error, jump ahead to :ref:`Install Software Repositories <instal
 
 If Network Manager is running, run the following commands to disable it.
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # systemctl stop NetworkManager
         # systemctl disable NetworkManager
@@ -84,19 +83,19 @@ Install Software Repositories
 
  1. Update your current software packages:
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # yum install update -y
 
  2. Install the software package for the OpenStack release of your choice. If you want to use the latest release, run:
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # yum install -y https://www.rdoproject.org/repos/rdo-release.rpm
 
  3. To install OpenStack Kilo
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
 
@@ -104,9 +103,9 @@ Install Software Repositories
 
  4. Install the software package for Packstack.
 
-    .. code-block:: shell
+    .. code-block:: text
 
-        #yum install -y openstack-packstack`
+        # yum install -y openstack-packstack
 
 
 Deploy OpenStack using Packstack
@@ -114,21 +113,20 @@ Deploy OpenStack using Packstack
 
 The quickest and easiest way to deploy OpenStack is via Packstack's ``--allinone`` option. This sets up a single machine as the controller,
 compute, and network node. Be aware that this configuration, while fairly simple to execute, is fairly limited. By default, the all-in-one
-configuration doesn't have Heat and Neutron LBaaS enabled. For this reason, **we don't recommend** going with the default ``--allinone``
-deployment. Instead, you can customize your all-in-one deployment with an answers file.
+configuration doesn't have `Heat <https://wiki.openstack.org/wiki/Heat>`_ and `Neutron LBaaS <https://wiki.openstack.org/wiki/Neutron/LBaaS>`_ enabled. For this reason, **we don't recommend** going with the default ``--allinone`` deployment. Instead, you can customize your all-in-one deployment with an answers file.
 
 Custom Configuration with an Answers File
 `````````````````````````````````````````
 
-Instead of using the ``--allinone`` flag, we generated an `answers file <./f5-onboard_kilo-answers.txt>`_ and edited it to enable the services we want and disable some options we don't want.
+Instead of using the ``--allinone`` flag, we generated an answers file -- :download:`f5-answers.txt` -- and edited it to enable the services we want and disable some options we don't want.
 
-**NOTE:** The configurations in our answers file are basically equivalent to running
+**NOTE:** The configurations in our answers file are basically equivalent to running the following command:
 
     .. code-block:: shell
 
         $ packstack --os-heat-install=y --os-debug-mode=y --os-neutron-lbaas-install=y --provision-demo=n
 
-To generate an answers file (replace '[answers-file]' with the file name of your choice):
+To generate an answers file (replace ``[answers-file]`` with the file name of your choice):
 
     .. code-block:: shell
 
@@ -137,7 +135,7 @@ To generate an answers file (replace '[answers-file]' with the file name of your
 For our custom all-in-one Kilo installation, we changed the following entries in the answers file. You can also customize your admin user
 account credentials here, if desired.
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # vi [answers-file].txt
         ...
@@ -173,7 +171,7 @@ the ``CONTROLLER_HOST``, ``COMPUTE_HOSTS``, & ``NETWORK_HOSTS`` entries. If you'
 edit the answers file to add in the IP addresses for those machines. As shown in the example below, multiple values should be comma-separated,
 without a space in between.
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # vi [answers-file].txt
         ...
@@ -193,19 +191,48 @@ without a space in between.
         ...
 
 
-**NOTE:** You can add more hosts **after** deploying an all-in-one environment. To do so:
+.. _run-packstack:
 
- 1. Update the network card names for ``CONFIG_NOVA_COMPUTE_PRIVIF`` and ``CONFIG_NOVA_NETWORK_PRIVIF``.
+Run Packstack
+`````````````
 
- 2. Update the IP addresses for the ``COMPUTE_HOSTS`` and ``NETWORK_HOSTS``.
+To deploy OpenStack using your custom answers file:
 
- 3. Add the IP address of the host on which you've already run Packstack to the ``EXCLUDE_SERVERS`` entry.
+    .. code-block:: shell
 
- 4. Run ``packstack`` again from the answer file as shown in the next section.
+        $ packstack --answer-file=[answers-file].txt
+
+
+The installation can take a while. If all goes well, you should eventually see the following message:
+
+    .. code-block:: text
+
+        **** Installation completed successfully ******
+
+        Additional information:
+         * Time synchronization installation was skipped. Please note that unsynchronized time on server instances might be problem for some OpenStack components.
+         * File /root/keystonerc_admin has been created on OpenStack client host 10.190.4.193. To use the command line tools you need to source the file.
+         * Copy of keystonerc_admin file has been created for non-root user in /home/manager.
+         * To access the OpenStack Dashboard browse to http://10.190.4.193/dashboard.
+        Please, find your login credentials stored in the keystonerc_admin in your home directory.
+         * The installation log file is available at: /var/tmp/packstack/20160121-155701-AyFMdp/openstack-setup.log
+         * The generated manifests are available at: /var/tmp/packstack/20160121-155701-AyFMdp/manifests
+
+
+Deploy Additional Hosts
+```````````````````````
+
+You can add more hosts after deploying an all-in-one environment. To do so:
+
+ 1. In the answers file:
+
+    - Update the network card names for ``CONFIG_NOVA_COMPUTE_PRIVIF`` and ``CONFIG_NOVA_NETWORK_PRIVIF``.
+    - Update the IP addresses for the ``COMPUTE_HOSTS`` and ``NETWORK_HOSTS``.
+    - Add the IP address of the host on which you've already run Packstack to the ``EXCLUDE_SERVERS`` entry.
 
     Example:
 
-    .. code-block:: shell
+    .. code-block:: text
 
         # Comma-separated list of servers to be excluded from the
         # installation. This is helpful if you are running Packstack a second
@@ -229,38 +256,30 @@ without a space in between.
         # Networking (neutron).
         CONFIG_NETWORK_HOSTS=10.190.4.195
 
-
-**TIP:** You can find the names of your devices by running:
-
-    .. code-block:: shell
-
-        # ifconfig | grep '^\S'
+ 2. :ref:`Run packstack <run-packstack>` again.
 
 
-Run Packstack
-`````````````
-
-To deploy OpenStack using your custom answers file:
+    **TIP:** Run ``ip addr show`` on the host(s) you want to add to find the interface names and IP addresses.
 
     .. code-block:: shell
 
-        $ packstack --answer-file=[answers-file].txt
-
-
-The installation can take a while. If all goes well, you should eventually see the following message:
-
-    .. code-block:: shell
-
-        **** Installation completed successfully ******
-
-        Additional information:
-         * Time synchronization installation was skipped. Please note that unsynchronized time on server instances might be problem for some OpenStack components.
-         * File /root/keystonerc_admin has been created on OpenStack client host 10.190.4.193. To use the command line tools you need to source the file.
-         * Copy of keystonerc_admin file has been created for non-root user in /home/manager.
-         * To access the OpenStack Dashboard browse to http://10.190.4.193/dashboard.
-        Please, find your login credentials stored in the keystonerc_admin in your home directory.
-         * The installation log file is available at: /var/tmp/packstack/20160121-155701-AyFMdp/openstack-setup.log
-         * The generated manifests are available at: /var/tmp/packstack/20160121-155701-AyFMdp/manifests
+        $ ip addr show
+        1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+            link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+            inet 127.0.0.1/8 scope host lo
+               valid_lft forever preferred_lft forever
+            inet6 ::1/128 scope host
+               valid_lft forever preferred_lft forever
+        2: ens2f0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+            link/ether 78:e3:b5:0b:61:a4 brd ff:ff:ff:ff:ff:ff
+        3: ens2f1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+            link/ether 78:e3:b5:0b:61:a6 brd ff:ff:ff:ff:ff:ff
+        4: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master ovs-system state UP qlen 1000
+            link/ether b4:99:ba:a9:55:f0 brd ff:ff:ff:ff:ff:ff
+            inet6 fe80::b699:baff:fea9:55f0/64 scope link
+               valid_lft forever preferred_lft forever
+        5: eno1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+            link/ether b4:99:ba:a9:55:f1 brd ff:ff:ff:ff:ff:ff
 
 
 Configure OpenStack
@@ -269,11 +288,11 @@ Configure OpenStack
 Congratulations! You now have an OpenStack deployment. Next, you'll need to configure your network, add projects and users, and launch instances.
 Please see our :ref:`OpenStack configuration guide <os-config-guide>` for instructions.
 
-You can log in to the Horizon dashboard at the URL provided, using the username and password found in :file:`keystonerc_admin`. **If you change your
-password in Horizon, be sure to update this file with the new password.**
+You can log in to the Horizon dashboard at the URL provided in the 'successful installation' message, using the username and password found in :file:`keystonerc_admin`. **If you change your password in Horizon, be sure to update this file.**
 
 **TIPS:**
-- To use the openstack, nova, neutron, and glance CLI commands, you'll need to source :file:`keystonerc_admin`.
+
+- To use the ``openstack``, ``nova``, ``neutron``, and ``glance`` CLI commands, you'll need to source :file:`keystonerc_admin`.
 
     .. code-block:: shell
 
