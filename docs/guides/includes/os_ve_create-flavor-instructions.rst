@@ -1,8 +1,5 @@
 .. _ve_create_flavor_instructions:
 
-How to Create a Flavor in OpenStack
-===================================
-
 To define a custom flavor via the command line:
 
     .. code-block:: text

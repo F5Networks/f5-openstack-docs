@@ -28,10 +28,9 @@ F5 OpenStack Documentation
         :titlesonly:
 
         releases_and_versioning.rst
-        openstack_docs/os-deploy-guide.rst
-        openstack_docs/os-config-guide.rst
-        ve_openstack/ve_deploy_single-tenant.rst
-        ve_openstack/ve_deploy_multi-tenant.rst
+        guides/os-deploy-guide.rst
+        guides/os-config-guide.rst
+        guides/deploy_ve_openstack.rst
 
 
 Introduction

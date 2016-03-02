@@ -1,9 +1,6 @@
-.. _launch-big-ip:
+.. _launch_big-ip_instance_reuse:
 
-Launch BIG-IP Instance in OpenStack
-===================================
-
-We're providing instructions for launching an instance using Horizon.
+To launch an instance using the OpenStack Horizon dashboard (easiest method):
 
 1. Go to ``http://<ip_address>/dashboard`` and log in with your admin credentials.
 2. Select :guilabel:`admin` from the :guilabel:`Projects` drop-down menu to the right of the OpenStack logo.
@@ -17,6 +14,7 @@ We're providing instructions for launching an instance using Horizon.
         - choose your custom flavor;
         - select :guilabel:`boot from image` as the boot source;
         - select your BIG-IP image.
+
    -  On the :guilabel:`Access & Security` tab:
         - select the :guilabel:`BIG-IP_default` security group.
 
@@ -26,4 +24,4 @@ We're providing instructions for launching an instance using Horizon.
    -  Click :guilabel:`Launch`.
 
 
-\* **Do not** select the physical external network; rather, select the ``bigip_external`` and ``bigip_internal`` networks you created earlier in this guide.
+\* **Do not select the physical external network** when launching an instance.
