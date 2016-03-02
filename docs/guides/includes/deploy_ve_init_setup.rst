@@ -1,38 +1,23 @@
 .. _ve-initial-setup:
 
-Initial Setup
-=============
-
-1. Create an “admin” project, role, and user:
+1. Create projects, roles, and users as needed. At minimum, create an admin project and role; then, create an admin user and assign to it the admin role and project.
 
     .. code-block:: text
 
         # openstack project create admin
         # openstack role create admin
-        # openstack user create admin --project=admin --password=default --email=[email] --role=admin
+        # openstack user create admin --project=admin --password=default --email=<email_address> --role=admin
 
-
-2. Create a new security group for the BIG-IP:
+2. Create a security group for the BIG-IP.
 
     .. code-block:: text
 
         # neutron security-group-create BIG-IP_default
-        Created a new security_group:
-        +----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-        | Field                | Value                                                                                                                                                                                                                                                                                                                         |
-        +----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-        | description          |                                                                                                                                                                                                                                                                                                                               |
-        | id                   | ea8c4843-3704-444d-a5fe-17d5a60261fd                                                                                                                                                                                                                                                                                          |
-        | name                 | BIG-IP_default                                                                                                                                                                                                                                                                                                                |
-        | security_group_rules | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "1a35d6558b59423e83f4500f1ebc1cec", "port_range_max": null, "security_group_id": "ea8c4843-3704-444d-a5fe-17d5a60261fd", "port_range_min": null, "ethertype": "IPv4", "id": "32d1093a-874b-4cf6-a379-084bc63718e3"} |
-        |                      | {"remote_group_id": null, "direction": "egress", "remote_ip_prefix": null, "protocol": null, "tenant_id": "1a35d6558b59423e83f4500f1ebc1cec", "port_range_max": null, "security_group_id": "ea8c4843-3704-444d-a5fe-17d5a60261fd", "port_range_min": null, "ethertype": "IPv6", "id": "1a3857ac-9ace-4850-9c31-860355ca76c6"} |
-        | tenant_id            | 1a35d6558b59423e83f4500f1ebc1cec                                                                                                                                                                                                                                                                                              |
-        +----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-3. Add Neutron security policies to the ``BIG-IP_default`` security group.
+3. Add incoming traffic policies to the security group.
 
-   -  Allow the ICMP protocol for incoming traffic:
+   -  ICMP
 
     .. code-block:: text
 
@@ -53,7 +38,7 @@ Initial Setup
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   -  Assign the standard ports used by BIG-IP (22, 80, and 443):
+   -  SSH
 
     .. code-block:: text
 
@@ -74,6 +59,10 @@ Initial Setup
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
+   - HTTP
+
+    .. code-block:: text
+
         # neutron security-group-rule-create --protocol tcp --port-range-min 80 --port-range-max 80 --direction ingress BIG-IP_default
         Created a new security_group_rule:
         +-------------------+--------------------------------------+
@@ -90,6 +79,10 @@ Initial Setup
         | security_group_id | ea8c4843-3704-444d-a5fe-17d5a60261fd |
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
+
+   - SSL
+
+    .. code-block:: text
 
         # neutron security-group-rule-create --protocol tcp --port-range-min 443 --port-range-max 443 --direction ingress BIG-IP_default
         Created a new security_group_rule:
@@ -108,7 +101,7 @@ Initial Setup
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   -  Allow BIG-IP VE access to VXLAN packets:
+   - VXLAN
 
     .. code-block:: text
 
@@ -129,7 +122,7 @@ Initial Setup
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   -  Allow BIG-IP VE access to GRE packets:
+   - GRE
 
     .. code-block:: text
 
@@ -150,8 +143,9 @@ Initial Setup
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-4. Set Up Nova Compute Nodes
-    BIG-IP needs to be able to detect that it’s running on KVM. Check :file:`/etc/nova/release` to make sure that the vendor, product, and package information is stored there.
+4. Check/Add Package Information
+
+    BIG-IP needs to be able to detect that it’s running on a VM. Check :file:`/etc/nova/release` to make sure that the vendor, product, and package information is stored there.
 
     .. code-block:: text
 
@@ -161,7 +155,10 @@ Initial Setup
         product = OpenStack Nova
         package = 1.el7
 
-    If it isn't, use the command shown below to enter the appropriate information for your environment.
+
+    If the package information isn't present, enter the appropriate information for your environment.
+
+    Example:
 
     .. code-block:: text
 
@@ -173,3 +170,4 @@ Initial Setup
     .. code-block:: text
 
         # service nova-compute restart
+

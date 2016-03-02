@@ -1,8 +1,5 @@
 .. _os_ve_deploy_vlan-provider-network:
 
-VLAN provider network
-=====================
-
 1. Create the data network.
 
    .. code-block:: text

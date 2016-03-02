@@ -1,9 +1,12 @@
 .. _os_ve_deploy_config-mgmt-network:
 
-Configure the Management Network
-================================
+1. Create a network to be used for the BIG-IP management interface.
 
-1. Create a new network to be used for the BIG-IP management interface.
+    .. code-block:: text
+
+        # neutron net-create <network_name>
+
+    Example:
 
     .. code-block:: text
 
@@ -30,6 +33,12 @@ Configure the Management Network
 
     .. code-block:: text
 
+        # neutron subnet-create --name <subnet_name> <network_name> <CIDR>
+
+    Example:
+
+    .. code-block:: text
+
         $ neutron subnet-create --name bigip_mgmt_subnet bigip_mgmt 10.10.0.0/24
         Created a new subnet:
         +-------------------+----------------------------------------------+
@@ -52,6 +61,12 @@ Configure the Management Network
         +-------------------+----------------------------------------------+
 
 3. Attach the subnet to the router.
+
+    .. code-block:: text
+
+        # neutron router-interface-add <router_name> <subnet_name>
+
+    Example:
 
     .. code-block:: text
 

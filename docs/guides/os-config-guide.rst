@@ -348,6 +348,21 @@ your cloud for various projects/users.
     | subnets                   | 49e2802a-ed2d-4eb8-a43d-2dac053433f5 |
     +---------------------------+--------------------------------------+
 
+Create the Data Network
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Flat Provider Network
+`````````````````````
+
+    .. include:: includes/os_ve_deploy_flat-provider-network.rst
+
+
+VLAN provider network
+`````````````````````
+
+    .. include:: includes/os_ve_deploy_vlan-provider-network.rst
+
+
 Add Projects and Users
 ======================
 
