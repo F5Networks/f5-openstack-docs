@@ -24,17 +24,13 @@
 F5 OpenStack Documentation
 ==========================
 
-.. toctree::
-    :hidden:
+    .. toctree::
+        :titlesonly:
 
-    releases_and_versioning.rst
-    cla_landing.rst
-    openstack_docs/Exploring_OpenStack.rst
-    openstack_docs/os-deploy-guide.rst
-    openstack_docs/os-config-guide.rst
-
-
-
+        releases_and_versioning.rst
+        guides/os-deploy-guide.rst
+        guides/os-config-guide.rst
+        guides/deploy_ve_openstack.rst
 
 
 Introduction
