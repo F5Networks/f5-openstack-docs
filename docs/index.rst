@@ -42,62 +42,48 @@ Projects
 --------
 All of F5 Networks' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. The OpenStack-specific projects are all prefaced by 'f5-openstack'; two additional F5 projects that are used by the F5 OpenStack projects are also noted below.
 
-f5-openstack-lbaasv1
-~~~~~~~~~~~~~~~~~~~~
+f5-openstack-lbaasv1_
+~~~~~~~~~~~~~~~~~~~~~
 This repo contains the code for the F5 OpenStack LBaaSv1 plugin.
 
-`F5Networks/f5-openstack-lbaasv1 <https://github.com/F5Networks/f5-openstack-lbaasv1>`_
-`Documentation <http://f5-openstack-lbaasv1.readthedocs.org/en/>`_
+`LBaaSv1 Documentation <http://f5-openstack-lbaasv1.readthedocs.org/en/>`_
 
-f5-openstack-lbaasv2-plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+f5-openstack-lbaasv2-plugin_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This repo contains the code for the F5 OpenStack LBaaSv2 plugin.
 
-`F5Networks/f5-openstack-lbaasv2-plugin <https://github.com/F5Networks/f5-openstack-lbaasv2-plugin>`_
+`LBaaSv2 Plugin Documentation <http://f5-openstack-lbaasv2-plugin.readthedocs.org/en/>`_
 
-`Documentation <http://f5-openstack-lbaasv2-plugin.readthedocs.org/en/>`_
-
-f5-openstack-lbaasv2-driver
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+f5-openstack-lbaasv2-driver_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This repo contains the code for the F5 OpenStack LBaaSv2 service provider driver, which is part of the LBaaSv2 plugin.
 
-`F5Networks/f5-openstack-lbaasv2-driver <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
+`LBaaSv2 Driver Documentation <http://f5-openstack-lbaasv2-driver.readthedocs.org/en/>`_
 
-`Documentation <http://f5-openstack-lbaasv2-driver.readthedocs.org/en/>`_
-
-f5-openstack-heat
-~~~~~~~~~~~~~~~~~
+f5-openstack-heat_
+~~~~~~~~~~~~~~~~~~
 This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP devices in OpenStack.
 
-`F5Networks/f5-openstack-heat <https://github.com/F5Networks/f5-openstack-heat>`_
+`F5 OpenStack Heat Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
 
-`Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
-
-f5-openstack-heat-plugins
-~~~~~~~~~~~~~~~~~~~~~~~~~
+f5-openstack-heat-plugins_
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 This repo contains code for the plugins that make the Heat templates work.
 
-`F5Networks/f5-openstack-heat-plugins <https://github.com/F5Networks/f5-openstack-heat-plugins>`_
+`F5 OpenStack Heat Plugins Documentation <http://f5-openstack-heat-plugins.readthedocs.org/en/>`_
 
-`Documentation <http://f5-openstack-heat-plugins.readthedocs.org/en/>`_
-
-f5-icontrol-rest-python
-~~~~~~~~~~~~~~~~~~~~~~~
+f5-icontrol-rest-python_
+~~~~~~~~~~~~~~~~~~~~~~~~
 This generic python library allows programs and other modules to interact with the BIG-IP iControl REST API.
 
-`F5Networks/f5-icontrol-rest-python <https://github.com/F5Networks/f5-icontrol-rest-python>`_
+`F5 iControl REST Python Documentation <http://icontrol.readthedocs.org/en/latest/>`_
 
-`Documentation <http://icontrol.readthedocs.org/en/latest/>`_
-
-f5-common-python
-~~~~~~~~~~~~~~~~
+f5-common-python_
+~~~~~~~~~~~~~~~~~
 The F5 Networks BIG-IP python SDK. This project implements an SDK for the iControl REST interface for the BigIP.
 
-`F5Networks/f5-common-python <https://github.com/F5Networks/f5-common-python>`_
-
-`Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
+`F5 Python SDK Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
 
 
 Releases and Versioning
@@ -149,3 +135,11 @@ have completed and submitted the :ref:`F5 Contributor License Agreement <cla_lan
 to Openstack_CLA@f5.com prior to their code submission being included
 in this project.
 
+
+.. _f5-openstack-lbaasv1: https://github.com/F5Networks/f5-openstack-lbaasv1
+.. _f5-openstack-lbaasv2-plugin: https://github.com/F5Networks/f5-openstack-lbaasv2-plugin
+.. _f5-openstack-lbaasv2-driver: https://github.com/F5Networks/f5-openstack-lbaasv2-driver
+.. _f5-openstack-heat: https://github.com/F5Networks/f5-openstack-heat
+.. _f5-openstack-heat-plugins: https://github.com/F5Networks/f5-openstack-heat-plugins
+.. _f5-icontrol-rest-python: https://github.com/F5Networks/f5-icontrol-rest-python>
+.. _f5common-python: https://github.com/F5Networks/f5-common-python>
