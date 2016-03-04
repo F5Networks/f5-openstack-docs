@@ -1,59 +1,47 @@
+.. _os-config-guide:
+
+OpenStack Configuration Guide
+=============================
+
 Overview
-========
+--------
+This guide will allow a user who already has an all-in-one OpenStack |openstack| deployment to configure it to attach to an existing external network.
 
-This guide will allow a user who already has an all-in-one OpenStack
-deployment (in other words, one host serves as the controller, compute,
-and network nodes) to configure it to attach to an existing external
-network.
-
-The instructions presented here were prepared from a Packstack
-deployment on OpenStack Kilo using CentOS 7. We relied heavily on the
-RDO project's [Neutron with existing external
-network](https://www.rdoproject.org/networking/neutron-with-existing-external-network/)
-and the Red Hat Enterprise Linux 7 [OpenStack Networking
-Guide](https://access.redhat.com/documentation/en/red-hat-enterprise-linux-openstack-platform/7/networking-guide/networking-guide).
-We've found both documentation sets extremely helpful and recommend
-consulting them for any issues you may encounter.
+The instructions presented here were prepared from a Packstack deployment on OpenStack |openstack| using CentOS 7. We relied heavily on the RDO project's `Neutron with existing external network <https://www.rdoproject.org/networking/neutron-with-existing-external-network/>`_ and the Red Hat Enterprise Linux 7 `OpenStack Networking Guide <https://access.redhat.com/documentation/en/red-hat-enterprise-linux-openstack-platform/7/networking-guide/networking-guide>`_. We've found both documentation sets extremely helpful and recommend consulting them for any issues you may encounter.
 
 Users
------
+`````
 
-When installing CentOS, we created a root user and a user with
-administrative priveleges. Our root user has the password 'default'; our
-admin user is 'manager', with the password 'manager'. In all command
-blocks shown in this guide, the assumed user is represented by the
-command prompt symbol:
+When installing CentOS, we created a root user and a user with administrative priveleges. Our root user has the password 'default'; our admin user is 'manager', with the password 'manager'. In all command blocks shown in this guide, the assumed user is represented by the command prompt symbol:
+
+.. code-block:: text
 
     # = root
     $ = admin
 
-**WARNING: This guide describes how to deploy OpenStack Kilo. This is an
-open source project that is continually changing; while the instructions
-included here worked for us, there is no guarantee they will work
-exactly the same for you.**
+
+.. caution::
+
+    This guide describes how to configure an OpenStack |openstack| environment. Because this is an open source project that is continually changing, you may see some variations between the commands presented here and those available in your environment.
+
 
 Prerequisites
--------------
+`````````````
+- OpenStack: All-in-one deployment on OpenStack |openstack|. See our :ref:`OpenStack deployment guide <os-deploy-guide>` for setup instructions.
+- Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended version you can use with OpenStack |openstack|. You can also use any of the equivalent versions of RHEL-based Linux distributions (CentOS, Scientific Linux, etc.). x86\_64 is currently the only supported architecture.
+- Hardware: Machine with at least 4GB RAM, processors with hardware virtualization extensions, and at least one network adapter. For more information, see the OpenStack Install guide for |openstack| at http://docs.openstack.org.
 
-OpenStack: All-in-one deployment on Kilo
-
-Software: Red Hat Enterprise Linux (RHEL) 7 is the minimum recommended
-version you can use with OpenStack Kilo. You can also use any of the
-equivalent versions of RHEL-based Linux distributions (CentOS,
-Scientific Linux, etc.). x86\_64 is currently the only supported
-architecture.
-
-Hardware: Machine with at least 4GB RAM, processors with hardware
-virtualization extensions, and at least one network adapter. For more
-information, see the [OpenStack Kilo Installation
-guide](http://docs.openstack.org/kilo/install-guide/install/yum/content/ch_overview.html#example-architecture-with-neutron-networking-hw).
+Releases and Versioning
+```````````````````````
+See the :ref:`F5 OpenStack Releases and Support Matrix <releases-and-versioning>`.
 
 Configure the Neutron Network
-=============================
+-----------------------------
 
-Before you configure Neutron to work with an existing external network,
-you'll need to identify the device that's attached to the management
-network via DHCP and record a few key values:
+Before you Start
+````````````````
+To configure Neutron to work with an existing external network, you'll need to identify the device that's attached to the management
+network and record a few key values:
 
 -   IPADDR
 -   HWADDR
@@ -61,14 +49,13 @@ network via DHCP and record a few key values:
 -   GATEWAY
 -   DNS1
 
-To find these values, run `ip addr show` and/or `ifconfig`. In our
-example, the device connected to the management network is enp2s0; yours
-may be something simpler, such as eth0. Your IP address is listed as
-'inet'.
+To find these values, run ``ip addr show`` and/or ``ifconfig``. In our example, the device connected to the management network is enp2s0; yours may be something simpler, such as eth0. The IP address is listed as 'inet'.
 
-**NOTE**: Do not copy and paste the IP addresses shown in this document
-when setting up your environment. Use the valid IP address(es) for your
-machine(s).
+.. note::
+
+    Do not copy and paste the IP addresses shown in this document when setting up your environment. Use the valid IP address(es) for your machine(s).
+
+.. code-block:: text
 
     # ip addr show
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
@@ -100,6 +87,8 @@ machine(s).
     9: br-tun: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN
         link/ether b2:91:a4:55:a0:4a brd ff:ff:ff:ff:ff:ff
 
+.. code-block:: text
+
     # ifconfig
     br-ex: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
             inet6 fe80::38c1:b2ff:fef4:3048  prefixlen 64  scopeid 0x20<link>
@@ -128,83 +117,93 @@ machine(s).
             TX packets 4013798  bytes 371688922 (354.4 MiB)
             TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-#### Configure the bridge
 
--   Create/modify the file */etc/sysconfig/network-scripts/ifcfg-br-ex*
-    and add the entries shown below, using the appropriate values for
-    your network. This moves the IP address and netmask that were
-    assigned to the device 'enp2s0' to the bridge 'br-ex'.
+Configure the bridge
+````````````````````
+1. Create/modify :file:`/etc/sysconfig/network-scripts/ifcfg-br-ex` and add the entries shown below, using the appropriate values for your network. This moves the IP address and netmask that were assigned to the device ``enp2s0`` to the bridge ``br-ex``.
 
-<!-- -->
+    .. code-block:: text
 
-    # vi /etc/sysconfig/network-scripts/ifcfg-br-ex
-    DEVICE=br-ex
-    DEVICETYPE=ovs
-    TYPE=OVSBridge
-    BOOTPROTO=static
-    IPADDR=10.190.4.193
-    NETMASK=255.255.248.0 \\ shown in the ifconfig readout
-    GATEWAY=10.190.0.1 \\ you may need to get this information from your network admin if you don't know it
-    DNS1=10.190.0.20 \\ you may need to get this information from your network admin if you don't know it
+        # vi /etc/sysconfig/network-scripts/ifcfg-br-ex
+        DEVICE=br-ex
+        DEVICETYPE=ovs
+        TYPE=OVSBridge
+        BOOTPROTO=static
+        IPADDR=10.190.4.193
+        NETMASK=255.255.248.0 \\ shown in the ifconfig readout
+        GATEWAY=10.190.0.1 \\ you may need to get this information from your network admin if you don't know it
+        DNS1=10.190.0.20 \\ you may need to get this information from your network admin if you don't know it
 
--   Edit the config file for the
-    device (/etc/sysconfig/network-scripts/ifcfg-enp2s0) and add the
-    lines shown below, using the appropriate values your network. This
-    attaches the devices to the OVS bridge as a port.
+2. Edit the config file for the device -- :file:`/etc/sysconfig/network-scripts/ifcfg-enp2s0` -- and add the lines shown below, using the appropriate values your network. This attaches the devices to the OVS bridge as a port.
 
-**NOTE:** You will need to remove the `BOOTPROTO` entry from the top of
-this file if it exists.
+.. note::
+
+    You will need to remove the ``BOOTPROTO`` entry from the top of this file if it exists.
+
+.. code-block:: text
 
     # vi /etc/sysconfig/network-scripts/ifcfg-enp2s0
     ...
-    DEVICE="enp2s0" 
+    DEVICE="enp2s0"
     HWADDR="b4:99:ba:a9:55:f0" \\ shown in the ifconfig readout as 'ether'
-    TYPE="OVSPort" 
+    TYPE="OVSPort"
     DEVICETYPE="ovs"
     OVS_BRIDGE="br-ex"
     ONBOOT="yes"
 
--   Run the command below to assign a name to the br-ex OVS
-    bridge ('exnet'). This will show up as the
-    `provider:physical_network` entry for the external networks.
+3. Run the command below to assign a name to the br-ex OVS bridge ('exnet'). This shows up as the ``provider:physical_network`` entry for the external networks. **This entry must be present** in order for the `F5 OpenStack LBaaSv1 <http://f5-openstack-lbaasv1.readthedocs.org>`_ plugin to work.
 
-<!-- -->
+.. code-block:: text
 
     # openstack-config --set /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini ovs bridge_mappings extnet:br-ex
 
-#### Configure the network types
 
-Run the command below to make the vxlan, flat, and vlan options
-available. (This is noted in the [RDO
-documentation](https://www.rdoproject.org/networking/neutron-with-existing-external-network/)
-as a bug workaround.)
+Configure network types
+```````````````````````
+Run the command below to make the vxlan, flat, and vlan options available. (This is noted in the `RDO
+documentation <https://www.rdoproject.org/networking/neutron-with-existing-external-network/>`_ as a bug workaround.)
 
-    # openstack-config --set /etc/neutron/plugin.ini ml2 type_drivers vxlan,flat,vlan
+    .. code-block:: text
 
-**NOTE:** We're assigning IP addresses from our external network using
-DHCP, so we replaced the default `dhcp_domain` in
-`/etc/neutron/dhcp_agent.ini` with the name of our local domain.
+        # openstack-config --set /etc/neutron/plugin.ini ml2 type_drivers vxlan,flat,vlan
 
-    # vi /etc/neutron/dhcp_agent.ini 
+
+Set the DHCP Domain
+```````````````````
+If you're using DHCP to acquire IP addresses automatically, replace the default ``dhcp_domain`` in :file:`/etc/neutron/dhcp_agent.ini` with  your local domain. If you're using static IP address assignment, this step shouldn't be necessary.
+
+.. code-block:: text
+
+    # vi /etc/neutron/dhcp_agent.ini
     ...
     # Domain to use for building the hostnames
     # dhcp_domain = openstacklocal
     dhcp_domain = [something.example.com]
     ...
 
-#### Reboot your machine
 
-**NOTE:** This will terminate your connection.
+Reboot your machine
+```````````````````
+.. note::
+
+    This will terminate your connection.
+
+.. code-block:: text
 
     # reboot
 
-**NOTE:** The following steps use neutron commands. You'll need to run
-`source keystonerc_admin` before proceeding to ensure access to the
-neutron command line tools. You can also configure the network using the
-Horizon dashboard; we're not documenting it here, but trust us that it's
-very intuitive and easy to figure out!
 
-#### Set up the router gateway for the external network.
+Set up the router gateway for the external network
+``````````````````````````````````````````````````
+.. note::
+
+    The steps in the following sections use ``neutron`` commands. You'll need to run ``source keystonerc_admin`` before proceeding to ensure access to the ``neutron`` command line tools.
+
+    You can also configure the network using the Horizon dashboard. See the `OpenStack dashboard user guide <http://docs.openstack.org/user-guide/dashboard.html>`_ for more information.
+
+Create an external network
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: text
 
     # neutron net-create external_network --provider:network_type flat --provider:physical_network extnet  --router:external --shared
     Created a new network:
@@ -225,12 +224,18 @@ very intuitive and easy to figure out!
     | tenant_id                 | 1a35d6558b59423e83f4500f1ebc1cec     |
     +---------------------------+--------------------------------------+
 
-#### Create a public subnet
 
+Create a public subnet
+~~~~~~~~~~~~~~~~~~~~~~
 This will allow you to assign floating IP addresses to your tenants.
-**NOTE:** Be sure the subnet range is outside the external DHCP range.
 
-    # neutron subnet-create --name public_subnet --enable_dhcp=False --allocation-pool=start=10.190.6.250,end=10.190.6.254 --gateway=10.190.0.1 external_network 10.190.0.0/21  
+.. note::
+
+    Be sure the subnet range is outside the external DHCP range if you're using DHCP.
+
+.. code-block:: text
+
+    # neutron subnet-create --name public_subnet --enable_dhcp=False --allocation-pool=start=10.190.6.250,end=10.190.6.254 --gateway=10.190.0.1 external_network 10.190.0.0/21
     Created a new subnet:
     +-------------------+--------------------------------------------------+
     | Field             | Value                                            |
@@ -250,6 +255,12 @@ This will allow you to assign floating IP addresses to your tenants.
     | subnetpool_id     |                                                  |
     | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec                 |
     +-------------------+--------------------------------------------------+
+
+
+Create a router
+~~~~~~~~~~~~~~~
+.. code-block:: text
+
     # neutron router-create router1
     Created a new router:
     +-----------------------+--------------------------------------+
@@ -265,13 +276,21 @@ This will allow you to assign floating IP addresses to your tenants.
     | status                | ACTIVE                               |
     | tenant_id             | 1a35d6558b59423e83f4500f1ebc1cec     |
     +-----------------------+--------------------------------------+
+
+
+Attach the router to the gateway
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: text
+
     # neutron router-gateway-set router1 external_network
     Set gateway for router router1
 
-#### Create a private network and subnet.
 
-A private network and subnet allow you to allocate private resources in
-your cloud for various projects/users.
+Create a private network and subnet
+```````````````````````````````````
+A private network and subnet allow you to allocate private resources in your cloud to various projects/users.
+
+.. code-block:: text
 
     # neutron net-create private_network
     Created a new network:
@@ -291,6 +310,9 @@ your cloud for various projects/users.
     | subnets                   |                                      |
     | tenant_id                 | 1a35d6558b59423e83f4500f1ebc1cec     |
     +---------------------------+--------------------------------------+
+
+.. code-block:: text
+
     # neutron subnet-create --name private_subnet private_network 172.16.0.0/12 --dns-nameserver=10.190.0.20
     Created a new subnet:
     +-------------------+-------------------------------------------------+
@@ -313,58 +335,74 @@ your cloud for various projects/users.
     | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec                |
     +-------------------+-------------------------------------------------+
 
-#### Connect the private network to the public network.
+
+Connect the private network to the public network
+`````````````````````````````````````````````````
+.. code-block:: text
 
     # neutron router-interface-add router1 private_subnet
     Added interface c0173575-d3dc-4018-939c-4481f0a1c152 to router router1.
 
-**TIP:** To check what networks are configured, run
-`openstack network list`. To view details for a configured network, run
-`openstack network show`.
+.. tip::
 
-    # openstack network list
-    +--------------------------------------+------------------+--------------------------------------+
-    | ID                                   | Name             | Subnets                              |
-    +--------------------------------------+------------------+--------------------------------------+
-    | 222840d7-4f9f-411d-a7de-6343ce71fee9 | private_network  | 3203971c-1c58-4e29-98e9-136e4a3aff86 |
-    | 8fe1a243-4970-4c5a-84c0-6fef5612c844 | external_network | 49e2802a-ed2d-4eb8-a43d-2dac053433f5 |
-    +--------------------------------------+------------------+--------------------------------------+
+    To check what networks are configured, run ``openstack network list``. To view details for a configured network, run
+    ``openstack network show``.
 
-    # openstack network show 8fe1a243-4970-4c5a-84c0-6fef5612c844
-    +---------------------------+--------------------------------------+
-    | Field                     | Value                                |
-    +---------------------------+--------------------------------------+
-    | id                        | 8fe1a243-4970-4c5a-84c0-6fef5612c844 |
-    | mtu                       | 0                                    |
-    | name                      | external_network                     |
-    | project_id                | 1a35d6558b59423e83f4500f1ebc1cec     |
-    | provider:network_type     | flat                                 |
-    | provider:physical_network | extnet                               |
-    | provider:segmentation_id  | None                                 |
-    | router_type               | External                             |
-    | shared                    | True                                 |
-    | state                     | UP                                   |
-    | status                    | ACTIVE                               |
-    | subnets                   | 49e2802a-ed2d-4eb8-a43d-2dac053433f5 |
-    +---------------------------+--------------------------------------+
+    .. code-block:: text
+
+        # openstack network list
+        +--------------------------------------+------------------+--------------------------------------+
+        | ID                                   | Name             | Subnets                              |
+        +--------------------------------------+------------------+--------------------------------------+
+        | 222840d7-4f9f-411d-a7de-6343ce71fee9 | private_network  | 3203971c-1c58-4e29-98e9-136e4a3aff86 |
+        | 8fe1a243-4970-4c5a-84c0-6fef5612c844 | external_network | 49e2802a-ed2d-4eb8-a43d-2dac053433f5 |
+        +--------------------------------------+------------------+--------------------------------------+
+
+        # openstack network show 8fe1a243-4970-4c5a-84c0-6fef5612c844
+        +---------------------------+--------------------------------------+
+        | Field                     | Value                                |
+        +---------------------------+--------------------------------------+
+        | id                        | 8fe1a243-4970-4c5a-84c0-6fef5612c844 |
+        | mtu                       | 0                                    |
+        | name                      | external_network                     |
+        | project_id                | 1a35d6558b59423e83f4500f1ebc1cec     |
+        | provider:network_type     | flat                                 |
+        | provider:physical_network | extnet                               |
+        | provider:segmentation_id  | None                                 |
+        | router_type               | External                             |
+        | shared                    | True                                 |
+        | state                     | UP                                   |
+        | status                    | ACTIVE                               |
+        | subnets                   | 49e2802a-ed2d-4eb8-a43d-2dac053433f5 |
+        +---------------------------+--------------------------------------+
+
+
+Create the Data Network
+```````````````````````
+
+Flat Provider Network
+~~~~~~~~~~~~~~~~~~~~~
+.. include:: includes/os_ve_deploy_flat-provider-network.rst
+
+VLAN provider network
+~~~~~~~~~~~~~~~~~~~~~
+.. include:: includes/os_ve_deploy_vlan-provider-network.rst
 
 Add Projects and Users
-======================
+----------------------
+Now that your network is configured, you'll probably want to create projects and users.
 
-Now that your network is configured, you'll probably want to create
-projects and users.
+.. note::
 
-**NOTES:** - According to the [OpenStack
-documentation](http://docs.openstack.org/openstack-ops/content/projects_users.html):
-"In OpenStack user interfaces and documentation, a group of users is
-referred to as a project or tenant. These terms are interchangeable." -
-You do not need to be logged in as root to run the below commands. You
-do need to source the *keystonerc\_admin* file, though.
+    - According to the `OpenStack documentation <http://docs.openstack.org/openstack-ops/content/projects_users.html>`_: "In OpenStack user interfaces and documentation, a group of users is referred to as a project or tenant. These terms are interchangeable."
 
-### Add a Project
+    - You do not need to be logged in as root to run the below commands. You do need to source :file:`keystonerc_admin`, though.
 
-The below command creates a project (or tenant) named 'demo1'. It's
-enabled by default.
+Add a Project
+`````````````
+The below command creates a project (or tenant) named 'demo1'.
+
+.. code-block:: text
 
     $ openstack project create --description "My demo Project" demo1
     +-------------+----------------------------------+
@@ -376,10 +414,12 @@ enabled by default.
     | name        | demo1                            |
     +-------------+----------------------------------+
 
-### Add a User
 
-The below command creates a user named demo with access to the 'demo1'
-project. The new user account will be enabled by default.
+Add a User
+``````````
+The below command creates a user named demo with access to the 'demo1' project.
+
+.. code-block:: text
 
     $ openstack user create --project demo1 --password foobar1 --email demo123@f5.com demo
     +------------+----------------------------------+
@@ -393,23 +433,23 @@ project. The new user account will be enabled by default.
     | username   | demo                             |
     +------------+----------------------------------+
 
-**TIP:** Run `openstack project list` to view a list of configured
-projects and `openstack user list` to view a list of configured users.
+
+.. tip::
+
+    Run ``openstack project list`` to view a list of configured projects and ``openstack user list`` to view a list of configured users.
+
 
 Install an Image from Glance
-============================
+----------------------------
+OpenStack's `Glance <http://docs.openstack.org/developer/glance/>`_ project is a service for sharing data assets to be used with other OpenStack services, including VM images.
 
-OpenStack's [Glance](http://docs.openstack.org/developer/glance/)
-project is a service for sharing data assets to be used with other
-OpenStack services, including VM images.
+To get a `CirrOS image <http://docs.openstack.org/image-guide/obtain-images.html#cirros-test-images>`_ (not provisioned, without demo provisioning), run the command shown below.
 
-To get a
-[CirrOS](http://docs.openstack.org/image-guide/obtain-images.html#cirros-test-images)
-image (not provisioned, without demo provisioning), run the command
-shown below.
+.. note::
 
-**NOTE:** Issues have been reported when using the `--is-public=true`
-flag. You may need to remove this for the command to work.
+    Issues have been reported when using the ``--is-public=true`` flag. You may need to remove this, or change it to ``--visibility=public`` for the command to work.
+
+.. code-block:: text
 
     $ curl http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img | glance image-create --name='cirros_image' --is-public=true  --container-format=bare --disk-format=qcow2
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -437,32 +477,30 @@ flag. You may need to remove this for the command to work.
     | virtual_size     | None                                 |
     +------------------+--------------------------------------+
 
+
 Launch an Instance
-==================
+------------------
+We highly recommend that you follow the RDO `Running an Instance guide <https://www.rdoproject.org/install/running-an-instance/>`_ from
+here on out. They've done a great job describing the information, so we're not going to paraphrase it here.
 
-We highly recommend that you follow the RDO [Running an Instance
-guide](https://www.rdoproject.org/install/running-an-instance/) from
-here on out. They've done a great job describing the information, so
-we're not going to paraphrase it here.
+We do have a few tips, though:
 
-We do have a few tips, though: - We recommend generating a key pair on
-your client and importing it as opposed to the other way around. - You
-already created an image as part of this guide; it will be available in
-the Images list to use when launching your instance. - If your private
-network doesn't show up in the network list when adding an instance, it
-may be misconfigured.
+- We recommend generating a key pair on your client and importing it as opposed to the other way around.
+
+- You already created an image as part of this guide; it will be available in the Images list to use when launching your instance.
+
+- If your private network doesn't show up in the network list when adding an instance, it may be misconfigured.
+
 
 Further Reading
-===============
+---------------
+Once you have successfully launched an instance in your OpenStack cloud, you may find the following doc sets helpful.
 
-Once you have successfully launched an instance in your OpenStack cloud,
-you may find the [OpenStack Admin User
-Guide](http://docs.openstack.org/user-guide-admin/) or the [OpenStack
-Operations Guide](http://docs.openstack.org/ops/) helpful.
+ - `OpenStack Admin User Guide <http://docs.openstack.org/user-guide-admin/>`_
+ - `OpenStack Operations Guide <http://docs.openstack.org/ops/>`_
+ - `F5 OpenStack LBaaSv1 Plugin Documentation <http://f5-openstack-lbaasv1.readthedocs.org/en/>`_
+ - `F5 BIG-IP LTM knowledge base <https://support.f5.com/kb/en-us/products/big-ip_ltm.html>`_
+ - :ref:`Deploying BIG-IP VE in OpenStack <deploy_big-ip_openstack>`
 
-If you want to deploy a BIG-IP VE and manage its LTM services using the
-F5 LBaaS Plugin, you may find these docs helpful: [How to Deploy a
-BIG-IP VE in
-OpenStack](http://f5networks.github.io/f5-openstack-docs/HowTo-DeployVEinOS/)
-[How to Deploy the F5 OpenStack LBaaSv1
-Plugin](http://f5networks.github.io/f5-openstack-docs/lbaasv1-plugin-deploy-guide/)
+
+
