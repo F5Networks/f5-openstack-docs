@@ -19,9 +19,9 @@
 f5-openstack-docs
 =================
 
-.. image:: https://readthedocs.org/projects/f5-openstack-docs/badge/?version=latest
-:target: http://f5-openstack-docs.readthedocs.org/en/latest/?badge=latest
-:alt: Documentation Status
+   .. image:: https://readthedocs.org/projects/f5-openstack-docs/badge/?version=latest
+      :target: http://f5-openstack-docs.readthedocs.org/en/latest/?badge=latest
+      :alt: Documentation Status
 
 Introduction
 ------------
