@@ -108,6 +108,8 @@ Install Software Repositories
         # yum install -y openstack-packstack
 
 
+.. _os_all-in-one_deployment:
+
 Deploy OpenStack using Packstack
 --------------------------------
 
