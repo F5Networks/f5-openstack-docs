@@ -19,17 +19,16 @@
 f5-openstack-docs
 =================
 
-    .. image:: https://travis-ci.org/F5Networks/f5-openstack-docs.svg?token=9DzDpZ48B74dRXvdFxM2&branch=master
-        :target: https://travis-ci.com/F5Networks/f5-openstack-docs
+   .. image:: https://readthedocs.org/projects/f5-openstack-docs/badge/?version=latest
+      :target: http://f5-openstack-docs.readthedocs.org/en/latest/?badge=latest
+      :alt: Documentation Status
 
 Introduction
 ------------
-
 This repo contains technical documentation related to the use of F5 products and tools in OpenStack.
 
 Projects
 --------
-
 Each F5 Networks OpenStack project repo in GitHub (prefaced by 'f5-openstack') has its own documentation set.
 
     - `f5-openstack-lbaasv1 <http://f5-openstack-lbaasv1.readthedocs.org/en/liberty/>`_
@@ -46,33 +45,27 @@ In addition, the following open source F5 projects are used in conjunction with 
 
 Releases and Versioning
 -----------------------
-
 See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/releases-and-versioning.html>`.
 
 
 Filing Issues
 -------------
-
 If you find an issue, we would love to hear about it. Please let us know by filing an issue; good issues contain specific and detailed information, such as links and line numbers.
 
 Contributing
 ------------
-
 See `Contributing <CONTRIBUTING.md>`_.
 
 Contact
 -------
-
 f5_openstack_docs@f5.com
 
 Copyright
 ---------
-
 Copyright 2015-2016 F5 Networks, Inc.
 
 Support
 -------
-
 See `Support <SUPPORT.md>`_.
 
 License
@@ -80,7 +73,6 @@ License
 
 Apache V2.0
 ~~~~~~~~~~~
-
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
 a copy of the License at
@@ -95,7 +87,6 @@ limitations under the License.
 
 Contributor License Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Individuals or business entities who contribute to this project must
 have completed and submitted the `F5 Contributor License
 Agreement <http://f5-openstack-docs.rtfd.org/cla_landing.html>`_
