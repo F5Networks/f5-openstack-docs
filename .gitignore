@@ -12,4 +12,4 @@ _build_html
 venv/*
 .venv
 .idea/*
-
+docs/venv/*

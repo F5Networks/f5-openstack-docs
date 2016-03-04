@@ -2,22 +2,21 @@
 
 1. Create projects, roles, and users as needed. At minimum, create an admin project and role; then, create an admin user and assign to it the admin role and project.
 
-    .. code-block:: text
+.. code-block:: text
 
-        # openstack project create admin
-        # openstack role create admin
-        # openstack user create admin --project=admin --password=default --email=<email_address> --role=admin
+    # openstack project create admin
+    # openstack role create admin
+    # openstack user create admin --project=admin --password=default --email=<email_address> --role=admin
 
 2. Create a security group for the BIG-IP.
 
-    .. code-block:: text
+.. code-block:: text
 
-        # neutron security-group-create BIG-IP_default
-
+    # neutron security-group-create BIG-IP_default
 
 3. Add incoming traffic policies to the security group.
 
-   -  ICMP
+    ICMP
 
     .. code-block:: text
 
@@ -38,7 +37,7 @@
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   -  SSH
+    SSH
 
     .. code-block:: text
 
@@ -59,7 +58,7 @@
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   - HTTP
+    HTTP
 
     .. code-block:: text
 
@@ -80,7 +79,7 @@
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   - SSL
+    SSL
 
     .. code-block:: text
 
@@ -101,7 +100,7 @@
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   - VXLAN
+    VXLAN
 
     .. code-block:: text
 
@@ -122,7 +121,7 @@
         | tenant_id         | 1a35d6558b59423e83f4500f1ebc1cec     |
         +-------------------+--------------------------------------+
 
-   - GRE
+    GRE
 
     .. code-block:: text
 
@@ -145,29 +144,28 @@
 
 4. Check/Add Package Information
 
-    BIG-IP needs to be able to detect that it’s running on a VM. Check :file:`/etc/nova/release` to make sure that the vendor, product, and package information is stored there.
+BIG-IP needs to be able to detect that it’s running on a VM. Check :file:`/etc/nova/release` to make sure that the vendor, product, and package information is stored there.
 
-    .. code-block:: text
+.. code-block:: text
 
-        # cat /etc/nova/release
-        [Nova]
-        vendor = Fedora Project
-        product = OpenStack Nova
-        package = 1.el7
+    # cat /etc/nova/release
+    [Nova]
+    vendor = Fedora Project
+    product = OpenStack Nova
+    package = 1.el7
 
 
-    If the package information isn't present, enter the appropriate information for your environment.
+If the package information isn't present, enter the appropriate information for your environment.
 
-    Example:
+Example:
 
-    .. code-block:: text
+.. code-block:: text
 
-        # echo -e "[Nova]\nvendor = Fedora Project\nproduct = OpenStack Nova\npackage = 1.el7" > /etc/nova/release
-
+    # echo -e "[Nova]\nvendor = Fedora Project\nproduct = OpenStack Nova\npackage = 1.el7" > /etc/nova/release
 
 5. Restart the Nova-Compute Service
 
-    .. code-block:: text
+.. code-block:: text
 
-        # service nova-compute restart
+    # service nova-compute restart
 

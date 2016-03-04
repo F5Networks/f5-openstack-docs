@@ -1,4 +1,4 @@
-.. title:: Deploying BIG-IP VE in OpenStack
+.. _deploy_big-ip_openstack:
 
 Deploying BIG-IP VE in OpenStack
 ================================
@@ -33,65 +33,57 @@ Create VLANs
 
 .. include:: includes/os_ve_creating_vlans.rst
 
-External
-````````
+For each network you need to create, take the steps below.
 
-.. include:: includes/os_ve_base_networking-external.rst
+- .. include:: includes/os_create_network.rst
+- .. include:: includes/os_create_subnet.rst
+- .. include:: includes/os_attach_net_to_router.rst
 
-Internal
-````````
+**Example**: Create an external network and subnet for the BIG-IP, and attach them to the public-facing router.
 
-.. include:: includes/os_ve_base_networking-internal.rst
+    .. include:: includes/example_create_external_network.rst
 
-Management
-``````````
+    .. include:: includes/example_create_external_subnet.rst
 
-.. include:: includes/os_ve_deploy_config-mgmt-network.rst
+    .. include:: includes/example_create_external_network.rst
+
 
 SR-IOV
 ``````
-
 .. include:: includes/os_ve_sr-iov.rst
 
 Device Service Clustering
 `````````````````````````
-
 .. include:: includes/ve_clustering_overview.rst
 
 Create Custom Flavors
 ---------------------
-
 For information regarding BIG-IP VE image sizes and minimum requirements, see :ref:`BIG-IP VE Flavor Requirements <big-ip_flavors>`.
 
 .. include:: includes/os_ve_create-flavor-instructions.rst
 
 Deploy BIG-IP VE
 ----------------
-
 .. include:: includes/os_ve_deploy-big-ip.rst
 
 .. _import-ve-image:
 
 Import the VE Image
 ~~~~~~~~~~~~~~~~~~~
-
 .. include:: includes/os_import_ve_image.rst
 
 .. _launch_big-ip_instance:
 
 Launch the BIG-IP Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. include:: includes/os_ve_launch_instance.rst
 
 Assign a Floating IP
 ~~~~~~~~~~~~~~~~~~~~
-
 .. include:: includes/os_ve_assign-floating-ip.rst
 
 Next Steps
 ----------
-
 .. include:: includes/os_ve_deploy_big-ip_next-steps.rst
 
 .. _further_reading:
