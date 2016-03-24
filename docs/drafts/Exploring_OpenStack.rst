@@ -1,4 +1,4 @@
-Exploring OpenStack and BIG-IP via the CLI
+Exploring OpenStack and BIG-IP® via the CLI
 ==========================================
 
 Overview
@@ -9,7 +9,7 @@ setup process.
 
  **http://<ip_address>/dashboard**
 
-**NOTE:** We’ve had better luck accessing the OpenStack and BIG-IP GUIs with Chrome or Firefox than with Internet Explorer.
+**NOTE:** We’ve had better luck accessing the OpenStack and BIG-IP® GUIs with Chrome or Firefox than with Internet Explorer.
 
 Explore OpenStack CLI Commands
 ------------------------------
@@ -316,11 +316,11 @@ LBaaSv1 Configuration Commands
         $ neutron lb-healthmonitor-list
 
 
-Explore BIG-IP CLI Commands
+Explore BIG-IP® CLI Commands
 ---------------------------
 
-Use `nova list` to find the address of your BIG-IP (in the following example, it's 10.190.4.193). The BIG-IP will begin with the default
-credentials [#f1]_. To access the BIG-IP GUI from a remote machine, run the following IPTables commands on the CentOS host command line:
+Use `nova list` to find the address of your BIG-IP® (in the following example, it's 10.190.4.193). The BIG-IP® will begin with the default
+credentials [#f1]_. To access the BIG-IP® GUI from a remote machine, run the following IPTables commands on the CentOS host command line:
 
     .. code-block:: shell
 
@@ -328,13 +328,13 @@ credentials [#f1]_. To access the BIG-IP GUI from a remote machine, run the foll
         $ myip=`ip addr show dev $myif | grep "inet "| cut -d' ' -f6 | cut -d'/' -f1`
         $ sudo iptables -t nat -A PREROUTING -i $myif -p tcp --dport 2443 -d $myip -m conntrack --ctstate NEW -j DNAT --to-destination 10.190.4.193:443
 
-If you deployed a second BIG-IP using the option `--ha-type pair` (which is not the default), then you should also do this for the second BIG-IP:
+If you deployed a second BIG-IP® using the option `--ha-type pair` (which is not the default), then you should also do this for the second BIG-IP®:
 
     .. code-block:: shell
 
         $ sudo iptables -t nat -A PREROUTING -i \$myif -p tcp --dport 3443 -d $myip -m conntrack --ctstate NEW -j DNAT --to-destination 10.190.4.193:443
 
-**To use any of the commands shown below, log in to the BIG-IP CLI as a user with admin privileges.**
+**To use any of the commands shown below, log in to the BIG-IP® CLI as a user with admin privileges.**
 
 Partition and LTM Object Configuration Commands
 ```````````````````````````````````````````````
@@ -480,7 +480,7 @@ Tunnel Commands
 Further Reading
 ---------------
 
-The command examples shown here are a very small subset of the available ``openstack``, ``neutron``, ``nova``, and ``tmos`` commands. More information can be found in the `OpenStack <http://docs.openstack.org/>`_ and `F5 BIG-IP LTM <https://support.f5.com/kb/en-us/products/big-ip_ltm.html>`_ documentation.
+The command examples shown here are a very small subset of the available ``openstack``, ``neutron``, ``nova``, and ``tmos`` commands. More information can be found in the `OpenStack <http://docs.openstack.org/>`_ and `F5 BIG-IP® LTM <https://support.f5.com/kb/en-us/products/big-ip_ltm.html>`_ documentation.
 
 
 .. rubric:: Footnotes

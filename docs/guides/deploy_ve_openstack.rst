@@ -1,6 +1,6 @@
 .. _deploy_big-ip_openstack:
 
-Deploying BIG-IP VE in OpenStack
+Deploying BIG-IP® VE in OpenStack
 ================================
 
 Overview
@@ -25,7 +25,7 @@ Initial Setup
 
 .. include:: includes/deploy_ve_init_setup.rst
 
-Integrate BIG-IP VE with the OpenStack Network Infrastructure
+Integrate BIG-IP® VE with the OpenStack Network Infrastructure
 -------------------------------------------------------------
 
 Create VLANs
@@ -39,7 +39,7 @@ For each network you need to create, take the steps below.
 - .. include:: includes/os_create_subnet.rst
 - .. include:: includes/os_attach_net_to_router.rst
 
-**Example**: Create an external network and subnet for the BIG-IP, and attach them to the public-facing router.
+**Example**: Create an external network and subnet for the BIG-IP®, and attach them to the public-facing router.
 
     .. include:: includes/example_create_external_network.rst
 
@@ -58,11 +58,11 @@ Device Service Clustering
 
 Create Custom Flavors
 ---------------------
-For information regarding BIG-IP VE image sizes and minimum requirements, see :ref:`BIG-IP VE Flavor Requirements <big-ip_flavors>`.
+For information regarding BIG-IP® VE image sizes and minimum requirements, see :ref:`BIG-IP® VE Flavor Requirements <big-ip_flavors>`.
 
 .. include:: includes/os_ve_create-flavor-instructions.rst
 
-Deploy BIG-IP VE
+Deploy BIG-IP® VE
 ----------------
 .. include:: includes/os_ve_deploy-big-ip.rst
 
@@ -74,7 +74,7 @@ Import the VE Image
 
 .. _launch_big-ip_instance:
 
-Launch the BIG-IP Instance
+Launch the BIG-IP® Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: includes/os_ve_launch_instance.rst
 

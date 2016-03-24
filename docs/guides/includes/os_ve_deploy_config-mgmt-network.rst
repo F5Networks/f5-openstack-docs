@@ -1,6 +1,6 @@
 .. _os_ve_deploy_config-mgmt-network:
 
-1. Create a network to be used for the BIG-IP management interface.
+1. Create a network to be used for the BIG-IP® management interface.
 
     .. code-block:: text
 

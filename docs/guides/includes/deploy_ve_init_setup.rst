@@ -8,7 +8,7 @@
     # openstack role create admin
     # openstack user create admin --project=admin --password=default --email=<email_address> --role=admin
 
-2. Create a security group for the BIG-IP.
+2. Create a security group for the BIG-IP®.
 
 .. code-block:: text
 
@@ -144,7 +144,7 @@
 
 4. Check/Add Package Information
 
-BIG-IP needs to be able to detect that it’s running on a VM. Check :file:`/etc/nova/release` to make sure that the vendor, product, and package information is stored there.
+BIG-IP® needs to be able to detect that it’s running on a VM. Check :file:`/etc/nova/release` to make sure that the vendor, product, and package information is stored there.
 
 .. code-block:: text
 
