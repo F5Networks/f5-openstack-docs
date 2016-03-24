@@ -1,7 +1,7 @@
+.. _releases-and-support:
+
 F5 OpenStack Releases and Support Matrix
 ========================================
-
-.. _releases-and-support:
 
 .. table:: F5® - OpenStack Neutron LBaaS compatibility
 

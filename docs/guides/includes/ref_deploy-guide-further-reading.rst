@@ -1,0 +1,19 @@
+.. _further-reading:
+
+Further Reading
+---------------
+
+The BIG-IP® literature on `AskF5 <http://bit.ly/1MTkM9l>`_ and `DevCentral <http://bit.ly/22KTKwu>`_ provides comprehensive configuration instructions and troubleshooting information. The initial configuration guide walks you through the essential first steps:
+
+    - `BIG-IP® System Initial Configuration Guide (v12.0) <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-initial-configuration-12-0-0.html>`_
+    - `BIG-IP® System Initial Configuration Guide (v11.6) <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-initial-configuration-11-6-0.html>`_
+
+
+Once your BIG-IP® is configured, you can deploy the F5® OpenStack LBaaS plugin appropriate for your environment.
+
+    * LBaaSv1_
+    * LBaaSv2_
+
+.. _LBaaSv1: http://f5-openstack-lbaasv1.rtfd.org/en/
+.. _LBaaSv2: http://f5-openstack-lbaasv2.rtfd.org/en/
+
