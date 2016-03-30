@@ -16,6 +16,16 @@ import sphinx_rtd_theme
 import sys
 import os
 
+# Ignore external image warnings
+import sphinx.environment
+from docutils.utils import get_source_line
+
+def _warn_node(self, msg, node):
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
