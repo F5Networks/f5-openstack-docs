@@ -63,7 +63,7 @@ This repo contains the code for the F5 OpenStack LBaaSv2 service provider driver
 
 f5-openstack-heat_
 ~~~~~~~~~~~~~~~~~~
-This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP devices in OpenStack.
+This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP® Virtual Edition (VE) in OpenStack.
 
 `F5 OpenStack Heat Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
 
@@ -75,13 +75,13 @@ This repo contains code for the plugins that make the Heat templates work.
 
 f5-icontrol-rest-python_
 ~~~~~~~~~~~~~~~~~~~~~~~~
-This generic python library allows programs and other modules to interact with the BIG-IP iControl REST API.
+This generic python library allows programs and other modules to interact with the BIG-IP® iControl REST API.
 
 `F5 iControl REST Python Documentation <http://icontrol.readthedocs.org/en/latest/>`_
 
 f5-common-python_
 ~~~~~~~~~~~~~~~~~
-The F5 Networks BIG-IP python SDK. This project implements an SDK for the iControl REST interface for the BigIP.
+The F5 Networks BIG-IP® python SDK. This project implements an SDK for the iControl REST interface for the BigIP.
 
 `F5 Python SDK Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
 
