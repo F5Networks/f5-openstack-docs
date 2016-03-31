@@ -11,7 +11,8 @@ The information presented here is based on the RDO project `Quickstart guide <ht
 
 .. caution::
 
-This guide describes how to deploy OpenStack using Packstack. Both are open source projects that are continually changing. You may see some variations between the commands presented here and those available in your environment.
+    This guide describes how to deploy OpenStack using Packstack. Both are open source projects that are continually changing. You may see some variations between the commands presented here and those available in your environment.
+
 
 Prerequisites
 `````````````
@@ -118,7 +119,7 @@ The quickest and easiest way to deploy OpenStack is via Packstack's ``--allinone
 
 Custom Configuration with an Answers File
 `````````````````````````````````````````
-Instead of using the ``--allinone`` flag, we generated an answers file -- :download:`f5-answers.txt` -- and edited it to enable the services we want and disable some options we don't want.
+Instead of using the ``--allinone`` flag, we generated an answers file -- :download:`f5-answers.txt <../_static/f5-answers.txt>` -- and edited it to enable the services we want and disable some options we don't want.
 
 .. note::
 

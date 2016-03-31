@@ -8,11 +8,9 @@ The BIG-IP® literature on `AskF5 <http://bit.ly/1MTkM9l>`_ and `DevCentral <htt
 
 Once your BIG-IP® is configured, you can deploy the F5 OpenStack LBaaS plugin appropriate for your environment.
 
-    LBaaSv1:
-     - `Plugin <https://github.com/F5Networks/f5-openstack-lbaasv1>`_
-     - `Documentation <http://f5-openstack-lbaasv1.rtfd.org/>`_
+* LBaaSv1_
+* LBaaSv2_
 
-    LBaaSv2:
-     - `Plugin <https://github.com/F5Networks/f5-openstack-lbaasv2-plugin>`_
-     - `Documentation <http://f5-openstack-lbaasv2-plugin.rtfd.org/>`_
+.. _LBaaSv1: http://f5-openstack-lbaasv1.rtfd.org/en.
+.. _LBaaSv2: http://f5-openstack-lbaasv2.rtfd.org/en
 
