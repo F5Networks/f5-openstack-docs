@@ -1,4 +1,5 @@
-.. _ve_clusters:
+Device Service Clustering
+-------------------------
 
 BIG-IP® Device Service Clustering (DSC) provides synchronization and failover of configuration data across multiple BIG-IP® devices on a network.
 
