@@ -40,8 +40,7 @@ Configure the Neutron Network
 
 Before you Start
 ````````````````
-To configure Neutron to work with an existing external network, you'll need to identify the device that's attached to the management
-network and record a few key values:
+To configure Neutron to work with an existing external network, you'll need to identify the device that's attached to the management network and record a few key values:
 
 -   IPADDR
 -   HWADDR
@@ -499,8 +498,8 @@ Once you have successfully launched an instance in your OpenStack cloud, you may
  - `OpenStack Admin User Guide <http://docs.openstack.org/user-guide-admin/>`_
  - `OpenStack Operations Guide <http://docs.openstack.org/ops/>`_
  - `F5 OpenStack LBaaSv1 Plugin Documentation <http://f5-openstack-lbaasv1.readthedocs.org/en/>`_
- - `F5 BIG-IP LTM knowledge base <https://support.f5.com/kb/en-us/products/big-ip_ltm.html>`_
- - :ref:`Deploying BIG-IP VE in OpenStack <deploy_big-ip_openstack>`
+ - `F5 BIG-IP® LTM knowledge base <https://support.f5.com/kb/en-us/products/big-ip_ltm.html>`_
+ - :ref:`Deploying BIG-IP® VE in OpenStack <deploy_big-ip_openstack>`
 
 
 

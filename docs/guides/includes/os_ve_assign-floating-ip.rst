@@ -8,7 +8,7 @@ To assign a floating IP using the Horizon dashboard:
 
 2. Select a :guilabel:`Floating IP` from the :guilabel:`IP Address` drop-down menu.
 
-3. In the :guilabel:`port` drop-down, select the port for your BIG-IP image that corresponds to the external VLAN you set up for your BIG-IP.
+3. In the :guilabel:`port` drop-down, select the port for your BIG-IP® image that corresponds to the external VLAN you set up for your BIG-IP®.
 
 4. Click :guilabel:`Associate`.
 

@@ -2,7 +2,7 @@
 
 .. tip::
 
-    You can access the BIG-IP from the Horizon dashboard via :menuselection:`System --> Instances --> Console`.
+    You can access the BIG-IP® from the Horizon dashboard via :menuselection:`System --> Instances --> Console`.
 
     On first launch, the console will display something similar to the following:
 
@@ -15,4 +15,4 @@
 
     The ``r:`` and ``a:`` strings displayed are randomly-generated passwords for the root and admin accounts, respectively. **Make note of them when they're shown, because they will not be shown again**.
 
-Now that your BIG-IP VE is running, you will need to configure it. See :ref:`Further Reading <further_reading>` for more information.
+Now that your BIG-IP® VE is running, you will need to configure it. See :ref:`Further Reading <further_reading>` for more information.
