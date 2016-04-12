@@ -52,9 +52,12 @@ SR-IOV
 ``````
 .. include:: includes/os_ve_sr-iov.rst
 
+.. _ve_clusters:
+
 Device Service Clustering
 `````````````````````````
 .. include:: includes/ve_clustering_overview.rst
+    :start-line: 3
 
 Create Custom Flavors
 ---------------------
