@@ -27,54 +27,19 @@ This repo contains technical documentation related to the use of F5® products a
 
 Projects
 --------
-All of F5 Networks®' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. The OpenStack-specific projects are all prefaced by 'f5-openstack'; two additional F5® projects that are used by the F5® OpenStack projects are also noted below.
-
-f5-openstack-agent_
-~~~~~~~~~~~~~~~~~~~
-This repo contains the code for the F5® OpenStack LBaaSv2 agent.
-
-`LBaaSv2 Agent Documentation <http://f5-openstack-lbaasv2-plugin
-.readthedocs.org/en/>`_
-
-f5-openstack-lbaasv2-driver_
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This repo contains the code for the F5® OpenStack LBaaSv2 service provider driver, which is part of the LBaaSv2 plugin.
-
-`LBaaSv2 Driver Documentation <http://f5-openstack-lbaasv2-driver.readthedocs.org/en/>`_
-
-f5-openstack-heat_
-~~~~~~~~~~~~~~~~~~
-This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP® Virtual Edition (VE) in OpenStack.
-
-`F5® OpenStack Heat Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
-
-f5-openstack-heat-plugins_
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-This repo contains code for the plugins that make the Heat templates work.
-
-`F5® OpenStack Heat Plugins Documentation <http://f5-openstack-heat-plugins.readthedocs.org/en/>`_
-
-f5-icontrol-rest-python_
-~~~~~~~~~~~~~~~~~~~~~~~~
-This generic python library allows programs and other modules to interact with the BIG-IP® iControl® REST API.
-
-`F5® iControl® REST Python Documentation <http://icontrol.readthedocs.org/en/latest/>`_
-
-f5-common-python_
-~~~~~~~~~~~~~~~~~
-The F5 Networks® BIG-IP® Python SDK. This project implements an SDK for the iControl® REST interface for the BIG-IP®.
-
-`F5® Python SDK Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
+All of F5 Networks®' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. The OpenStack-specific projects are all prefaced by 'f5-openstack'; two additional F5® projects that are used by the F5® OpenStack projects are f5-icontrol-rest-python and f5-common-python.
 
 Releases and Versioning
 -----------------------
 See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/releases-and-versioning.html>`_.
 
+Documentation
+-------------
+User guides, architecture overviews, and more are available at `f5-openstack-docs.readthedocs.org <http://f5-openstack-docs.readthedocs.org/en/>`_.
 
 Filing Issues
 -------------
-If you find an issue, we would love to hear about it. Please let us know by filing an issue; good issues contain specific and detailed information, such as links and line numbers.
+We welcome feedback on our documentation! If you find an issue or would like to request a new guide, please let us know by filing an `issue <https://github.com/F5Networks/f5-openstack-docs/issues>`_ in this repository; good issues contain specific and detailed information, such as links and line numbers.
 
 Contributing
 ------------

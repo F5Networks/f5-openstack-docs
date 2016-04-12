@@ -33,11 +33,60 @@ F5 OpenStack Documentation
     guides/deploy_ve_openstack.rst
 
 
-.. include:: ../README.rst
-    :start-line: 23
-    :end-line: 74
+Projects
+--------
+All of F5 Networks®' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. The OpenStack-specific projects are all prefaced by 'f5-openstack'; two additional F5® projects that are used by the F5® OpenStack projects are also noted below.
+
+f5-openstack-agent_
+~~~~~~~~~~~~~~~~~~~
+
+This repo contains the code for the F5® OpenStack agent.
+
+`Agent Documentation <#>`_ (Coming soon!)
+`LBaaSv2 Documentation <http://f5-openstack-lbaasv2.readthedocs.org/en/>`_
+
+f5-openstack-lbaasv2-driver_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This repo contains the code for the F5® OpenStack LBaaSv2 service provider driver, which is part of the LBaaSv2 plugin.
+
+`LBaaSv2 Driver Documentation <http://f5-openstack-lbaasv2-driver.readthedocs.org/en/>`_
+
+f5-openstack-heat_
+~~~~~~~~~~~~~~~~~~
+This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP® Virtual Edition (VE) in OpenStack.
+
+`F5® OpenStack Heat Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
+
+f5-openstack-heat-plugins_
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+This repo contains code for the plugins that make the Heat templates work.
+
+`F5® OpenStack Heat Plugins Documentation <http://f5-openstack-heat-plugins.readthedocs.org/en/>`_
+
+f5-icontrol-rest-python_
+~~~~~~~~~~~~~~~~~~~~~~~~
+This generic python library allows programs and other modules to interact with the BIG-IP® iControl® REST API.
+
+`F5® iControl® REST Python Documentation <http://icontrol.readthedocs.org/en/latest/>`_
+
+f5-common-python_
+~~~~~~~~~~~~~~~~~
+The F5 Networks® BIG-IP® Python SDK. This project implements an SDK for the iControl® REST interface for the BIG-IP®.
+
+`F5® Python SDK Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
+
+Releases and Versioning
+-----------------------
+See `F5 OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthedocs.org/en/1.0/releases_and_versioning.html>`_.
 
 
-.. include:: ../README.rst
-    :start-line: 120
-    :end-line: 137
+.. _f5-openstack-lbaasv1: https://github.com/F5Networks/f5-openstack-lbaasv1
+.. _f5-openstack-agent: https://github.com/F5Networks/f5-openstack-agent
+.. _f5-openstack-lbaasv2-driver: https://github.com/F5Networks/f5-openstack-lbaasv2-driver
+.. _f5-openstack-heat: https://github.com/F5Networks/f5-openstack-heat
+.. _f5-openstack-heat-plugins: https://github.com/F5Networks/f5-openstack-heat-plugins
+.. _f5-icontrol-rest-python: https://github.com/F5Networks/f5-icontrol-rest-python
+.. _f5common-python: https://github.com/F5Networks/f5-common-python>
+
+
