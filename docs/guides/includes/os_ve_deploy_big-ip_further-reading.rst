@@ -11,6 +11,6 @@ Once your BIG-IP® is configured, you can deploy the F5 OpenStack LBaaS plugin a
 * LBaaSv1_
 * LBaaSv2_
 
-.. _LBaaSv1: http://f5-openstack-lbaasv1.rtfd.org/en.
-.. _LBaaSv2: http://f5-openstack-lbaasv2.rtfd.org/en
+.. _LBaaSv1: http://f5-openstack-lbaasv1.rtfd.org/en/
+.. _LBaaSv2: http://f5-openstack-lbaasv2.rtfd.org/en/
 
