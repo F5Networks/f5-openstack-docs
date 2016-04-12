@@ -24,7 +24,7 @@
         +---------------------------+--------------------------------------+
 
 2. Create the subnet.
-    Notice that a higher range of the subnet is used here. The idea is that IP addresses used for tunneling endpoints on the compute nodes can use a lower range of the subnet and service VMs like BIG-IP can use a higher range of the subnet. This separation might be necessary if the compute nodes are using static IPs or a different DHCP server.
+    Notice that a higher range of the subnet is used here. The idea is that IP addresses used for tunneling endpoints on the compute nodes can use a lower range of the subnet and service VMs like BIG-IP® can use a higher range of the subnet. This separation might be necessary if the compute nodes are using static IPs or a different DHCP server.
 
    .. code-block:: text
 

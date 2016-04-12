@@ -12,7 +12,7 @@ To launch an instance using the OpenStack Horizon dashboard (easiest method):
         - enter a descriptive instance name;
         - choose your custom flavor;
         - select :guilabel:`boot from image` as the boot source;
-        - select your BIG-IP image.
+        - select your BIG-IP® image.
    -  On the :guilabel:`Access & Security` tab:
         - select the :guilabel:`BIG-IP_default` security group.
    -  On the :guilabel:`Network` tab:
@@ -21,4 +21,4 @@ To launch an instance using the OpenStack Horizon dashboard (easiest method):
 
 .. warning::
 
-    Do not select the physical external network when launching an instance. Choose the VLANs you set up for use with your BIG-IP.
+    Do not select the physical external network when launching an instance. Choose the VLANs you set up for use with your BIG-IP®.

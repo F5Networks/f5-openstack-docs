@@ -11,7 +11,8 @@ The information presented here is based on the RDO project `Quickstart guide <ht
 
 .. caution::
 
-This guide describes how to deploy OpenStack using Packstack. Both are open source projects that are continually changing. You may see some variations between the commands presented here and those available in your environment.
+    This guide describes how to deploy OpenStack using Packstack. Both are open source projects that are continually changing. You may see some variations between the commands presented here and those available in your environment.
+
 
 Prerequisites
 `````````````
@@ -32,9 +33,7 @@ compute, and network nodes (referred to in this document as an 'all-in-one' conf
 Users
 `````
 
-When installing CentOS, create a root user and a user with administrative priveleges. Our root user has the password 'default'; our
-admin user is 'manager', with the password 'manager'. In all command blocks shown in this guide, the assumed user is represented by the
-command prompt symbol:
+When installing CentOS, create a root user and a user with administrative priveleges. Our root user has the password 'default'; our admin user is 'manager', with the password 'manager'. In all command blocks shown in this guide, the assumed user is represented by the command prompt symbol:
 
 .. code-block:: text
 
@@ -45,8 +44,7 @@ command prompt symbol:
 Disable Network Manager
 ```````````````````````
 
-Once the operating system is installed, you'll need to disable Network Manager. It will be replaced by the standard network service for all
-interfaces that will be used by OpenStack Networking.
+Once the operating system is installed, you'll need to disable Network Manager. It will be replaced by the standard network service for all interfaces that will be used by OpenStack Networking (Neutron).
 
 To verify if Network Manager is enabled:
 
@@ -84,23 +82,23 @@ Install Software Repositories
 
 1. Update your current software packages:
 
-    .. code-block:: text
+.. code-block:: text
 
-        # yum install update -y
+    # yum install update -y
 
 
 2. Install the software package for the OpenStack |openstack| release:
 
-    .. code-block:: text
+.. code-block:: text
 
-        # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-1.noarch.rpm
+    # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-1.noarch.rpm
 
 
 3. Install the software package for Packstack.
 
-    .. code-block:: text
+.. code-block:: text
 
-        # yum install -y openstack-packstack
+    # yum install -y openstack-packstack
 
 
 .. _os_all-in-one_deployment:
@@ -114,7 +112,7 @@ The quickest and easiest way to deploy OpenStack is via Packstack's ``--allinone
 
 Custom Configuration with an Answers File
 `````````````````````````````````````````
-Instead of using the ``--allinone`` flag, we generated an answers file -- :download:`f5-answers.txt` -- and edited it to enable the services we want and disable some options we don't want.
+Instead of using the ``--allinone`` flag, we generated an answers file -- :download:`f5-answers.txt <../_static/f5-answers.txt>` -- and edited it to enable the services we want and disable some options we don't want.
 
 .. note::
 
