@@ -89,16 +89,11 @@ Install Software Repositories
         # yum install update -y
 
 
-2. Install the software package for the OpenStack release of your choice. If you want to use the latest release, run:
+2. Install the software package for the OpenStack |openstack| release:
 
     .. code-block:: text
 
-        # yum install -y https://www.rdoproject.org/repos/rdo-release.rpm
-
-
-    .. note::
-
-        To install a different OpenStack release, see http://rdoproject.org/repos/ for the full listing.
+        # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-1.noarch.rpm
 
 
 3. Install the software package for Packstack.
