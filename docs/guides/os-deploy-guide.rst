@@ -91,7 +91,7 @@ Install Software Repositories
 
 .. code-block:: text
 
-    # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-liberty/rdo-release-liberty-1.noarch.rpm
+    # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-1.noarch.rpm
 
 
 3. Install the software package for Packstack.
@@ -112,6 +112,9 @@ The quickest and easiest way to deploy OpenStack is via Packstack's ``--allinone
 
 Custom Configuration with an Answers File
 `````````````````````````````````````````
+
+.. todo:: Update answers file for Mitaka
+
 Instead of using the ``--allinone`` flag, we generated an answers file -- :download:`f5-answers.txt <../_static/f5-answers.txt>` -- and edited it to enable the services we want and disable some options we don't want.
 
 .. note::
