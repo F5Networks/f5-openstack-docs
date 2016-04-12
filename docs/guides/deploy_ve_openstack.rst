@@ -1,7 +1,7 @@
 .. _deploy_big-ip_openstack:
 
 Deploying BIG-IP® VE in OpenStack
-================================
+=================================
 
 Overview
 --------
@@ -26,7 +26,7 @@ Initial Setup
 .. include:: includes/deploy_ve_init_setup.rst
 
 Integrate BIG-IP® VE with the OpenStack Network Infrastructure
--------------------------------------------------------------
+--------------------------------------------------------------
 
 Create VLANs
 ~~~~~~~~~~~~
@@ -63,7 +63,7 @@ For information regarding BIG-IP® VE image sizes and minimum requirements, see 
 .. include:: includes/os_ve_create-flavor-instructions.rst
 
 Deploy BIG-IP® VE
-----------------
+-----------------
 .. include:: includes/os_ve_deploy-big-ip.rst
 
 .. _import-ve-image:
@@ -75,7 +75,7 @@ Import the VE Image
 .. _launch_big-ip_instance:
 
 Launch the BIG-IP® Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: includes/os_ve_launch_instance.rst
 
 Assign a Floating IP

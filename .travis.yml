@@ -7,7 +7,7 @@ install:
  - sudo pip install -r requirements.docs.txt
 
 script: 
- - sphinx-build -W docs/ docs/_build/
+ - sphinx-build docs/ docs/_build/
 
 notifications:
  slack:
