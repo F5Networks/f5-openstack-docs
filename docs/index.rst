@@ -39,10 +39,11 @@ All of F5 Networks®' OpenStack projects are open source and can be found at `gi
 
 f5-openstack-agent_
 ~~~~~~~~~~~~~~~~~~~
-This repo contains the code for the F5® OpenStack LBaaSv2 agent.
 
-`LBaaSv2 Agent Documentation <http://f5-openstack-lbaasv2-plugin
-.readthedocs.org/en/>`_
+This repo contains the code for the F5® OpenStack agent.
+
+`Agent Documentation <#>`_ (Coming soon!)
+`LBaaSv2 Documentation <http://f5-openstack-lbaasv2.readthedocs.org/en/>`_
 
 f5-openstack-lbaasv2-driver_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,6 +78,15 @@ The F5 Networks® BIG-IP® Python SDK. This project implements an SDK for the iC
 
 Releases and Versioning
 -----------------------
-See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/releases-and-versioning.html>`_.
+See `F5 OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthedocs.org/en/1.0/releases_and_versioning.html>`_.
+
+
+.. _f5-openstack-lbaasv1: https://github.com/F5Networks/f5-openstack-lbaasv1
+.. _f5-openstack-agent: https://github.com/F5Networks/f5-openstack-agent
+.. _f5-openstack-lbaasv2-driver: https://github.com/F5Networks/f5-openstack-lbaasv2-driver
+.. _f5-openstack-heat: https://github.com/F5Networks/f5-openstack-heat
+.. _f5-openstack-heat-plugins: https://github.com/F5Networks/f5-openstack-heat-plugins
+.. _f5-icontrol-rest-python: https://github.com/F5Networks/f5-icontrol-rest-python
+.. _f5common-python: https://github.com/F5Networks/f5-common-python>
 
 
