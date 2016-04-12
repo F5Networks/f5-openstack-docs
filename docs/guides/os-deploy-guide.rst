@@ -33,9 +33,7 @@ compute, and network nodes (referred to in this document as an 'all-in-one' conf
 Users
 `````
 
-When installing CentOS, create a root user and a user with administrative priveleges. Our root user has the password 'default'; our
-admin user is 'manager', with the password 'manager'. In all command blocks shown in this guide, the assumed user is represented by the
-command prompt symbol:
+When installing CentOS, create a root user and a user with administrative priveleges. Our root user has the password 'default'; our admin user is 'manager', with the password 'manager'. In all command blocks shown in this guide, the assumed user is represented by the command prompt symbol:
 
 .. code-block:: text
 
@@ -46,8 +44,7 @@ command prompt symbol:
 Disable Network Manager
 ```````````````````````
 
-Once the operating system is installed, you'll need to disable Network Manager. It will be replaced by the standard network service for all
-interfaces that will be used by OpenStack Networking.
+Once the operating system is installed, you'll need to disable Network Manager. It will be replaced by the standard network service for all interfaces that will be used by OpenStack Networking (Neutron).
 
 To verify if Network Manager is enabled:
 
@@ -90,16 +87,12 @@ Install Software Repositories
         # yum install update -y
 
 
-2. Install the software package for the OpenStack release of your choice. If you want to use the latest release, run:
+2. Install the software package for the OpenStack |openstack| release.
 
     .. code-block:: text
 
-        # yum install -y https://www.rdoproject.org/repos/rdo-release.rpm
+        # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
 
-
-    .. note::
-
-        To install a different OpenStack release, see http://rdoproject.org/repos/ for the full listing.
 
 3. Install the software package for Packstack.
 
