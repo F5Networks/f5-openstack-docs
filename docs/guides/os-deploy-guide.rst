@@ -82,23 +82,23 @@ Install Software Repositories
 
 1. Update your current software packages:
 
-    .. code-block:: text
+.. code-block:: text
 
-        # yum install update -y
+    # yum install update -y
 
 
 2. Install the software package for the OpenStack |openstack| release.
 
-    .. code-block:: text
+.. code-block:: text
 
-        # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
+    # yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
 
 
 3. Install the software package for Packstack.
 
-    .. code-block:: text
+.. code-block:: text
 
-        # yum install -y openstack-packstack
+    # yum install -y openstack-packstack
 
 
 .. _os_all-in-one_deployment:
