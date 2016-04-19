@@ -22,7 +22,7 @@ Prerequisites
 
 Releases and Versioning
 ```````````````````````
-See :ref:`F5 OpenStack Releases and Support Matrix <releases-and-versioning>`.
+See :ref:`F5 OpenStack Releases and Support Matrix <releases-and-support>`.
 
 Getting Started
 ---------------
