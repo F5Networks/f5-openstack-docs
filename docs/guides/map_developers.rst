@@ -7,9 +7,10 @@ Contents
 --------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    ../branching_strategy.rst
+    ../branching_strategy
+    ../cla_landing
 
 
 Reference Materials
