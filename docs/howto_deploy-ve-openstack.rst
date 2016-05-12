@@ -8,14 +8,14 @@ How To Deploy BIG-IP® VE in OpenStack
 
 .. toctree::
 
-    guides/includes/topic_deploy-ve-before-you-begin.rst
+    guides/map_deploy-ve-before-you-begin.rst
     guides/map_network-architecture
-    guides/includes/topic_deploy-ve-initial-setup
+    guides/map_deploy-ve-initial-setup
     guides/map_network-setup
     guides/map_provider-network
-    guides/map_launch-bigip-horizon
-    guides/includes/ref_deploy-guide-next-steps
-    guides/includes/ref_deploy-guide-further-reading
+    guides/map_launch-bigip-gui
+    guides/map_deploy-guide-next-steps
+
 
 
 

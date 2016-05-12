@@ -9,15 +9,11 @@ OpenStack Configuration Guide
 
 .. toctree::
 
-    guides/includes/topic_os-config-releases-versioning
-    guides/includes/topic_os-config-before-you-begin
-    guides/includes/topic_os-config-getting-started
+    guides/map_config-guide-intro.rst
     guides/map_neutron-network-initial-setup
     guides/map_network-setup
     guides/map_provider-network
-    guides/includes/topic_os-config-add-users-and-projects
-    guides/includes/ref_os-config-guide-next-steps
-    guides/includes/ref_os-config-guide-further-reading
+    guides/map_os-config-next-steps
 
 
 

@@ -1,4 +1,4 @@
-.. _ha-mirroring:
+.. _concept_ha-mirroring:
 
 Mirroring
 `````````

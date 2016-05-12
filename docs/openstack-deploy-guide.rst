@@ -9,9 +9,8 @@ OpenStack Deployment Guide
 
 .. toctree::
 
-    guides/includes/topic_os-deploy-releases-versioning.rst
-    guides/includes/topic_os-deploy-before-you-begin.rst
+    guides/map_os-deploy-intro
     guides/map_os-deploy-getting-started
     guides/map_os-deploy-with-packstack
-    guides/includes/topic_os-deploy-next-steps
+    guides/map_os-deploy-next-steps
 

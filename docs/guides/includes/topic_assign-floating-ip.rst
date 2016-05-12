@@ -1,7 +1,7 @@
 Assign a Floating IP Address
 ````````````````````````````
 
-Use the Horizon dashboard to assign a floating IP address to the instance.
+Use the OpenStack dashboard to assign a floating IP address to the instance.
 
 1. Go to :menuselection:`Project --> Compute --> Instances`, then choose :guilabel:`Associate Floating IP` from the drop-down menu in the :menuselection:`Actions` column.
 

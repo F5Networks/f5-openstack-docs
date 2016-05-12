@@ -7,5 +7,5 @@ This document describes how to deploy BIG-IP® Virtual Edition (VE) in OpenStack
 
 .. important::
 
-    This guide outlines the basic commands you'll use in the OpenStack CLI, or the steps you'll take in OpenStack Horizon, to configure OpenStack for use with a BIG-IP® VE. The actual configurations you'll need to make may vary depending on your network's architecture and your data center's requirements.
+    This guide outlines the basic commands you'll use in the OpenStack CLI, or the steps you'll take in the OpenStack dashboard, to configure OpenStack for use with a BIG-IP® VE. The actual configurations you'll need to make may vary depending on your network's architecture and your data center's requirements.
 

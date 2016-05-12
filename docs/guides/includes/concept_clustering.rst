@@ -1,4 +1,4 @@
-.. _clustering:
+.. _concept_clustering:
 
 Device Service Clustering
 `````````````````````````

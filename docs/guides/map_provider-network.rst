@@ -1,7 +1,7 @@
 .. _provider-network:
 
-Provider Network
-----------------
+Neutron - Provider Networks
+---------------------------
 
 Overview
 ````````

@@ -1,7 +1,7 @@
 Launch an Instance
 ``````````````````
 
-To launch a BIG-IP® instance using the OpenStack Horizon dashboard:
+To launch a BIG-IP® instance using the OpenStack dashboard:
 
 1. Go to ``http://<ip_address>/dashboard`` and log in with your admin credentials.
 

@@ -1,4 +1,4 @@
-.. _ve-deploy-guide-before-you-begin:
+.. _topic_deploy-ve-before-you-begin:
 
 Before You Begin
 ----------------
@@ -24,6 +24,5 @@ You must have the following before deploying a BIG-IP® VE in OpenStack:
 
         - `OpenStack User Guide: Create and manage networks <http://docs.openstack.org/user-guide/cli_create_and_manage_networks.html>`_
 
-.. include:: topic_note-source-admin-credentials.rst
-    :start-line: 3
+
 

@@ -1,7 +1,7 @@
-.. _launch-bigip-ve-horizon:
+.. _launch-bigip-ve-gui:
 
-Launch BIG-IP® VE in OpenStack Horizon
---------------------------------------
+Launch BIG-IP® VE in OpenStack
+------------------------------
 
 .. _deploy-bigip-overview:
 

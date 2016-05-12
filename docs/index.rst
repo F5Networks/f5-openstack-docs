@@ -33,38 +33,38 @@ f5-openstack-agent_
 
 This repo contains the code for the F5® OpenStack agent.
 
-Agent documentation is included in the `LBaaSv2 Documentation <http://f5-openstack-lbaasv2.readthedocs.org/en/>`_.
+Agent documentation is included in the `LBaaSv2 Documentation <http://f5-openstack-lbaasv2.readthedocs.io/>`_.
 
 f5-openstack-lbaasv2-driver_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This repo contains the code for the F5® OpenStack LBaaSv2 service provider driver, which is part of the LBaaSv2 plugin.
 
-LBaaSv2 Driver documentation is included in the `LBaaSv2 Documentation <http://f5-openstack-lbaasv2.readthedocs.org/en/>`_.
+LBaaSv2 Driver documentation is included in the `LBaaSv2 Documentation <http://f5-openstack-lbaasv2.readthedocs.io>`_.
 
 f5-openstack-heat_
 ~~~~~~~~~~~~~~~~~~
 This repo contains supported and unsupported Heat templates. These can be used to simplify and automate the deployment and configuration of BIG-IP® Virtual Edition (VE) in OpenStack.
 
-`F5® OpenStack Heat Documentation <http://f5-openstack-heat.readthedocs.org/en/>`_
+`F5® OpenStack Heat Documentation <http://f5-openstack-heat.readthedocs.io>`_
 
 f5-openstack-heat-plugins_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 This repo contains code for the plugins that make the Heat templates work.
 
-`F5® OpenStack Heat Plugins Documentation <http://f5-openstack-heat-plugins.readthedocs.org/en/>`_
+`F5® OpenStack Heat Plugins Documentation <http://f5-openstack-heat-plugins.readthedocs.io>`_
 
 f5-icontrol-rest-python_
 ~~~~~~~~~~~~~~~~~~~~~~~~
 This generic python library allows programs and other modules to interact with the BIG-IP® iControl® REST API.
 
-`F5® iControl® REST Python Documentation <http://icontrol.readthedocs.org/en/latest/>`_
+`F5® iControl® REST Python Documentation <http://icontrol.readthedocs.io>`_
 
 f5-common-python_
 ~~~~~~~~~~~~~~~~~
 The F5 Networks® BIG-IP® Python SDK. This project implements an SDK for the iControl® REST interface for the BIG-IP®.
 
-`F5® Python SDK Documentation <https://f5-sdk.readthedocs.org/en/latest/>`_
+`F5® Python SDK Documentation <https://f5-sdk.readthedocs.io>`_
 
 User Guides and Resources
 -------------------------

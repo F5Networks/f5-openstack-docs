@@ -1,7 +1,7 @@
 .. _os-config-neutron-network-initial-setup:
 
-Neutron Network - Initial Setup
--------------------------------
+Neutron - Initial Setup
+-----------------------
 
 .. include:: includes/topic_os-config-intro.rst
 

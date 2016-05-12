@@ -1,7 +1,7 @@
 .. _os-config-ovs-bridge:
 
-Configure the bridge
-````````````````````
+Configure the OVS bridge
+````````````````````````
 
 Setting up an OVS bridge allows Neutron network traffic to reach the physical, or external, network.
 

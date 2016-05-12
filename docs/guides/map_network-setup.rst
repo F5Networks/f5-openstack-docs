@@ -1,7 +1,7 @@
 .. _os-neutron-network-setup:
 
-Network Setup
--------------
+Neutron - Network Setup
+-----------------------
 
 .. include:: includes/topic_note-source-admin-credentials.rst
     :start-line: 3

@@ -12,7 +12,7 @@ Creating an external network in Neutron enables network connectivity via your ph
     :ref:`Provider Network <provider-network>`
 
 
-Creating a public subnet allows you to define a range of floating IP addresses you can assign to instances -- like :ref:`BIG-IP® VE <launch-bigip-ve-horizon>` -- and tenants.
+Creating a public subnet allows you to define a range of floating IP addresses you can assign to instances -- like :ref:`BIG-IP® VE <launch-bigip-ve-gui>` -- and tenants.
 
 .. tip::
 

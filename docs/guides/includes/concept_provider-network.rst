@@ -14,8 +14,11 @@ BIG-IP® can work with either type of provider network. Users with VLAN provider
 
 .. seealso::
 
-    * `OpenStack Networking Guide <http://docs.openstack.org/liberty/networking-guide/intro-os-networking-overview.html>`_
-    * `Rackspace Blog's Neutron Networking: Simple Flat Network <https://developer.rackspace.com/blog/neutron-networking-simple-flat-network/>`_
-    * `Rackspace Blog's Neutron Networking: VLAN Provider Networks <https://developer.rackspace.com/blog/neutron-networking-vlan-provider-networks/>`_
+    * `OpenStack Networking Guide <http://docs.openstack.org/liberty/networking-guide/intro-os-networking-overview.html>`_ (Liberty)
     * :ref:`F5® LBaaSv1 Plugin Documentation <lbaasv1:home>`
     * :ref:`F5® LBaaSv2 Plugin Documentation <lbaasv2:home>`
+
+
+.. Rackspace Blog's Neutron Networking: Simple Flat Network <https://developer.rackspace.com/blog/neutron-networking-simple-flat-network/>`_
+    Rackspace Blog's Neutron Networking: VLAN Provider Networks <https://developer.rackspace.com/blog/neutron-networking-vlan-provider-networks/>`_
+
