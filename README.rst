@@ -31,7 +31,7 @@ All of F5 Networks®' OpenStack projects are open source and can be found at `gi
 
 Releases and Versioning
 -----------------------
-See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.rtfd.org/releases-and-versioning.html>`_.
+See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.readthedocs.org/en/1.0/releases-and-versioning.html>`_.
 
 Documentation
 -------------
@@ -73,7 +73,7 @@ limitations under the License.
 Contributor License Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Individuals or business entities who contribute to this project must
-have completed and submitted the `F5 Contributor License Agreement <http://f5-openstack-docs.rtfd.org/cla_landing>`_ to Openstack_CLA@f5.com prior to their code submission being included
+have completed and submitted the `F5 Contributor License Agreement <http://f5-openstack-docs.readthedocs.org/cla_landing>`_ to Openstack_CLA@f5.com prior to their code submission being included
 in this project.
 
 

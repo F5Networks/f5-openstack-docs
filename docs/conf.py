@@ -12,20 +12,11 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sphinx_rtd_theme
-import sys
-import os
-
-# Ignore external image warnings
-import sphinx.environment
-from docutils.utils import get_source_line
-
-def _warn_node(self, msg, node):
-    if not msg.startswith('nonlocal image URI found:'):
-        self._warnfunc(msg, '%s:%s' % get_source_line(node))
-
-sphinx.environment.BuildEnvironment.warn_node = _warn_node
-
+#import sys
+#import os
+#import os.path
+import six
+print "six version:", six.__version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -74,13 +65,13 @@ author = u'F5 Networks'
 # built documents.
 #
 # The short X.Y version.
-version = u'2.0'
+version = u'8.0.2, Liberty'
 # The full version, including alpha/beta/rc tags.
-release = u'2.0.x'
+release = u'8.0.2'
 
 # OpenStack release
-
 openstack_release = "Liberty"
+
 rst_epilog = """
 .. |openstack| replace:: {0}
 """.format(openstack_release)
@@ -100,7 +91,7 @@ rst_epilog = """
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'guides/includes']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -153,12 +144,12 @@ html_short_title = 'f5-os-docs'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-# html_logo = './_static/f5-logo.png'
+#html_logo = '_static/f5-logo-solid-rgb_sm.jpg'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+#html_favicon = '_static/f5-logo.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -312,3 +303,12 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 # intersphinx_mapping = {'https://docs.python.org/': None}
+
+intersphinx_mapping = {'heat': (
+    'http://f5-openstack-heat.readthedocs.org/en/latest', None),
+    'lbaasv1': (
+    'http://f5-openstack-lbaasv1.readthedocs.org/en/latest', None),
+    'lbaasv2': (
+    'http://f5-openstack-lbaasv2.readthedocs.org/en/latest', None),
+    }
+
