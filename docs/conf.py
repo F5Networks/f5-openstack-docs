@@ -65,9 +65,9 @@ author = u'F5 Networks'
 # built documents.
 #
 # The short X.Y version.
-version = u'1.0'
+version = u'Kilo'
 # The full version, including alpha/beta/rc tags.
-release = u'1.0'
+release = u'Kilo'
 
 # OpenStack release
 
@@ -305,10 +305,10 @@ texinfo_documents = [
 # intersphinx_mapping = {'https://docs.python.org/': None}
 
 intersphinx_mapping = {'heat': (
-    'http://f5-openstack-heat.readthedocs.org/en/latest', None),
+    'http://f5-openstack-heat.readthedocs.io/en/kilo', None),
     'lbaasv1': (
-    'http://f5-openstack-lbaasv1.readthedocs.org/en/latest', None),
+    'http://f5-openstack-lbaasv1.readthedocs.io/en/1.0/', None),
     'lbaasv2': (
-    'http://f5-openstack-lbaasv2.readthedocs.org/en/latest', None),
+    'http://f5-openstack-lbaasv2.readthedocs.io/en/liberty/', None),
     }
 
