@@ -39,6 +39,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+    'sphinx.ext.autosectionlabel'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -154,7 +155,7 @@ html_short_title = 'f5-os-docs'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -308,7 +309,7 @@ intersphinx_mapping = {'heat': (
     'http://f5-openstack-heat.readthedocs.io/en/kilo', None),
     'lbaasv1': (
     'http://f5-openstack-lbaasv1.readthedocs.io/en/1.0/', None),
-    'lbaasv2': (
-    'http://f5-openstack-lbaasv2.readthedocs.io/en/liberty/', None),
+    #'lbaasv2': (
+    #'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/liberty', None),
     }
 
