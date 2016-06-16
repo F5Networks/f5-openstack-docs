@@ -35,7 +35,7 @@ See `F5 OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthed
 
 Documentation
 -------------
-User guides, architecture overviews, and more are available at `f5-openstack-docs.readthedocs.org <http://f5-openstack-docs.readthedocs.io`_.
+User guides, architecture overviews, and more are available at `f5-openstack-docs.readthedocs.org <http://f5-openstack-docs.readthedocs.io>`_.
 
 Filing Issues
 -------------
