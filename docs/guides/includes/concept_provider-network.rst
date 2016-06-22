@@ -12,11 +12,11 @@ In a flat, or untagged, provider network, all instances reside on the same netwo
 Provider Networks and BIG-IP®
 `````````````````````````````
 
-BIG-IP® can work with either type of provider network. Users with VLAN provider networks can use the F5® LBaaS plugins in :ref:`global routed mode <lbaasv2:global-routed-mode>` or :ref:`L2/L3-adjacent mode <lbaasv2:l2-l3-adjacent-mode>` to provision services from BIG-IP®. Users with a flat provider network must use the F5® LBaaS plugins in global routed mode with a BIG-IP® deployed within OpenStack (what we call 'overcloud'). If BIG-IP® is deployed externally (what we call 'undercloud'), the :ref:`F5® agent <lbaasv2:agent>` must be configured to use L2/L3-adjacent mode.
+BIG-IP® can work with either type of provider network. Users with VLAN provider networks can use the :ref:`F5® LBaaS plugins <lbaasv1:f5-lbaasv1-plugin-architecture-overview>` in :ref:`global routed mode <lbaasv1:global-routed-mode>` or :ref:`L2-adjacent mode <lbaasv1:l2-adjacent-mode>` to provision services from BIG-IP®. Users with a flat provider network must use the F5® LBaaS plugins in global routed mode with a BIG-IP® deployed within OpenStack (referred to as :dfn:`overcloud`). If BIG-IP® is deployed externally (referred to as :dfn:`undercloud`), the F5® agent must be configured to use L2/L3-adjacent mode.
 
 .. seealso::
 
-    * `OpenStack Networking Guide <http://docs.openstack.org/liberty/networking-guide/intro-os-networking-overview.html>`_ (Liberty)
+    * `OpenStack Networking Guide <http://docs.openstack.org/kilo/networking-guide/>`_
     * :ref:`F5® LBaaSv1 Plugin Documentation <lbaasv1:home>`
     * :ref:`F5® LBaaSv2 Plugin Documentation <lbaasv2:home>`
 
