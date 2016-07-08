@@ -1,7 +1,7 @@
 .. _deploy_big-ip_openstack:
 
-How To Deploy BIG-IP® VE in OpenStack
-=====================================
+How To Deploy BIG-IP VE in OpenStack
+====================================
 
 .. include:: guides/includes/concept_ve-deploy-guide-overview.rst
     :start-line: 5
