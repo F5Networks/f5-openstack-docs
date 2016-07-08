@@ -44,7 +44,7 @@ The F5 OpenStack service provider driver -- also referred to as the F5 LBaaSv2 d
 f5-openstack-agent
 ------------------
 
-The F5 agent provides OpenStack users with access to the robust set of `BIG-IP® LTM® <https://f5.com/products/modules/local-traffic-manager>`_ services. It uses the `f5-sdk <f5sdk:F5 Python SDK Documentation>` to translate messaging calls from OpenStack to iControl® REST calls that are understood by BIG-IP devices.
+The F5 agent provides OpenStack users with access to the robust set of `BIG-IP® LTM® <https://f5.com/products/modules/local-traffic-manager>`_ services. It uses the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>` to translate messaging calls from OpenStack to iControl® REST calls that are understood by BIG-IP devices.
 
 In the future, the agent may also provide the means for using such OpenStack services as `FWaaS <https://wiki.openstack.org/wiki/Neutron/FWaaS>`_ and `VPNaaS <https://wiki.openstack.org/wiki/Neutron/VPNaaS>`_ in conjunction with BIG-IP devices.
 
