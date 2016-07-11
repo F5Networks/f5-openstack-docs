@@ -306,10 +306,10 @@ texinfo_documents = [
 # intersphinx_mapping = {'https://docs.python.org/': None}
 
 intersphinx_mapping = {'heat': (
-    'http://f5-openstack-heat.readthedocs.io/en/kilo', None),
+    'http://f5-openstack-heat.readthedocs.io/en/liberty', None),
     'lbaasv1': (
-    'http://f5-openstack-lbaasv1.readthedocs.io/en/1.0/', None),
-    #'lbaasv2': (
-    #'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/liberty', None),
+    'http://f5-openstack-lbaasv1.readthedocs.io/en/liberty/', None),
+    'lbaasv2': (
+    'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/liberty', None),
     }
 
