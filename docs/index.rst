@@ -34,12 +34,11 @@ Guides and Resources
     :maxdepth: 1
 
     project_index
+    map_developers
     releases_and_versioning
     openstack-deploy-guide
     openstack-config-guide
     howto_deploy-ve-openstack
-    guides/map_developers
-
 
 Releases and Support
 --------------------
@@ -50,7 +49,6 @@ For Developers
 --------------
 
 Interested in contributing to an F5 OpenStack project? Check out the :ref:`Developer Area`.
-
 
 
 
