@@ -18,7 +18,7 @@ Install Software Repositories
 
     .. code-block:: shell
 
-        $ sudo install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-1.noarch.rpm
+        $ sudo install -y https://repos.fedorapeople.org/repos/openstack/openstack-kilo/rdo-release-kilo-2.noarch.rpm
 
 
 3. Install the software package for Packstack.

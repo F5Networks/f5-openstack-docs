@@ -31,11 +31,11 @@ All of F5 Networks®' OpenStack projects are open source and can be found at `gi
 
 Releases and Versioning
 -----------------------
-See `F5 OpenStack Releases and Support Matrix <f5-openstack-docs.readthedocs.org/en/1.0/releases-and-versioning.html>`_.
+See `F5 OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthedocs.org/en/1.0/releases-and-versioning.html>`_.
 
 Documentation
 -------------
-User guides, architecture overviews, and more are available at `f5-openstack-docs.readthedocs.org <http://f5-openstack-docs.readthedocs.org/en/>`_.
+User guides, architecture overviews, and more are available at `f5-openstack-docs.readthedocs.org <http://f5-openstack-docs.readthedocs.io>`_.
 
 Filing Issues
 -------------
