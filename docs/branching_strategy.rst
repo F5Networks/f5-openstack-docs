@@ -1,5 +1,5 @@
-F5® Development Branching Strategy
-==================================
+F5 Development Branching Strategy
+=================================
 
 .. important:: Development for all F5® OpenStack projects in GitHub follows this branching strategy.
 

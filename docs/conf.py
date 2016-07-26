@@ -12,21 +12,21 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-#import sys
-#import os
-#import os.path
+# import sys
+# import os
+# import os.path
 import six
 print "six version:", six.__version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
+# sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '1.4'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -39,7 +39,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -306,10 +306,16 @@ texinfo_documents = [
 # intersphinx_mapping = {'https://docs.python.org/': None}
 
 intersphinx_mapping = {'heat': (
-    'http://f5-openstack-heat.readthedocs.io/en/liberty', None),
+    'http://f5-openstack-heat.readthedocs.io/en/kilo', None),
+    'heatplugins': (
+    'http://f5-openstack-heat-plugins.readthedocs.io/en/kilo', None),
     'lbaasv1': (
-    'http://f5-openstack-lbaasv1.readthedocs.io/en/liberty/', None),
+    'http://f5-openstack-lbaasv1.readthedocs.io/en/1.0/', None),
     'lbaasv2': (
-    'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/liberty', None),
+    'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/latest', None),
+    'agent': (
+    'http://f5-openstack-agent.readthedocs.io/en/latest', None),
+    'f5sdk': (
+    'http://f5-sdk.readthedocs.io/en/latest/', None),
     }
 
