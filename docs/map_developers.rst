@@ -3,18 +3,19 @@ Developer Area
 
 The information presented in this area is for those wishing to contribute to any of F5®'s OpenStack :ref:`projects <Project Index>`. Be sure to consult the README and Contributing guide for the specific project that interests you, to ensure you're inline with current practices and policies.
 
-Contents
---------
 
 .. toctree::
     :maxdepth: 1
+    :glob:
 
-    ../branching_strategy
-    ../cla_landing
+    branching_strategy
+    cla_landing
+    style_guide
+    quick-ref*
 
 
 Reference Materials
 -------------------
 
-.. todo:: define and populate this section
+    - Coming soon!
 
