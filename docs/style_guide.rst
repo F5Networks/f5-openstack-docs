@@ -1,7 +1,7 @@
 .. _style_guide:
 
-F5 Open Source Documentation Guide
-==================================
+F5 Open Source Documentation Style Guide
+========================================
 
 .. include:: guides/includes/concept_style-guide-intro.rst
     :start-line: 3
