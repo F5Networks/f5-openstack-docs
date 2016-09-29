@@ -92,7 +92,7 @@ Document Structure
 
 .. topic:: Example:
 
-    The following map builds our :ref:`LBaaSv2 User Guide <lbaasv2:user guide`.
+    The following map builds our :ref:`LBaaSv2 User Guide <lbaasv2:user guide>`.
 
     .. code-block:: text
 
