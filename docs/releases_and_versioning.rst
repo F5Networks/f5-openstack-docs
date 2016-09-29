@@ -3,56 +3,108 @@
 F5 OpenStack Releases and Support Matrix
 ========================================
 
-.. table:: F5® - OpenStack Neutron LBaaSv2 compatibility
+F5/OpenStack Compatibility -- LBaaSv2
+-------------------------------------
 
-    +-------------------+--------------------+---------------+-------+-----------+
-    |OpenStack release  | F5® LBaaSv2 Plugin |  BIG-IP®      | RHEL  | Ubuntu    |
-    +===================+====================+===============+=======+===========+
-    | Liberty           |                8.x | | 11.5.2+     | 6, 7  | 12, 14    |
-    |                   |                    | | 11.6.x      |       |           |
-    |                   |                    | | 12.0.x      |       |           |
-    |                   |                    | | 12.1.x      |       |           |
-    +-------------------+--------------------+---------------+-------+-----------+
-    | Mitaka            |                9.x | | 11.5.2+     | 6, 7  | 12, 14    |
-    |                   |                    | | 11.6.x      |       |           |
-    |                   |                    | | 12.0.x      |       |           |
-    |                   |                    | | 12.1.x      |       |           |
-    +-------------------+--------------------+---------------+-------+-----------+
-    | Newton            |                N/A | | 11.5.2+     | 6, 7  | 12, 14    |
-    |                   |                    | | 11.6.x      |       |           |
-    |                   |                    | | 12.0.x      |       |           |
-    |                   |                    | | 12.1.x      |       |           |
-    +-------------------+--------------------+---------------+-------+-----------+
+.. list-table::
+    :header-rows: 1
 
-
-.. table:: F5® - OpenStack Neutron LBaaSv1 compatibility
-
-    +-------------------+--------------------+---------------+-------+-----------+
-    |OpenStack release  | F5® LBaaSv1 Plugin |  BIG-IP®      | RHEL  | Ubuntu    |
-    +===================+====================+===============+=======+===========+
-    | Icehouse - Kilo   |                7.x | | 11.5.2+     | 6, 7  | 12, 14    |
-    |                   |                    | | 11.6.x      |       |           |
-    |                   |                    | | 12.0.x      |       |           |
-    +-------------------+--------------------+---------------+-------+-----------+
-    | Liberty           |                8.x | | 11.5.2+     | 6, 7  | 12, 14    |
-    |                   |                    | | 11.6.x      |       |           |
-    |                   |                    | | 12.0.x      |       |           |
-    +-------------------+--------------------+---------------+-------+-----------+
-    | Mitaka            |                9.x | | 11.5.2+     | 6, 7  | 12, 14    |
-    |                   |                    | | 11.6.x      |       |           |
-    |                   |                    | | 12.0.x      |       |           |
-    +-------------------+--------------------+---------------+-------+-----------+
+    * - OpenStack release
+      - F5 LBaaSv2 Plugin
+      - BIG-IP®
+      - RHEL
+      - Ubuntu
+    * - Liberty
+      - 8.x
+      - | 11.5.2+
+        | 11.6.x
+        | 12.0.x
+        | 12.1.x
+      - 6, 7
+      - 12, 14
+    * - Mitaka
+      - 9.x
+      - | 11.5.2+
+        | 11.6.x
+        | 12.0.x
+        | 12.1.x
+      - 6, 7
+      - 12, 14
+    * - Newton
+      - N/A
+      - | 11.5.2+
+        | 11.6.x
+        | 12.0.x
+        | 12.1.x
+      - 6, 7
+      - 12, 14
 
 
-.. table:: F5® - OpenStack Heat compatibility
+F5/OpenStack Compatibility -- Heat
+----------------------------------
 
-    +-------------------+--------------------+--------------------+
-    |OpenStack release  | F5® Heat Plugins   | F5® Heat Templates |
-    +===================+====================+====================+
-    | Kilo              |                7.x |                7.x |
-    +-------------------+--------------------+--------------------+
-    | Liberty           |                8.x |                8.x |
-    +-------------------+--------------------+--------------------+
-    | Mitaka            |                9.x |                9.x |
-    +-------------------+--------------------+--------------------+
+.. list-table::
+    :header-rows: 1
+
+    * - OpenStack release
+      - F5 Heat Plugins
+      - F5 Heat Templates
+    * - Kilo
+      - 7.x
+      - 7.x
+    * - Liberty
+      - 8.x
+      - 8.x
+    * - Mitaka
+      - 9.x
+      - 9.x
+    * - Newton
+      - N/A
+      - N/A
+
+
+Deprecated
+----------
+
+    **End of Software Development for F5 OpenStack LBaaS version 1**
+
+    F5 announces the End of Software Development (EoSD) for the F5 OpenStack LBaaS version 1 integration, effective October 1, 2016. This announcement is in compliance with the OpenStack community deprecation of the OpenStack Neutron LBaaS version 1 plugin. Customers are encouraged to move to OpenStack LBaaS version 2.
+
+    F5 will continue to repair defects and perform maintenance on the F5 OpenStack LBaaS version 1 integration until the Openstack Ocata release in April 2017.
+
+    *The information below is provided for informational purposes only.*
+
+
+.. list-table:: F5® - OpenStack Neutron Compatibility -- LBaaSv1
+    :header-rows: 1
+
+    * - OpenStack release
+      - F5 LBaaSv2 Plugin
+      - BIG-IP®
+      - RHEL
+      - Ubuntu
+    * - Kilo
+      - 7.x
+      - | 11.5.2+
+        | 11.6.x
+        | 12.0.x
+        | 12.1.x
+      - 6, 7
+      - 12, 14
+    * - Liberty
+      - 8.x
+      - | 11.5.2+
+        | 11.6.x
+        | 12.0.x
+        | 12.1.x
+      - 6, 7
+      - 12, 14
+    * - Mitaka
+      - 9.x
+      - | 11.5.2+
+        | 11.6.x
+        | 12.0.x
+        | 12.1.x
+      - 6, 7
+      - 12, 14
 
