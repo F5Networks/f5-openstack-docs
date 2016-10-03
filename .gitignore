@@ -4,9 +4,10 @@ _site
 .idea
 Gemfile.lock
 
-# Ignore the sphinx build directories
+# Ignore the sphinx build artifacts
 _build
 _build_html
+docs/errors.txt
 
 # Ignore the python venv directory
 venv/*
