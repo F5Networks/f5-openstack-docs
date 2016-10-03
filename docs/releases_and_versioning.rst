@@ -19,6 +19,7 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
+        | 12.1.x
       - 6, 7
       - 12, 14
     * - Mitaka
@@ -26,6 +27,7 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
+        | 12.1.x
       - 6, 7
       - 12, 14
     * - Newton
@@ -33,6 +35,7 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
+        | 12.1.x
       - 6, 7
       - 12, 14
 
@@ -69,7 +72,7 @@ Deprecated
 
     F5 will continue to repair defects and perform maintenance on the F5 OpenStack LBaaS version 1 integration until the Openstack Ocata release in April 2017.
 
-    *The information below is provided for informational purposes only.*
+    *The table below is provided for informational purposes only.*
 
 
 .. list-table:: F5® - OpenStack Neutron Compatibility -- LBaaSv1
