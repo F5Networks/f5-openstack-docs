@@ -19,7 +19,6 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
-        | 12.1.x
       - 6, 7
       - 12, 14
     * - Mitaka
@@ -27,7 +26,6 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
-        | 12.1.x
       - 6, 7
       - 12, 14
     * - Newton
@@ -35,7 +33,6 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
-        | 12.1.x
       - 6, 7
       - 12, 14
 
@@ -79,7 +76,7 @@ Deprecated
     :header-rows: 1
 
     * - OpenStack release
-      - F5 LBaaSv2 Plugin
+      - F5 LBaaSv1 Plugin
       - BIG-IP®
       - RHEL
       - Ubuntu
@@ -88,7 +85,6 @@ Deprecated
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
-        | 12.1.x
       - 6, 7
       - 12, 14
     * - Liberty
@@ -96,7 +92,6 @@ Deprecated
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
-        | 12.1.x
       - 6, 7
       - 12, 14
     * - Mitaka
@@ -104,7 +99,6 @@ Deprecated
       - | 11.5.2+
         | 11.6.x
         | 12.0.x
-        | 12.1.x
       - 6, 7
       - 12, 14
 
