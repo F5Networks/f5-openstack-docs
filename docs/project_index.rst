@@ -52,7 +52,7 @@ The F5 OpenStack service provider driver -- also referred to as the F5 LBaaSv2 d
 f5-openstack-agent
 ``````````````````
 
-The F5 agent provides OpenStack users with access to the robust set of `BIG-IP® LTM® <https://f5.com/products/modules/local-traffic-manager>`_ services, by means of the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>`. The agent receives tasks from the F5 service provider driver and configures the requested LBaaS objects on the BIG-IP.
+The F5 agent provides OpenStack users with access to the robust set of `BIG-IP® LTM® <https://f5.com/products/big-ip/local-traffic-manager-ltm>`_ services, by means of the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>`. The agent receives tasks from the F5 service provider driver and configures the requested LBaaS objects on the BIG-IP.
 
 In the future, the agent may also provide the means for using OpenStack services other than LBaaS in conjunction with BIG-IP devices.
 

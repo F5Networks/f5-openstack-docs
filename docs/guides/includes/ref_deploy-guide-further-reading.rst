@@ -15,7 +15,7 @@ Once your BIG-IP® is configured, you can deploy the F5® OpenStack LBaaS plugin
     * LBaaSv2_
 
 .. _LBaaSv1: http://f5-openstack-lbaasv1.readthedocs.io
-.. _LBaaSv2: http://f5-openstack-lbaasv2.readthedocs.io
+.. _LBaaSv2: http://f5-openstack-lbaasv2-driver.readthedocs.io
 
 
 

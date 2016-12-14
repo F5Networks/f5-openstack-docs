@@ -22,7 +22,7 @@ You must have the following before deploying a BIG-IP® VE in OpenStack:
 
     .. seealso::
 
-        - `OpenStack User Guide: Create and manage networks <http://docs.openstack.org/user-guide/cli_create_and_manage_networks.html>`_
+        - `OpenStack User Guide: Create and manage networks <http://docs.openstack.org/user-guide/cli-create-and-manage-networks.html>`_
 
 
 
