@@ -181,7 +181,7 @@ If the package information isn't present, enter the appropriate information for 
 Custom Flavors
 ``````````````
 
-While the built-in `Nova Flavors <http://docs.openstack.org/openstack-ops/content/flavors.html>`_ can be used with BIG-IP® VE, you can also create your own custom flavors.
+While the built-in `Nova Flavors <http://docs.openstack.org/admin-guide/compute-flavors.html>`_ can be used with BIG-IP® VE, you can also create your own custom flavors.
 
 .. include:: includes/topic_create-custom-flavor.rst
     :start-line: 5

@@ -63,6 +63,12 @@ F5/OpenStack Compatibility -- Heat
       - N/A
 
 
+F5/OpenStack Distribution Platform Compatibility
+------------------------------------------------
+
+Please see the :ref:`Partners <f5ospartners>` page for information about our OpenStack distribution platform partnerships and :ref:`certifications <partner-cert-table>`.
+
+
 Deprecated
 ----------
 

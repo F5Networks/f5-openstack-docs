@@ -34,6 +34,7 @@ Guides and Resources
     :maxdepth: 1
 
     project_index
+    partners
     map_developers
     releases_and_versioning
     openstack-deploy-guide

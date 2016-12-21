@@ -9,7 +9,7 @@ We highly recommend using OpenStack dashboard to add images to Glance, launch in
 
     Here are a few helpful tips:
 
-    - If your private network doesn't show up in the network list when `launching an instance <http://docs.openstack.org/user-guide/dashboard_launch_instances.html>`_, the network may be misconfigured.
+    - If your private network doesn't show up in the network list when `launching an instance <http://docs.openstack.org/user-guide/dashboard-launch-instances.html>`_, the network may be misconfigured.
 
     - If you want to be able to use SSH to authenticate to tenants in your cloud, you'll need to create or add SSH key pairs. We recommend generating your own key pair and :ref:`adding it to OpenStack <heat:add-ssh-key-horizon>`.
 

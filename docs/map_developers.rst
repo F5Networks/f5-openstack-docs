@@ -10,8 +10,7 @@ The information presented in this area is for those wishing to contribute to any
 
     branching_strategy
     cla_landing
-    style_guide
-    quick-ref*
+    guides/openstack_big-ip_flavors
 
 
 Reference Materials

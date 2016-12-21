@@ -66,6 +66,6 @@ Setting up an OVS bridge allows Neutron network traffic to reach the physical, o
 
 .. seealso::
 
-    * `RHEL OpenStack Networking Guide: Configure Bridge Mappings <https://access.redhat.com/documentation/en/red-hat-enterprise-linux-openstack-platform/7/networking-guide/chapter-14-configure-bridge-mappings>`_
+    * `RHEL OpenStack Networking Guide: Configure Bridge Mappings <https://access.redhat.com/documentation/en/red-hat-enterprise-linux-openstack-platform/7/paged/networking-guide/chapter-14-configure-bridge-mappings>`_
     * `OpenStack Networking Guide: Provider networks with Open vSwitch <http://docs.openstack.org/kilo/networking-guide/scenario_provider_ovs.html>`_
 
