@@ -4,21 +4,27 @@
 Project Index
 #############
 
-F5 currently has a presence in the `OpenStack projects <http://www.openstack.org/software/project-navigator>`_ listed below.
+F5 Networks® currently has a presence in the `OpenStack projects <http://www.openstack.org/software/project-navigator>`_ listed below.
 
 
 Neutron
-*******
-
-`Neutron <http://www.openstack.org/software/releases/kilo/components/neutron>`_ is the OpenStack Networking component. The Load-Balancer-as-a-Service (LBaaS) plugin adds load balancing functionality to Neutron. There are two versions -- LBaaSv1 and LBaaSv2 -- for both of which F5 provides tools that enable users to provision BIG-IP® services in OpenStack.
-
-LBaaSv1
 =======
 
+`Neutron <http://www.openstack.org/software/releases/kilo/components/neutron>`_ is the OpenStack Networking component. The `Load-Balancer-as-a-Service <http://docs.openstack.org/mitaka/networking-guide/config-lbaas.html>`_ (LBaaS) plugin adds load balancing functionality to Neutron. There are two versions -- LBaaSv1 and LBaaSv2.
 
-F5's :ref:`LBaaSv1 plugin <lbaasv1:home>` is supported for use with OpenStack Juno - Liberty. LBaaSv1 was deprecated in the Liberty release.
+LBaaSv1
+-------
 
-The LBaaSv1 plugin is an :ref:`all-in-one solution <lbaasv1:f5-lbaasv1-plugin-architecture-overview>`, comprising the F5 agent, driver, and common (a predecessor to the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>`) libraries.
+.. important::
+
+    **End of Software Development for F5 OpenStack LBaaS version 1**
+
+    F5 announces the End of Software Development (EoSD) for the F5 OpenStack LBaaS version 1 integration, effective October 1, 2016. This announcement is in compliance with the OpenStack community deprecation of the OpenStack Neutron LBaaS version 1 plugin. Customers are encouraged to move to OpenStack LBaaS version 2.
+
+    F5 will continue to repair defects and perform maintenance on the F5 OpenStack LBaaS version 1 integration until the Openstack Ocata release in April 2017.
+
+    For additional information, please refer to the :ref:`F5 OpenStack Releases and Support Matrix`.
+
 
 .. seealso::
 
@@ -26,14 +32,16 @@ The LBaaSv1 plugin is an :ref:`all-in-one solution <lbaasv1:f5-lbaasv1-plugin-ar
     * :ref:`F5 LBaaSv1 Plugin Docs Home <lbaasv1:home>`
 
 LBaaSv2
-=======
+-------
 
-F5's LBaaSv2 solution is supported for use with OpenStack Liberty forward. [#]_ Unlike the F5 LBaaSv1 solution, for LBaaSv2 the agent and driver are developed as **separate** projects.
+F5's LBaaSv2 solution is supported for use with OpenStack Liberty forward. [#]_ F5's LBaaSv2 solution comprises two separate projects: the F5 service provider driver and F5 agent.
+
+All documentation relevant to LBaaSv2 is sourced from the `f5-openstack-lbaasv2-driver <https://github.com/f5networks/f5-openstack-lbaasv2-driver>`_ project in GitHub.
 
 f5-openstack-lbaasv2-driver
----------------------------
+```````````````````````````
 
-The F5 OpenStack service provider driver -- also referred to as the F5 LBaaSv2 driver -- directs Neutron load balancing calls from the RPC messaging queue to the F5 agent.
+The F5 OpenStack service provider driver -- also referred to as the F5 LBaaSv2 driver -- directs Neutron load balancing calls from the RPC messaging queue to the F5 agent. The two work in conjunction to retrieve LBaaS messaging calls from the OpenStack RPC queue and translate them into iControl® REST calls that are understood by BIG-IP devices.
 
 .. seealso::
 
@@ -42,11 +50,11 @@ The F5 OpenStack service provider driver -- also referred to as the F5 LBaaSv2 d
     * `f5-openstack-lbaasv2-driver on GitHub <https://github.com/F5Networks/f5-openstack-lbaasv2-driver>`_
 
 f5-openstack-agent
-------------------
+``````````````````
 
-The F5 agent provides OpenStack users with access to the robust set of `BIG-IP® LTM® <https://f5.com/products/modules/local-traffic-manager>`_ services. It uses the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>` to translate messaging calls from OpenStack to iControl® REST calls that are understood by BIG-IP devices.
+The F5 agent provides OpenStack users with access to the robust set of `BIG-IP® LTM® <https://f5.com/products/big-ip/local-traffic-manager-ltm>`_ services, by means of the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>`. The agent receives tasks from the F5 service provider driver and configures the requested LBaaS objects on the BIG-IP.
 
-In the future, the agent may also provide the means for using such OpenStack services as `FWaaS <https://wiki.openstack.org/wiki/Neutron/FWaaS>`_ and `VPNaaS <https://wiki.openstack.org/wiki/Neutron/VPNaaS>`_ in conjunction with BIG-IP devices.
+In the future, the agent may also provide the means for using OpenStack services other than LBaaS in conjunction with BIG-IP devices.
 
 .. seealso::
 
@@ -55,19 +63,15 @@ In the future, the agent may also provide the means for using such OpenStack ser
     * `f5-openstack-agent on GitHub <https://github.com/F5Networks/f5-openstack-agent>`_
 
 
-.. rubric:: Footnotes
-.. [#] See the :ref:`Releases and Support Matrix <releases-and-support>`
-
-
 Heat
-****
+----
 
 `Heat <http://www.openstack.org/software/releases/kilo/components/heat>`_ is OpenStack's orchestration service. F5 has developed a set of Heat :ref:`plugins <heatplugins:home>` and :ref:`templates <heat:home>` that make it easy to orchestrate cloud applications in OpenStack using F5 technologies.
 
 Plugins
-=======
+```````
 
-The :ref:`F5 Heat plugins <heatplugins:home>` enable BIG-IP objects for use in OpenStack. Like the F5 LBaaSv2 agent, the plugins use the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>` to communicate with BIG-IP via the REST API.
+The :ref:`F5 Heat plugins <heatplugins:home>` enable BIG-IP objects for use in OpenStack. Like F5 LBaaSv2, the Heat plugins use the :ref:`f5-sdk <f5sdk:F5 Python SDK Documentation>` to communicate with BIG-IP via the REST API.
 
 .. seealso::
 
@@ -76,7 +80,7 @@ The :ref:`F5 Heat plugins <heatplugins:home>` enable BIG-IP objects for use in O
 
 
 Templates
-=========
+`````````
 
 The F5 Heat templates can be used to provision resources and BIG-IP services in OpenStack clouds. F5's templates use the OpenStack HOT template format; they can be used in conjunction with `F5 iApps® <https://devcentral.f5.com/wiki/iApp.HomePage.ashx>`_, a user-customizable framework for deploying applications.
 
@@ -94,3 +98,5 @@ The F5 Heat templates come in two flavors: :ref:`supported <heat:f5-supported_ho
     * :ref:`F5 Heat User Guide <heat:heat-user-guide>`
 
 
+.. rubric:: Footnotes
+.. [#] See the :ref:`Releases and Support Matrix <releases-and-support>`
