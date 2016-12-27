@@ -7,6 +7,8 @@ In OpenStack Neutron, the provider network maps to your existing physical networ
 
 In a flat, or untagged, provider network, all instances reside on the same network. In a VLAN, or tagged, provider network, instances can reside in multiple distinct networks. You can use tagging to map the tenant or provider networks both to existing physical networks and to BIG-IP®.
 
+.. _provider-networks-bigip:
+
 Provider Networks and BIG-IP®
 `````````````````````````````
 

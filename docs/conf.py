@@ -66,13 +66,13 @@ author = u'F5 Networks'
 # built documents.
 #
 # The short X.Y version.
-version = u'Kilo'
+version = u'Mitaka'
 # The full version, including alpha/beta/rc tags.
-release = u'Kilo'
+release = u'Mitaka'
 
 # OpenStack release
+openstack_release = "Mitaka"
 
-openstack_release = "Kilo"
 rst_epilog = """
 .. |openstack| replace:: {0}
 """.format(openstack_release)
@@ -306,15 +306,15 @@ texinfo_documents = [
 # intersphinx_mapping = {'https://docs.python.org/': None}
 
 intersphinx_mapping = {'heat': (
-    'http://f5-openstack-heat.readthedocs.io/en/latest', None),
+    'http://f5-openstack-heat.readthedocs.io/en/mitaka', None),
     'heatplugins': (
-    'http://f5-openstack-heat-plugins.readthedocs.io/en/latest', None),
+    'http://f5-openstack-heat-plugins.readthedocs.io/en/mitaka', None),
     'lbaasv1': (
-    'http://f5-openstack-lbaasv1.readthedocs.io/en/1.0/', None),
+    'http://f5-openstack-lbaasv1.readthedocs.io/en/mitaka/', None),
     'lbaasv2': (
-    'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/latest', None),
+    'http://f5-openstack-lbaasv2-driver.readthedocs.io/en/mitaka', None),
     'agent': (
-    'http://f5-openstack-agent.readthedocs.io/en/latest', None),
+    'http://f5-openstack-agent.readthedocs.io/en/mitaka', None),
     'f5sdk': (
     'http://f5-sdk.readthedocs.io/en/latest/', None),
     }
