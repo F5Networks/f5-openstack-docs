@@ -2,12 +2,35 @@ sudo: true
 language: python
 python:
  - '2.7'
-
+sudo: required
+services:
+- docker
+before_install:
+- docker pull f5devcentral/containthedocs
 install:
  - sudo pip install -r requirements.docs.txt
 
-script: 
- - sphinx-build docs/ docs/_build/
+script:
+- ./scripts/docker-docs.sh ./scripts/test-docs.sh
+
+deploy:
+- provider: script
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: F5Networks/f5-openstack-docs
+  script:
+  - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack latest
+
+deploy:
+- provider: script
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: F5Networks/f5-openstack-docs
+  script:
+  - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack latest
+
 
 notifications:
  slack:

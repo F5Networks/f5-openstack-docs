@@ -39,7 +39,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'sphinx.ext.autosectionlabel',
+    'cloud_sptheme.ext.table_styling',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -95,7 +95,11 @@ rst_prolog = '''
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'guides/includes', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build',
+                    'guides/includes',
+                    'Thumbs.db',
+                    '.DS_Store',
+                    'deprecated' ]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -142,14 +146,14 @@ html_theme_options = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'F5 OpenStack Documentation'
+html_title = 'F5 OpenStack Integrations'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = 'f5-os-docs'
+html_short_title = 'Home'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = '_static/f5-logo-solid-rgb_sm.jpg'
+html_logo = '_static/f5-logo-solid-rgb_small.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -244,7 +248,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'F5OpenStackDocumentation.tex', u'F5 OpenStack Documentation Documentation',
+    (master_doc, 'F5OpenStackDocumentation.tex', u'F5 OpenStack Documentation',
      u'F5 Networks, Inc', 'manual'),
 ]
 
@@ -274,7 +278,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'f5openstackdocumentation', u'F5 OpenStack Documentation Documentation',
+    (master_doc, 'f5openstackdocumentation', u'F5 OpenStack Documentation',
      [author], 1)
 ]
 
@@ -288,8 +292,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'F5OpenStackDocumentation', u'F5 OpenStack Documentation Documentation',
-     author, 'F5OpenStackDocumentation', 'One line description of project.',
+    (master_doc, 'F5OpenStackDocumentation', u'F5 OpenStack Documentation',
+     author, 'F5OpenStackDocumentation',
      'Miscellaneous'),
 ]
 
