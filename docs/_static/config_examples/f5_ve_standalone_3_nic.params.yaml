@@ -1,0 +1,34 @@
+parameters:
+  ve_image: BIGIP-12.1.2.0.0.249.LTM.qcow2
+  # Default is m1.medium
+  # F5 flavor to use with BIG-IP VE LTM image is "f5-ltm"
+  ve_flavor: m1.medium
+  # Provide the name of an SSH key configured in OpenStack
+  # This key will be used to authenticate to the BIG-IP VE instance
+  f5_ve_os_ssh_key: my-openstack-ssh-key
+  # Create a password for the BIG-IP admin user account
+  # (TIP: use an environment variable)
+  # This value is set to be hidden
+  admin_password: $ADMIN_PASSWORD
+  # Create a password for the BIG-IP root user account
+  # (TIP: use an environment variable)
+  # This value is set to be hidden
+  root_password: $ROOT_PASSWORD
+  # Enter your BIG-IP license key
+  license: <license_string>
+  # Provide the name of the Neutron network that has access to the internet
+  external_network: neutron.ext.network
+  # Provide the name of a Neutron network to assign to the BIG-IP mgmt interface
+  mgmt_network: test
+  # Provide the name of an existing Neutron network to connect to the BIG-IP 1.1
+  # interface
+  network_1: tmm_network
+  # Assign a name to the 1.1 network on the BIG-IP instance
+  network_1_name: network-1.1
+  # Provide the name of an existing Neutron network to connect to the BIG-IP 1.2
+  # interface
+  network_2: tmm_network
+  # Assign a name to the 1.2 network on the BIG-IP instance
+  network_2_name: network-1.2
+  # Provide the default gateway IP or hostname; defaults to 'none'
+  default_gateway: none
