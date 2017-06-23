@@ -18,7 +18,6 @@ F5/OpenStack Compatibility -- LBaaSv2
       - 8.x
       - | 11.5.2+
         | 11.6.x
-        | 12.0.x
         | 12.1.x
       - 6, 7
       - 12, 14
@@ -26,15 +25,13 @@ F5/OpenStack Compatibility -- LBaaSv2
       - 9.x
       - | 11.5.2+
         | 11.6.x
-        | 12.0.x
         | 12.1.x
       - 6, 7
       - 12, 14
     * - Newton
-      - N/A
+      - 10.x
       - | 11.5.2+
         | 11.6.x
-        | 12.0.x
         | 12.1.x
       - 6, 7
       - 12, 14
@@ -59,8 +56,8 @@ F5/OpenStack Compatibility -- Heat
       - 9.x
       - 9.x
     * - Newton
-      - N/A
-      - N/A
+      - 10.x
+      - 10.x
 
 
 F5/OpenStack Distribution Platform Compatibility
