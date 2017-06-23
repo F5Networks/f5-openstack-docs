@@ -71,7 +71,7 @@ version = '|openstack_release|'
 #release = u'Kilo'
 
 # OpenStack release
-openstack_release = "Kilo"
+openstack_release = "Liberty"
 
 rst_prolog = '''
 .. attention::
