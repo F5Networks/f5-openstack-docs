@@ -28,6 +28,12 @@ Each of F5's OpenStack distribution partners provides comprehensive documentatio
     * - `Mirantis OpenStack v7.0 <https://docs.mirantis.com/openstack/fuel/fuel-7.0/>`_
       - F5 LBaaSv1
       - Kilo
+    * - `RedHat OpenStack Platform v9 <https://access.redhat.com/documentation/en/red-hat-openstack-platform/?version=9>`_
+      - F5 LBaaSv2
+      - Mitaka
+    * - `RedHat OpenStack Platform v8 <https://access.redhat.com/documentation/en/red-hat-openstack-platform/?version=8>`_
+      - F5 LBaaSv2
+      - Liberty
     * - `RedHat OpenStack Platform v7 <https://access.redhat.com/documentation/en/red-hat-openstack-platform/?version=7>`_
       - F5 LBaaSv1
       - Kilo
