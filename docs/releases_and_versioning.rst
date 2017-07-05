@@ -19,6 +19,7 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.1.x
+        | 13.0.x
       - 6, 7
       - 12, 14
     * - Mitaka
@@ -26,6 +27,7 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.1.x
+        | 13.0.x
       - 6, 7
       - 12, 14
     * - Newton
@@ -33,6 +35,7 @@ F5/OpenStack Compatibility -- LBaaSv2
       - | 11.5.2+
         | 11.6.x
         | 12.1.x
+        | 13.0.x
       - 6, 7
       - 12, 14
 
