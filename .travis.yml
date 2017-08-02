@@ -3,8 +3,8 @@ language: python
 python:
  - '2.7'
 
-install: true
-# - sudo pip install -r requirements.docs.txt
+install: 
+- pip install --user -r requirements.docs.txt
 
 script:
 - set +e
