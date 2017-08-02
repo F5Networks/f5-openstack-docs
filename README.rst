@@ -1,7 +1,7 @@
 .. raw:: html
 
    <!--
-   Copyright 2015-2016 F5 Networks Inc.
+   Copyright 2015-2017 F5 Networks Inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -19,27 +19,28 @@
 f5-openstack-docs
 =================
 
-|Docs build badge| |sphinx badge|
+|travis badge| |slack badge|
 
 Introduction
 ------------
-This repo contains technical documentation related to the use of F5® products and tools in OpenStack.
+This repo contains documentation for the F5 Integrations for OpenStack Neutron LBaaS and OpenStack Heat.
 
 Projects
 --------
-All of F5 Networks®' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. The OpenStack-specific projects are all prefaced by 'f5-openstack'; two additional F5® projects that are used by the F5® OpenStack projects are f5-icontrol-rest-python and f5-common-python.
+All of F5 Networks' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. 
 
 Releases and Versioning
 -----------------------
-See `F5 OpenStack Releases and Support Matrix <http://f5-openstack-docs.readthedocs.org/en/1.0/releases-and-versioning.html>`_.
+See `Releases and Support Matrix <http://clouddocs.f5.com/cloud/openstack/v1/support/releases-and-versioning.html>`_on clouddocs.f5.com.
 
 Documentation
 -------------
-User guides, architecture overviews, and more are available at `f5-openstack-docs.readthedocs.org <http://f5-openstack-docs.readthedocs.io>`_.
+Documentation is published on `clouddocs.f5.com <http://clouddocs.f5.com/cloud/openstack/>_.
 
 Filing Issues
 -------------
-We welcome feedback on our documentation! If you find an issue or would like to request a new guide, please let us know by filing an `issue <https://github.com/F5Networks/f5-openstack-docs/issues>`_ in this repository; good issues contain specific and detailed information, such as links and line numbers.
+We welcome feedback on our documentation! 
+If you find an issue or would like to request a new guide, please let us know by filing an `issue <https://github.com/F5Networks/f5-openstack-docs/issues>`_ in this repository; good issues contain specific and detailed information, such as links and line numbers.
 
 Contributing
 ------------
@@ -47,7 +48,7 @@ See `Contributing <CONTRIBUTING.md>`_.
 
 Copyright
 ---------
-Copyright 2015-2016 F5 Networks, Inc.
+Copyright 2015-2017 F5 Networks, Inc.
 
 Support
 -------
@@ -77,19 +78,10 @@ have completed and submitted the `F5 Contributor License Agreement <http://f5-op
 in this project.
 
 
+.. |travis badge| .. image:: https://travis-ci.org/F5Networks/f5-openstack-docs.svg?branch=master
+   :target: https://travis-ci.org/F5Networks/f5-openstack-docs
+   :alt: Documentation Status
 
-.. _f5-openstack-lbaasv1: https://github.com/F5Networks/f5-openstack-lbaasv1
-.. _f5-openstack-agent: https://github.com/F5Networks/f5-openstack-agent
-.. _f5-openstack-lbaasv2-driver: https://github.com/F5Networks/f5-openstack-lbaasv2-driver
-.. _f5-openstack-heat: https://github.com/F5Networks/f5-openstack-heat
-.. _f5-openstack-heat-plugins: https://github.com/F5Networks/f5-openstack-heat-plugins
-.. _f5-icontrol-rest-python: https://github.com/F5Networks/f5-icontrol-rest-python>
-.. _f5common-python: https://github.com/F5Networks/f5-common-python>
-
-.. |Docs build badge| image:: https://readthedocs.org/projects/f5-openstack-docs/badge/?version=latest
-    :target: http://f5-openstack-docs.readthedocs.org/en/latest/?badge=latest
-    :alt: Documentation Status
-
-.. |sphinx badge| image:: https://f5-openstack-slack.herokuapp.com/badge.svg
-    :target: https://f5-openstack-slack.herokuapp.com/
-    :alt: Slack
+.. |slack badge| image:: https://f5-openstack-slack.herokuapp.com/badge.svg
+   :target: https://f5-openstack-slack.herokuapp.com/
+   :alt: Slack
