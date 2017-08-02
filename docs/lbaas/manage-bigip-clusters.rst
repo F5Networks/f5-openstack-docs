@@ -30,7 +30,7 @@ Prerequisites
 
   .. tip::
 
-     If you do not already have a BIG-IP cluster deployed in your network, you can use the `F5 BIG-IP: Active-Standby Pair </templates/openstack-heat/f5_supported/f5-bigip-ve_active-standby-pair.html>`_ Heat template to create an :term:`overcloud` `sync-failover device group <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html>`_.
+     If you do not already have a BIG-IP cluster deployed in your network, you can use the `F5 BIG-IP: Active-Standby Pair <products/templates/openstack-heat/f5_supported/f5-bigip-ve_active-standby-pair.html>`_ Heat template to create an :term:`overcloud` `sync-failover device group <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html>`_.
 
 Caveats
 -------

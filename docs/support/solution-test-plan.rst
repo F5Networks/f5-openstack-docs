@@ -49,8 +49,8 @@ TMOS
 * `Supported TMOS version </cloud/openstack/v1/support/releases_and_versioning.html>`_.
 * If using Virtual Edition:
 
-  * LTM_1SLOT KVM qcow2 image built using the supported `BIG-IP onboarding Heat template </templates/openstack-heat/liberty/f5_supported/f5-bigip-ve_image-patch-upload.html>`_ ;
-  * Instance deployed using the supported `BIG-IP VE Standalone, 3-NIC Heat template </templates/openstack-heat/liberty/f5_supported/f5-bigip-ve_standalone-3nic>`_.
+  * LTM_1SLOT KVM qcow2 image built using the supported `BIG-IP onboarding Heat template <products/templates/openstack-heat/liberty/f5_supported/f5-bigip-ve_image-patch-upload.html>`_ ;
+  * Instance deployed using the supported `BIG-IP VE Standalone, 3-NIC Heat template <products/templates/openstack-heat/liberty/f5_supported/f5-bigip-ve_standalone-3nic>`_.
 
 * Operational BIG-IP device or device service cluster with `Better or Best license <https://f5.com/products/how-to-buy/simplified-licensing>`_ (including LTM and SDN Services).
 * Initial configuration orchestrated to match the deployment architecture, per the `F5 LBaaSv2 documentation </cloud/openstack/v1/lbaas/index.html>`_.
