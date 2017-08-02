@@ -6,8 +6,9 @@ python:
 install: true
 # - sudo pip install -r requirements.docs.txt
 
-#script:
-# - sphinx-build docs/ docs/_build/
+script:
+- set +e
+- sphinx-build docs/ docs/_build/
 
 notifications:
  slack:
