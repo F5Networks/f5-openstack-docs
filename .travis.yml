@@ -1,13 +1,14 @@
-sudo: true
+#sudo: true
 language: python
 python:
  - '2.7'
 
 install:
- - sudo pip install -r requirements.docs.txt
+- pip install -r requirements.docs.txt
 
-script: 
- - sphinx-build docs/ docs/_build/
+script:
+- set +e
+- sphinx-build docs/ docs/_build/
 
 notifications:
  slack:
