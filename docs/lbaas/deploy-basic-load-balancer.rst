@@ -60,7 +60,7 @@ Add a secure BIG-IP virtual server
 
 #. Set up `Keystone`_ and `Barbican`_, if you haven't already. [#ostlslb]_
 
-#. Complete the `Certificate Manager settings </products/openstack/latest/agent/index.html#cert-manager-settings>`_ section of the |agent| configuration file.
+#. Complete the `Certificate Manager settings </products/openstack/agent/latest/index.html#cert-manager-settings>`_ section of the |agent| configuration file.
 
 #. Create a listener using the :code:`TERMINATED_HTTPS` protocol; specify the location of the `Barbican container <http://docs.openstack.org/developer/barbican/api/quickstart/containers.html>`_ where the certificate you want to use for authentication lives.
 

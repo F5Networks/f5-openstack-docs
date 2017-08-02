@@ -30,7 +30,7 @@ Prerequisites
 
   .. tip::
 
-     If you do not already have a BIG-IP cluster deployed in your network, you can use the `F5 BIG-IP: Active-Standby Pair <products/templates/openstack-heat/f5_supported/f5-bigip-ve_active-standby-pair.html>`_ Heat template to create an :term:`overcloud` `sync-failover device group <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html>`_.
+     If you do not already have a BIG-IP cluster deployed in your network, you can use the `F5 BIG-IP: Active-Standby Pair </products/templates/openstack-heat/f5_supported/f5-bigip-ve_active-standby-pair.html>`_ Heat template to create an :term:`overcloud` `sync-failover device group <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html>`_.
 
 Caveats
 -------
@@ -43,7 +43,7 @@ Caveats
 Configuration
 -------------
 
-Edit the `device settings </products/openstack/latest/agent/ha-mode.html>`_ and `Device Driver/iControl driver settings`_ sections of the |agent| `configuration file`_.
+Edit the `device settings </products/openstack/agent/latest/ha-mode.html>`_ and `Device Driver/iControl driver settings`_ sections of the |agent| `configuration file`_.
 
 #. Set the HA mode to :term:`pair` **or** :term:`scalen`.
 
@@ -76,7 +76,7 @@ Edit the `device settings </products/openstack/latest/agent/ha-mode.html>`_ and 
 Learn more
 ----------
 
-The |oslbaas| can manage BIG-IP `Sync-Failover device groups`_ when you set `High Availability mode </products/openstack/latest/agent/ha-mode.html>`_ to :term:`pair` or :term:`scalen` .
+The |oslbaas| can manage BIG-IP `Sync-Failover device groups`_ when you set `High Availability mode </products/openstack/agent/latest/ha-mode.html>`_ to :term:`pair` or :term:`scalen` .
 
 .. figure:: /_static/media/f5-lbaas-scalen-cluster.png
    :alt: BIG-IP scalen cluster diagram
@@ -84,7 +84,7 @@ The |oslbaas| can manage BIG-IP `Sync-Failover device groups`_ when you set `Hig
 
    BIG-IP scalen cluster
 
-The |agent| expects to find a specific number of iControl endpoints (the ``icontrol_hostname`` `configuration parameter </products/openstack/latest/agent/index.html#configuration-parameters>`_) based on the ``f5_ha_type``, as noted below.
+The |agent| expects to find a specific number of iControl endpoints (the ``icontrol_hostname`` `configuration parameter </products/openstack/agent/latest/index.html#configuration-parameters>`_) based on the ``f5_ha_type``, as noted below.
 
 .. table:: |oslbaas| high availability (HA) options
 
