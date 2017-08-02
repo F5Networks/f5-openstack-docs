@@ -19,7 +19,7 @@
 f5-openstack-docs
 =================
 
-|travis badge| |slack badge|
+|travis_badge| |slack_badge|
 
 Introduction
 ------------
@@ -31,11 +31,11 @@ All of F5 Networks' OpenStack projects are open source and can be found at `gith
 
 Releases and Versioning
 -----------------------
-See `Releases and Support Matrix <http://clouddocs.f5.com/cloud/openstack/v1/support/releases-and-versioning.html>`_on clouddocs.f5.com.
+See `Releases and Support Matrix <http://clouddocs.f5.com/cloud/openstack/v1/support/releases-and-versioning.html>`_ on clouddocs.f5.com.
 
 Documentation
 -------------
-Documentation is published on `clouddocs.f5.com <http://clouddocs.f5.com/cloud/openstack/>_.
+Documentation is published on `clouddocs.f5.com <http://clouddocs.f5.com/cloud/openstack/>`_.
 
 Filing Issues
 -------------
@@ -78,10 +78,10 @@ have completed and submitted the `F5 Contributor License Agreement <http://f5-op
 in this project.
 
 
-.. |travis badge| .. image:: https://travis-ci.org/F5Networks/f5-openstack-docs.svg?branch=master
+.. |travis_badge| image:: https://travis-ci.org/F5Networks/f5-openstack-docs.svg?branch=master
    :target: https://travis-ci.org/F5Networks/f5-openstack-docs
    :alt: Documentation Status
 
-.. |slack badge| image:: https://f5-openstack-slack.herokuapp.com/badge.svg
+.. |slack_badge| image:: https://f5-openstack-slack.herokuapp.com/badge.svg
    :target: https://f5-openstack-slack.herokuapp.com/
    :alt: Slack
