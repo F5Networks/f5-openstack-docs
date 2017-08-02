@@ -14,18 +14,10 @@ deploy:
 - provider: script
   skip_cleanup: true
   on:
-    branch: master
+    branch: v1
     repo: F5Networks/f5-openstack-docs
   script:
-  - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack latest
-deploy:
-- provider: script
-  skip_cleanup: true
-  on:
-    branch: master
-    repo: F5Networks/f5-openstack-docs
-  script:
-  - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack latest
+  - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack v1
 notifications:
  slack:
   rooms:
