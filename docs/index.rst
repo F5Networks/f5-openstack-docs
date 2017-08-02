@@ -16,40 +16,239 @@
    limitations under the License.
    -->
 
-F5 OpenStack Documentation
-##########################
+.. raw:: html
+
+   <script async defer src="https://f5-openstack-slack.herokuapp.com/slackin.js"></script>
+
+.. attention::
+
+   **We've moved!**
+
+   Come find us on `clouddocs.f5.com <http://clouddocs.f5.com/cloud/openstack/v1/>`_.
 
 .. raw:: html
 
-    <script async defer src="https://f5-openstack-slack.herokuapp.com/slackin.js"></script>
+   <div class="row">
+   <div class="col-xs-12">
+      <h4>Newton Releases</h4>
+      <div class="row">
+       <div class="col-md-3">
+       <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-agent</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/agent/newton/v10.0">v10.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+       <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-lbaasv2-driver</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/lbaasv2-driver/newton/v10.0">v10.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/templates/openstack-heat/newton/v10.0">v10.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+        <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat-plugins</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/heat-plugins/newton/v10.0">v10.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      </div>
+     </div>
+   </div>
+   <div class="row">
+   <div class="col-xs-12">
+      <h4>Mitaka Releases</h4>
+      <div class="row">
+       <div class="col-md-3">
+       <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-agent</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/mitaka/agent/v9.3">v9.3</a>
+         </li>
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/mitaka/agent/v9.2">v9.2</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+       <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-lbaasv2-driver</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/lbaasv2-driver/mitaka/v9.3">v9.3</a>
+         </li>
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/lbaasv2-driver/mitaka/v9.2">v9.2</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/templates/openstack-heat/mitaka/v9.0">v9.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+        <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat-plugins</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/heat-plugins/mitaka/v9.0">v9.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      </div>
+   </div>
+   </div>
+   <div class="row">
+   <div class="col-xs-12">
+      <h4>Liberty Releases</h4>
+      <div class="row">
+       <div class="col-md-3">
+       <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-agent</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/agent/liberty/v8.3">v8.3</a>
+         </li>
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/agent/liberty/v8.2">v8.2</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+       <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-lbaasv2-driver</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/lbaasv2-driver/liberty/v8.3">v8.3</a>
+         </li>
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/lbaasv2-driver/liberty/v8.2">v8.2</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/templates/openstack-heat/liberty">v8.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+        <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat-plugins</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/heat-plugins/liberty">v8.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      </div>
+     </div>
+   </div>
+   <div class="row">
+   <div class="col-xs-12">
+      <h4>Kilo Releases</h4>
+      <div class="row">
+       <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/templates/openstack-heat/kilo">v7.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+        <div class="col-md-3">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+       <div class="panel-title">f5-openstack-heat-plugins</div>
+       </div>
+       <div class="panel-body">
+       </div>
+         <ul class="list-group">
+         <li class="list-group-item"><a target="_blank" href="/products/openstack/heat-plugins/kilo">v7.0</a>
+         </li>
+       </ul>
+       </div>
+       </div>
+      </div>
+     </div>
+   </div>
 
-This documentation set provides users of F5® technologies with an interest in OpenStack a jumping-off point for getting started with F5 in OpenStack. We have guides for simple OpenStack :ref:`deployment <os-deploy-guide>` and :ref:`configuration <os-config-guide>` and for :ref:`deploying BIG-IP® VE <deploy_big-ip_openstack>` from within an OpenStack cloud.
-
-If you would like to request a new user guide or notify us of an issue with an existing one, please file an `issue <https://github.com/F5Networks/f5-openstack-docs/issues>`_ in GitHub.
-
-Guides and Resources
-********************
-
-.. toctree::
-    :maxdepth: 1
-
-    project_index
-    partners
-    map_developers
-    releases_and_versioning
-    openstack-deploy-guide
-    openstack-config-guide
-    howto_deploy-ve-openstack
-
-Releases and Support
---------------------
-
-The user guides provided here support OpenStack |openstack|. See the :ref:`F5 Releases and Support Matrix <releases-and-support>` for more information.
-
-For Developers
---------------
-
-Interested in contributing to an F5 OpenStack project? Check out the :ref:`Developer Area`.
+   </div>
+   </div>
 
 
 
