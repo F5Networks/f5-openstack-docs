@@ -106,5 +106,5 @@ What's Next
 
 .. _Better or Best license: https://f5.com/products/how-to-buy/simplified-licensing
 .. _OpenStack Networking Concepts: http://docs.openstack.org/liberty/networking-guide/
-.. _agent configuration file: /products/openstack/latest/agent/index.html#agent-configuration-file
-.. _Set up Neutron to use the F5 service provider driver: /products/openstack/latest/lbaasv2-driver/index.html#neutron-setup
+.. _agent configuration file: /products/openstack/agent/latest/index.html#agent-configuration-file
+.. _Set up Neutron to use the F5 service provider driver: /products/openstack/lbaasv2-driver/latest/index.html#neutron-setup

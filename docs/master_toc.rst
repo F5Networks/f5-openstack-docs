@@ -14,8 +14,8 @@
    :glob:
    :maxdepth: 1
 
-   F5 Agent for Neutron <http://clouddocs.f5.com/products/openstack/latest/agent>
-   F5 Driver for Neutron LBaaS <http://clouddocs.f5.com/products/openstack/latest/lbaasv2-driver>
+   F5 Agent for Neutron <http://clouddocs.f5.com/products/openstack/agent/latest>
+   F5 Driver for Neutron LBaaS <http://clouddocs.f5.com/products/openstack/lbaasv2-driver/latest>
    Integration Overview <lbaas/index>
    lbaas/quick-reference
    lbaas/basic-environment-reqs
@@ -29,7 +29,7 @@
    lbaas/differentiated-service-environments
    lbaas/capacity-based-scaleout
    lbaas/hierarchical-port-binding
-   F5 LBaaS v1 integration (EOTS) <http://clouddocs.f5.com/products/openstack/latest/lbaasv1>
+   F5 LBaaS v1 integration (EOTS) <http://clouddocs.f5.com/products/openstack/lbaasv1/master>
 
 .. toctree::
    :caption: Troubleshooting

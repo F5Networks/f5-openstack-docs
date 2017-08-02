@@ -354,8 +354,8 @@ rst_epilog = '''
 .. |agent| replace:: F5 agent
 .. |driver| replace:: F5 driver
 .. |driver-long| replace:: F5 Driver for OpenStack LBaaSv2
-.. _F5 Agent for OpenStack Neutron: /products/openstack/latest/agent/index.html
-.. _F5 Driver for OpenStack LBaaSv2: /products/openstack/latest/lbaasv2-driver/
+.. _F5 Agent for OpenStack Neutron: /products/openstack/agent/latest/index.html
+.. _F5 Driver for OpenStack LBaaSv2: /products/openstack/lbaasv2-driver/latest/
 .. |oslbaas| replace:: F5 Integration for OpenStack Neutron LBaaS
 .. _OpenStack CLI: https://docs.openstack.org/cli-reference/
 .. _OpenStack API: https://developer.openstack.org/api-guide/quick-start/index.html
@@ -396,13 +396,13 @@ rst_epilog = '''
 .. |community_tempest_lbaasv2_tests| raw:: html
 
    <a href="https://github.com/openstack/neutron-lbaas/tree/stable/%(openstack_release_l)s">tests</a>
-.. _configuration file: /products/openstack/latest/agent/index.html#agent-configuration-file
-.. _configuration parameters: /products/openstack/latest/agent/index.html#configuration-parameters
-.. _F5 environment generator: /products/openstack/latest/lbaasv2-driver/environment-generator.html
-.. _L2 Segmentation Mode settings: /products/openstack/latest/agent/index.html#l2-segmentation-settings
-.. _L3 Segmentation Mode settings: .. _L2 Segmentation Mode Settings: /products/openstack/latest/agent/index.html#l3-segmentation-settings
-.. _global routed mode: /products/openstack/latest/agent/global-routed-mode.html
-.. _Device driver/iControl Driver settings: /products/openstack/latest/agent/device-driver-settings.html
+.. _configuration file: /products/openstack/agent/latest/index.html#agent-configuration-file
+.. _configuration parameters: /products/openstack/agent/latest/index.html#configuration-parameters
+.. _F5 environment generator: /products/openstack/lbaasv2-driver/latest/environment-generator.html
+.. _L2 Segmentation Mode settings: /products/openstack/agent/latest/index.html#l2-segmentation-settings
+.. _L3 Segmentation Mode settings: .. _L2 Segmentation Mode Settings: /products/openstack/agent/latest/index.html#l3-segmentation-settings
+.. _global routed mode: /products/openstack/agent/latest/global-routed-mode.html
+.. _Device driver/iControl Driver settings: /products/openstack/agent/latest/device-driver-settings.html
 .. |f5_agent_pip_url_branch| replace:: git+https://github.com/F5Networks/f5-openstack-agent@%(openstack_release_l)s
 .. |f5_agent_deb_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(version_latest)s/python-f5-openstack-agent_%(version_latest)s-1_1404_all.deb
 .. |f5_agent_rpm_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(version_latest)s/f5-openstack-agent-%(version_latest)s-1.el7.noarch.rpm
@@ -424,7 +424,7 @@ rst_epilog = '''
 .. |f5_agent_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-agent@v%(version_latest)s
 .. |f5_driver_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v%(version_latest)s
 .. |version_latest| replace:: %(version_latest)s
-.. _Configure the F5 Agent for OpenStack Neutron: /products/openstack/latest/agent/index.html#configure-the-f5-openstack-agent
+.. _Configure the F5 Agent for OpenStack Neutron: /products/openstack/agent/latest/index.html#configure-the-f5-openstack-agent
 .. _HPE Helion OpenStack: https://docs.hpcloud.com/hrc/helionReady.html
 .. _Mirantis OpenStack: https://www.mirantis.com/partners/f5-networks/
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
