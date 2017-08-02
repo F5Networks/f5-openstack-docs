@@ -1,0 +1,15 @@
+parameters:
+  client_server_image: <image-name>
+  client_server_flavor: <nova-flavor>
+  key_name: <ssh-hey-name>
+  client_server_sec_group: open
+  client_network: <client_vlan>
+  server_network: <server_vlan>
+  bigip_un: $BIGIP_USER
+  bigip_pw: $BIGIP_PASS
+  vs_name: virtual_server1
+  pool_name: pool1
+  bigip_fip:
+  vs_vip:
+  vs_port: 443
+  pool_member_port: 8080

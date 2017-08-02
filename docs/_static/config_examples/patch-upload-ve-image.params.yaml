@@ -1,0 +1,25 @@
+parameters:
+  onboard_image: ubuntu-14.04.5-server-amd64.iso
+  # provide the name of a private network in your OpenStack cloud
+  private_network: mgmt_net
+  # provide your Keystone authentication URL
+  f5_image_import_auth_url: http://1.2.3.4:5000/v2.0
+  # provide the name of the OpenStack tenant (project) you want to import the
+  # image to
+  f5_image_import_tenant: admin
+  # provide your OpenStack user name
+  f5_image_import_user: admin
+  # provide your OpenStack password
+  # (TIP: use an environment variable)
+  # This value is set to be hidden
+  f5_image_import_password: $MY_PASSWORD
+  # DO NOT CHANGE THIS ENTRY
+  # This F5 Networks GitHub repo contains the image patch script
+  image_prep_url: https://github.com/F5Networks/f5-openstack-image-prep.git
+  # Provide the URL for your BIG-IP qcow.zip image
+  # Must be accessible via http
+  f5_ve_image_url: http://path/to/my/big-ip-ve-image
+  f5_ve_image_name: BIGIP-12.1.2.0.0.249.LTM.qcow2.zip
+  # Provide the name of an SSH key configured in OpenStack
+  # This key will be used to authenticate to the Ubuntu server
+  image_prep_key: my-openstack-ssh-key

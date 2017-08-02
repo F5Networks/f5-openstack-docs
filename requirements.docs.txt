@@ -1,2 +1,0 @@
-Sphinx==1.5.5
-git+https://github.com/f5devcentral/f5-sphinx-theme@master
