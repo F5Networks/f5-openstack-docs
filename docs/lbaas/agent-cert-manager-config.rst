@@ -20,7 +20,7 @@ Prerequisites
 Configure SSL offloading using OpenStack Barbican Secrets
 ---------------------------------------------------------
 
-Edit the `Certificate Manager Settings </products/openstack/latest/agent/index.html#cert-manager-settings>`_ section of the |agent| configuration file.
+Edit the `Certificate Manager Settings </products/openstack/agent/latest/index.html#cert-manager-settings>`_ section of the |agent| configuration file.
 
 #. Enable the F5 Barbican certificate manager.
 

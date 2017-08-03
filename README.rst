@@ -27,7 +27,7 @@ This repo contains documentation for the F5 Integrations for OpenStack Neutron L
 
 Projects
 --------
-All of F5 Networks' OpenStack projects are open source and can be found at `githib.com/F5Networks <https://github.com/F5Networks>`_. 
+All of F5 Networks' OpenStack projects are open source and can be found at `github.com/F5Networks <https://github.com/F5Networks>`_.
 
 Releases and Versioning
 -----------------------

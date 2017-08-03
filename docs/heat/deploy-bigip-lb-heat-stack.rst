@@ -169,6 +169,6 @@ Next Steps
 
 .. _Ubuntu 14.04 server image: http://releases.ubuntu.com/trusty/
 .. _F5 Neutron LBaaS: /cloud/openstack/latest/lbaas/
-.. _BIG-IP VE image patch and upload: /templates/openstack-heat/latest/f5_supported/f5-bigip-ve_image-patch-upload.html
-.. _BIG-IP VE Standalone, 3-nic: /templates/openstack-heat/latest/f5_supported/f5-bigip-ve_standalone-3nic.html
-.. _Deploy basic load balancer: /templates/openstack-heat/latest/f5_supported/deploy-basic-lb.html
+.. _BIG-IP VE image patch and upload: /products/templates/openstack-heat/latest/f5_supported/f5-bigip-ve_image-patch-upload.html
+.. _BIG-IP VE Standalone, 3-nic: /products/templates/openstack-heat/latest/f5_supported/f5-bigip-ve_standalone-3nic.html
+.. _Deploy basic load balancer: /products/templates/openstack-heat/latest/f5_supported/deploy-basic-lb.html
