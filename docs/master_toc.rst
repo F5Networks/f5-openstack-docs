@@ -4,7 +4,7 @@
    :maxdepth: 1
 
    F5 HOT Library <http://clouddocs.f5.com/products/templates/openstack-heat/latest>
-   F5 Plugins for Heat <http://clouddocs.f5.com/products/openstack/latest/heat-plugins>
+   F5 Plugins for Heat <http://clouddocs.f5.com/products/openstack/heat-plugins/latest>
    Integration Overview <heat/index>
    heat/how-to-deploy-heat-stack
    heat/deploy-bigip-lb-heat-stack
