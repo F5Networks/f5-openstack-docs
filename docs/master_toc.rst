@@ -29,6 +29,7 @@
    lbaas/differentiated-service-environments
    lbaas/capacity-based-scaleout
    lbaas/hierarchical-port-binding
+   lbaas/set-up-agent-hpb
    F5 LBaaS v1 integration (EOTS) <http://clouddocs.f5.com/products/openstack/lbaasv1/master>
 
 .. toctree::

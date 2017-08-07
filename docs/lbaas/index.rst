@@ -1,3 +1,7 @@
+.. index::
+   single: openstack; concept
+   triple: lbaas; agent; driver
+
 .. _openstack-lbaas-home:
 
 F5 Integration for OpenStack Neutron LBaaS
@@ -31,7 +35,7 @@ It picks up Neutron LBaaS calls from the RPC messaging queue and assigns them to
 .. figure:: /_static/media/f5-lbaas-architecture.png
    :align: center
    :scale: 100%
-   :alt: Diagram showing the architecture of the F5 Integration for OpenStack Neutron LBaaS. A user issues a neutron lbaas command; the F5 LBaaSv2 driver assigns the task from the Neutron RPC messaging queue to the F5 Agent for OpenStack Neutron. The BIG-IP Controller periodically reports its status to the Neutron database.
+   :alt: Diagram showing the architecture of the F5 Integration for OpenStack Neutron LBaaS. A user issues a neutron lbaas command; the F5 LBaaSv2 driver assigns the task from the Neutron RPC messaging queue to the F5 Agent for OpenStack Neutron. The F5 Agent periodically reports its status to the Neutron database.
 
    F5 Integration for OpenStack Neutron LBaaS Architecture
 
@@ -45,12 +49,14 @@ It receives tasks from the Neutron RPC messaging queue, converts them to `iContr
 .. figure:: /_static/media/f5-lbaas-agent-to-BIG-IP.png
    :align: center
    :scale: 100%
-   :alt: Diagram showing the operation of the F5 Agent for OpenStack Neutron. A user issues a neutron lbaas command; the F5 LBaaSv2 driver assigns the task to the F5 Agent for OpenStack Neutron; the BIG-IP Controller sends the command to the BIG-IP device as an iControl REST API call to add or edit the requested object.
+   :alt: Diagram showing the operation of the F5 Agent for OpenStack Neutron. A user issues a neutron lbaas command; the F5 LBaaSv2 driver assigns the task to the F5 Agent for OpenStack Neutron; the F5 Agent sends the command to the BIG-IP device as an iControl REST API call to add or edit the requested object.
 
    F5 Agent for OpenStack Neutron traffic flow
 
 Key OpenStack Concepts
 ----------------------
+
+.. todo:: add provider networks section; need to note the supported network types (vlan, vxlan, gre, opflex) somewhere; could be in the agent repo instead
 
 .. _lbaas-agent-tenant-affinity:
 
