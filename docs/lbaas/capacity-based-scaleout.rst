@@ -149,8 +149,8 @@ The capacity score each |agent| instance reports back to the Neutron database he
 .. seealso::
 
    * |agent| `configuration file`_
-   * :ref:`Differentiated Service Environments <lbaas-differentiated-service-env>`
-   * :ref:`Agent Redundancy and Scale Out <lbaas-agent-redundancy>`
+   * :ref:`Manage a BIG-IP device with multiple F5 Agents in differentiated service environments <lbaas-differentiated-service-env>`
+   * :ref:`Manage a BIG-IP device with multiple F5 Agents <lbaas-agent-redundancy>`
 
 .. rubric:: Footnotes
 .. [#diffenv] See :ref:`differentiated service environments <lbaas-differentiated-service-env>` for information about running multiple |agent| instances on the same host.

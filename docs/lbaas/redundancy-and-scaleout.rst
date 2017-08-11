@@ -1,7 +1,7 @@
 .. _lbaas-agent-redundancy:
 
-Manage a BIG-IP device with multiple F5 Agents on different hosts
-=================================================================
+Manage a BIG-IP device with multiple F5 Agents
+==============================================
 
 .. sidebar:: Applies to:
 
@@ -32,13 +32,17 @@ Prerequisites
 Caveats
 ```````
 
-.. danger::
+.. caution::
 
-   **Do not** use multiple |agent| instances that are running on the same host to manage the same BIG-IP device or :term:`cluster`.
-   Doing so will cause errors and may lead to a loss of service.
+   When using multiple instances of the |agent| to manage the same BIG-IP device or :term:`cluster`, each must have a unique ``agent_id``.
+   If you do not specify a unique ``agent_id`` for each |agent|, you may experience errors and/or loss of service.
 
 The standard multi-agent deployment doesn't allow you to specify which |agent| you want to use to create a new load balancer (meaning it's also not possible to specify on which BIG-IP device/cluster you want to create objects).
 **If you need a greater degree of control** over which |agent| handles specific LBaaS requests, use :ref:`differentiated service environments <lbaas-differentiated-service-env>` instead.
+
+
+Set up the F5 Agent on a single host
+------------------------------------
 
 Set up the F5 Agent on multiple hosts
 -------------------------------------
@@ -52,7 +56,8 @@ Set up the F5 Agent on multiple hosts
 
 #. :ref:`Install the F5 Agent for OpenStack Neutron <lbaas-quick-start>` on each host.
 
-#. Set up the |agent| `configuration file`_ to suit the needs of your environment.
+#. Edit the |agent| `configuration file`_ to suit the needs of your environment.
+
 
 #. Copy your |agent| configuration file from the Neutron controller to each host.
 
