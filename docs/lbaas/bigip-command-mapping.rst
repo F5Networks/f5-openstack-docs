@@ -40,7 +40,7 @@ Start the |agent-long|
 ----------------------
 
 :command:`systemctl start f5-openstack agent`
-  When you first start the |agent-long|:
+  When you first start the |agent|:
 
 - it reads the :code:`vtep` `self IP`_ defined in the |agent| config file;
 - the |agent| discovers the BIG-IP :code:`vtep` IP address and advertises it to Neutron as its ``tunneling_ip``;
@@ -110,8 +110,8 @@ Create a Neutron LBaaS Health Monitor
   Any additions or changes may change the status of the specified pool.
 
 .. rubric:: Footnotes
-.. [#tablefn4] If using `global routed mode`_, |agent| doesn't create a tunnel. Instead, all traffic goes to the load balancer's self IP address.
-.. [#tablefn5] You can set the number of SNAT addresses to create via the ``f5_snat_addresses_per_subnet`` setting in the `L3 Segmentation Mode Settings`_ section of the |agent| configuration file.
+.. [#tablefn4] If using :agent:`global routed mode <global-routed-mode.html>`, |agent| doesn't create a tunnel. Instead, all traffic goes to the load balancer's self IP address.
+.. [#tablefn5] You can set the number of SNAT addresses to create via the ``f5_snat_addresses_per_subnet`` setting in the |l3-seg| section of the |agent| configuration file.
 .. [#tablefn6] See :ref:`Set up the F5 Agent for OpenStack Barbican <certificate-manager>`.
 .. [#tablefn7] The |agent| will not create a FDB entry if the pool member IP address and subnet don't have a corresponding Neutron port. In such cases, warning messages print to the :code:`f5-openstack-agent` and :code:`neutron-server` logs.
 

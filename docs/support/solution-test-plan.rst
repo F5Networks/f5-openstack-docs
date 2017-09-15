@@ -13,7 +13,7 @@ F5 OpenStack Integrated Solutions
 `````````````````````````````````
 
 F5 produces integration solutions that orchestrate BIG-IP Application Delivery Controllers (ADC) with OpenStack Networking (Neutron) services.
-F5 OpenStack LBaaSv2 integration provides under-the-cloud multi-tenant infrastructure L4-L7 services for Neutron tenants.
+The F5 OpenStack LBaaSv2 integration provides under-the-cloud multi-tenant infrastructure L4-L7 services for Neutron tenants.
 
 In addition to community OpenStack participation, F5 maintains partnerships with several OpenStack platform vendors.
 Each vendor defines a certification process, including test requirements, that expand on or focus tests available in community OpenStack.
@@ -58,7 +58,7 @@ TMOS
 F5 OpenStack LBaaSv2
 ````````````````````
 
-* |agent-link|, F5 driver package, and |driver-link| installed on all hosts you want to use to provision BIG-IP services. [#f5driver]_
+* :agent:`F5 Agent <index.html>`, F5 driver package, and :driver:`F5 LBaaSv2 Driver <index.html>` installed on all hosts you want to use to provision BIG-IP services. [#f5driver]_
 * Agent configured according to the needs of the use case test architecture.
 
 .. [#f5driver] The F5 driver package is available for download at |f5_lbaasv2_driver_shim_url|.
@@ -77,8 +77,8 @@ Community OpenStack tests (not required, but recommended) are available to exerc
 
 F5 OpenStack tests exercise the following key components:
 
-* F5 OpenStack LBaaSv2 plugin driver (|f5_lbaasv2_driver_readme|);
-* F5 OpenStack Agent (|f5_agent_readme|).
+* |driver-long| (|f5_lbaasv2_driver_readme|);
+* |agent-long| (|f5_agent_readme|).
 
 Each use case requires execution of tests over one or more standard network deployments, detailed below.
 
@@ -88,7 +88,7 @@ Network Architectures
 NA1: Global Routed Mode
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Edge deployment architecture using only OpenStack networking provider networks, with F5 OpenStack agents deployed in `Global Routed Mode`_.
+Edge deployment architecture using only OpenStack networking provider networks, with |agent| deployed in :ref:`global routed mode`.
 
 .. figure:: /_static/media/f5-lbaas-test-architecture-grm.png
    :align: center

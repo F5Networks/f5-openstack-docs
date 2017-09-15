@@ -28,7 +28,7 @@ Prerequisites
 - Licensed, operational `BIG-IP chassis`_ with support for vCMP.
 - Licensed, operational BIG-IP vCMP guest running on a vCMP host.
 - Administrative access to the vCMP host(s) and guest(s) you will manage with F5 LBaaSv2.
-- `F5 Agent for OpenStack Neutron`_ and `F5 Driver for OpenStack LBaaSv2`_ installed on the Neutron controller.
+- :agent:`F5 Agent <index.html>` and :driver:`F5 Driver <index.html>` installed on the Neutron controller.
 - Knowledge of `BIG-IP vCMP <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/vcmp-administration-appliances-12-1-1/1.html>`_ configuration and administration.
 
 Caveats
@@ -40,7 +40,7 @@ Caveats
 Configuration
 -------------
 
-Edit the `Device driver/iControl driver settings`_ and `L2 Segmentation Mode settings`_ sections of the |agent| `configuration file`_.
+Edit the |driver-settings| and |l2-seg| sections of the |agent| |config-file|.
 
 #. Add the ``icontrol_vcmp_hostname``. Multiple values can be comma-separated.
 

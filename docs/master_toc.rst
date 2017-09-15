@@ -20,16 +20,18 @@
    lbaas/quick-reference
    lbaas/basic-environment-reqs
    lbaas/bigip-command-mapping
-   lbaas/deploy-basic-load-balancer
-   lbaas/agent-cert-manager-config
+   lbaas/f5-agent-modes
    lbaas/l7-content-switching
    lbaas/redundancy-and-scaleout
-   lbaas/manage-bigip-clusters
-   lbaas/manage-vcmp
-   lbaas/differentiated-service-environments
    lbaas/capacity-based-scaleout
    lbaas/hierarchical-port-binding
    lbaas/set-up-agent-hpb
+   lbaas/differentiated-service-environments
+   lbaas/agent-cert-manager-config
+   lbaas/manage-common-net-objects
+   lbaas/deploy-basic-load-balancer
+   lbaas/manage-bigip-clusters
+   lbaas/manage-vcmp
    F5 LBaaS v1 integration (EOTS) <http://clouddocs.f5.com/products/openstack/lbaasv1/master>
 
 .. toctree::

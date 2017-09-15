@@ -1,7 +1,7 @@
-.. _lbaas-differentiated-service-env:
+.. index::
+   single: F5 Agent; Differentiated service environments
 
-Manage a single BIG-IP device with multiple Controller instances
-================================================================
+.. _lbaas-differentiated-service-env:
 
 .. sidebar:: Applies to:
 
@@ -15,8 +15,10 @@ Manage a single BIG-IP device with multiple Controller instances
    v10.0+                  Newton
    ====================    ===========================
 
+Run multiple F5 Agents in different environments
+================================================
 
-You can manage the same BIG-IP device or cluster with multiple instances of the |agent-long| running in differentiated service environments.
+You can manage the same BIG-IP device or cluster with multiple instances of the |agent-long| when the instances run in differentiated service environments.
 A :dfn:`differentiated service environment` is a uniquely-named environment that has:
 
 - a dedicated |driver|,
@@ -27,7 +29,7 @@ In a multiple-agent setup, each |agent| manages a distinct environment that corr
 
 .. important::
 
-   - The `F5 environment generator`_, a tool built in to the |driver-long|, creates new service environments for you and configures Neutron to use the new service provider drivers.
+   - The |env-generator|, a tool built in to the |driver-long|, creates new service environments for you and configures Neutron to use the new service provider drivers.
 
    - Differentiated service environments are not compatible with `Virtual Clustered Multiprocessing`_ (vCMP) systems.
      BIG-IP devices cannot share data or resources across differentiated service environments; this precludes the use of vCMP because vCMP guests share global VLAN IDs
@@ -63,7 +65,7 @@ Set up a new service environment
 Set up |agent| to use the new environment
 -----------------------------------------
 
-In the |agent| `configuration file`_:
+In the |agent| |config-file|:
 
 #. Replace the default :code:`environment_prefix` with the name of the new service environment.
 

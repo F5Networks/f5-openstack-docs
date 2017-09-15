@@ -1,7 +1,7 @@
 
 .. seealso::
 
-   * :fonticon:`fa fa-github` `f5-openstack-heat`_
-   * :fonticon:`fa fa-github` `f5-openstack-heat-plugins`_
-   * :fonticon:`fa fa-book` `F5 OpenStack Heat templates`_
-   * :fonticon:`fa fa-book` `F5 OpenStack Heat plugins`_
+   * :fonticon:`fa fa-github` :github:`f5-openstack-heat`
+   * :fonticon:`fa fa-github` :github:`f5-openstack-heat-plugins`
+   * :fonticon:`fa fa-book` :heat:`F5 Heat template library <index.html>`
+   * :fonticon:`fa fa-book` :plugins:`F5 Heat Plugins for OpenStack <index.html>`

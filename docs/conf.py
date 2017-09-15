@@ -389,10 +389,9 @@ rst_epilog = '''
 .. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
 .. |env-generator| replace:: :driver:`F5 environment generator <environment-generator.html>`
 .. |l2-seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l2-segmentation-mode-settings>`
-.. |l3=seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l3-segmentation-mode-settings>`
+.. |l3-seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l3-segmentation-mode-settings>`
 .. |grm| replace:: :agent:`Global routed mode <global-routed-mode.html>`
 .. |l2mode| replace:: :agent:`L2-adjacent mode <l2-adjacent-mode.html>`
-.. |ext-gate| replace:: :agent:`External gateway mode <ext-gateway-mode.html>`
 .. |driver-settings| replace:: :agent:`Device driver\/iControl Driver settings <device-driver-settings.html>`
 .. _Device driver/iControl Driver settings: /products/openstack/agent/latest/device-driver-settings.html
 .. |f5_agent_pip_url_branch| replace:: git+https://github.com/F5Networks/f5-openstack-agent@%(openstack_release_l)s
@@ -421,6 +420,8 @@ rst_epilog = '''
 .. _Mirantis OpenStack: https://www.mirantis.com/partners/f5-networks/
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
 .. _OpenStack Nova: https://docs.openstack.org/nova/latest
+.. _Install the F5 LBaaSv2 Driver: /products/openstack/f5-openstack-lbaasv2-driver/latest/index.html#installation
+.. _Install the F5 Agent: /products/openstack/f5-openstack-agent/latest/index.html#installation
 ''' % {
   'openstack_release': openstack_release,
   'openstack_release_l': openstack_release.lower(),
@@ -432,14 +433,17 @@ rst_epilog = '''
 }
 
 # Markup to shorten links to external sites
-extlinks = {'agent': ('http://clouddocs.f5.com/products/openstack/f5-openstack-agent/latest/%s',
+extlinks = {'agent': ('http://clouddocs.f5.com/products/openstack/agent/latest/%s',
                       ''),
-            'driver': ('http://clouddocs.f5.com/products/openstack/f5-openstack-lbaasv2-driver/latest/%s',
+            'driver': ('http://clouddocs.f5.com/products/openstack/lbaasv2-driver/latest/%s',
             ''),
-            'heat': ('http://clouddocs.f5.com/products/templates/openstack-heat/%s',
+            'heat': ('http://clouddocs.f5.com/products/templates/openstack-heat/latest/%s',
             ''),
-            'plugins': ('http://clouddocs.f5.com/products/openstack/heat-plugins/%s',
+            'plugins': ('http://clouddocs.f5.com/products/openstack/heat-plugins/latest/%s',
             ''),
             'github': ('https://github.com/f5networks/%s',
             '')
 }
+
+# Ignore anchors when running linkcheck
+linkcheck_anchors = False
