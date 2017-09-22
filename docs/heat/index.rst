@@ -32,7 +32,7 @@ Heat Plugins
 The `F5 OpenStack Heat plugins`_ enable BIG-IP objects for use in OpenStack.
 The Heat plugins use the `F5 Python SDK`_ to communicate with BIG-IP via the iControl REST API.
 
-:fonticon:`fa fa-chevron-right` `Install the F5 Heat Plugins </products/openstack/latest/heat-plugins/index.html#installation>`_
+:fonticon:`fa fa-chevron-right` `Install the F5 Heat Plugins </products/openstack/heat-plugins/latest/index.html#installation>`_
 
 Heat Templates
 --------------

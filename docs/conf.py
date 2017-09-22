@@ -360,7 +360,7 @@ rst_epilog = '''
 .. _OpenStack CLI: https://docs.openstack.org/cli-reference/
 .. _OpenStack API: https://developer.openstack.org/api-guide/quick-start/index.html
 .. _F5 OpenStack Heat templates: /products/templates/openstack-heat/latest/index.html
-.. _F5 OpenStack Heat plugins: /products/openstack/latest/heat-plugins/index.html
+.. _F5 OpenStack Heat plugins: /products/openstack/heat-plugins/latest/index.html
 .. _f5-openstack-heat: https://github.com/f5networks/f5-openstack-heat
 .. _f5-openstack-heat-plugins: https://github.com/f5networks/f5-openstack-heat-plugins
 .. _f5-openstack-agent: https://github.com/f5networks/f5-openstack-agent
