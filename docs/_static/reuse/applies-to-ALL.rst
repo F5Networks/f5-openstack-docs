@@ -1,4 +1,4 @@
-.. sidebar:: Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
 
    ====================    ===========================
    F5 LBaaS version(s)     OpenStack version(s)
