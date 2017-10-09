@@ -1,20 +1,9 @@
 .. _lbaas-differentiated-service-env:
 
-Manage a single BIG-IP device with multiple Controller instances
-================================================================
+Manage a BIG-IP device with multiple F5 Agents on the same host
+===============================================================
 
-.. sidebar:: Applies to:
-
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.1+                   Liberty
-   --------------------    ---------------------------
-   v9.1+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
-
+.. include:: /_static/reuse/applies-to-ALL.rst
 
 You can manage the same BIG-IP device or cluster with multiple instances of the |agent-long| running in differentiated service environments.
 A :dfn:`differentiated service environment` is a uniquely-named environment that has:
@@ -30,7 +19,7 @@ In a multiple-agent setup, each |agent| manages a distinct environment that corr
    - The `F5 environment generator`_, a tool built in to the |driver-long|, creates new service environments for you and configures Neutron to use the new service provider drivers.
 
    - Differentiated service environments are not compatible with `Virtual Clustered Multiprocessing`_ (vCMP) systems.
-     BIG-IP devices cannot share data or resources across differentiated service environments; this precludes the use of vCMP because vCMP guests share global VLAN IDs
+     BIG-IP devices cannot share data or resources across differentiated service environments; this precludes the use of vCMP because vCMP guests share global VLAN IDs.
 
 Set up a new service environment
 --------------------------------
