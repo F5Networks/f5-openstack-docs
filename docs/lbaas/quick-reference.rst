@@ -8,7 +8,7 @@ F5 LBaaSv2 Quick Reference
    ====================    ===========================
    F5 LBaaS version(s)     OpenStack version(s)
    ====================    ===========================
-   v10.0+                  Newton
+   v10.1.0                 Newton
    ====================    ===========================
 
    To install previous versions, see the :agent:`F5 Agent <index.html>` documentation.
