@@ -93,7 +93,7 @@ If the service provider driver is in the container's build context, you don't ne
 
 .. seealso::
 
-   * `Configure the F5 Agent for OpenStack Neutron`_
+   * :agent:`Configure the F5 Agent <index.html#configure-the-f5-agent>`
    * :ref:`Manage BIG-IP Clusters with F5 LBaaSv2 <lbaas-manage-clusters>`
    * :ref:`Differentiated Service Environments <lbaas-differentiated-service-env>`
 

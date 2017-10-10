@@ -66,7 +66,7 @@ Configuration Parameter                                                    Descr
                                                                            This should match a mapping used in the ``ml2_type_vlan`` section
                                                                            of the `ML2 driver configuration file`_ (:file:`ML2_conf.ini`).
 ------------------------------------------------------------------------   ------------------------------------------------------------------
-``f5_global_routed_mode = False``                                          *Default setting*; disables the |agent| `Global Routed Mode`_.
+``f5_global_routed_mode = False``                                          *Default setting*; disables the |agent| |grm|.
 ------------------------------------------------------------------------   ------------------------------------------------------------------
 ``common_network_ids = <neutron_uuid>:<BIG-IP_network_name>``              Tells the |agent| that a VLAN set up directly on the BIG-IP
                                                                            device corresponds to a specific Neutron network.
@@ -81,7 +81,7 @@ Configuration Parameter                                                    Descr
 Set up standard HPB
 -------------------
 
-#. Edit the |agent| `configuration file`_:
+#. Edit the |agent| |config-file|:
 
    .. include:: /_static/reuse/edit-agent-config-file.rst
 
@@ -129,7 +129,7 @@ Set up HPB with Cisco APIC/ACI & OpFlex on RedHat OSP
 
 #. `Configure the OpFlex ML2 Plugin to use Hierarchical Port Binding`_ :fonticon:`fa fa-external`
 
-#. Edit the |agent| `configuration file`_:
+#. Edit the |agent| |config-file|:
 
    .. include:: /_static/reuse/edit-agent-config-file.rst
 

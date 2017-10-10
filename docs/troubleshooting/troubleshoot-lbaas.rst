@@ -68,15 +68,15 @@ If ``f5-openstack-agent``, or ``f5-oslbaasv2-agent``, doesn't appear in the agen
 
      ssh admin@<big-ip_mgmt_ip>
 
-  and verify that the following entries in the |agent| `configuration file`_ are correct:
+  and verify that the following entries in the |agent| |config-file| are correct:
 
   - iControl hostname (can be a DNS-recognized hostname or the BIG-IP device's management IP address)
   - username (account must have permission to manage LTM objects in the OpenStack tenant's partition; see )
   - password
 
-- When using `Global Routed Mode`_:
+- When using :ref:`global routed mode`:
 
-  Comment out (#) the ``vtep`` lines (shown below) in the |agent| `configuration file`_.
+  Comment out (#) the ``vtep`` lines (shown below) in the |agent| |config-file|.
 
   .. code-block:: text
 
@@ -87,7 +87,7 @@ If ``f5-openstack-agent``, or ``f5-oslbaasv2-agent``, doesn't appear in the agen
 
 - When using L2/L3 segmentation mode:
 
-  Verify that the :code:`advertised_tunnel_types` setting in the |agent| `configuration file`_ matches the Neutron network's :code:`provider:network_type`.
+  Verify that the :code:`advertised_tunnel_types` setting in the |agent| |config-file| matches the Neutron network's :code:`provider:network_type`.
   If the settings don't match, check your network configurations and make corrections as needed.
 
   .. code-block:: text
@@ -173,7 +173,7 @@ VxLAN traffic doesn't reach BIG-IP device
 #. Check the VxLAN port binding.
 
    If you're using the default Open vSwitch (ovs) core plugin, run the command :command:`ovs-vsctl show` to view a list of configured bridges and associated ports.
-   As shown in the example below, there should be a :code:`remote_ip` address for a VxLAN tunnel that corresponds to the self IP identified in the |agent| `configuration file`_.
+   As shown in the example below, there should be a :code:`remote_ip` address for a VxLAN tunnel that corresponds to the self IP identified in the |agent| |config-file|.
 
    .. code-block:: console
       :caption: The ovs bridge has a ``remote_ip`` address that corresponds to the BIG-IP ``vtep`` self IP address.

@@ -26,7 +26,7 @@ Create a Neutron LBaaS load balancer
 
    The name assigned to the new BIG-IP partition follows the naming convention :code:`<environment-prefix>_<openstack-tenant-ID>`.
    The default environment prefix is :code:`Project_`.
-   You can change the environment prefix in the |agent| `configuration file`_.
+   You can change the environment prefix in the |agent| |config-file|.
 
 Specify the name you want to assign to the load balancer and the existing OpenStack subnet you want to assign to it.
 

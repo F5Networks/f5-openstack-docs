@@ -7,11 +7,11 @@ How to Deploy a BIG-IP VE instance and set up a basic load balancer
 
 This guide demonstrates how to use the `OpenStack Heat`_ orchestration service to onboard, deploy, and provision a F5 BIG-IP Virtual Edition (VE) instance. We provide instructions for deploying the Heat templates via the `OpenStack Horizon`_ dashboard.
 
-This guide uses the following `F5-Supported Heat templates`_:
+This guide uses the following :heat:`F5 Heat templates <index.html>`:
 
-- `BIG-IP VE image patch and upload`_: Add an OpenStack-ready BIG-IP VE image to Glance.
-- `BIG-IP VE Standalone, 3-nic`_: Deploy a standalone, 3-nic BIG-IP VE instance.
-- `Deploy basic load balancer`_: Deploy a simple load balancer on the BIG-IP VE instance.
+- :heat:`BIG-IP VE image patch and upload <f5_supported/f5-bigip-ve_image-patch-upload.html>`: Add an OpenStack-ready BIG-IP VE image to Glance.
+- :heat:`BIG-IP VE Standalone, 3-nic <f5_supported/f5-bigip-ve_standalone-3nic.html>`: Deploy a standalone, 3-nic BIG-IP VE instance.
+- :heat:`Deploy basic load balancer <f5_supported/deploy-basic-lb.html>`: Deploy a simple load balancer on the BIG-IP VE instance.
 
 .. _deploy-lb_before-you-begin:
 
@@ -21,7 +21,7 @@ Before You Begin
 In addition to the basic :ref:`F5 Heat prerequisites <heat-prereqs>`, you will need the following to follow this guide:
 
 - An external network set up in Neutron that can access the internet.
-- `F5 OpenStack Heat plugins`_ installed on the Neutron controller.
+- :plugins:`F5 Heat Plugins for OpenStack <index.html>` installed on the Neutron controller.
 - SSH key(s) set up in OpenStack.
 - (Optional) Add the :ref:`F5 flavors <add-nova-flavors>` to OpenStack.
 
@@ -58,7 +58,7 @@ If you don't already have a Ubuntu image in Glance, you'll need to add one.
 Patch and upload the BIG-IP VE image
 ````````````````````````````````````
 
-#. Download the `BIG-IP VE image patch and upload`_ heat template.
+#. Download the :heat:`BIG-IP VE image patch and upload <f5_supported/f5-bigip-ve_image-patch-upload.html>` heat template.
 
 #. Define the stack parameters in a YAML file.
 
@@ -84,7 +84,7 @@ Patch and upload the BIG-IP VE image
 Deploy a BIG-IP VE instance
 ---------------------------
 
-#. Download the `BIG-IP VE standalone, 3-nic`_ heat template.
+#. Download the :heat:`BIG-IP VE Standalone, 3-nic <f5_supported/f5-bigip-ve_standalone-3nic.html>` heat template.
 
 #. Define the stack parameters in a YAML file.
 
@@ -134,7 +134,7 @@ Use the `OpenStack Horizon`_ dashboard to assign a floating IP address to the BI
 Create a basic load balancer on the BIG-IP VE instance
 ------------------------------------------------------
 
-#. Download the `Deploy basic load balancer`_ heat template.
+#. Download the :heat:`Deploy basic load balancer <f5_supported/deploy-basic-lb.html>` heat template.
 
 #. Define the stack parameters in a YAML file.
 
@@ -162,13 +162,10 @@ Next Steps
 
       * You can access the BIG-IP from the OpenStack dashboard via :menuselection:`System --> Instances --> Console`.
       * To log in to the BIG-IP configuration utility, copy its floating IP address from the :guilabel:`Instance` screen in the dashboard, then paste it into your browser's address bar.
-        **You must use** ``https`` **to connect**.
+        **You must use** ``https`` **to access the BIG-IP configuration utility**.
       * You can connect to the BIG-IP instance via ssh using the floating IP address and the ssh key you provided in the environment file.
 
-#. Set up the `F5 Neutron LBaaS`_ integration to communicate with your new BIG-IP instance.
+#. Set up the :ref:`F5 Integration for OpenStack Neutron LBaaS <openstack-lbaas-home>` to communicate with your new BIG-IP instance.
 
 .. _Ubuntu 14.04 server image: http://releases.ubuntu.com/trusty/
-.. _F5 Neutron LBaaS: /cloud/openstack/latest/lbaas/
-.. _BIG-IP VE image patch and upload: /products/templates/openstack-heat/latest/f5_supported/f5-bigip-ve_image-patch-upload.html
-.. _BIG-IP VE Standalone, 3-nic: /products/templates/openstack-heat/latest/f5_supported/f5-bigip-ve_standalone-3nic.html
-.. _Deploy basic load balancer: /products/templates/openstack-heat/latest/f5_supported/deploy-basic-lb.html
+

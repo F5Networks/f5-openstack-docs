@@ -43,7 +43,7 @@ Caveats
 Configuration
 -------------
 
-Edit the `device settings </products/openstack/agent/latest/ha-mode.html>`_ and `Device Driver/iControl driver settings`_ sections of the |agent| `configuration file`_.
+Edit the :agent:`device settings <ha-mode.html>` and |driver-settings| sections of the |agent| |config-file|.
 
 #. Set the HA mode to :term:`pair` **or** :term:`scalen`.
 
@@ -115,7 +115,7 @@ If you need to sync a BIG-IP device group, do so manually **after** making chang
 
    If you must use config sync mode, set the ``f5_ha_type`` to ``standalone`` and enter the iControl endpoint for one (1) of the BIG-IP devices in the group.
 
-   If you choose to do so, **you must manually replace the iControl endpoint** in the |agent| `configuration file`_ with the iControl endpoint of another device in the group if the configured device should fail.
+   If you choose to do so, **you must manually replace the iControl endpoint** in the |agent| |config-file| with the iControl endpoint of another device in the group if the configured device should fail.
 
    While it is possible to use config sync for a device group *after* creating a new load balancer, it is not recommended.
 

@@ -3,7 +3,7 @@
 F5 OpenStack Heat Integration
 =============================
 
-F5's `OpenStack Heat`_ Integration consists of the `F5 OpenStack Heat templates`_ and `F5 OpenStack Heat plugins`_.
+F5's `OpenStack Heat`_ Integration consists of the :heat:`F5 Heat template library <index.html>` and :plugins:`F5 Heat Plugins for OpenStack <index.html>`.
 
 .. _heat-prereqs:
 
@@ -29,7 +29,7 @@ Caveats
 Heat Plugins
 ------------
 
-The `F5 OpenStack Heat plugins`_ enable BIG-IP objects for use in OpenStack.
+The :plugins:`F5 Heat Plugins for OpenStack <index.html>` enable BIG-IP objects for use in OpenStack.
 The Heat plugins use the `F5 Python SDK`_ to communicate with BIG-IP via the iControl REST API.
 
 :fonticon:`fa fa-chevron-right` `Install the F5 Heat Plugins </products/openstack/heat-plugins/latest/index.html#installation>`_
@@ -37,18 +37,18 @@ The Heat plugins use the `F5 Python SDK`_ to communicate with BIG-IP via the iCo
 Heat Templates
 --------------
 
-You can use the `F5-Supported Heat Templates`_ to provision resources and BIG-IP services in an OpenStack cloud.
+You can use the :heat:`F5-Supported Heat templates <f5-supported/index.html>` to provision resources and BIG-IP services in an OpenStack cloud.
 F5's Heat templates follow the `OpenStack Heat Orchestration Template`_ (HOT) specification.
 You can use the templates in conjunction with `F5 iApps <https://devcentral.f5.com/wiki/iApp.HomePage.ashx>`_ to deploy BIG-IP VE instances and Local Traffic Manager services.
 
 .. warning::
 
    The F5 Heat template library contains supported and unsupported templates.
-   The unsupported templates provided in the `f5-openstack-heat`_ GitHub repo are 'use-at-your-own-risk'.
+   The unsupported templates provided in the :github:`f5-openstack-heat` GitHub repo are 'use-at-your-own-risk'.
 
    Templates in the unsupported directory are not supported by F5, **regardless of your account's support agreement status**.
 
-:fonticon:`fa fa-chevron-right` Browse the `F5-Supported Heat Templates`_
+:fonticon:`fa fa-chevron-right` Browse the :heat:`F5-Supported Heat templates <f5-supported/index.html>`
 
 .. include:: /_static/reuse/see-also-heat.rst
 

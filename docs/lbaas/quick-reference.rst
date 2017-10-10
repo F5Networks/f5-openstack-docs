@@ -11,7 +11,7 @@ F5 LBaaSv2 Quick Reference
    v10.0+                  Newton
    ====================    ===========================
 
-   To install previous versions, see the `F5 Agent for OpenStack Neutron`_ documentation.
+   To install previous versions, see the :agent:`F5 Agent <index.html>` documentation.
 
 This reference sheet provides the basic information you need to get the |oslbaas| up and running using the latest release: v |version_latest|.
 
@@ -102,9 +102,8 @@ What's Next
 - Discover how the |agent| :ref:`maps Neutron commands to BIG-IP objects <neutron-bigip-command-mapping>`.
 
 .. rubric:: Footnotes
-.. [#licensing] You need a `Better or Best license`_ if you plan to use GRE or VxLAN tunnels in an L2-adjacent under-the-cloud deployment.
+.. [#licensing] You need a `license`_ that includes SDN services if you plan to use VXLAN/GRE tunnels in your deployment.
 
-.. _Better or Best license: https://f5.com/products/how-to-buy/simplified-licensing
+.. _license: https://f5.com/products/how-to-buy/simplified-licensing
 .. _OpenStack Networking Concepts: http://docs.openstack.org/liberty/networking-guide/
-.. _agent configuration file: /products/openstack/agent/latest/index.html#agent-configuration-file
 .. _Set up Neutron to use the F5 service provider driver: /products/openstack/lbaasv2-driver/latest/index.html#neutron-setup
