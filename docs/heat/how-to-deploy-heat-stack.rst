@@ -13,7 +13,7 @@ OpenStack CLI
 .. rubric:: Platform Requirements
 
 - `python-openstackclient`_ configured with the ``python-heatclient`` plugin
-- |heat-p|
+- :plugins:`F5 Heat Plugins for OpenStack <index.html>`
 
 The |heat| documentation extensively covers creation and management of Heat stacks.
 This document describes F5's OpenStack development team's preferred means of stack creation:
@@ -23,9 +23,9 @@ This document describes F5's OpenStack development team's preferred means of sta
 
 .. note::
 
-   This example uses the F5-supported `Deploy basic load balancer`_ template.
+   This example uses the F5-supported :heat:`Deploy basic load balancer <f5_supported/deploy-basic-lb.html>` template.
 
-#. Download the template you want to deploy from the `F5-Supported Heat Templates`_ library.
+#. Download the template you want to deploy from the :heat:`F5-Supported Heat templates <f5-supported/index.html>` library.
 #. Save the definition for each of the template's required configuration parameters in an `environment file`_.
 
    .. literalinclude:: /_static/config_examples/deploy-lb.params.yaml
@@ -76,4 +76,3 @@ Follow the directions below to deploy a Heat stack using the `OpenStack Horizon`
 .. _python-openstackclient: https://docs.openstack.org/python-openstackclient/latest
 .. _environment file: https://docs.openstack.org/heat/latest/template_guide/environment.html
 .. _environment variables: https://docs.openstack.org/user-guide/common/cli-set-environment-variables-using-openstack-rc.html
-.. _Deploy basic load balancer: /products/templates/openstack-heat/latest/f5_supported/deploy-basic-lb.html

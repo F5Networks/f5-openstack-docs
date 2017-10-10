@@ -22,20 +22,20 @@ When using :ref:`differentiated service environments <lbaas-differentiated-servi
 Prerequisites
 -------------
 - Administrator access to both the BIG-IP devices and the OpenStack cloud.
-- `F5 Agent for OpenStack Neutron`_  installed on all hosts.
-- `F5 Driver for OpenStack LBaaSv2`_  installed on the Neutron controller.
-- One F5 OpenStack service provider driver instance installed on the Neutron controller for each :ref:`custom environment <lbaas-differentiated-service-env>` you want to use.
+- :agent:`F5 Agent` installed on all hosts.
+- One (1) F5 OpenStack service provider driver instance installed on the Neutron controller for each of your :ref:`custom service environments <lbaas-differentiated-service-env>`.
 
 Caveats
 -------
 
 - All hosts running the |oslbaas| must use the same Neutron database.
-- You **can not** manage a single BIG-IP device or :term:`cluster` with multiple |agent| instances running in the same service environment on the same host. [#diffenv]_
+- F5 does not support the use of multiple |agent| instances on the same host, in the same service environment, to manage a single BIG-IP device or :term:`cluster`.
+  When using multiple |agent| instances to manage a single BIG-IP device/cluster, each Agent must run in a :ref:`different service environment <lbaas-differentiated-service-env>`.
 
 Configuration
 -------------
 
-Edit the following items in the |agent| `configuration file`_.
+Edit the following items in the |agent| |config-file|.
 
 #. Set the desired :code:`environment_group_number`.
 
@@ -111,7 +111,7 @@ Edit the following items in the |agent| `configuration file`_.
 Learn more
 ----------
 
-The |agent| :code:`environment_group_number` and :code:`environment_capacity_score` `configuration parameters`_ allow the |driver-long| to assign requests to the group that has the lowest capacity score.
+The |agent| :code:`environment_group_number` and :code:`environment_capacity_score` |configs| allow the |driver-long| to assign requests to the group that has the lowest capacity score.
 The :code:`environment_group_number` provides a convenient way for the F5 driver to identify |agent| instances that are available to handle requests for any of the devices in a given group.
 
 You can configure a variety of capacity metrics via the :code:`capacity_policy` configuration parameter.
@@ -148,9 +148,6 @@ The capacity score each |agent| instance reports back to the Neutron database he
 
 .. seealso::
 
-   * |agent| `configuration file`_
+   * |agent| |config-file|
    * :ref:`Differentiated Service Environments <lbaas-differentiated-service-env>`
    * :ref:`Agent Redundancy and Scale Out <lbaas-agent-redundancy>`
-
-.. rubric:: Footnotes
-.. [#diffenv] See :ref:`differentiated service environments <lbaas-differentiated-service-env>` for information about running multiple |agent| instances on the same host.

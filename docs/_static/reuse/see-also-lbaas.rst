@@ -1,7 +1,7 @@
 
 .. seealso::
 
-   * :fonticon:`fa fa-github` `f5-openstack-lbaasv2-driver`_
-   * :fonticon:`fa fa-github` `f5-openstack-agent`_
-   * :fonticon:`fa fa-book` |agent-link|
-   * :fonticon:`fa fa-book` |driver-link|
+   * :fonticon:`fa fa-github` :github:`f5-openstack-lbaasv2-driver`
+   * :fonticon:`fa fa-github` :github:`f5-openstack-agent`
+   * :fonticon:`fa fa-book` :agent:`F5 Agent <index.html>`
+   * :fonticon:`fa fa-book` :driver:`F5 Driver <index.html>`

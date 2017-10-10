@@ -41,6 +41,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'cloud_sptheme.ext.table_styling',
     'sphinxjp.themes.basicstrap',
+    'sphinx.ext.extlinks',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -81,7 +82,7 @@ rst_prolog = '''
     var home = "clouddocs.f5.com";
     var rtd = "f5-openstack-docs.readthedocs.io";
 
-    if (window.location.hostname === rtd) {window.location.assign("http://" + home + "/cloud/openstack/");}
+    if (window.location.hostname === rtd) {window.location.assign("http://" + home + "/cloud/openstack/v1");}
    </script>
 '''
 
@@ -342,30 +343,18 @@ version_latest = '10.0.0'
 
 
 rst_epilog = '''
-.. |agent-link| replace:: `F5 Agent for OpenStack Neutron`_
-.. |driver-link| replace:: `F5 Driver for OpenStack LBaaSv2`_
 .. |agent-versions| replace:: 8.x, 9.x, 10.x
 .. |heat-versions| replace:: 7.x, 8.x, 9.x, 10.x
 .. |plugins-versions| replace:: 7.x, 8.x, 9.x, 10.x
 .. |driver-versions| replace:: 8.x, 9.x, 10.x
-.. |heat-t| replace:: F5 OpenStack Heat templates
-.. |heat-p| replace:: `F5 OpenStack Heat plugins`_
+.. |heat-t| replace:: F5 Heat template library
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
 .. |agent| replace:: F5 agent
 .. |driver| replace:: F5 driver
 .. |driver-long| replace:: F5 Driver for OpenStack LBaaSv2
-.. _F5 Agent for OpenStack Neutron: /products/openstack/agent/latest/index.html
-.. _F5 Driver for OpenStack LBaaSv2: /products/openstack/lbaasv2-driver/latest/
 .. |oslbaas| replace:: F5 Integration for OpenStack Neutron LBaaS
 .. _OpenStack CLI: https://docs.openstack.org/cli-reference/
 .. _OpenStack API: https://developer.openstack.org/api-guide/quick-start/index.html
-.. _F5 OpenStack Heat templates: /products/templates/openstack-heat/latest/index.html
-.. _F5 OpenStack Heat plugins: /products/openstack/heat-plugins/latest/index.html
-.. _f5-openstack-heat: https://github.com/f5networks/f5-openstack-heat
-.. _f5-openstack-heat-plugins: https://github.com/f5networks/f5-openstack-heat-plugins
-.. _f5-openstack-agent: https://github.com/f5networks/f5-openstack-agent
-.. _f5-openstack-agent: https://github.com/f5networks/f5-openstack-agent
-.. _f5-openstack-lbaasv2-driver: https://github.com/f5networks/f5-openstack-lbaasv2-driver
 .. |neutron| replace:: `OpenStack Neutron`_
 .. |heat| replace:: `OpenStack Heat`_
 .. _OpenStack Heat: https://docs.openstack.org/heat/latest
@@ -396,12 +385,14 @@ rst_epilog = '''
 .. |community_tempest_lbaasv2_tests| raw:: html
 
    <a href="https://github.com/openstack/neutron-lbaas/tree/stable/%(openstack_release_l)s">tests</a>
-.. _configuration file: /products/openstack/agent/latest/index.html#agent-configuration-file
-.. _configuration parameters: /products/openstack/agent/latest/index.html#configuration-parameters
-.. _F5 environment generator: /products/openstack/lbaasv2-driver/latest/environment-generator.html
-.. _L2 Segmentation Mode settings: /products/openstack/agent/latest/index.html#l2-segmentation-settings
-.. _L3 Segmentation Mode settings: .. _L2 Segmentation Mode Settings: /products/openstack/agent/latest/index.html#l3-segmentation-settings
-.. _global routed mode: /products/openstack/agent/latest/global-routed-mode.html
+.. |config-file| replace:: :agent:`configuration file <config-file.html>`
+.. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
+.. |env-generator| replace:: :driver:`F5 environment generator <environment-generator.html>`
+.. |l2-seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l2-segmentation-mode-settings>`
+.. |l3-seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l3-segmentation-mode-settings>`
+.. |grm| replace:: :agent:`Global routed mode <global-routed-mode.html>`
+.. |l2mode| replace:: :agent:`L2-adjacent mode <l2-adjacent-mode.html>`
+.. |driver-settings| replace:: :agent:`Device driver\/iControl Driver settings <device-driver-settings.html>`
 .. _Device driver/iControl Driver settings: /products/openstack/agent/latest/device-driver-settings.html
 .. |f5_agent_pip_url_branch| replace:: git+https://github.com/F5Networks/f5-openstack-agent@%(openstack_release_l)s
 .. |f5_agent_deb_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(version_latest)s/python-f5-openstack-agent_%(version_latest)s-1_1404_all.deb
@@ -425,10 +416,12 @@ rst_epilog = '''
 .. |f5_driver_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v%(version_latest)s
 .. |version_latest| replace:: %(version_latest)s
 .. _Configure the F5 Agent for OpenStack Neutron: /products/openstack/agent/latest/index.html#configure-the-f5-openstack-agent
-.. _HPE Helion OpenStack: https://www.hpe.com/us/en/software/openstack-cloud-iaas.html
+.. _HPE Helion OpenStack: https://docs.hpcloud.com/hrc/helionReady.html
 .. _Mirantis OpenStack: https://www.mirantis.com/partners/f5-networks/
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
 .. _OpenStack Nova: https://docs.openstack.org/nova/latest
+.. _Install the F5 LBaaSv2 Driver: /products/openstack/f5-openstack-lbaasv2-driver/latest/index.html#installation
+.. _Install the F5 Agent: /products/openstack/f5-openstack-agent/latest/index.html#installation
 ''' % {
   'openstack_release': openstack_release,
   'openstack_release_l': openstack_release.lower(),
@@ -438,3 +431,19 @@ rst_epilog = '''
   'version_latest': version_latest,
   'version': version
 }
+
+# Markup to shorten links to external sites
+extlinks = {'agent': ('http://clouddocs.f5.com/products/openstack/agent/latest/%s',
+                      ''),
+            'driver': ('http://clouddocs.f5.com/products/openstack/lbaasv2-driver/latest/%s',
+            ''),
+            'heat': ('http://clouddocs.f5.com/products/templates/openstack-heat/latest/%s',
+            ''),
+            'plugins': ('http://clouddocs.f5.com/products/openstack/heat-plugins/latest/%s',
+            ''),
+            'github': ('https://github.com/f5networks/%s',
+            '')
+}
+
+# Ignore anchors when running linkcheck
+linkcheck_anchors = False

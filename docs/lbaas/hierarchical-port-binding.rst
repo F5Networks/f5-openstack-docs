@@ -1,6 +1,9 @@
+
 .. index::
-   :single: concept, lbaas
-   :pair: hierarchical port binding, F5 agent
+   single: concept; lbaas
+   pair: hierarchical port binding; F5 agent
+
+.. _lbaas-port-binding:
 
 .. sidebar:: :fonticon:`fa fa-info-circle` Introduced in:
 
@@ -12,7 +15,7 @@
    v10.0.x                 Newton
    ====================    ===========================
 
-.. _lbaas-port-binding:
+
 .. _hpb:
 
 Hierarchical Port Binding
@@ -45,6 +48,8 @@ As noted in the OpenStack documentation, this can be useful if you need your Neu
    :scale: 60%
 
    F5 LBaaSv2 Hierarchical Port Binding
+
+\
 
 .. seealso::
 
