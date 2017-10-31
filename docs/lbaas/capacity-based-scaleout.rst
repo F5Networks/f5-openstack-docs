@@ -22,7 +22,7 @@ When using :ref:`differentiated service environments <lbaas-differentiated-servi
 Prerequisites
 -------------
 - Administrator access to both the BIG-IP devices and the OpenStack cloud.
-- :agent:`F5 Agent` installed on all hosts.
+- :agent:`F5 Agent <#f5-agent-for-openstack-neutron>` installed on all hosts.
 - One (1) F5 OpenStack service provider driver instance installed on the Neutron controller for each of your :ref:`custom service environments <lbaas-differentiated-service-env>`.
 
 Caveats

@@ -21,12 +21,13 @@
    lbaas/basic-environment-reqs
    lbaas/bigip-command-mapping
    lbaas/f5-agent-modes
-   lbaas/l7-content-switching
    lbaas/redundancy-and-scaleout
    lbaas/capacity-based-scaleout
    lbaas/hierarchical-port-binding
    lbaas/set-up-agent-hpb
    lbaas/differentiated-service-environments
+   lbaas/enhanced-service-definitions
+   lbaas/l7-content-switching
    lbaas/agent-cert-manager-config
    lbaas/manage-common-net-objects
    lbaas/deploy-basic-load-balancer
