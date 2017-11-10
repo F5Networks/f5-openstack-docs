@@ -73,7 +73,7 @@ Tasks
 
    Sample configuration files:
 
-   * `Global Routed Mode example <products/openstack/agent/_static/config_examples/f5-openstack-agent.grm.ini>`_
+   * `Global Routed Mode example </products/openstack/agent/_static/config_examples/f5-openstack-agent.grm.ini>`_
    * `GRE example </products/openstack/agent/_static/config_examples/f5-openstack-agent.gre.ini>`_ [#licensing]_
    * `VLAN example </products/openstack/agent/_static/config_examples/f5-openstack-agent.vlan.ini>`_
    * `VXLAN example </products/openstack/agent/_static/config_examples/f5-openstack-agent.vxlan.ini>`_ [#licensing]_

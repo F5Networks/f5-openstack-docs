@@ -84,9 +84,9 @@ Use the tags in the table below to define the policies you want the |agent| to a
    | lbaas\_stcp                | Specify a named TCP profile for servers. This tag has a single value.                                         | tcp-lan-optimized         |
    +----------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
    | lbaas\_cssl\_profile       | Specify a named client SSL profile to implement SSL/TLS offload. This can replace the use of, or override the | clientssl                 |
-   |                            | life-cycle management of certificates and keys in LBaaSv2 SSL termination support.
-   |                            |
-   |                            | This tag has a single value.
+   |                            | life-cycle management of certificates and keys in LBaaSv2 SSL termination support.                            |                           |
+   |                            |                                                                                                               |                           |
+   |                            | This tag has a single value.                                                                                  |                           |
    +----------------------------+---------------------------------------------------------------------------------------------------------------+---------------------------+
    | lbaas\_sssl\_profile       | Specify a named server side SSL profile for re-encryption of traffic towards the pool member servers.         | serverssl                 |
    |                            |                                                                                                               |                           |
