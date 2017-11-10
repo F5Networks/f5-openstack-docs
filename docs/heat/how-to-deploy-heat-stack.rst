@@ -25,7 +25,7 @@ This document describes F5's OpenStack development team's preferred means of sta
 
    This example uses the F5-supported :heat:`Deploy basic load balancer <f5_supported/deploy-basic-lb.html>` template.
 
-#. Download the template you want to deploy from the :heat:`F5-Supported Heat templates <f5-supported/index.html>` library.
+#. Download the template you want to deploy from the :heat:`F5-Supported Heat templates <#f5-supported>` library.
 #. Save the definition for each of the template's required configuration parameters in an `environment file`_.
 
    .. literalinclude:: /_static/config_examples/deploy-lb.params.yaml
