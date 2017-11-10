@@ -125,7 +125,7 @@ Set up HPB with Cisco APIC/ACI & OpFlex on RedHat OSP
    The information provided here supplements the `Cisco ACI with OpenStack OpFlex Deployment Guide for Red Hat`_.
    It assumes you have already completed the deployment and network configuration steps in the Cisco Deployment Guide.
 
-   See the `Cisco APIC/ACI with OpFlex Use Case <understanding cisco aci opflex>`_ for more information about this deployment.
+   See the :ref:`Cisco APIC/ACI with OpFlex Use Case <understanding cisco aci opflex>` for more information about this deployment.
 
 #. `Configure the OpFlex ML2 Plugin to use Hierarchical Port Binding`_ :fonticon:`fa fa-external`
 
