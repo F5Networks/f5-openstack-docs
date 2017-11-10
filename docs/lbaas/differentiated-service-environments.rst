@@ -34,6 +34,8 @@ In a multiple-agent setup, each |agent| manages a distinct environment that corr
    - Differentiated service environments are not compatible with `Virtual Clustered Multiprocessing`_ (vCMP) systems.
      BIG-IP devices cannot share data or resources across differentiated service environments; this precludes the use of vCMP because vCMP guests share global VLAN IDs
 
+:fonticon:`fa fa-chevron-right` :ref:`Learn more <learn-diff-svcs>`
+
 Set up a new service environment
 --------------------------------
 
@@ -157,6 +159,8 @@ Create a load balancer in the new service environment
    .. note::
 
       Specifying the service provider driver determines which LBaaS driver messaging queue receives the task and, ultimately, which BIG-IP device/cluster gets the requested load balancer.
+
+.. _learn-diff-svcs:
 
 Learn more
 ----------

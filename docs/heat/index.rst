@@ -37,7 +37,7 @@ The Heat plugins use the `F5 Python SDK`_ to communicate with BIG-IP via the iCo
 Heat Templates
 --------------
 
-You can use the :heat:`F5-Supported Heat templates <f5-supported/index.html>` to provision resources and BIG-IP services in an OpenStack cloud.
+You can use the :heat:`F5-Supported Heat templates <#f5-supported>` to provision resources and BIG-IP services in an OpenStack cloud.
 F5's Heat templates follow the `OpenStack Heat Orchestration Template`_ (HOT) specification.
 You can use the templates in conjunction with `F5 iApps <https://devcentral.f5.com/wiki/iApp.HomePage.ashx>`_ to deploy BIG-IP VE instances and Local Traffic Manager services.
 
@@ -48,7 +48,7 @@ You can use the templates in conjunction with `F5 iApps <https://devcentral.f5.c
 
    Templates in the unsupported directory are not supported by F5, **regardless of your account's support agreement status**.
 
-:fonticon:`fa fa-chevron-right` Browse the :heat:`F5-Supported Heat templates <f5-supported/index.html>`
+:fonticon:`fa fa-chevron-right` Browse the :heat:`F5-Supported Heat templates <#f5-supported>`
 
 .. include:: /_static/reuse/see-also-heat.rst
 
