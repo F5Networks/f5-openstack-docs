@@ -5,7 +5,7 @@ How to Deploy OpenStack Heat Templates
 
 .. include:: /_static/reuse/applies-to-ALL.rst
 
-Use the instructions provided here to deploy any of the templates in F5's `heat orchestration template library <products/templates/openstach-heat/latest/index.html#heat-orchestration-template-index>`_.
+Use the instructions provided here to deploy any of the templates in F5's `heat orchestration template library </products/templates/openstack-heat/latest/index.html#heat-orchestration-template-index>`_.
 
 OpenStack CLI
 -------------

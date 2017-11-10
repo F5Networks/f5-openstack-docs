@@ -416,7 +416,7 @@ rst_epilog = '''
 .. |f5_driver_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v%(version_latest)s
 .. |version_latest| replace:: %(version_latest)s
 .. _Configure the F5 Agent for OpenStack Neutron: /products/openstack/agent/latest/index.html#configure-the-f5-openstack-agent
-.. _HPE Helion OpenStack: https://docs.hpcloud.com/hrc/helionReady.html
+.. _HPE Helion OpenStack: https://www.hpe.com/us/en/software/openstack-cloud-iaas.html
 .. _Mirantis OpenStack: https://www.mirantis.com/partners/f5-networks/
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
 .. _OpenStack Nova: https://docs.openstack.org/nova/latest
