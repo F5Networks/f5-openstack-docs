@@ -28,7 +28,7 @@ The |agent| applies ESDs to BIG-IP virtual servers using LBaaSv2 `L7 policy`_ op
 You can define multiple ESDs - each containing a set of predefined tags and values - in a single JSON file. The Agent validates each tag and discards any that are invalid. ESDs remain fixed in the Agent's memory until you restart the Agent service.
 When you apply multiple L7 policies, each subsequent ESD overwrites the virtual server settings defined by previous ESDs. For this reason, **F5 recommends defining all of the settings you want to apply for a specific application in a single ESD**. If you define multiple ESDs, each should apply to one (1) specific application.
 
-:ref:`Deleting an L7 policy that matches an ESD <esd-delete>` removes all ESD settings from the virtual server, returning the virtual server to its original state.
+:ref:`Deleting an L7 policy that matches an ESD <esd-delete>` removes all the settings defined by that ESD from the virtual server.  If a user applies multiple ESD policies to the virtual server, removing one ESD L7 policy will not affect the settings defined by the remaining ESD policies.
 
 .. caution::
 
