@@ -1,124 +1,140 @@
-Applying multiple ESDs
-======================
+.. index::
+   single: LBaaSv2, L7 Policy, F5 Agent, OpenStack
+
+.. _apply-multiple-esd:
+
+How to define L7 policies for Virtual Servers using Multiple ESDs
+=================================================================
+
+The |agent-long| can implement L7 policy on your BIG-IP device(s) using :ref:`Enhanced Service Definitions <esd>`, or ESDs. F5 recommends that you define all desired :ref:`ESD tags <esd-supported-tags>` in a single file to avoid configuration conflicts.
+
+When you deploy multiple ESDs in separate files, the |agent| essentially overlaps them into a single JSON request.
+
+**For example:**
+
+What you define:
+
+.. code-block:: JSON
+   :caption: ESD_DEMO_1
+
+   {
+      "lbaas_ctcp": "tcp-mobile-optimized",
+      "lbaas_stcp": "tcp-lan-optimized",
+   }
+
+.. code-block:: JSON
+   :caption: ESD_DEMO_2
+
+   {
+      "lbaas_persist": "sourceip"
+   }
+
+What the |agent| applies to the BIG-IP virtual server:
+
+.. code-block:: JSON
+   :caption: Combined ESD
+
+   {
+     "lbaas_ctcp": "tcp-mobile-optimized",
+     "lbaas_stcp": "tcp-lan-optimized",
+     "lbaas_persist": "sourceip"
+   }
 
 
-| 
+How the F5 Agent uses position to determine priority
+----------------------------------------------------
 
-While it is possible to apply multiple Enhanced Service Definition(ESD) configurations
-to a virtual server, the recommendation is that the user define all ESD configuration
-tags in one named ESD.  When the user applies multiple Enhanced Service Definitions
-to the same LBaaS Listener, and those ESDs contain
-the same tag with different values, the tenant will have to be aware of
-the precedence of tag application to avoid unexpected behaviors.
+When you create a new l7-policy, you can use the ``position`` argument to assign it a priority. The lower the position, the higher the priority.
 
-| 
+.. code-block:: console
+   :caption: Example: Use ``l7-policy-create`` to create two ESDs
 
-Since the user applies ESDs by attaching LBaaS L7 Policy to LBaaS Listeners,
-ESDs follow the same ‘first match’ behavior detailed for community LBaaS
-L7 Policies. Each LBaaS L7 Policy has a position attribute, either
-defined explicitly by the tenant or else populated automatically by the
-Neutron LBaaS community plugin. When multiple ESDs containing the same
-tag have conflicting values, the ESD matching the LBaaS L7 Policy with
-the lowest position attribute is the one applied to the
-tenant’s BIG-IP virtual service.
+   $ lbaas-l7-policy-create –name “esd_demo_1” –action REJECT –listener vs1 –position 1
+   $ lbaas-l7-policy-create –name “esd_demo_2” –action REJECT –listener vs1 –position 2
 
-|
+If the |agent| encounters conflicting settings, it will select the settings from the ESD with the lower position number.
 
-In example, given the following two ESDs:
+What you define:
 
+.. code-block:: JSON
+   :caption: ESD_DEMO_1 -- position 1
 
-    .. code-block:: JSON
+   {
+     "lbaas_ctcp": "tcp-mobile-optimized",
+     "lbaas_stcp": "tcp-lan-optimized",
+   }
 
-        "esd\_demo\_1": {
-            "lbaas\_ctcp": "tcp-mobile-optimized",
+.. code-block:: JSON
+   :caption: ESD_DEMO_2 -- position 2
 
-            "lbaas\_stcp": "tcp-lan-optimized",
-        }
+   {
+     "lbaas_ctcp": "tcp-mobile-optimized",
+     "lbaas_stcp": "tcp-lan-optimized",
+     "lbaas_persist": "sourceip"
+   }
 
-    .. code-block:: JSON
+What the |agent| sees:
 
+.. code-block:: JSON
+   :emphasize-lines: 2,3
 
-        "esd\_demo\_2": {
-            "lbaas\_ctcp": "tcp-lan-optimized",
+   {
+     "lbaas_ctcp": "tcp-mobile-optimized",   \\ CONFLICT
+     "lbaas_ctcp": "tcp-lan-optimized",      \\ CONFLICT
+     "lbaas_stcp": "tcp-lan-optimized",
+     "lbaas_stcp": "tcp-lan-optimized",
+     "lbaas_persist": "sourceip"
+   }
 
-            "lbaas\_stcp": "tcp-lan-optimized",
-        }
+What the |agent| applies to the BIG-IP virtual server:
 
-| which get applied by the tenant to the same LBaaS Listener
+.. code-block:: JSON
 
-    .. code-block:: console
+   {
+     "lbaas_ctcp": "tcp-mobile-optimized",   \\ Taken from ESD_DEMO_1 (priority 1)
+     "lbaas_stcp": "tcp-lan-optimized",      \\ Same in both ESDs
+     "lbaas_persist": "sourceip"             \\ Taken from ESD_DEMO_2
+   }
 
-	    $> lbaas-l7-policy-create –name “esd_demo_1” –action REJECT
-					–listener vs1 –position 1
-	    $> lbaas-l7-policy-create –name “esd_demo_2” –action REJECT
-					–listener vs1 –position 2
+As noted in the example, the |agent| encountered conflicting settings for the ``lbaas_ctcp`` field. Because ESD\_DEMO\_1 has a lower position number, the |agent| will select its ``lbaas_ctcp`` setting and discard the setting from ESD\_DEMO\_2. It is possible to assign the same position to multiple ``l7-policies``. If, for example, the |agent| finds multiple ``l7-policies`` with "position 1" assigned, it treats the most recent policy as the highest priority.
 
+What happens if I don't assign a position?
+------------------------------------------
 
-the BIG-IP virtual server would have the
-**/Common/tcp-mobile-optimized** profile applied for client TCP
-connections. The ESD “esd\_demo\_1” has a lower position number than the
-ESD “esd\_demo\_2”, hence its “lbaas\_ctcp” tag value takes precedence.
-The OpenStack agent applies its tag to the BIG-IP virtual service.
+If you don't assign a position argument, the |agent| follows the protocols defined by the LBaaS community:
 
-| 
+"If [you create] a new policy ... without specifying a position, or specifying a position that is greater than the number of policies already in the list, the new policy will just [get] appended to the list." [#source]_
 
-If no position argument is explicitly defined when the tenant creates L7
-Policies, the community LBaaS plugin follow a strict ordered process to
-populate each L7 Policy’s position attribute value.
+To expand on the previous example:
 
-| 
+You define two ESDs in separate JSON files, then create an ``l7-policy`` for each in the order shown below.
 
-The LBaaS community defines the evaluation order and assignment of policy
-position using the following rules:
+.. code-block:: console
+   :caption: Create L7 policies without assigning positions
 
--  Policy position numbering starts with 1.
--  If a user creates a new policy with a position that matches that of another
-   policy, then the Neutron LBaaS plugin inserts it at the given position.
--  If a user creates a new policy without specifying a position, or specifies
-   a position number that is greater than the number of policies already in the
-   list, the Neutron LBaaS plugin appends the policy to the end of the list.
--  When a user inserts, deletes, or appends a policy, the Neutron LBaaS plugin reorders the
-   position values without skipping numbers.  For example, if policy A, B, and C
-   have position values of 1, 2, and 3, respectively, if you delete policy B from
-   the list, policy A will have position 1 and policy C will have position 2.
+   $ lbaas-l7-policy-create –name “esd_demo_1” –action REJECT –listener vs1
+   $ lbaas-l7-policy-create –name “esd_demo_2” –action REJECT –listener vs1
 
-A user can check the value of an L7 Policy’s position attribute by showing
-the policy via the Neutron API or CLI client.
+Because you created the policy for ESD\_DEMO\_1 first, it receives "position 1". If you define ESD\_DEMO\_2 first, it would receive "position 1" and the Agent would prioritize its settings over ESD\_DEMO\_1. In that case, the |agent| would apply the ``lbaas_ctcp`` setting from ESD\_DEMO\_2 to the virtual server.
 
-| 
+.. [#source] `Neutron/LBaaS/l7 Wiki`_
 
-If the user repeats the above example, but this time without the tenant
-explicitly defining each L7 policy’s position attribute,
+How do I check what ESDs are active on my virtual server?
+---------------------------------------------------------
 
-    .. code-block:: console
+Because ESDs, by definition, provide L4-7 policies beyond those available in OpenStack, you won't be able to check them using any OpenStack interface. Instead, you can use either the BIG-IP configuration utility or TMSH to view the virtual server settings.
 
-        $> lbaas-l7-policy-create –name “esd_demo_1” –action REJECT –listener vs1
-        $> lbaas-l7-policy-create –name “esd_demo_2” –action REJECT –listener vs1
+You can, however, use the Neutron API or CLI client to check an L7 Policy's position. The example command shown below uses the ``-D`` flag to return detailed information.
 
+.. code-block:: console
 
-the result would be the same as before because the L7 Policy
-“esd\_demo\_1” gets assigned position value 1 at creation. Since
-the user created L7 Policy “esd\_demo\_2” after “esd\_demo\_1” and is
-also lacking an explicitly defined position value, it was assign
-position value 2 according to LBaaS community rules.
+   $ neutron lbaas-l7policy-show -D esd_demo_1
 
-| 
+What's next
+-----------
 
-There is no visibility into which composition of ESD tags get applied
-using the Neutron API, CLI clients, or via the Horizon dashboard. To
-check the applied ESD tags on a virtual service, the user must consult
-the BIG-IP virtual service configuration. This is intentional in order to
-maintain the separation of concerns between the tenant and provider.
-The provider knows the composition of tested ESD configurations and the
-tenant is only aware that the must apply a named L7 Policy to get
-the desired ADC behavior.
+- Check out the `Neutron/LBaaS/l7 Wiki`_ for more information about L7 switching in OpenStack.
+- View the `Neutron client lbaas-l7policy commands`_.
 
-| 
-
-Again, we recommend that the provider define unique sets of ESDs for
-each combination of BIG-IP desired configurations for tenant virtual
-services. When the user applies a single L7 Policy, referencing the
-single named ESD, there is no question as to what BIG-IP configuration
-apply to the tenant’s virtual service. In addition, unique ESD
-application will reduce the combinations of BIG-IP configurations a
-provider should test and will simplify the tenant’s role even further.
+.. _Neutron/LBaaS/l7 Wiki: https://wiki.openstack.org/wiki/Neutron/LBaaS/l7#Policy_Position
+.. _Neutron client lbaas-l7policy commands: https://docs.openstack.org/python-neutronclient/latest/cli/neutron-reference.html#lbaas-l7policy-create
