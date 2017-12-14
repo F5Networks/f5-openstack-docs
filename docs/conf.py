@@ -333,7 +333,7 @@ texinfo_documents = [
 #    'http://f5-sdk.readthedocs.io/en/latest/', None),
 #    }
 
-f5_lbaasv2_driver_shim_version = '10.1.0'
+f5_lbaasv2_driver_shim_version = '10.0.0'
 f5_lbaasv2_driver_shim_url = '\https://github.com/F5Networks/neutron-lbaas/releases/download/v%s/f5.tgz' % f5_lbaasv2_driver_shim_version
 # F5 SDK release version should be set here
 f5_sdk_version = '2.3.3'
