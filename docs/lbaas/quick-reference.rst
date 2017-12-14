@@ -71,13 +71,16 @@ Tasks
 
 #. Set up the |agent|.
 
-   Sample configuration files:
+   Sample configuration files for download:
 
-   * `Global Routed Mode example </products/openstack/agent/_static/config_examples/f5-openstack-agent.grm.ini>`_
-   * `GRE example </products/openstack/agent/_static/config_examples/f5-openstack-agent.gre.ini>`_ [#licensing]_
-   * `VLAN example </products/openstack/agent/_static/config_examples/f5-openstack-agent.vlan.ini>`_
-   * `VXLAN example </products/openstack/agent/_static/config_examples/f5-openstack-agent.vxlan.ini>`_ [#licensing]_
+   * :agent:`Global Routed Mode example <_static/config_examples/f5-openstack-agent.grm.ini>`
+   * :agent:`GRE example <_static/config_examples/f5-openstack-agent.gre.ini>` [#licensing]_
+   * :agent:`VLAN example <_static/config_examples/f5-openstack-agent.vlan.ini>`
+   * :agent:`VXLAN example <_static/config_examples/f5-openstack-agent.vxlan.ini>` [#licensing]_
 
+   .. seealso::
+
+      `View the examples in the f5-openstack-agent repo on GitHub <https://github.com/F5Networks/f5-openstack-agent/tree/master/docs/_static/config_examples>`_.
 
 #. Start the |agent|.
 
