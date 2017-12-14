@@ -1,7 +1,7 @@
 .. _esd:
 
-Enhance L7 Policy Capabilites with Enhanced Service Definitions
-===============================================================
+Enhance L7 Policy Capabilities with Enhanced Service Definitions
+================================================================
 
 .. sidebar:: Applies to:
 
@@ -26,14 +26,22 @@ An ESD is a set of tags and values that define custom settings for BIG-IP object
 The |agent| applies ESDs to BIG-IP virtual servers using LBaaSv2 `L7 policy`_ operations. When you create an LBaaSv2 L7 policy object (``neutron lbaas-l7policy-create``), the Agent checks the policy name against the names of all available ESDs. If it finds a match, the Agent  applies the ESD to the BIG-IP virtual server associated with the policy. If the Agent doesn't find a matching ESD, it creates a standard L7 policy. Essentially, the |agent| supersedes the standard LBaaSv2 behavior, translating ``neutron lbaas-l7policy-create mypolicy`` into “apply the ESD named mypolicy to the BIG-IP system”.
 
 You can define multiple ESDs - each containing a set of predefined tags and values - in a single JSON file. The Agent validates each tag and discards any that are invalid. ESDs remain fixed in the Agent's memory until you restart the Agent service.
+
+.. sidebar:: :fonticon:`fa fa-info-circle` Note
+
+   While F5 recommends that you define all desired ESDs in a single JSON file, the |agent| does support deploying multiple ESDs in separate files. See :ref:`apply-multiple-esd` for more information.
+
 When you apply multiple L7 policies, each subsequent ESD overwrites the virtual server settings defined by previous ESDs. For this reason, **F5 recommends defining all of the settings you want to apply for a specific application in a single ESD**. If you define multiple ESDs, each should apply to one (1) specific application.
 
-:ref:`Deleting an L7 policy that matches an ESD <esd-delete>` removes all ESD settings from the virtual server, returning the virtual server to its original state.
+:ref:`Deleting an L7 policy that matches an ESD <esd-delete>` removes all the settings defined by that ESD from the virtual server. If you apply multiple ESD policies to the virtual server, removing one ESD L7 policy will not affect the settings defined by the remaining ESD policies.
 
 .. caution::
 
-   The |agent| ignores all ESD files that aren't valid JSON. If your ESD policy wasn't applied, check your JSON.
+   The |agent| ignores all ESD files that aren't valid JSON. It's a good idea to run your JSON through a linter *before* deploying ESDs in your production environment.
 
+.. note::
+
+   When you add an ESD to a TCP listener, the |agent| adds the ``http`` `profile`_ to the BIG-IP virtual server.
 
 Agent Process
 `````````````
@@ -48,7 +56,7 @@ During startup, the |agent| reads all JSON files in :file:`/etc/neutron/services
 
 .. important::
 
-   **The agent ignores all incorrectly-formatted tags**, including those referencing non-existent BIG-IP objects.
+   **The agent ignores all incorrectly-formatted tags**, including references to non-existent BIG-IP objects.
    If an ESD contains a mix of valid and invalid tags, the Agent applies the valid tags and ignores the invalid ones.
 
 .. [#jsonlist] The ``lbaas_irule`` and ``lbaas_policy`` tags accept a comma-delimited list; all others accept only a single string.
@@ -63,9 +71,8 @@ Enhanced Service Definitions (ESDs) must be valid JSON. To apply multiple ESDs t
 
 .. tip::
 
-   You need to restart the Agent service whenever you add or modify ESD files.
+   You need to restart the Agent service whenever you add or modify ESD files. See the :ref:`esd-usage` section for more information.
 
-   .. include:: /_static/reuse/restart-f5-agent.rst
 
 .. _esd-supported-tags:
 
@@ -130,7 +137,7 @@ Create an Enhanced Service Definition
 
    .. tip::
 
-    The agent package includes an example ESD file, demo.json. You can amend this example file -- and save it with a unique name -- to create ESDs specific to your applications.
+      The agent package includes an example ESD file, :file:`demo.json`. You can amend this example file -- and save it with a unique name -- to create ESDs for your applications.
 
 
    .. code-block:: JSON
@@ -180,9 +187,7 @@ Use Neutron's `L7 policy delete`_ operation to remove its associated ESD.
 Usage
 -----
 
-.. hint::
-
-   Helpful hints:
+.. sidebar:: :fonticon:`fa fa-info-circle` Helpful hints
 
    #. Use a JSON lint application to validate your ESD files **before** you deploy them.
    #. Restart the |agent| every time you add or modify ESD files.

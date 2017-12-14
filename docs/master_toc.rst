@@ -28,6 +28,7 @@
    lbaas/differentiated-service-environments
    lbaas/enhanced-service-definitions
    lbaas/l7-content-switching
+   lbaas/applying-multiple-esds
    lbaas/agent-cert-manager-config
    lbaas/manage-common-net-objects
    lbaas/deploy-basic-load-balancer
