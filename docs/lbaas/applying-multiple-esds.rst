@@ -6,9 +6,13 @@
 How to define L7 policies for Virtual Servers using Multiple ESDs
 =================================================================
 
-The |agent-long| can implement L7 policy on your BIG-IP device(s) using :ref:`Enhanced Service Definitions <esd>`, or ESDs. F5 recommends that you define all desired :ref:`ESD tags <esd-supported-tags>` in a single file to avoid configuration conflicts.
+The |agent-long| can implement L7 policy on your BIG-IP device(s) using :ref:`Enhanced Service Definitions <esd>`, or ESDs.
 
-When you deploy multiple ESDs in separate files, the |agent| essentially overlaps them into a single JSON request.
+.. important::
+
+   While you can apply multiple ESDs to an LBaaS Listener, you should only apply one ESD to a Listener at a time. If you apply multiple ESDs with conflicting settings to the same Listener at the same time, you may experience unexpected behaviors.
+
+When you deploy multiple ESDs to a single Listener, the |agent| essentially overlaps the settings from each ESD into a single JSON request
 
 **For example:**
 
@@ -40,6 +44,7 @@ What the |agent| applies to the BIG-IP virtual server:
      "lbaas_persist": "sourceip"
    }
 
+When you apply multiple ESDs containing the same tag with different settings to a single LBaaS Listener, L7-policy's "position" setting determines which setting receives priority.
 
 How the F5 Agent uses position to determine priority
 ----------------------------------------------------
