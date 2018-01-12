@@ -28,7 +28,7 @@ You can use the OpenStack API to define the content conditions and the actions t
 Neutron LBaaSv2 API L7 Policies and Rules
 `````````````````````````````````````````
 
-In Neutron, an L7 Policy is a collection of L7 rules associated with a Listener; it may also have an association to a back-end pool.
+In Neutron, an L7 Policy is a collection of L7 rules associated with a Listener; it may also have an association to a back-end pool.
 Policies describe actions that the load balancing software should take if all of the rules in the policy return "true" (or, in other words, they match).
 
 OpenStack Policy/Rules versus BIG-IP Local Traffic Manager Policy/Rules
