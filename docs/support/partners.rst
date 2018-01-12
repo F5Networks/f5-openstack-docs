@@ -27,7 +27,9 @@ Each of F5's OpenStack distribution partners provides comprehensive documentatio
 
                                     v7.0                v7.x                    Kilo
    -------------------------------- ------------------- ----------------------- -------------------
-   `RedHat OpenStack Platform`_     v9                  v9.x                    Mitaka
+   `RedHat OpenStack Platform`_     v10                 v10.x                   Newton 
+   
+                                    v9                  v9.x                    Mitaka
 
                                     v8                  v8.x                    Liberty
 
