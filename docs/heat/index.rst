@@ -32,14 +32,14 @@ Heat Plugins
 The :plugins:`F5 Heat Plugins for OpenStack <index.html>` enable BIG-IP objects for use in OpenStack.
 The Heat plugins use the `F5 Python SDK`_ to communicate with BIG-IP via the iControl REST API.
 
-:fonticon:`fa fa-chevron-right` `Install the F5 Heat Plugins </products/openstack/heat-plugins/latest/index.html#installation>`_
+:fonticon:`fa fa-chevron-right` `Install the F5 Plugins for Heat`_
 
 Heat Templates
 --------------
 
 You can use the :heat:`F5-Supported Heat templates <#f5-supported>` to provision resources and BIG-IP services in an OpenStack cloud.
 F5's Heat templates follow the `OpenStack Heat Orchestration Template`_ (HOT) specification.
-You can use the templates in conjunction with `F5 iApps <https://devcentral.f5.com/wiki/iApp.HomePage.ashx>`_ to deploy BIG-IP VE instances and Local Traffic Manager services.
+You can use the templates in conjunction with `F5 iApps`_ to deploy BIG-IP VE instances and Local Traffic Manager services.
 
 .. warning::
 
@@ -57,7 +57,4 @@ You can use the templates in conjunction with `F5 iApps <https://devcentral.f5.c
 .. [#buybigip] `How to Buy <https://f5.com/products/how-to-buy>`_
 
 
-.. _Local Traffic Manager: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-basics-13-0-0.html
-.. _Virtual Edition: https://f5.com/products/deployment-methods/virtual-editions
-.. _different sizes: https://support.f5.com/csp/article/K14946
-.. _OpenStack Heat Orchestration Template: https://docs.openstack.org/heat/latest/template_guide/hot_spec.html
+

@@ -20,7 +20,7 @@ Prerequisites
 Configure SSL offloading using OpenStack Barbican Secrets
 ---------------------------------------------------------
 
-Edit the `Certificate Manager Settings </products/openstack/agent/latest/index.html#cert-manager-settings>`_ section of the |agent| configuration file.
+Edit the `Certificate Manager Settings`_ section of the |agent| configuration file.
 
 #. Enable the F5 Barbican certificate manager.
 
@@ -120,7 +120,3 @@ You can use `Client SSL`_ (the most common use case) to decrypt client requests 
    - :ref:`Create a secure BIG-IP virtual server <create-secure-vs>`
 
 
-.. _secrets: http://developer.openstack.org/api-guide/key-manager/secrets.html
-.. _Client SSL: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-ssl-administration-13-0-0/5.html
-.. _Server SSL: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-ssl-administration-13-0-0/5.html
-.. _BIG-IP SSL profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-1-0/6.html

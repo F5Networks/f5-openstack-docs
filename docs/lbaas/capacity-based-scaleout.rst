@@ -118,7 +118,7 @@ You can configure a variety of capacity metrics via the :code:`capacity_policy` 
 These metrics contribute to the overall :code:`environment_capacity_score` for the environment group.
 Each |agent| instance calculates the capacity score for its group and reports the score back to the Neutron database.
 
-To find the capacity score, the |agent| divides the collected metric by the max specified for that metric in the :code:`capacity_policy` `configuration parameter </products/openstack/agent/latest/index.html#configuration-parameters>`_.
+To find the capacity score, the |agent| divides the collected metric by the max specified for that metric in the :code:`capacity_policy` `Agent configuration parameter`_.
 An acceptable reported :code:`environment_capacity_score` is between zero (0) and one (1).
 **If an |agent| instance in the group reports an :code:`environment_capacity_score` of one (1) or greater, the device is at capacity.**
 

@@ -3,12 +3,12 @@
 
 .. _common networks:
 
+Manage shared network resources from any tenant
+===============================================
+
 .. sidebar:: :fonticon:`fa fa-exclamation-triangle` Compatibility notice:
 
    **Common networks** is not available in OpenStack Liberty deployments.
-
-Manage shared network resources from any tenant
-===============================================
 
 You can use the |agent| to manage shared, or "common", network objects across Neutron tenants.
 When using common networks, all network objects live in the :code:`/Common` partition on the BIG-IP system.
@@ -24,7 +24,7 @@ When using common networks, no isolation exists between the tenants themselves.
 - orchestrate a set of shared network objects from any Neutron tenant, and/or
 - share network resources across multiple Neutron tenants.
 
-You can use common networks in :ref:`L2-adjacent mode` or :ref:`global routed mode`.
+You can use common networks in :ref:`l2-adjacent mode` or :ref:`global routed mode`.
 
 As demonstrated in the diagram below, each Neutron tenant normally has a separate network, route domain, and partition on the BIG-IP system.
 In this type of setup, no tenant can control network or LTM objects in any other tenant's partition.

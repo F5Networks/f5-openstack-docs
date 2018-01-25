@@ -30,7 +30,7 @@ Prerequisites
 
   .. tip::
 
-     If you do not already have a BIG-IP cluster deployed in your network, you can use the `F5 BIG-IP: Active-Standby Pair </products/templates/openstack-heat/f5_supported/f5-bigip-ve_active-standby-pair.html>`_ Heat template to create an :term:`overcloud` `sync-failover device group <https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html>`_.
+     If you do not already have a BIG-IP cluster deployed in your network, you can use the `F5 BIG-IP Active-Standby Pair`_ Heat template to create an :term:`overcloud` `sync-failover device group`_.
 
 Caveats
 -------
@@ -76,7 +76,7 @@ Edit the :agent:`device settings <ha-mode.html>` and |driver-settings| sections 
 Learn more
 ----------
 
-The |oslbaas| can manage BIG-IP `Sync-Failover device groups`_ when you set `High Availability mode </products/openstack/agent/latest/ha-mode.html>`_ to :term:`pair` or :term:`scalen` .
+The |oslbaas| can manage a BIG-IP `Sync-Failover device group`_ when you set `High Availability mode`_ to :term:`pair` or :term:`scalen` .
 
 .. figure:: /_static/media/f5-lbaas-scalen-cluster.png
    :alt: BIG-IP scalen cluster diagram
@@ -84,7 +84,7 @@ The |oslbaas| can manage BIG-IP `Sync-Failover device groups`_ when you set `Hig
 
    BIG-IP scalen cluster
 
-The |agent| expects to find a specific number of iControl endpoints (the ``icontrol_hostname`` `configuration parameter </products/openstack/agent/latest/index.html#configuration-parameters>`_) based on the ``f5_ha_type``, as noted below.
+The |agent| expects to find a specific number of iControl endpoints (the ``icontrol_hostname`` `Agent configuration parameter`_) based on the ``f5_ha_type``, as noted below.
 
 .. table:: |oslbaas| high availability (HA) options
 
@@ -126,6 +126,4 @@ If you need to sync a BIG-IP device group, do so manually **after** making chang
    * :ref:`Manage BIG-IP vCMP clusters <lbaas-manage-vcmp-clusters>`
 
 
-.. _BIG-IP device service clustering: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-device-service-clustering-administration-12-1-1.html
-.. _Sync-Failover device groups: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-device-service-clustering-administration-12-1-1/4.html
-.. _configuration synchronization: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-device-service-clustering-administration-12-1-1/5.html
+
