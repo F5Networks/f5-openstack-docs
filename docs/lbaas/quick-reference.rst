@@ -8,8 +8,10 @@ F5 LBaaSv2 Quick Reference
    ====================    ===========================
    F5 LBaaS version(s)     OpenStack version(s)
    ====================    ===========================
-   v10.1.0                 Newton
+   |version_latest|        |openstack|
    ====================    ===========================
+
+   \
 
    To install previous versions, see the :agent:`F5 Agent <index.html>` documentation.
 
@@ -77,6 +79,8 @@ Tasks
    * :agent:`GRE example <_static/config_examples/f5-openstack-agent.gre.ini>` [#licensing]_
    * :agent:`VLAN example <_static/config_examples/f5-openstack-agent.vlan.ini>`
    * :agent:`VXLAN example <_static/config_examples/f5-openstack-agent.vxlan.ini>` [#licensing]_
+
+   \
 
    .. seealso::
 
