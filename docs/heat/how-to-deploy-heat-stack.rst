@@ -5,7 +5,7 @@ How to Deploy OpenStack Heat Templates
 
 .. include:: /_static/reuse/applies-to-ALL.rst
 
-Use the instructions provided here to deploy any of the templates in F5's `heat orchestration template library </products/templates/openstack-heat/latest/index.html#heat-orchestration-template-index>`_.
+Use the instructions provided here to deploy any of the templates in F5's `heat orchestration template library`_.
 
 OpenStack CLI
 -------------
@@ -73,6 +73,3 @@ Follow the directions below to deploy a Heat stack using the `OpenStack Horizon`
    In the :guilabel:`Stacks` table, the status changes to :guilabel:`Create complete` when the deployment finishes.
 
 
-.. _python-openstackclient: https://docs.openstack.org/python-openstackclient/latest
-.. _environment file: https://docs.openstack.org/heat/latest/template_guide/environment.html
-.. _environment variables: https://docs.openstack.org/user-guide/common/cli-set-environment-variables-using-openstack-rc.html

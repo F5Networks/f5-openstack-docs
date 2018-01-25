@@ -107,6 +107,5 @@ What's Next
 .. rubric:: Footnotes
 .. [#licensing] You need a `license`_ that includes SDN services if you plan to use VXLAN/GRE tunnels in your deployment.
 
-.. _license: https://f5.com/products/how-to-buy/simplified-licensing
-.. _OpenStack Networking Concepts: http://docs.openstack.org/liberty/networking-guide/
-.. _Set up Neutron to use the F5 service provider driver: /products/openstack/lbaasv2-driver/latest/index.html#neutron-setup
+
+

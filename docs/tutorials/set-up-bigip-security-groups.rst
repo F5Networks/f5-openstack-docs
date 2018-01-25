@@ -34,8 +34,8 @@ Security Groups
 You'll need to create a security group and rules that allow traffic to pass through BIG-IP devices from `OpenStack Neutron`_ networks.
 Specifically, the security rules should allow the ICMP protocol and standard ports used by BIG-IP devices: 22, 80, and 443.
 
-- `Create security groups with OpenStack Heat`_ using templates from the F5 Unsupported HOT library.
-- `Create security groups in OpenStack Horizon`_. :fonticon:`fa fa-external`
+- Create security groups with OpenStack Heat using templates from the `F5 Unsupported HOT library`_.
+- Create security groups in OpenStack Horizon. :fonticon:`fa fa-external`
 - `Create security groups using the OpenStack CLI`_. :fonticon:`fa fa-external`
 - `Create security group rules using the OpenStack CLI`_. :fonticon:`fa fa-external`
 
@@ -55,12 +55,3 @@ If you're using VXLAN and/or GRE, create the following rule(s):
    neutron security group rule create --protocol udp --dst-port 4789 --ingress bigip
    neutron security group rule create --protocol gre --ingress bigip
 
-
-
-.. _configure access and security groups: https://docs.openstack.org/horizon/latest/user/configure-access-and-security-for-instances.html
-.. _Manage SSH keys using OpenStack Horizon: https://docs.openstack.org/horizon/latest/user/configure-access-and-security-for-instances.html#keypair-add
-.. _Manage SSH keys using the OpenStack CLI: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/keypair.html
-.. _Create security groups with OpenStack Heat:
-.. _Create security groups in OpenStack Horizon:
-.. _Create security groups using the OpenStack CLI: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/security-group.html
-.. _Create security group rules using the OpenStack CLI: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/security-group-rule.html

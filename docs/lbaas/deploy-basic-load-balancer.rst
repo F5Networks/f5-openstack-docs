@@ -60,7 +60,7 @@ Add a secure BIG-IP virtual server
 
 #. Set up `Keystone`_ and `Barbican`_, if you haven't already. [#ostlslb]_
 
-#. Complete the `Certificate Manager settings </products/openstack/agent/latest/index.html#cert-manager-settings>`_ section of the |agent| configuration file.
+#. Complete the `Certificate Manager settings`_ section of the |agent| configuration file.
 
 #. Create a listener using the :code:`TERMINATED_HTTPS` protocol; specify the location of the `Barbican container <http://docs.openstack.org/developer/barbican/api/quickstart/containers.html>`_ where the certificate you want to use for authentication lives.
 
@@ -114,7 +114,4 @@ Use the BIG-IP configuration utility to verify that all of your Neutron LBaaS ob
 .. rubric:: Footnotes
 .. [#ostlslb] See OpenStack's `How to create a TLS load balancer <https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer>`_ for more information and configuration instructions.
 
-.. _deprecated OpenStack LBaaS v1 project: https://docs.openstack.org/mitaka/networking-guide/config-lbaas.html#lbaas-v1
-.. _Barbican: https://docs.openstack.org/developer/barbican/
-.. _Keystone: https://docs.openstack.org/developer/keystone/
-.. _BIG-IP SSL profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-1-0/6.html
+
