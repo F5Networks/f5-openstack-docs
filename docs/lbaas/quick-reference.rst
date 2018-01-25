@@ -8,8 +8,10 @@ F5 LBaaSv2 Quick Reference
    ====================    ===========================
    F5 LBaaS version(s)     OpenStack version(s)
    ====================    ===========================
-   v10.1.0                 Newton
+   |version_latest|        |openstack|
    ====================    ===========================
+
+   \
 
    To install previous versions, see the :agent:`F5 Agent <index.html>` documentation.
 
@@ -78,6 +80,8 @@ Tasks
    * :agent:`VLAN example <_static/config_examples/f5-openstack-agent.vlan.ini>`
    * :agent:`VXLAN example <_static/config_examples/f5-openstack-agent.vxlan.ini>` [#licensing]_
 
+   \
+
    .. seealso::
 
       `View the examples in the f5-openstack-agent repo on GitHub <https://github.com/F5Networks/f5-openstack-agent/tree/master/docs/_static/config_examples>`_.
@@ -107,6 +111,5 @@ What's Next
 .. rubric:: Footnotes
 .. [#licensing] You need a `license`_ that includes SDN services if you plan to use VXLAN/GRE tunnels in your deployment.
 
-.. _license: https://f5.com/products/how-to-buy/simplified-licensing
-.. _OpenStack Networking Concepts: http://docs.openstack.org/liberty/networking-guide/
-.. _Set up Neutron to use the F5 service provider driver: /products/openstack/lbaasv2-driver/latest/index.html#neutron-setup
+
+

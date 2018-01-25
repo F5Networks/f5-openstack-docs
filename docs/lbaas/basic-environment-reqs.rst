@@ -76,15 +76,4 @@ BIG-IP Device Requirements
 .. [#vteps] If you're using a tunnel to reach an undercloud BIG-IP, you must configure the BIG-IP virtual tunnel endpoint (VTEP) **before** launching the |agent|.
 
 
-
-.. _OpenStack installation guides: https://docs.openstack.org/project-install-guide/newton/
-.. _Nova: http://www.openstack.org/software/releases/newton/components/nova
-.. _Neutron: http://www.openstack.org/software/releases/newton/components/neutron
-.. _Keystone: http://www.openstack.org/software/releases/newton/components/keystone
-.. _Glance: http://www.openstack.org/software/releases/newton/components/glance
-.. _Horizon: http://www.openstack.org/software/releases/newton/components/horizon
-.. _Heat: http://www.openstack.org/software/releases/newton/components/heat
-.. _Barbican: http://www.openstack.org/software/releases/newton/components/barbican
-.. _license: https://f5.com/products/how-to-buy/simplified-licensing
 .. _BIG-IP LTM Release Notes: https://support.f5.com/csp/knowledge-center/software/BIG-IP?module=BIG-IP%20LTM&version=13.0.0
-.. _Configuring the basic BIG-IP network: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-ecmp-mirrored-clustering-12-1-0/2.html?sr=56312127

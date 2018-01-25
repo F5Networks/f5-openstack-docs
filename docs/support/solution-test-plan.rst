@@ -41,19 +41,19 @@ OpenStack
   * 1 host machine for a Controller node;
   * 1 host machine for a Compute node.
 
-* `BIG-IP Nova flavor </cloud/openstack/v1/support/openstack_big-ip_flavors.html>`_.
+* :ref:`big-ip_flavors`.
 
 TMOS
 ````
 
-* `Supported TMOS version </cloud/openstack/v1/support/releases_and_versioning.html>`_.
+* :ref:`Supported TMOS version <releases-and-support>`.
 * If using Virtual Edition:
 
-  * LTM_1SLOT KVM qcow2 image built using the supported `BIG-IP onboarding Heat template </products/templates/openstack-heat/latest/f5-bigip-ve_image-patch-upload.html>`_ ;
-  * Instance deployed using the supported `BIG-IP VE Standalone, 3-NIC Heat template </products/templates/openstack-heat/latest/f5-bigip-ve_standalone-3nic.html>`_.
+  * LTM_1SLOT KVM qcow2 image built using the supported `BIG-IP onboarding Heat template`_ ;
+  * Instance deployed using the supported `BIG-IP VE Standalone, 3-NIC Heat template`_.
 
 * Operational BIG-IP device or device service cluster with `Better or Best license <https://f5.com/products/how-to-buy/simplified-licensing>`_ (including LTM and SDN Services).
-* Initial configuration orchestrated to match the deployment architecture, per the `F5 LBaaSv2 documentation </cloud/openstack/v1/lbaas/index.html>`_.
+* Initial configuration orchestrated to match the deployment architecture, per the :ref:`F5 LBaaSv2 documentation <openstack-lbaas-home>`.
 
 F5 OpenStack LBaaSv2
 ````````````````````
@@ -97,7 +97,7 @@ Edge deployment architecture using only OpenStack networking provider networks, 
 NA2: L2 Adjacent Mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-Micro-segmentation architecture using tenant networks, with F5 agents deployed in `L2 Adjacent Mode </products/openstack/agent/latest/l2-adjacent-mode.html>`_.
+Micro-segmentation architecture using tenant networks, with F5 agents deployed in |l2mode|.
 Execute tests for VLAN and then VxLAN network types.
 
 .. figure:: /_static/media/f5-lbaas-test-architecture-l2adj.png
