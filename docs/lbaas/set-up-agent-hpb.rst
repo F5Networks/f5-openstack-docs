@@ -1,10 +1,23 @@
-.. index::
-   :pair: task, lbaas
-   :pair: task, F5 agent
-
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
 
 How to set up the F5 Agent for Hierarchical Port Binding
 ========================================================
+
+.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+
+   +----------+-----------+----------------------+
+   | |agent|  | |driver|  | OpenStack version(s) |
+   +==========+===========+======================+
+   | v11.x    | v12.x     | Pike                 |
+   +          +-----------+----------------------+
+   |          | v11.x     | Ocata                |
+   +----------+-----------+----------------------+
+   | v10.x.x              | Newton               |
+   +----------+-----------+----------------------+
+   | v9.3.x               | Mitaka               |
+   +----------+-----------+----------------------+
 
 Overview
 --------

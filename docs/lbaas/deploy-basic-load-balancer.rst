@@ -1,11 +1,14 @@
+:product: F5 Agent for OpenStack Neutron
+:type: tutorial
+
 .. _f5-openstack-lbaasv2-coding-example:
 
 .. _lbaas-basic-loadbalancer:
 
-.. include:: /_static/reuse/applies-to-ALL.rst
-
 Deploy a basic load balancer
 ============================
+
+.. include:: /_static/reuse/applies-to-ALL.rst
 
 The series of code samples provided here demonstrate how to configure a basic loadbalancer via the OpenStack Neutron CLI with the |oslbaas|.
 The `OpenStack CLI`_ documentation has a full list of all :code:`neutron lbaas` commands.

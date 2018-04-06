@@ -1,17 +1,24 @@
+:product: F5 Agent for OpenStack Neutron
+:type: tutorial
+
 .. _esd:
 
 Enhance L7 Policy Capabilities with Enhanced Service Definitions
 ================================================================
 
-.. sidebar:: Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
 
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v9.3+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
+   +----------+-----------+----------------------+
+   | |agent|  | |driver|  | OpenStack version(s) |
+   +==========+===========+======================+
+   | v11.x    | v12.x     | Pike                 |
+   +          +-----------+----------------------+
+   |          | v11.x     | Ocata                |
+   +----------+-----------+----------------------+
+   | v10.x.x              | Newton               |
+   +----------+-----------+----------------------+
+   | v9.3.x               | Mitaka               |
+   +----------+-----------+----------------------+
 
 Overview
 --------
@@ -116,7 +123,7 @@ Use the tags in the table below to define the policies you want the |agent| to a
 
 **Example**
 
-.. code-block:: JSON
+.. code-block:: yaml
    :caption: Basic ESD format
 
    {
@@ -140,7 +147,7 @@ Create an Enhanced Service Definition
       The agent package includes an example ESD file, :file:`demo.json`. You can amend this example file -- and save it with a unique name -- to create ESDs for your applications.
 
 
-   .. code-block:: JSON
+   .. code-block:: yaml
       :caption: demo.json
 
       {
@@ -246,7 +253,7 @@ For example, if you want to re-write certificate values into request headers:
 #. Create the desired iRule(s) in the ``/Common`` partition on the BIG-IP.
 #. Define the ``lbaas_irule`` tag with a JSON list.
 
-   .. code-block:: JSON
+   .. code-block:: yaml
       :linenos:
 
       {
@@ -276,7 +283,7 @@ Use the ``lbaas_policy`` tag to assign a BIG-IP LTM `policy`_ to a virtual serve
 #. Create the `policy`_ in the ``/Common`` partition on the BIG-IP.
 #. Define the ``lbaas_policy`` tag with a JSON list.
 
-   .. code-block:: JSON
+   .. code-block:: yaml
       :linenos:
 
       {
@@ -299,7 +306,7 @@ Add Server-side SSL Termination
 
 Use the ``lbaas_sssl_profile`` tag to add `BIG-IP server-side SSL termination`_ to a virtual server associated with an LBaaSv2 load balancer.
 
-.. code-block:: JSON
+.. code-block:: yaml
 
    "lbaas_sssl_profile": "serverssl"
 
@@ -313,7 +320,7 @@ Use the ``lbaas_cssl_profile tag`` tag to add a `BIG-IP SSL profile`_ to a virtu
 #. `Create an LBaaSv2 HTTPS listener`_.
 #. Create an L7 policy object using the ``lbaas_cssl_profile`` tag.
 
-   .. code-block:: JSON
+   .. code-block:: yaml
 
       "lbaas_cssl_profile": "clientssl"
 
@@ -327,7 +334,7 @@ Use the ``lbaas_persist`` and ``lbaas_fallback_persist`` tags to configure a `BI
 
    In the LBaaSv2 session persistence model, persistence types apply to pools, not listeners. The |agent| maps LBaaSv2 pool session persistence values to the BIG-IP virtual server(s) associated with the pool. The BIG-IP provides many persistence profiles beyond those available in LBaaSv2, including ``dest_addr``, ``hash``, ``ssl``, ``sip``, etc.
 
-.. code-block:: JSON
+.. code-block:: yaml
    :linenos:
 
    "lbaas_persist": "hash",
@@ -354,7 +361,7 @@ Use the ``lbaas_ctcp`` tag to define a `BIG-IP TCP profile`_ for a virtual serve
 
 If your load balancer fronts an application used for mobile clients, you can use the ``tcp_mobile_optimized`` BIG-IP client SSL profile to optimize TCP processing.
 
-.. code-block:: json
+.. code-block:: yaml
 
    "lbaas_ctcp": "tcp_mobile_optimized"
 
@@ -362,7 +369,7 @@ Of course, that profile may not be optimal for traffic between your BIG-IP and t
 
 For ``esd_demo_1`` in the example below, we define a single TCP profile ("tcp") for both client- and server-side traffic. For ``esd_demo_2``, we assign separate TCP policies for client- and server-side traffic (``tcp_mobile_optimized`` and ``tcp_lan_optimized``, respectively).
 
-.. code-block:: json
+.. code-block:: yaml
    :linenos:
 
    {

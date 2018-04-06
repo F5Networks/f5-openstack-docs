@@ -1,3 +1,7 @@
+:product: F5 Templates for OpenStack Heat
+:product: F5 Plugins for OpenStack Heat
+:type: reference
+
 .. _heat-home:
 
 F5 OpenStack Heat Integration
@@ -9,6 +13,10 @@ F5's `OpenStack Heat`_ Integration consists of the :heat:`F5 Heat template libra
 
 General Prerequisites
 ---------------------
+
+.. warning::
+
+   Active development of Heat Orchestration templates for BIG-IP version 13 and later has moved to the `f5-openstack-hot`_ repo in GitHub.
 
 The F5 OpenStack Heat Integration's documentation set assumes that you:
 
@@ -57,4 +65,4 @@ You can use the templates in conjunction with `F5 iApps`_ to deploy BIG-IP VE in
 .. [#buybigip] `How to Buy <https://f5.com/products/how-to-buy>`_
 
 
-
+.. _f5-openstack-hot: https://github.com/F5Networks/f5-openstack-hot

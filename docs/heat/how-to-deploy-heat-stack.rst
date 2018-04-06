@@ -1,3 +1,7 @@
+:product: F5 Templates for OpenStack Heat
+:product: F5 Plugins for OpenStack Heat
+:type: tutorial
+
 .. _heat-how-to-deploy:
 
 How to Deploy OpenStack Heat Templates

@@ -1,5 +1,6 @@
-.. index::
-   single: F5 Agent; Common networks
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
 
 .. _common networks:
 

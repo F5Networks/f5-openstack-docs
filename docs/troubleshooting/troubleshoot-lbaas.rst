@@ -1,3 +1,7 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for OpenStack Neutron
+:type: reference
+
 .. _lbaas-troubleshooting:
 
 F5 Integration for OpenStack Neutron LBaaS - Troubleshooting

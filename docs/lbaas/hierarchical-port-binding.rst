@@ -1,25 +1,26 @@
-
-.. index::
-   single: concept; lbaas
-   pair: hierarchical port binding; F5 agent
+:product: F5 Agent for OpenStack Neutron
+:type: tutorial
 
 .. _lbaas-port-binding:
-
-.. sidebar:: :fonticon:`fa fa-info-circle` Introduced in:
-
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.3.x                  Liberty
-   v9.3.x                  Mitaka
-   v10.0.x                 Newton
-   ====================    ===========================
-
 
 .. _hpb:
 
 Hierarchical Port Binding
 =========================
+
+.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+
+   +----------+-----------+----------------------+
+   | |agent|  | |driver|  | OpenStack version(s) |
+   +==========+===========+======================+
+   | v11.x    | v12.x     | Pike                 |
+   +          +-----------+----------------------+
+   |          | v11.x     | Ocata                |
+   +----------+-----------+----------------------+
+   | v10.x.x              | Newton               |
+   +----------+-----------+----------------------+
+   | v9.3.x               | Mitaka               |
+   +----------+-----------+----------------------+
 
 Overview
 --------
