@@ -7,7 +7,7 @@ How to set up the F5 Agent for Hierarchical Port Binding
 
 .. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   Hierarchical Port Binding was introduced in |agent| v9.3.0.
+   Hierarchical Port Binding introduced in |agent| v9.3.0.
 
 Overview
 --------
