@@ -6,19 +6,9 @@
 L7 Routing
 ==========
 
-.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   +----------+-----------+----------------------+
-   | |agent|  | |driver|  | OpenStack version(s) |
-   +==========+===========+======================+
-   | v11.x    | v12.x     | Pike                 |
-   +          +-----------+----------------------+
-   |          | v11.x     | Ocata                |
-   +----------+-----------+----------------------+
-   | v10.x.x              | Newton               |
-   +----------+-----------+----------------------+
-   | v9.2.x               | Mitaka               |
-   +----------+-----------+----------------------+
+   Introduced in |agent| v9.2.0 (Mitaka) and 10.0.0 (Newton)
 
 L7 routing takes its name from layer 7 of the OSI Model, also called the application layer. [#l7]_
 The |agent-long| passes L7 content switching policies and rules from OpenStack Neutron to a BIG-IP device.

@@ -7,19 +7,9 @@
 Manage BIG-IP Clusters
 ======================
 
-.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   +----------+-----------+----------------------+
-   | |agent|  | |driver|  | OpenStack version(s) |
-   +==========+===========+======================+
-   | v11.x    | v12.x     | Pike                 |
-   +          +-----------+----------------------+
-   |          | v11.x     | Ocata                |
-   +----------+-----------+----------------------+
-   | v10.x.x              | Newton               |
-   +----------+-----------+----------------------+
-   | v9.1.x               | Mitaka               |
-   +----------+-----------+----------------------+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 You can use the |oslbaas| to manage BIG-IP :term:`device service clusters` with :term:`high availability`, :term:`mirroring`, and :term:`failover` services in your OpenStack cloud.
 

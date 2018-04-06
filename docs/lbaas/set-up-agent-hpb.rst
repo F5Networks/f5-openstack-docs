@@ -5,19 +5,9 @@
 How to set up the F5 Agent for Hierarchical Port Binding
 ========================================================
 
-.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   +----------+-----------+----------------------+
-   | |agent|  | |driver|  | OpenStack version(s) |
-   +==========+===========+======================+
-   | v11.x    | v12.x     | Pike                 |
-   +          +-----------+----------------------+
-   |          | v11.x     | Ocata                |
-   +----------+-----------+----------------------+
-   | v10.x.x              | Newton               |
-   +----------+-----------+----------------------+
-   | v9.3.x               | Mitaka               |
-   +----------+-----------+----------------------+
+   Hierarchical Port Binding was introduced in |agent| v9.3.0.
 
 Overview
 --------

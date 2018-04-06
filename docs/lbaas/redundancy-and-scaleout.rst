@@ -7,19 +7,9 @@
 Redundancy and Scale Out
 ========================
 
-.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   +----------+-----------+----------------------+
-   | |agent|  | |driver|  | OpenStack version(s) |
-   +==========+===========+======================+
-   | v11.x    | v12.x     | Pike                 |
-   +          +-----------+----------------------+
-   |          | v11.x     | Ocata                |
-   +----------+-----------+----------------------+
-   | v10.x.x              | Newton               |
-   +----------+-----------+----------------------+
-   | v9.1.x               | Mitaka               |
-   +----------+-----------+----------------------+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 Running the |agent| on different hosts helps ensure that the |agent| and |driver| processes remain alive and functional if a host goes down.
 Multiple |agent| instances can manage a single BIG-IP device or :term:`cluster` if **each runs on a separate host**.

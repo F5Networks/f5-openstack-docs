@@ -7,19 +7,9 @@
 Capacity-Based Scale Out
 ========================
 
-.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   +----------+-----------+----------------------+
-   | |agent|  | |driver|  | OpenStack version(s) |
-   +==========+===========+======================+
-   | v11.x    | v12.x     | Pike                 |
-   +          +-----------+----------------------+
-   |          | v11.x     | Ocata                |
-   +----------+-----------+----------------------+
-   | v10.x.x              | Newton               |
-   +----------+-----------+----------------------+
-   | v9.1.x               | Mitaka               |
-   +----------+-----------+----------------------+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 When using :ref:`differentiated service environments <lbaas-differentiated-service-env>`, you can configure capacity metrics for the |agent-long| to provide scale out across multiple BIG-IP device groups.
 

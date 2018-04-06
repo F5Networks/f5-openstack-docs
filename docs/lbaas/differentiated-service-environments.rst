@@ -7,19 +7,9 @@
 Run multiple F5 Agents in different environments
 ================================================
 
-.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   +----------+-----------+----------------------+
-   | |agent|  | |driver|  | OpenStack version(s) |
-   +==========+===========+======================+
-   | v11.x    | v12.x     | Pike                 |
-   +          +-----------+----------------------+
-   |          | v11.x     | Ocata                |
-   +----------+-----------+----------------------+
-   | v10.x.x              | Newton               |
-   +----------+-----------+----------------------+
-   | v9.1.x               | Mitaka               |
-   +----------+-----------+----------------------+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 You can manage the same BIG-IP device or cluster with multiple instances of the |agent-long| when the instances run in differentiated service environments.
 A :dfn:`differentiated service environment` is a uniquely-named environment that has:
