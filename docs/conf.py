@@ -324,7 +324,7 @@ driver_version = '12.0.0'
 rst_epilog = '''
 .. |agent| replace:: F5 Agent
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
-.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 10.3.x
+.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 10.2.x
 .. |config-file| replace:: :agent:`configuration file <config-file.html>`
 .. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
 .. |driver| replace:: F5 Driver
