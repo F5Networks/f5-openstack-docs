@@ -1,19 +1,15 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
+
 .. _lbaas-capacity-based-scaleout:
-
-.. sidebar:: Applies to:
-
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.1+                   Liberty
-   --------------------    ---------------------------
-   v9.1+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
 
 Capacity-Based Scale Out
 ========================
+
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 When using :ref:`differentiated service environments <lbaas-differentiated-service-env>`, you can configure capacity metrics for the |agent-long| to provide scale out across multiple BIG-IP device groups.
 

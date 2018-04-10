@@ -1,3 +1,8 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for OpenStack Neutron
+:product: F5 Templates for OpenStack Heat
+:type: reference
+
 .. _big-ip_flavors:
 
 Nova Flavors for BIG-IP Virtual Edition images
@@ -8,7 +13,7 @@ Use the table below to determine the correct "f5 flavor" for your image.
 
 .. important::
 
-   OpenStack Newton does not have any default Nova flavors.
+   Beginning with OpenStack Newton, there are no default Nova flavors.
    The `Nova flavors`_ shown in the table apply to OpenStack Mitaka and earlier.
 
 .. table:: F5 Nova flavors

@@ -1,18 +1,14 @@
+:product: F5 Agent for OpenStack Neutron
+:type: reference
+
 .. _lbaas-l7-content-switching:
 
 L7 Routing
 ==========
 
-.. sidebar:: Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v9.2+                   Mitaka
-   --------------------    ---------------------------
-   v10.x.x                 Newton
-   ====================    ===========================
-
+   Introduced in |agent| v9.2.0 (Mitaka) and 10.0.0 (Newton)
 
 L7 routing takes its name from layer 7 of the OSI Model, also called the application layer. [#l7]_
 The |agent-long| passes L7 content switching policies and rules from OpenStack Neutron to a BIG-IP device.

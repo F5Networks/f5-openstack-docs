@@ -1,6 +1,6 @@
-.. index::
-   single: openstack; concept
-   triple: lbaas; agent; driver
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: concept
 
 .. _openstack-lbaas-home:
 

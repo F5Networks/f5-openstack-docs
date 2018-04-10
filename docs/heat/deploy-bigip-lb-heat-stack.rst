@@ -1,3 +1,7 @@
+:product: F5 Templates for OpenStack Heat
+:product: F5 Plugins for OpenStack Heat
+:type: tutorial
+
 .. _heat-deploy-bigip-lb:
 
 How to Deploy a BIG-IP VE instance and set up a basic load balancer

@@ -1,19 +1,15 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
+
 .. _lbaas-manage-clusters:
 
 Manage BIG-IP Clusters
 ======================
 
-.. sidebar:: Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.1+                   Liberty
-   --------------------    ---------------------------
-   v9.1+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 You can use the |oslbaas| to manage BIG-IP :term:`device service clusters` with :term:`high availability`, :term:`mirroring`, and :term:`failover` services in your OpenStack cloud.
 
