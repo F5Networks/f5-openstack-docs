@@ -61,4 +61,3 @@
    support/partners
    support/acknowledgements
    F5 Contributor License Agreement <support/cla_landing>
-   support/branching_strategy

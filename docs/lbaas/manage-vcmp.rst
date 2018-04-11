@@ -1,22 +1,17 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
+
 .. _lbaas-manage-vcmp-clusters:
 
 .. _lbaas-manage-vcmp-systems:
 
-
-.. sidebar:: Applies to:
-
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.1+                   Liberty
-   --------------------    ---------------------------
-   v9.1+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
-
 Manage BIG-IP vCMP Systems
 ==========================
+
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 You can manage a BIG-IP using `Virtual Clustered Multiprocessing`_ (vCMP) with the |oslbaas|.
 

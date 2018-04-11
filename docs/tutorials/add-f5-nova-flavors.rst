@@ -1,3 +1,8 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for OpenStack Neutron
+:product: F5 Templates for OpenStack Heat
+:type: tutorial
+
 .. _add-nova-flavors:
 
 How to add the F5 flavors to OpenStack Nova

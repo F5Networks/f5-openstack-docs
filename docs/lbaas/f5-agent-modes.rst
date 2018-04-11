@@ -1,5 +1,5 @@
-.. index::
-   single: F5 Agent; Modes of operation
+:product: F5 Agent for OpenStack Neutron
+:type: reference
 
 .. _F5 agent modes:
 

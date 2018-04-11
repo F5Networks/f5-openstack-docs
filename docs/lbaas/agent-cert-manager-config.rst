@@ -1,3 +1,6 @@
+:product: F5 Agent for OpenStack Neutron
+:type: tutorial
+
 .. _certificate-manager:
 
 Set up SSL offloading with OpenStack Barbican
