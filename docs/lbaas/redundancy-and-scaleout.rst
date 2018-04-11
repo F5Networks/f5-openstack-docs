@@ -1,19 +1,15 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
+
 .. _lbaas-agent-redundancy:
 
 Redundancy and Scale Out
 ========================
 
-.. sidebar:: Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
 
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.1+                   Liberty
-   --------------------    ---------------------------
-   v9.1+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 Running the |agent| on different hosts helps ensure that the |agent| and |driver| processes remain alive and functional if a host goes down.
 Multiple |agent| instances can manage a single BIG-IP device or :term:`cluster` if **each runs on a separate host**.

@@ -1,9 +1,12 @@
-.. _lbaas-basic-env-requirements:
+:product: F5 Agent for OpenStack Neutron
+:type: reference
 
-.. include:: /_static/reuse/applies-to-ALL.rst
+.. _lbaas-basic-env-requirements:
 
 Basic Environment Requirements
 ==============================
+
+.. include:: /_static/reuse/applies-to-ALL.rst
 
 This document provides the minimum basic requirements for using the |oslbaas| in OpenStack.
 

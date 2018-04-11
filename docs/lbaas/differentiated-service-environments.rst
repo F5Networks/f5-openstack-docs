@@ -1,22 +1,15 @@
-.. index::
-   single: F5 Agent; Differentiated service environments
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: tutorial
 
 .. _lbaas-differentiated-service-env:
 
-.. sidebar:: Applies to:
-
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   v8.1+                   Liberty
-   --------------------    ---------------------------
-   v9.1+                   Mitaka
-   --------------------    ---------------------------
-   v10.0+                  Newton
-   ====================    ===========================
-
 Run multiple F5 Agents in different environments
 ================================================
+
+.. sidebar:: :fonticon:`fa fa-info-circle` Version notice:
+
+   Introduced in |agent| v9.1.0 (Mitaka) and 10.0.0 (Newton)
 
 You can manage the same BIG-IP device or cluster with multiple instances of the |agent-long| when the instances run in differentiated service environments.
 A :dfn:`differentiated service environment` is a uniquely-named environment that has:

@@ -12,9 +12,9 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-# import sys
-# import os
-# import os.path
+import sys
+import os
+import os.path
 
 import f5_sphinx_theme
 
@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'F5 OpenStack Solutions'
-copyright = u'2018 F5 Networks Inc'
+copyright = u'2018, F5 Networks Inc'
 author = u'F5 Networks'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -68,12 +68,12 @@ author = u'F5 Networks'
 # built documents.
 #
 # The short X.Y version.
-version = '1.0'
+version = ''
 # The full version, including alpha/beta/rc tags.
 # release = ''
 
 # OpenStack release
-openstack_release = "Newton"
+openstack_release = "Pike"
 
 #rst_prolog = '''
 #'''
@@ -134,7 +134,6 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'f5_sphinx_theme'
-html_theme_path = f5_sphinx_theme.get_html_theme_path()
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -319,70 +318,68 @@ f5_lbaasv2_driver_shim_url = '\https://github.com/F5Networks/neutron-lbaas/relea
 f5_sdk_version = '2.3.3'
 # F5 icontrol REST version should be set here
 f5_icontrol_version = '1.3.0'
-version_latest = '10.2.0'
-
+agent_version = '9.6.0'
+driver_version = '12.0.0'
 
 rst_epilog = '''
 .. |agent| replace:: F5 Agent
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
-.. |agent-versions| replace:: 8.x, 9.x, 10.x
+.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 10.2.x
 .. |config-file| replace:: :agent:`configuration file <config-file.html>`
 .. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
-.. |driver| replace:: F5 driver
+.. |driver| replace:: F5 Driver
 .. |driver-long| replace:: F5 Driver for OpenStack LBaaSv2
 .. |driver-settings| replace:: :agent:`Device driver\/iControl Driver settings <device-driver-settings.html>`
-.. |driver-versions| replace:: 8.x, 9.x, 10.x
+.. |driver-versions| replace:: 9.x-12.x
 .. |env-generator| replace:: :driver:`F5 environment generator <environment-generator.html>`
 .. |f5_lbaasv2_driver_shim_url| replace:: %(f5_lbaasv2_driver_shim_url)s
 .. |grm| replace:: :agent:`Global routed mode <global-routed-mode.html>`
 .. |heat| replace:: `OpenStack Heat`_
 .. |heat-t| replace:: F5 Heat template library
-.. |heat-versions| replace:: 7.x, 8.x, 9.x, 10.x
+.. |heat-versions| replace:: 9.x, 10.x
 .. |l2-seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l2-segmentation-mode-settings>`
 .. |l3-seg| replace:: :agent:`L2 Segmentation Mode settings <config-file.html#l3-segmentation-mode-settings>`
 .. |l2mode| replace:: :agent:`L2-adjacent mode <l2-adjacent-mode.html>`
-.. |plugins-versions| replace:: 7.x, 8.x, 9.x, 10.x
+.. |plugins-versions| replace:: 9.x, 10.x
 .. |neutron| replace:: `OpenStack Neutron`_
 .. |openstack| replace:: %(openstack_release)s
 .. |oslbaas| replace:: F5 Integration for OpenStack Neutron LBaaS
-.. |f5_agent_deb_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(version_latest)s/python-f5-openstack-agent_%(version_latest)s-1_1404_all.deb
-.. |f5_agent_pip_url_branch| replace:: git+https://github.com/F5Networks/f5-openstack-agent@%(openstack_release_l)s
-.. |f5_agent_rpm_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(version_latest)s/f5-openstack-agent-%(version_latest)s-1.el7.noarch.rpm
-.. |f5_agent_deb_package| replace:: python-f5-openstack-agent_%(version_latest)s-1_1404_all.deb
-.. |f5_agent_rpm_package| replace:: f5-openstack-agent-%(version_latest)s-1.el7.noarch.rpm
-.. |f5_lbaasv2_driver_deb_package| replace:: python-f5-openstack-lbaasv2-driver_%(version_latest)s-1_1404_all.deb
-.. |f5_lbaasv2_driver_deb_url| replace:: \https://github.com/F5Networks/f5-openstack-lbaasv2-driver/releases/download/v%(version_latest)s/python-f5-openstack-lbaasv2-driver_%(version_latest)s-1_1404_all.deb
+.. |f5_agent_deb_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(agent_version)s/python-f5-openstack-agent_%(agent_version)s-1_1404_all.deb
+.. |f5_agent_rpm_url| replace:: \https://github.com/F5Networks/f5-openstack-agent/releases/download/v%(agent_version)s/f5-openstack-agent-%(agent_version)s-1.el7.noarch.rpm
+.. |f5_agent_deb_package| replace:: python-f5-openstack-agent_%(agent_version)s-1_1404_all.deb
+.. |f5_agent_rpm_package| replace:: f5-openstack-agent-%(agent_version)s-1.el7.noarch.rpm
+.. |f5_lbaasv2_driver_deb_package| replace:: python-f5-openstack-lbaasv2-driver_%(driver_version)s-1_1404_all.deb
+.. |f5_lbaasv2_driver_deb_url| replace:: \https://github.com/F5Networks/f5-openstack-lbaasv2-driver/releases/download/v%(driver_version)s/python-f5-openstack-lbaasv2-driver_%(driver_version)s-1_1404_all.deb
 .. |f5_lbaasv2_driver_pip_url_branch| replace:: git+https:\//github.com/F5Networks/f5-openstack-lbaasv2-driver@%(openstack_release_l)s
-.. |f5_lbaasv2_driver_rpm_package| replace:: f5-openstack-lbaasv2-driver-%(version_latest)s-1.el7.noarch.rpm
-.. |f5_lbaasv2_driver_rpm_url| replace:: \https://github.com/F5Networks/f5-openstack-lbaasv2-driver/releases/download/v%(version_latest)s/f5-openstack-lbaasv2-driver-%(version_latest)s-1.el7.noarch.rpm
+.. |f5_lbaasv2_driver_rpm_package| replace:: f5-openstack-lbaasv2-driver-%(driver_version)s-1.el7.noarch.rpm
+.. |f5_lbaasv2_driver_rpm_url| replace:: \https://github.com/F5Networks/f5-openstack-lbaasv2-driver/releases/download/v%(driver_version)s/f5-openstack-lbaasv2-driver-%(driver_version)s-1.el7.noarch.rpm
 .. |f5_sdk_deb_package| replace:: python-f5-sdk_%(f5_sdk_version)s-1_1404_all.deb
 .. |f5_sdk_deb_url| replace:: \https://github.com/F5Networks/f5-common-python/releases/download/v%(f5_sdk_version)s/python-f5-sdk_%(f5_sdk_version)s-1_1404_all.deb
-.. |f5_agent_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-agent@v%(version_latest)s
-.. |f5_driver_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v%(version_latest)s
+.. |f5_agent_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-agent@v%(agent_version)s
+.. |f5_driver_pip_url| replace:: git+https://github.com/F5Networks/f5-openstack-lbaasv2-driver@v%(driver_version)s
 .. |f5_icontrol_deb_package| replace:: python-f5-icontrol-rest_%(f5_icontrol_version)s-1_1404_all.deb
 .. |f5_icontrol_deb_url| replace:: \https://github.com/F5Networks/f5-icontrol-rest-python/releases/download/v%(f5_icontrol_version)s/python-f5-icontrol-rest_%(f5_icontrol_version)s-1_1404_all.deb
 .. |f5_icontrol_rpm_package| replace:: f5-icontrol-rest-%(f5_icontrol_version)s-1.el7.noarch.rpm
 .. |f5_icontrol_rpm_url| replace:: \https://github.com/F5Networks/f5-icontrol-rest-python/releases/download/v%(f5_icontrol_version)s/f5-icontrol-rest-%(f5_icontrol_version)s-1.el7.noarch.rpm
 .. |f5_sdk_rpm_package| replace:: f5-sdk-%(f5_sdk_version)s-1.el7.noarch.rpm
 .. |f5_sdk_rpm_url| replace:: \https://github.com/F5Networks/f5-common-python/releases/download/v%(f5_sdk_version)s/f5-sdk-%(f5_sdk_version)s-1.el7.noarch.rpm
-
-.. |version_latest| replace:: %(version_latest)s
-
+.. |agent_version| replace:: %(agent_version)s
+.. |driver_version| replace:: %(driver_version)s
 .. |f5_agent_readme| raw:: html
    
-   <a href="https://github.com/F5Networks/f5-openstack-agent/blob/%(openstack_release_l)s/README.rst" target="_blank">README</a>
+   <a href="https://github.com/F5Networks/f5-openstack-agent/blob/master/README.rst" target="_blank">README</a>
 .. |f5_lbaasv2_driver_readme| raw:: html
 
-   <a href="https://github.com/F5Networks/f5-openstack-lbaasv2-driver/blob/%(openstack_release_l)s/README.rst" target="_blank">README</a>
+   <a href="https://github.com/F5Networks/f5-openstack-lbaasv2-driver/blob/master/README.rst" target="_blank">README</a>
 .. |neutron-lbaas| raw:: html
    
-   <a href="https://docs.openstack.org/%(openstack_release_l)s/networking-guide/config-lbaas.html" target="_blank">Neutron LBaaS</a>
+   <a href="https://docs.openstack.org/latest/networking-guide/config-lbaas.html" target="_blank">Neutron LBaaS</a>
 .. |os-deployment| raw:: html
    
-   <a href="https://docs.openstack.org/%(openstack_release_l)s/networking-guide/deploy.html" target="_blank">OpenStack Deployment</a>
+   <a href="https://docs.openstack.org/latest/networking-guide/deploy.html" target="_blank">OpenStack Deployment</a>
 .. |os-extnet| raw:: html
 
-    <a href="https://docs.openstack.org/%(openstack_release_l)s/install-guide-rdo/launch-instance-networks-provider.html" target+"_blank">external provider network</a>
+    <a href="https://docs.openstack.org/latest/install-guide-rdo/launch-instance-networks-provider.html" target+"_blank">external provider network</a>
 .. |community_tempest_lbaasv2_tests| raw:: html
 
    <a href="https://github.com/openstack/neutron-lbaas/tree/stable/%(openstack_release_l)s">tests</a>
@@ -420,10 +417,10 @@ rst_epilog = '''
 .. _F5 iApps: https://devcentral.f5.com/wiki/iApp.HomePage.ashx
 .. _F5 Python SDK: http://f5-sdk.readthedocs.io/
 .. _F5 Unsupported HOT library: %(base_url)s/products/templates/openstack-heat/latest/#unsupported-heat-templates
-.. _Heat: http://www.openstack.org/software/releases/%(openstack_release_l)s/components/heat
+.. _Heat: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/heat
 .. _heat orchestration template library: %(base_url)s/products/templates/openstack-heat/latest/#heat-orchestration-template-index
-.. _Glance: http://www.openstack.org/software/releases/%(openstack_release_l)s/components/glance
-.. _Horizon: http://www.openstack.org/software/releases/%(openstack_release_l)s/components/horizon
+.. _Glance: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/glance
+.. _Horizon: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/horizon
 .. _High Availability mode: %(base_url)s/products/openstack/agent/latest/ha-mode.html
 .. _HPE Helion OpenStack: https://www.hpe.com/us/en/software/openstack-cloud-iaas.html
 .. _iControl REST: https://devcentral.f5.com/wiki/iControlrest.HomePage.ashx
@@ -434,29 +431,28 @@ rst_epilog = '''
 .. _iRule: https://devcentral.f5.com/irules
 .. _Keystone: https://docs.openstack.org/developer/keystone/
 .. _L7 policy: https://wiki.openstack.org/wiki/Neutron/LBaaS/l7#L7_Policies
+.. _L7 policy delete: https://docs.openstack.org/cli-reference/neutron.html#neutron-lbaas-l7policy-delete
 .. _license: https://f5.com/products/how-to-buy/simplified-licensing
 .. _Local Traffic Manager: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-basics-13-0-0.html
 .. _Manage SSH keys using OpenStack Horizon: https://docs.openstack.org/horizon/latest/user/configure-access-and-security-for-instances.html#keypair-add
 .. _Manage SSH keys using the OpenStack CLI: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/keypair.html
 .. _Mirantis OpenStack: https://www.mirantis.com/partners/f5-networks/
-.. _Neutron: http://www.openstack.org/software/releases/%(openstack_release_l)s/components/neutron
-.. _Nova: http://www.openstack.org/software/releases/%(openstack_release_l)s/components/nova
+.. _Neutron: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/neutron
+.. _Nova: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/nova
 .. _OpenStack API: https://developer.openstack.org/api-guide/quick-start/index.html
 .. _OpenStack CLI: https://docs.openstack.org/cli-reference/
 .. _OpenStack Barbican: https://docs.openstack.org/barbican/latest
 .. _OpenStack Heat: https://docs.openstack.org/heat/latest
 .. _OpenStack Heat Orchestration Template: https://docs.openstack.org/heat/latest/template_guide/hot_spec.html
-.. _OpenStack Horizon: https://docs.openstack.org/horizon/latest
+.. _OpenStack Horizon: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/horizon
 .. _OpenStack Networking Concepts: http://docs.openstack.org/liberty/networking-guide/
 .. _OpenStack Neutron: https://docs.openstack.org/neutron/latest
 .. _OpenStack Nova: https://docs.openstack.org/nova/latest
-.. _OpenStack installation guides: https://docs.openstack.org/project-install-guide/%(openstack_release_l)s/
+.. _OpenStack installation guides: https://docs.openstack.org/install-guide/
 .. _policies: https://support.f5.com/csp/article/K15085
 .. _policy: https://support.f5.com/csp/article/K15085
 .. _profiles: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-0-0/2.html
 .. _profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-0-0/2.html
-
-
 .. _python-openstackclient: https://docs.openstack.org/python-openstackclient/latest
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
 .. _secrets: http://developer.openstack.org/api-guide/key-manager/secrets.html
@@ -464,29 +460,17 @@ rst_epilog = '''
 .. _Set up Neutron to use the F5 service provider driver: %(base_url)s/products/openstack/lbaasv2-driver/latest/#neutron-setup
 .. _Sync-Failover device group: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html
 .. _Virtual Edition: https://f5.com/products/deployment-methods/virtual-editions
-
-
-
-
-
-
-.. _L7 policy delete: https://docs.openstack.org/cli-reference/neutron.html#neutron-lbaas-l7policy-delete
-
-
-
 ''' % {
   'openstack_release': openstack_release,
   'openstack_release_l': openstack_release.lower(),
   'f5_lbaasv2_driver_shim_url': f5_lbaasv2_driver_shim_url,
   'f5_sdk_version': f5_sdk_version,
   'f5_icontrol_version': f5_icontrol_version,
-  'version_latest': version_latest,
+  'agent_version': agent_version,
+  'driver_version': driver_version,
   'version': version,
   'base_url': 'http://clouddocs.f5.com'
 }
-
-
-
 
 # Markup to shorten links to external sites
 extlinks = {'agent': ('http://clouddocs.f5.com/products/openstack/agent/latest/%s',

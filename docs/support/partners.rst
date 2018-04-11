@@ -1,3 +1,9 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for OpenStack Neutron
+:product: F5 Templates for OpenStack Heat
+:type: reference
+
+
 .. _f5ospartners:
 
 OpenStack Platform Partnerships
@@ -18,22 +24,12 @@ Each of F5's OpenStack distribution partners provides comprehensive documentatio
    Platform                         Platform version(s) F5 Connector version(s) OpenStack version
    ================================ =================== ======================= ===================
    `HPE Helion OpenStack`_          v4.x                v9.x                    Mitaka
-
-                                    v3.x                v8.x                    Liberty
-
-                                    v2.x                v7.x                    Kilo
    -------------------------------- ------------------- ----------------------- -------------------
    `Mirantis OpenStack`_            v9.0                v9.x                    Mitaka
-
-                                    v7.0                v7.x                    Kilo
    -------------------------------- ------------------- ----------------------- -------------------
    `RedHat OpenStack Platform`_     v10                 v10.x                   Newton 
    
                                     v9                  v9.x                    Mitaka
-
-                                    v8                  v8.x                    Liberty
-
-                                    v7                  v7.x                    Kilo
    ================================ =================== ======================= ===================
 
 

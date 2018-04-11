@@ -1,8 +1,7 @@
-.. index::
-   :pair: BIG-IP, lbaas
-   :pair: BIG-IP, heat
-   :pair: BIG-IP, security
-   :single: OpenStack security groups
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for OpenStack Neutron
+:product: F5 Templates for OpenStack Heat
+:type: tutorial
 
 .. _setup-access-security:
 

@@ -1,5 +1,5 @@
-.. index::
-   single: LBaaSv2, L7 Policy, F5 Agent, OpenStack
+:product: F5 Agent for OpenStack Neutron
+:type: tutorial
 
 .. _apply-multiple-esd:
 
@@ -18,7 +18,7 @@ When you deploy multiple ESDs to a single Listener, the |agent| essentially over
 
 What you define:
 
-.. code-block:: JSON
+.. code-block:: yaml
    :caption: ESD_DEMO_1
 
    {
@@ -26,7 +26,7 @@ What you define:
       "lbaas_stcp": "tcp-lan-optimized",
    }
 
-.. code-block:: JSON
+.. code-block:: yaml
    :caption: ESD_DEMO_2
 
    {
@@ -35,7 +35,7 @@ What you define:
 
 What the |agent| applies to the BIG-IP virtual server:
 
-.. code-block:: JSON
+.. code-block:: yaml
    :caption: Combined ESD
 
    {
@@ -61,7 +61,7 @@ If the |agent| encounters conflicting settings, it will select the settings from
 
 What you define:
 
-.. code-block:: JSON
+.. code-block:: yaml
    :caption: ESD_DEMO_1 -- position 1
 
    {
@@ -69,7 +69,7 @@ What you define:
      "lbaas_stcp": "tcp-lan-optimized",
    }
 
-.. code-block:: JSON
+.. code-block:: yaml
    :caption: ESD_DEMO_2 -- position 2
 
    {
@@ -80,7 +80,7 @@ What you define:
 
 What the |agent| sees:
 
-.. code-block:: JSON
+.. code-block:: yaml
    :emphasize-lines: 2,3
 
    {
@@ -93,7 +93,7 @@ What the |agent| sees:
 
 What the |agent| applies to the BIG-IP virtual server:
 
-.. code-block:: JSON
+.. code-block:: yaml
 
    {
      "lbaas_ctcp": "tcp-mobile-optimized",   \\ Taken from ESD_DEMO_1 (priority 1)

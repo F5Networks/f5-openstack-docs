@@ -1,6 +1,8 @@
-.. _neutron-bigip-command-mapping:
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: reference
 
-.. include:: /_static/reuse/applies-to-ALL.rst
+.. _neutron-bigip-command-mapping:
 
 Neutron to BIG-IP Command Mapping
 =================================

@@ -1,21 +1,30 @@
+:product: F5 Agent for OpenStack Neutron
+:product: F5 Driver for Neutron LBaaSv2
+:type: reference
+
 .. _lbaas-quick-start:
 
 F5 LBaaSv2 Quick Reference
 ==========================
 
-.. sidebar:: Applies to:
+.. sidebar:: :fonticon:`fa fa-info-circle` Applies to:
 
-   ====================    ===========================
-   F5 LBaaS version(s)     OpenStack version(s)
-   ====================    ===========================
-   |version_latest|        |openstack|
-   ====================    ===========================
+   =========================  ===========================
+   F5 LBaaS version(s)        OpenStack version(s)
+   =========================  ===========================
+   |agent| |agent_version|    |openstack|, Ocata
+
+   |driver| |driver_version|  |openstack|
+   =========================  ===========================
 
    \
 
    To install previous versions, see the :agent:`F5 Agent <index.html>` documentation.
 
-This reference sheet provides the basic information you need to get the |oslbaas| up and running using the latest release: v |version_latest|.
+This reference sheet provides the basic information you need to get the |oslbaas| up and running using the latest releases of the |agent| and |driver|:
+
+- |agent-long| |agent_version|
+- |driver-long| |driver_version|
 
 Tasks
 -----
