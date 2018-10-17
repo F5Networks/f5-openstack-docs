@@ -422,7 +422,7 @@ rst_epilog = '''
 .. _Glance: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/glance
 .. _Horizon: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/horizon
 .. _High Availability mode: %(base_url)s/products/openstack/agent/latest/ha-mode.html
-.. _HPE Helion OpenStack: https://www.hpe.com/us/en/software/openstack-cloud-iaas.html
+.. _HPE Helion OpenStack: https://www.openstack.org/foundation/companies/profile/hewlett-packard-enterprise
 .. _iControl REST: https://devcentral.f5.com/wiki/iControlrest.HomePage.ashx
 .. _Install the F5 Agent: %(base_url)s/products/openstack/agent/latest/#installation
 .. _Install the F5 Plugins for Heat: %(base_url)s/products/openstack/heat-plugins/latest/#installation

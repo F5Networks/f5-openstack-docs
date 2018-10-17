@@ -15,7 +15,7 @@ The |agent-long| can use Barbican certificates to perform BIG-IP :term:`SSL offl
 Prerequisites
 -------------
 
-- Administrator accesses to both BIG-IP device(s) and OpenStack cloud.
+- Administrator access to both BIG-IP device(s) and OpenStack cloud.
 - `OpenStack Barbican`_ certificate manager configured and operational.
 - Existing `BIG-IP SSL profile`_ (*optional*).
 
