@@ -207,7 +207,7 @@ You should now be able to send HTTP traffic to the listener (the BIG-IP virtual 
 
 .. _Cisco ACI OpFlex network: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Architectural_Overview/b_ACI_with_OpenStack_OpFlex_Architectural_Overview_chapter_010.html
 .. _ACI: http://www.cisco.com/c/en/us/solutions/data-center-virtualization/application-centric-infrastructure/index.html
-.. _OpenStack OpFlex: http://openstack-opflex.ciscolive.com/pod1
+.. _OpenStack OpFlex: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Architectural_Overview/b_ACI_with_OpenStack_OpFlex_Architectural_Overview_chapter_010.html
 .. _Cisco ACI with OpenStack OpFlex Deployment Guide for Red Hat: http://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat_appendix_0101.html#id_46535
 .. _Configure the OpFlex ML2 Plugin to use Hierarchical Port Binding: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat_appendix_0101.html#id_46535
 .. _Example of the ml2_conf_cisco_apic.ini file: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat_appendix_0101.html#id_46545
