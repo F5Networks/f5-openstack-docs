@@ -142,7 +142,7 @@ Testing
    :ref:`Set up the F5 Agent for HPB with Cisco APIC & OpFlex`
 
 .. rubric:: Footnotes
-.. [#opflex] The `Cisco OpFlex <http://openstack-opflex.ciscolive.com/pod1>`_ ML2 plugin allows integration of the |agent| with Cisco ACI Fabric.
+.. [#opflex] The `Cisco OpFlex <https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Architectural_Overview/b_ACI_with_OpenStack_OpFlex_Architectural_Overview_chapter_010.html>`_ ML2 plugin allows integration of the |agent| with Cisco ACI Fabric.
 .. [#osvlans] `OpenStack ML2 Hierarchical Port Binding specs <https://specs.openstack.org/openstack/neutron-specs/specs/kilo/ml2-hierarchical-port-binding.html#problem-description>`_.
 
 
@@ -157,4 +157,4 @@ Testing
 .. _Neutron ML2: https://wiki.openstack.org/wiki/Neutron/ML2
 .. _Cisco ACI with OpenStack OpFlex Deployment Guide for Red Hat: http://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat/b_ACI_with_OpenStack_OpFlex_Deployment_Guide_for_Red_Hat_appendix_0101.html#id_46535
 .. _Red Hat OpenStack Platform: https://www.redhat.com/en/technologies/linux-platforms/openstack-platform
-.. _OpenStack OpFlex: http://openstack-opflex.ciscolive.com/pod1
+.. _OpenStack OpFlex: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/openstack/b_ACI_with_OpenStack_OpFlex_Architectural_Overview/b_ACI_with_OpenStack_OpFlex_Architectural_Overview_chapter_010.html
