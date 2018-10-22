@@ -1,6 +1,7 @@
 # Ignore the sphinx artifacts
 _build/
 .gitkeep
+.vscode
 
 # Ignore the pycharm artifacts
 .idea/
