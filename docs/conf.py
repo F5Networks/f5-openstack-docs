@@ -323,6 +323,7 @@ driver_version = '12.0.0'
 
 rst_epilog = '''
 .. |agent| replace:: F5 Agent
+.. |dashboard| replace:: F5 Neutron LBaaS Dashboard
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
 .. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 10.2.x
 .. |config-file| replace:: :agent:`configuration file <config-file.html>`
@@ -460,6 +461,9 @@ rst_epilog = '''
 .. _Set up Neutron to use the F5 service provider driver: %(base_url)s/products/openstack/lbaasv2-driver/latest/#neutron-setup
 .. _Sync-Failover device group: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-system-device-service-clustering-administration-13-0-0/4.html
 .. _Virtual Edition: https://f5.com/products/deployment-methods/virtual-editions
+.. _OpenStack Neutron LBaaS Dashboard: https://docs.openstack.org/neutron-lbaas-dashboard/latest/usage.html
+.. _Octavia Documentation: https://docs.openstack.org/octavia/latest/index.html
+.. _Setting up Barbican: https://docs.openstack.org/barbican/latest/configuration/index.html
 ''' % {
   'openstack_release': openstack_release,
   'openstack_release_l': openstack_release.lower(),

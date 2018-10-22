@@ -30,6 +30,7 @@
    lbaas/l7-content-switching
    lbaas/applying-multiple-esds
    lbaas/agent-cert-manager-config
+   lbaas/ssl-offloading-configuration
    lbaas/manage-common-net-objects
    lbaas/deploy-basic-load-balancer
    lbaas/manage-bigip-clusters
