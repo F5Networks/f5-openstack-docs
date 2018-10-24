@@ -6,9 +6,13 @@
 Configure SSL Offloading On F5 Neutron LBaaS Dashboard
 ======================================================
 
-.. sidebar:: :fonticon:`fa fa-info-circle` **OpenStack version:**
+.. sidebar:: :fonticon:`fa fa-info-circle` **Applies to:**
 
-   **Mitaka** and later.
+   +----------------------+------------------------+
+   | OpenStack version(s) | |dashboard|            |
+   +======================+========================+
+   | Mitaka               | v9.0.0                 |
+   +----------------------+------------------------+
 
 Overview
 --------
