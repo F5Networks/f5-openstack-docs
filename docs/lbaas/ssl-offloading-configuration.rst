@@ -48,7 +48,7 @@ Create TERMINATED_HTTPS Load Balancer
 
 7. Click *Create SSL Certificate*. Input the tuple information for creating.
  
-- The inputs are validated when you enter them. The *Create* button is available when all inputs are valid.
+- The *Create* button is available when all inputs are valid.
 
 - Clicking *Create* will trigger the creation of certificate. In the backend, it will call barbican library to store a new certificate container with the inputs.
 
