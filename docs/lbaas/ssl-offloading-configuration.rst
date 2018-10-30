@@ -23,7 +23,7 @@ Note that, on that page it mentions "Neutron-lbaas-dashboard is now deprecated."
 
 This page describes how to configure a *TERMINATED_HTTPS* protocol load balancer called **SSL Offloading** load balancer whose service provider is F5 Networks. F5 Networks does the work of the TLS handshake with clients for the back-end servers.
 
-Note that, to configure **SSL Offloading** on |dashboard|, OpenStack needs to use Barbican as secret backend store. For details about Barbican setup, see `Set up SSL offloading with OpenStack Barbican <agent-cert-manager-config>`_ and `Setting up Barbican`_.
+Note that, to configure **SSL Offloading** on |dashboard|, OpenStack needs to use Barbican as secret backend store. For details about Barbican setup, see `Set up SSL offloading with OpenStack Barbican <agent-cert-manager-config.html>`_ and `Setting up Barbican`_.
 
 Create TERMINATED_HTTPS Load Balancer
 -------------------------------------
