@@ -7,7 +7,7 @@
 F5 Integration for OpenStack Neutron LBaaS
 ==========================================
 
-The |oslbaas| orchestrates BIG-IP Application Delivery Controllers (ADCs) with OpenStack Networking (Neutron) services.
+The |oslbaas| orchestrates BIG-IP Application Delivery Controllers (ADCs) with OpenStack Networking (Neutron) services. 
 The Integration consists of the :agent:`F5 Agent for OpenStack Neutron <index.html>` and :driver:`F5 Driver for OpenStack LBaaSv2 <index.html>`, which work together to configure F5 BIG-IP Local Traffic Manager (LTM) objects via the `OpenStack Networking API`_.
 
 .. _os-lbaas-prereqs:
