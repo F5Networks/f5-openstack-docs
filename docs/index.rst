@@ -16,7 +16,7 @@ F5 OpenStack Integrations Documentation
 Enhancements and issues
 -----------------------
 
-If you would like to request new documentation or notify us of a docs bug, please `file an issue in GitHub <https://github.com/F5Networks/f5-openstack-docs/issues>`_.
+If you would like to request new documentation or notify us of a docs bug, please `file an issue in GitHub <https://github.com/F5Networks/f5-openstack-docs/issues>`_. 
 
 Acknowledgements
 ----------------
