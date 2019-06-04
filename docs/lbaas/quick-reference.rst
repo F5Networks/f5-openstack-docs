@@ -12,7 +12,7 @@ F5 LBaaSv2 Quick Reference
    =========================  ===========================
    F5 LBaaS version(s)        OpenStack version(s)
    =========================  ===========================
-   |agent| |agent_version|    |openstack|, Ocata
+   |agent| |agent_version|    |openstack|
 
    |driver| |driver_version|  |openstack|
    =========================  ===========================

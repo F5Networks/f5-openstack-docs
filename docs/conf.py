@@ -73,7 +73,7 @@ version = ''
 # release = ''
 
 # OpenStack release
-openstack_release = "Pike"
+openstack_release = "Queens"
 
 #rst_prolog = '''
 #'''
@@ -318,20 +318,20 @@ f5_lbaasv2_driver_shim_url = '\https://github.com/F5Networks/neutron-lbaas/relea
 f5_sdk_version = '2.3.3'
 # F5 icontrol REST version should be set here
 f5_icontrol_version = '1.3.0'
-agent_version = '9.6.0'
-driver_version = '12.0.0'
+agent_version = '9.8.1'
+driver_version = '13.0.0'
 
 rst_epilog = '''
 .. |agent| replace:: F5 Agent
 .. |dashboard| replace:: F5 Neutron LBaaS Dashboard
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
-.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 10.2.x
+.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 9.7+, 9.8+, 10.2.x
 .. |config-file| replace:: :agent:`configuration file <config-file.html>`
 .. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
 .. |driver| replace:: F5 Driver
 .. |driver-long| replace:: F5 Driver for OpenStack LBaaSv2
 .. |driver-settings| replace:: :agent:`Device driver\/iControl Driver settings <device-driver-settings.html>`
-.. |driver-versions| replace:: 9.x-12.x
+.. |driver-versions| replace:: 9.x-13.x
 .. |env-generator| replace:: :driver:`F5 environment generator <environment-generator.html>`
 .. |f5_lbaasv2_driver_shim_url| replace:: %(f5_lbaasv2_driver_shim_url)s
 .. |grm| replace:: :agent:`Global routed mode <global-routed-mode.html>`
