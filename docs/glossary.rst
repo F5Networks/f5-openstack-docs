@@ -1,5 +1,10 @@
 :orphan: true
 
+.. _glossary:
+
+Glossary
+========
+
 .. glossary::
    :sorted:
 
