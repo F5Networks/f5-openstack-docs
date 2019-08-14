@@ -6,18 +6,38 @@ sudo: required
 services:
 - docker
 before_install:
-- docker pull f5devcentral/containthedocs
-install: true
+- docker pull f5devcentral/containthedocs: latest
+install:
+- pip install awscli --upgrade
 script:
 - ./scripts/docker-docs.sh ./scripts/test-docs.sh
 deploy:
-- provider: script
+# DEPLOY TO STAGING
+- provider: s3
   skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $AWS_S3_STAGING
+  local_dir: docs/_build/html
+  upload_dir: $AWS_DIR
+  on:
+    branch: master
+    repo: F5Networks/f5-openstack-docs
+# DEPLOY TO PRODUCTION
+- provider: s3
+  skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $AWS_S3_BUCKET
+  local_dir: docs/_build/html
+  upload_dir: /cloud/openstack/v1
   on:
     branch: v1
     repo: F5Networks/f5-openstack-docs
-  script:
-  - ./scripts/deploy-docs.sh publish-cloud-docs-to-prod openstack v1
+
+after_deploy:
+  - aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths /cloud/openstack/v1/
+
 notifications:
  slack:
   rooms:
