@@ -19,7 +19,7 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: $AWS_S3_STAGING
   local_dir: docs/_build/html
-  upload_dir: $AWS_DIR
+  upload_dir: /cloud/openstack/v1
   on:
     branch: master
     repo: F5Networks/f5-openstack-docs
