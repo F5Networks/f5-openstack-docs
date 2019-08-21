@@ -1,4 +1,4 @@
 Sphinx>=1.7
-f5-sphinx-theme>=1.0.2
+f5-sphinx-theme>=2.0.2
 cloud_sptheme
 sphinxjp.themes.basicstrap
