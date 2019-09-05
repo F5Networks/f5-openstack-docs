@@ -77,7 +77,7 @@ What Happens on BIG-IP
 
 On BIG-IP, there is a new partition created. After you switch to it, it is possible to view Virtual Server/SSL Profile/Pool/Certificate Management. 
 
-The created objects are by default named with prefix "Project_", which is configurable in *f5-openstack-agent.ini*.
+The created objects are by default named with prefix "Project\_", which is configurable in *f5-openstack-agent.ini*.
 
 Navigate to them on BIG-IP console through:
 

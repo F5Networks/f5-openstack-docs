@@ -248,7 +248,7 @@ A) Using command line
 
      .. tip::
         
-        **Where to find ESD names used in 'neutron lbaas-l7policy-create'? (Two options) **
+        **Where to find ESD names used in 'neutron lbaas-l7policy-create'? (Two options)**
 
         * Option 1. Going to :file:`/etc/openstack-dashboard/esds` directory, finding names from ESD file(s) directly.
 
@@ -513,8 +513,8 @@ Use the ``lbaas_persist`` and ``lbaas_fallback_persist`` tags to configure a `BI
 .. code-block:: yaml
    :linenos:
 
-   "lbaas_persist": "hash",
-   "lbaas_fallback_persist": "source_addr"
+   lbaas_persist: hash,
+   lbaas_fallback_persist: source_addr
 
 .. tip::
 
