@@ -41,7 +41,9 @@ This documentation set applies to the following versions of each F5 Integration 
 F5 in OpenStack compatibility
 -----------------------------
 
-The tables below show the versions used in development testing. The F5 Integration for OpenStack Heat may work with versions not shown here; F5 has not verified functionality in those versions.
+The tables below show the versions used in earlier development testing. The F5 Integration for OpenStack Heat may work with versions not shown here; F5 has not verified functionality in those versions.
+Besides the versions listed here, please note that the main supported version now for lbaas is Pike. F5 encourages customers to use Pike if they are installing new environment.
+Please contact the PD team first for more details if you have any questions about the related versions.
 
 .. table:: OpenStack, F5 Integration, & BIG-IP version compatibility
    :widths: 4 2 2 4 2
@@ -49,23 +51,15 @@ The tables below show the versions used in development testing. The F5 Integrati
    +-----------------------------------+-----------------------+--------------------------------------------+--------------------------+
    | F5 Component                      | Version(s)            | OpenStack Version(s)                       | BIG-IP version(s)        |
    +===================================+=======================+============================================+==========================+
-   | |agent-long|                      | v9.0.x-9.5.x          | Mitaka                                     | v12.x, v13.x             |
+   | |agent-long|                      | v9.8.x                | Pike,Queens                                | v12.x, v13.x             |
    +                                   +-----------------------+--------------------------------------------+                          |
-   | ``f5-openstack-agent``            | v9.6.x-v9.8.0         | Mitaka, Newton, Ocata, Pike                |                          |
-   +                                   +-----------------------+--------------------------------------------+                          |
-   |                                   | v9.8.1                | Mitaka, Newton, Ocata, Pike, Queens        |                          |
+   | ``f5-openstack-agent``            | v9.9.x                | Pike,Queens                                |                          |
    +-----------------------------------+-----------------------+--------------------------------------------+--------------------------+
    |                                                                                                                                   |
    +-----------------------------------+-----------------------+--------------------------------------------+--------------------------+
-   | |driver-long|                     | v9.x                  | Mitaka                                     | v12.x, v13.x             |
+   | |driver-long|                     | v12.x                 | Pike                                       | v12.x, v13.x             |
    +                                   +-----------------------+--------------------------------------------+                          |
-   | ``f5-openstack-lbaasv2-driver``   | v10.x                 | Newton                                     |                          |
-   +                                   +-----------------------+--------------------------------------------+                          |
-   |                                   | v11.x                 | Ocata                                      |                          |
-   +                                   +-----------------------+--------------------------------------------+                          |
-   |                                   | v12.x                 | Pike                                       |                          |
-   +                                   +-----------------------+--------------------------------------------+                          |
-   |                                   | v13.x                 | Queens                                     |                          |
+   | ``f5-openstack-lbaasv2-driver``   | v13.x                 | Queens                                     |                          |
    +-----------------------------------+-----------------------+--------------------------------------------+--------------------------+
    |                                                                                                                                   |
    +-----------------------------------+-----------------------+--------------------------------------------+--------------------------+
@@ -110,6 +104,12 @@ version
 v7.x                Kilo
 ------------------- --------------------
 v8.x                Liberty
+------------------- --------------------
+v9.x                Mitaka
+------------------- --------------------
+v10.x               Newton
+------------------- --------------------
+v11.x               Ocata
 =================== ====================
 
 
