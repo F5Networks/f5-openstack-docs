@@ -10,4 +10,3 @@ OpenStack China Documentation
 `SSL Offload with OpenStack Barbican <https://clouddocs.f5.com/cloud/openstack/v1/lbaas/agent-cert-manager-config.html>`_
  
 `Enhance L7 Policies with ESD <https://clouddocs.f5.com/cloud/openstack/v1/lbaas/enhanced-service-definitions.html>`_
- 
