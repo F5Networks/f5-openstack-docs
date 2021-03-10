@@ -452,8 +452,8 @@ rst_epilog = '''
 .. _OpenStack installation guides: https://docs.openstack.org/install-guide/
 .. _policies: https://support.f5.com/csp/article/K15085
 .. _policy: https://support.f5.com/csp/article/K15085
-.. _profiles: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-0-0/2.html
-.. _profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-0-0/2.html
+.. _profiles:  https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-13-0-0/2.html
+.. _profile:  https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-13-0-0/2.html
 .. _python-openstackclient: https://docs.openstack.org/python-openstackclient/latest
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
 .. _secrets: http://developer.openstack.org/api-guide/key-manager/secrets.html
