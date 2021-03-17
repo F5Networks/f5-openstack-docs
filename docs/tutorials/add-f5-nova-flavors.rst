@@ -44,8 +44,9 @@ f5-all
 
 .. tip::
 
-   If you're using the BIG-IP Application Acceleration Manager(AAM) module, increase the disk size to 160.
+   If you're using the BIG-IP `Application Acceleration Manager`_ (AAM) module, increase the disk size to 160.
 
 
 
 .. _OpenStack Horizon - Manage flavors: https://docs.openstack.org/horizon/latest/admin/manage-flavors.html
+.. _Application Acceleration Manager: https://f5.com/products/big-ip/application-acceleration-manager-aam
