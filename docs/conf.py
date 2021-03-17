@@ -325,13 +325,13 @@ rst_epilog = '''
 .. |agent| replace:: F5 Agent
 .. |dashboard| replace:: F5 Neutron LBaaS Dashboard
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
-.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 9.7+, 9.8+, 10.2.x
+.. |agent-versions| replace:: 9.8+, 9.9+
 .. |config-file| replace:: :agent:`configuration file <config-file.html>`
 .. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
 .. |driver| replace:: F5 Driver
 .. |driver-long| replace:: F5 Driver for OpenStack LBaaSv2
 .. |driver-settings| replace:: :agent:`Device driver\/iControl Driver settings <device-driver-settings.html>`
-.. |driver-versions| replace:: 9.x-13.x
+.. |driver-versions| replace:: 12.x-13.x
 .. |env-generator| replace:: :driver:`F5 environment generator <environment-generator.html>`
 .. |f5_lbaasv2_driver_shim_url| replace:: %(f5_lbaasv2_driver_shim_url)s
 .. |grm| replace:: :agent:`Global routed mode <global-routed-mode.html>`
@@ -452,8 +452,8 @@ rst_epilog = '''
 .. _OpenStack installation guides: https://docs.openstack.org/install-guide/
 .. _policies: https://support.f5.com/csp/article/K15085
 .. _policy: https://support.f5.com/csp/article/K15085
-.. _profiles: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-0-0/2.html
-.. _profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-12-0-0/2.html
+.. _profiles: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-13-0-0/2.html
+.. _profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-13-0-0/2.html
 .. _python-openstackclient: https://docs.openstack.org/python-openstackclient/latest
 .. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
 .. _secrets: http://developer.openstack.org/api-guide/key-manager/secrets.html
