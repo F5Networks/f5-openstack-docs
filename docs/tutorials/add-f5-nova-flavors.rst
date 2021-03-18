@@ -44,7 +44,7 @@ f5-all
 
 .. tip::
 
-   If you're using the BIG-IP `Application Acceleration Manager`_ (AAM) module, increase the disk size to 160.
+   If you're using the BIG-IP Application Acceleration Manager(AAM) module, increase the disk size to 160.
 
 
 
