@@ -49,4 +49,3 @@ f5-all
 
 
 .. _OpenStack Horizon - Manage flavors: https://docs.openstack.org/horizon/latest/admin/manage-flavors.html
-.. _Application Acceleration Manager: https://support.f5.com/csp/knowledge-center/software/BIG-IP?module=BIG-IP%20AAM
