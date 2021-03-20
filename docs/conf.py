@@ -325,21 +325,13 @@ rst_epilog = '''
 .. |agent| replace:: F5 Agent
 .. |dashboard| replace:: F5 Neutron LBaaS Dashboard
 .. |agent-long| replace:: F5 Agent for OpenStack Neutron
-<<<<<<< HEAD
-.. |agent-versions| replace:: 9.0.x-9.5.x, 9.6+, 9.7+, 9.8+, 10.2.x
-=======
 .. |agent-versions| replace:: 9.8+, 9.9+
->>>>>>> master
 .. |config-file| replace:: :agent:`configuration file <config-file.html>`
 .. |configs| replace:: :agent:`configuration parameters <config-file.html#configuration-parameters>`
 .. |driver| replace:: F5 Driver
 .. |driver-long| replace:: F5 Driver for OpenStack LBaaSv2
 .. |driver-settings| replace:: :agent:`Device driver\/iControl Driver settings <device-driver-settings.html>`
-<<<<<<< HEAD
-.. |driver-versions| replace:: 9.x-13.x
-=======
 .. |driver-versions| replace:: 12.x-13.x
->>>>>>> master
 .. |env-generator| replace:: :driver:`F5 environment generator <environment-generator.html>`
 .. |f5_lbaasv2_driver_shim_url| replace:: %(f5_lbaasv2_driver_shim_url)s
 .. |grm| replace:: :agent:`Global routed mode <global-routed-mode.html>`
