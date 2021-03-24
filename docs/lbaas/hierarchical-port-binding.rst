@@ -47,11 +47,6 @@ As noted in the OpenStack documentation, this can be useful if you need your Neu
    :ref:`Set up the F5 Agent for standard HPB <agent-setup-hpb>`
 
 
-.. index::
-   :pair: cisco aci, F5 agent
-   :pair: cisco apic, F5 agent
-   :pair: openstack opflex, F5 agent
-
 .. _understanding cisco aci opflex:
 
 Use Case - Cisco APIC/ACI, OpenStack OpFlex, and Red Hat OSP
