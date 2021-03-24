@@ -48,9 +48,9 @@ As noted in the OpenStack documentation, this can be useful if you need your Neu
 
 
 .. index::
-   :pair: cisco aci, F5 agent
-   :pair: cisco apic, F5 agent
-   :pair: openstack opflex, F5 agent
+   pair: cisco aci; F5 agent
+   pair: cisco apic; F5 agent
+   pair: openstack opflex; F5 agent
 
 .. _understanding cisco aci opflex:
 

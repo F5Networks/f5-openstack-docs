@@ -115,8 +115,8 @@ Set up standard HPB
       #
 
 .. index::
-   :triple: lbaas, cisco aci, F5 agent
-   :triple: lbaas, opflex, F5 agent
+   triple: lbaas; cisco aci; F5 agent
+   triple: lbaas; opflex; F5 agent
 
 .. _Set up the F5 Agent for HPB with Cisco APIC & OpFlex:
 
