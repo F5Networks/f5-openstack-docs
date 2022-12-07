@@ -415,7 +415,7 @@ rst_epilog = '''
 .. _environment variables: https://docs.openstack.org/user-guide/common/cli-set-environment-variables-using-openstack-rc.html
 .. _F5-Supported Heat Templates: %(base_url)s/products/templates/openstack-heat/latest/index.html#f5-supported-heat-templates
 .. _F5 BIG-IP Active-Standby Pair: %(base_url)s/products/templates/openstack-heat/latest/f5_supported/f5-bigip-ve_active-standby-pair.html
-.. _F5 iApps: https://devcentral.f5.com/wiki/iApp.HomePage.ashx
+.. _F5 iApps: https://clouddocs.f5.com/api/iapps/
 .. _F5 Python SDK: http://f5-sdk.readthedocs.io/
 .. _F5 Unsupported HOT library: %(base_url)s/products/templates/openstack-heat/latest/#unsupported-heat-templates
 .. _Heat: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/heat
@@ -424,12 +424,12 @@ rst_epilog = '''
 .. _Horizon: https://www.openstack.org/software/releases/%(openstack_release_l)s/components/horizon
 .. _High Availability mode: %(base_url)s/products/openstack/agent/latest/ha-mode.html
 .. _HPE Helion OpenStack: https://www.openstack.org/foundation/companies/profile/hewlett-packard-enterprise
-.. _iControl REST: https://devcentral.f5.com/wiki/iControlrest.HomePage.ashx
+.. _iControl REST: https://clouddocs.f5.com/api/icontrol-rest/
 .. _Install the F5 Agent: %(base_url)s/products/openstack/agent/latest/#installation
 .. _Install the F5 Plugins for Heat: %(base_url)s/products/openstack/heat-plugins/latest/#installation
 .. _Install the F5 LBaaSv2 Driver: %(base_url)s/products/openstack/lbaasv2-driver/latest/#installation
-.. _iRules: https://devcentral.f5.com/irules
-.. _iRule: https://devcentral.f5.com/irules
+.. _iRules: https://clouddocs.f5.com/api/irules/
+.. _iRule: https://clouddocs.f5.com/api/irules/
 .. _Keystone: https://docs.openstack.org/developer/keystone/
 .. _L7 policy: https://wiki.openstack.org/wiki/Neutron/LBaaS/l7#L7_Policies
 .. _L7 policy delete: https://docs.openstack.org/cli-reference/neutron.html#neutron-lbaas-l7policy-delete
