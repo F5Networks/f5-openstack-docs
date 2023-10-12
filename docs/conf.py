@@ -455,7 +455,7 @@ rst_epilog = '''
 .. _profiles: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-13-0-0/2.html
 .. _profile: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-profiles-reference-13-0-0/2.html
 .. _python-openstackclient: https://docs.openstack.org/python-openstackclient/latest
-.. _RedHat OpenStack Platform: https://access.redhat.com/ecosystem/software/1446683
+.. _RedHat OpenStack Platform: https://catalog.redhat.com/platform/red-hat-openstack
 .. _secrets: http://developer.openstack.org/api-guide/key-manager/secrets.html
 .. _Server SSL: https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-ssl-administration-13-0-0/5.html
 .. _Set up Neutron to use the F5 service provider driver: %(base_url)s/products/openstack/lbaasv2-driver/latest/#neutron-setup
