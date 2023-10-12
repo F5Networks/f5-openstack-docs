@@ -142,4 +142,4 @@ What's next
 - View the `Neutron client lbaas-l7policy commands`_.
 
 .. _Neutron/LBaaS/l7 Wiki: https://wiki.openstack.org/wiki/Neutron/LBaaS/l7#Policy_Position
-.. _Neutron client lbaas-l7policy commands: https://docs.openstack.org/python-neutronclient/latest/cli/neutron-reference.html#lbaas-l7policy-create
+.. _Neutron client lbaas-l7policy commands: https://docs.openstack.org/python-neutronclient/pike/cli/neutron-reference.html#lbaas-l7policy-create
