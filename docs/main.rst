@@ -11,6 +11,8 @@ OpenStack China Documentation
 
 `OpenStack Agent 9.10.5 <https://clouddocs.f5.com/products/openstack/agent/v9.10.5/>`_ (`Release Notes <https://clouddocs.f5.com/products/openstack/agent/v9.10.5/RELEASE-NOTES.html#release-notes>`_)
 
+`OpenStack Agent 9.10.6 <https://clouddocs.f5.com/products/openstack/agent/v9.10.6/>`_ (`Release Notes <https://clouddocs.f5.com/products/openstack/agent/v9.10.6/RELEASE-NOTES.html#release-notes>`_)
+
 `SSL Offload with OpenStack Barbican <https://clouddocs.f5.com/cloud/openstack/v1/lbaas/agent-cert-manager-config.html>`_
  
 `Enhance L7 Policies with ESD <https://clouddocs.f5.com/cloud/openstack/v1/lbaas/enhanced-service-definitions.html>`_
